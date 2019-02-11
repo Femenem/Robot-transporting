@@ -1,0 +1,22 @@
+<launch>
+  <arg name="world" default="worlds/empty.world" />
+  <arg name="debug" default="false"/>
+  <arg name="paused" default="false"/>
+
+  <include file="$(find gazebo_ros)/launch/empty_world.launch">
+    <arg name="debug" value="$(arg debug)" />
+    <arg name="paused" value="$(arg paused)" />
+  </include>
+
+  <arg name="urdf" default="$(find idris_sim)/description/urdf/idris.urdf" />
+  <arg name="name" default="idris_sim" />
+
+  <param name="robot_description"
+     command="$(find xacro)/xacro --inorder $(arg urdf).xacro" />
+  <node name="spawn_urdf" pkg="gazebo_ros" type="spawn_model"
+     args="-param robot_description -urdf -model $(arg name)" />
+
+<!--
+     <node name="robot_state_publisher" pkg="robot_state_publisher" type="robot_state_publisher" />
+-->
+</launch>

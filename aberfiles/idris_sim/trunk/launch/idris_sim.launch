@@ -1,0 +1,19 @@
+<launch>
+<!--
+  <arg name="unsafe" default="false" />
+
+  <remap if="$(arg unsafe)"
+     from="/idris_sim/cmd_ackermann"
+     to="/idris_sim/cmd_ackermann_unsafe" />
+  <remap  if="$(arg unsafe)"
+     from="/idris_sim/cmd_vel"
+     to="/idris_sim/cmd_vel_unsafe" />
+-->
+
+  <node name="idris_sim" pkg="idris_sim" type="idris_sim_node" respawn="true">
+    <param name="maxVelocity" value="16.667" />
+    <param name="maxSteering" value="0.35" />
+    <param name="axleSeparation" value="1.21" />
+    <param name="axleWidth" value="1.20" />
+  </node>
+</launch>

@@ -1,0 +1,57 @@
+<launch>
+  <!--
+    Gazebo stuff.
+  -->
+  <arg name="world" default="$(find idris_sim)/gazebo/worlds/idris.world" />
+  <arg name="debug" default="false"/>
+  <arg name="paused" default="false"/>
+
+  <include file="$(find gazebo_ros)/launch/empty_world.launch">
+    <arg name="world_name" value="$(arg world)" />
+    <arg name="debug" value="$(arg debug)" />
+    <arg name="paused" value="$(arg paused)" />
+  </include>
+
+  <arg name="urdf" default="$(find idris_sim)/description/urdf/idris.urdf" />
+  <arg name="name" default="idris_sim" />
+
+  <param name="robot_description"
+     command="$(find xacro)/xacro --inorder $(arg urdf).xacro" />
+  <node name="spawn_urdf" pkg="gazebo_ros" type="spawn_model"
+     args="-param robot_description -urdf -model $(arg name)" />
+
+  <!--
+    Control stuff
+  -->
+  <rosparam file="$(find idris_sim)/config/control.yaml" command="load"/>
+
+  <node name="controller_spawner" pkg="controller_manager" type="spawner" respawn="false"
+    output="screen" ns="/idris_sim"
+    args="front_right_steering_controller
+          front_left_steering_controller
+          rear_right_steering_controller
+          rear_left_steering_controller
+          front_right_wheel_controller
+          front_left_wheel_controller
+          rear_right_wheel_controller
+          rear_left_wheel_controller
+          joint_state_controller"/>
+
+  <!-- convert joint states to TF transforms for rviz, etc -->
+  <node name="robot_state_publisher" pkg="robot_state_publisher"
+      type="robot_state_publisher"
+      respawn="true" output="screen">
+    <remap from="/joint_states" to="/idris_sim/joint_states" />
+  </node>
+
+  <!--
+    And the simulator software
+  -->
+  <node name="idris_sim" pkg="idris_sim" type="idris_sim_node"
+      respawn="true" output="screen">
+    <param name="maxVelocity" value="16.667" />
+    <param name="maxSteering" value="0.35" />
+    <param name="axleSeparation" value="1.21" />
+    <param name="axleWidth" value="1.20" />
+  </node>
+</launch>

@@ -1,0 +1,8 @@
+prefix=/home/matt/Documents/Robot-transporting/workspace/devel
+
+Name: idris_sim
+Description: Description of idris_sim
+Version: 0.0.0
+Cflags: 
+Libs: -L/home/matt/Documents/Robot-transporting/workspace/devel/lib -lidris_sim
+Requires: hardware_interface message_runtime roscpp std_msgs

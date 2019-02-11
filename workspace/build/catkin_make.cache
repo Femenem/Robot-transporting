@@ -1,0 +1,2 @@
+idris_sim/trunk
+-DCATKIN_DEVEL_PREFIX=/home/matt/Documents/Robot-transporting/workspace/devel -DCMAKE_INSTALL_PREFIX=/home/matt/Documents/Robot-transporting/workspace/install -G Unix Makefiles
