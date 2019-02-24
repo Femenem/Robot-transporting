@@ -122,7 +122,9 @@ endif()
 if(NOT CMAKE_INSTALL_LOCAL_ONLY)
   # Include the install script for each subdirectory.
   include("/home/matt/Documents/Robot-transporting/workspace/build/gtest/cmake_install.cmake")
+  include("/home/matt/Documents/Robot-transporting/workspace/build/double_ackermann/trunk/cmake_install.cmake")
   include("/home/matt/Documents/Robot-transporting/workspace/build/idris_sim/trunk/cmake_install.cmake")
+  include("/home/matt/Documents/Robot-transporting/workspace/build/van_loading/cmake_install.cmake")
 
 endif()
 

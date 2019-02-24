@@ -1,0 +1,8 @@
+prefix=/home/matt/Documents/Robot-transporting/workspace/devel
+
+Name: van_loading
+Description: Description of van_loading
+Version: 0.0.0
+Cflags: 
+Libs: -L/home/matt/Documents/Robot-transporting/workspace/devel/lib -lvan_loading
+Requires: hardware_interface message_runtime roscpp std_msgs

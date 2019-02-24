@@ -293,8 +293,14 @@ catkin_DIR:PATH=/opt/ros/melodic/share/catkin/cmake
 //The directory containing a CMake configuration file for cpp_common.
 cpp_common_DIR:PATH=/opt/ros/melodic/share/cpp_common/cmake
 
+//Value Computed by CMake
+double_ackermann_BINARY_DIR:STATIC=/home/matt/Documents/Robot-transporting/workspace/build/double_ackermann/trunk
+
 //The directory containing a CMake configuration file for double_ackermann.
-double_ackermann_DIR:PATH=double_ackermann_DIR-NOTFOUND
+double_ackermann_DIR:PATH=/home/matt/Documents/Robot-transporting/workspace/devel/share/double_ackermann/cmake
+
+//Value Computed by CMake
+double_ackermann_SOURCE_DIR:STATIC=/home/matt/Documents/Robot-transporting/workspace/src/double_ackermann/trunk
 
 //The directory containing a CMake configuration file for gencpp.
 gencpp_DIR:PATH=/opt/ros/melodic/share/gencpp/cmake
@@ -435,6 +441,12 @@ tf2_ros_DIR:PATH=/opt/ros/melodic/share/tf2_ros/cmake
 //The directory containing a CMake configuration file for tf.
 tf_DIR:PATH=/opt/ros/melodic/share/tf/cmake
 
+//Value Computed by CMake
+van_loading_BINARY_DIR:STATIC=/home/matt/Documents/Robot-transporting/workspace/build/van_loading
+
+//Value Computed by CMake
+van_loading_SOURCE_DIR:STATIC=/home/matt/Documents/Robot-transporting/workspace/src/van_loading
+
 //The directory containing a CMake configuration file for xmlrpcpp.
 xmlrpcpp_DIR:PATH=/opt/ros/melodic/share/xmlrpcpp/cmake
 
@@ -548,7 +560,7 @@ CMAKE_MODULE_LINKER_FLAGS_RELWITHDEBINFO-ADVANCED:INTERNAL=1
 //ADVANCED property for variable: CMAKE_NM
 CMAKE_NM-ADVANCED:INTERNAL=1
 //number of local generators
-CMAKE_NUMBER_OF_MAKEFILES:INTERNAL=5
+CMAKE_NUMBER_OF_MAKEFILES:INTERNAL=7
 //ADVANCED property for variable: CMAKE_OBJCOPY
 CMAKE_OBJCOPY-ADVANCED:INTERNAL=1
 //ADVANCED property for variable: CMAKE_OBJDUMP

@@ -2,5 +2,9 @@
 <project version="4">
   <component name="VcsDirectoryMappings">
     <mapping directory="$PROJECT_DIR$" vcs="Git" />
+    <mapping directory="$PROJECT_DIR$/libs/libicp" vcs="Git" />
+    <mapping directory="$PROJECT_DIR$/libs/libnabo" vcs="Git" />
+    <mapping directory="$PROJECT_DIR$/libs/libpointmatcher" vcs="Git" />
+    <mapping directory="$PROJECT_DIR$/libs/mrpt" vcs="Git" />
   </component>
 </project>

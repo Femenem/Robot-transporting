@@ -1,0 +1,65 @@
+<launch>
+    <!--
+      Gazebo stuff.
+    -->
+    <arg name="world" default="$(find gazebo_ros)/launch/empty_world.launch" />
+    <arg name="debug" default="false"/>
+    <arg name="paused" default="false"/>
+
+    <include file="$(find gazebo_ros)/launch/empty_world.launch">
+        <arg name="world_name" value="$(arg world)" />
+        <arg name="debug" value="$(arg debug)" />
+        <arg name="paused" value="$(arg paused)" />
+    </include>
+
+    <arg name="urdf" default="$(find van_loading)/description/urdf/idris.urdf" />
+    <arg name="robot_spawn" default="idris" />
+
+    <param name="robot_description"
+           command="$(find xacro)/xacro $(arg urdf).xacro" />
+    <node name="spawn_urdf" pkg="gazebo_ros" type="spawn_model"
+          args="-param robot_description -urdf -model $(arg robot_spawn)" />
+
+    <arg name="sdf" default="$(find van_loading)/description/van/model.sdf" />
+    <arg name="van_spawn" default="van" />
+<!---->
+    <!--<param name="van_description"-->
+           <!--command="$(arg sdf)"/>-->
+    <node name="spawn_sdf" pkg="gazebo_ros" type="spawn_model"
+          args="-file $(arg sdf) -sdf -x 6 -z 1 -Y 0.0 -model $(arg van_spawn)" />
+
+    <!--
+      Control stuff
+    -->
+    <rosparam file="$(find van_loading)/config/control.yaml" command="load"/>
+
+    <node name="controller_spawner" pkg="controller_manager" type="spawner" respawn="false"
+          output="screen" ns="/van_loading"
+          args="front_right_steering_controller
+          front_left_steering_controller
+          rear_right_steering_controller
+          rear_left_steering_controller
+          front_right_wheel_controller
+          front_left_wheel_controller
+          rear_right_wheel_controller
+          rear_left_wheel_controller
+          joint_state_controller"/>
+
+    <!-- convert joint states to TF transforms for rviz, etc -->
+    <node name="robot_state_publisher" pkg="robot_state_publisher"
+          type="robot_state_publisher"
+          respawn="true" output="screen">
+        <remap from="/joint_states" to="/van_loading/joint_states" />
+    </node>
+
+    <!--
+      And the simulator software
+    -->
+    <node name="van_loading" pkg="van_loading" type="van_loading_node"
+          respawn="true" output="screen">
+        <param name="maxVelocity" value="16.667" />
+        <param name="maxSteering" value="0.35" />
+        <param name="axleSeparation" value="1.21" />
+        <param name="axleWidth" value="1.20" />
+    </node>
+</launch>

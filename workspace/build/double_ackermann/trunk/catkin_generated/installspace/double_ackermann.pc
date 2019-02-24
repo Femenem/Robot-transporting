@@ -1,0 +1,8 @@
+prefix=/home/matt/Documents/Robot-transporting/workspace/install
+
+Name: double_ackermann
+Description: Description of double_ackermann
+Version: 0.0.0
+Cflags: -I/home/matt/Documents/Robot-transporting/workspace/install/include
+Libs: -L/home/matt/Documents/Robot-transporting/workspace/install/lib 
+Requires: message_runtime

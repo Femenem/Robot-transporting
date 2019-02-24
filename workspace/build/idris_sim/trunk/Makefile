@@ -89,17 +89,16 @@ test/fast: test
 
 .PHONY : test/fast
 
-# Special rule for the target install/local
-install/local: preinstall
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "Installing only the local directory..."
-	/usr/bin/cmake -DCMAKE_INSTALL_LOCAL_ONLY=1 -P cmake_install.cmake
-.PHONY : install/local
+# Special rule for the target edit_cache
+edit_cache:
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "No interactive CMake dialog available..."
+	/usr/bin/cmake -E echo No\ interactive\ CMake\ dialog\ available.
+.PHONY : edit_cache
 
-# Special rule for the target install/local
-install/local/fast: preinstall/fast
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "Installing only the local directory..."
-	/usr/bin/cmake -DCMAKE_INSTALL_LOCAL_ONLY=1 -P cmake_install.cmake
-.PHONY : install/local/fast
+# Special rule for the target edit_cache
+edit_cache/fast: edit_cache
+
+.PHONY : edit_cache/fast
 
 # Special rule for the target install
 install: preinstall
@@ -113,6 +112,18 @@ install/fast: preinstall/fast
 	/usr/bin/cmake -P cmake_install.cmake
 .PHONY : install/fast
 
+# Special rule for the target install/local
+install/local: preinstall
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "Installing only the local directory..."
+	/usr/bin/cmake -DCMAKE_INSTALL_LOCAL_ONLY=1 -P cmake_install.cmake
+.PHONY : install/local
+
+# Special rule for the target install/local
+install/local/fast: preinstall/fast
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "Installing only the local directory..."
+	/usr/bin/cmake -DCMAKE_INSTALL_LOCAL_ONLY=1 -P cmake_install.cmake
+.PHONY : install/local/fast
+
 # Special rule for the target rebuild_cache
 rebuild_cache:
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "Running CMake to regenerate build system..."
@@ -123,17 +134,6 @@ rebuild_cache:
 rebuild_cache/fast: rebuild_cache
 
 .PHONY : rebuild_cache/fast
-
-# Special rule for the target edit_cache
-edit_cache:
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "No interactive CMake dialog available..."
-	/usr/bin/cmake -E echo No\ interactive\ CMake\ dialog\ available.
-.PHONY : edit_cache
-
-# Special rule for the target edit_cache
-edit_cache/fast: edit_cache
-
-.PHONY : edit_cache/fast
 
 # The main all target
 all: cmake_check_build_system
@@ -303,94 +303,79 @@ actionlib_generate_messages_eus/fast:
 .PHONY : actionlib_generate_messages_eus/fast
 
 # Convenience name for target.
-idris_sim/trunk/CMakeFiles/sensor_msgs_generate_messages_lisp.dir/rule:
-	cd /home/matt/Documents/Robot-transporting/workspace/build && $(MAKE) -f CMakeFiles/Makefile2 idris_sim/trunk/CMakeFiles/sensor_msgs_generate_messages_lisp.dir/rule
-.PHONY : idris_sim/trunk/CMakeFiles/sensor_msgs_generate_messages_lisp.dir/rule
+idris_sim/trunk/CMakeFiles/nav_msgs_generate_messages_lisp.dir/rule:
+	cd /home/matt/Documents/Robot-transporting/workspace/build && $(MAKE) -f CMakeFiles/Makefile2 idris_sim/trunk/CMakeFiles/nav_msgs_generate_messages_lisp.dir/rule
+.PHONY : idris_sim/trunk/CMakeFiles/nav_msgs_generate_messages_lisp.dir/rule
 
 # Convenience name for target.
-sensor_msgs_generate_messages_lisp: idris_sim/trunk/CMakeFiles/sensor_msgs_generate_messages_lisp.dir/rule
+nav_msgs_generate_messages_lisp: idris_sim/trunk/CMakeFiles/nav_msgs_generate_messages_lisp.dir/rule
 
-.PHONY : sensor_msgs_generate_messages_lisp
+.PHONY : nav_msgs_generate_messages_lisp
 
 # fast build rule for target.
-sensor_msgs_generate_messages_lisp/fast:
-	cd /home/matt/Documents/Robot-transporting/workspace/build && $(MAKE) -f idris_sim/trunk/CMakeFiles/sensor_msgs_generate_messages_lisp.dir/build.make idris_sim/trunk/CMakeFiles/sensor_msgs_generate_messages_lisp.dir/build
-.PHONY : sensor_msgs_generate_messages_lisp/fast
+nav_msgs_generate_messages_lisp/fast:
+	cd /home/matt/Documents/Robot-transporting/workspace/build && $(MAKE) -f idris_sim/trunk/CMakeFiles/nav_msgs_generate_messages_lisp.dir/build.make idris_sim/trunk/CMakeFiles/nav_msgs_generate_messages_lisp.dir/build
+.PHONY : nav_msgs_generate_messages_lisp/fast
 
 # Convenience name for target.
-idris_sim/trunk/CMakeFiles/sensor_msgs_generate_messages_eus.dir/rule:
-	cd /home/matt/Documents/Robot-transporting/workspace/build && $(MAKE) -f CMakeFiles/Makefile2 idris_sim/trunk/CMakeFiles/sensor_msgs_generate_messages_eus.dir/rule
-.PHONY : idris_sim/trunk/CMakeFiles/sensor_msgs_generate_messages_eus.dir/rule
+idris_sim/trunk/CMakeFiles/roscpp_generate_messages_lisp.dir/rule:
+	cd /home/matt/Documents/Robot-transporting/workspace/build && $(MAKE) -f CMakeFiles/Makefile2 idris_sim/trunk/CMakeFiles/roscpp_generate_messages_lisp.dir/rule
+.PHONY : idris_sim/trunk/CMakeFiles/roscpp_generate_messages_lisp.dir/rule
 
 # Convenience name for target.
-sensor_msgs_generate_messages_eus: idris_sim/trunk/CMakeFiles/sensor_msgs_generate_messages_eus.dir/rule
+roscpp_generate_messages_lisp: idris_sim/trunk/CMakeFiles/roscpp_generate_messages_lisp.dir/rule
 
-.PHONY : sensor_msgs_generate_messages_eus
+.PHONY : roscpp_generate_messages_lisp
 
 # fast build rule for target.
-sensor_msgs_generate_messages_eus/fast:
-	cd /home/matt/Documents/Robot-transporting/workspace/build && $(MAKE) -f idris_sim/trunk/CMakeFiles/sensor_msgs_generate_messages_eus.dir/build.make idris_sim/trunk/CMakeFiles/sensor_msgs_generate_messages_eus.dir/build
-.PHONY : sensor_msgs_generate_messages_eus/fast
+roscpp_generate_messages_lisp/fast:
+	cd /home/matt/Documents/Robot-transporting/workspace/build && $(MAKE) -f idris_sim/trunk/CMakeFiles/roscpp_generate_messages_lisp.dir/build.make idris_sim/trunk/CMakeFiles/roscpp_generate_messages_lisp.dir/build
+.PHONY : roscpp_generate_messages_lisp/fast
 
 # Convenience name for target.
-idris_sim/trunk/CMakeFiles/std_msgs_generate_messages_py.dir/rule:
-	cd /home/matt/Documents/Robot-transporting/workspace/build && $(MAKE) -f CMakeFiles/Makefile2 idris_sim/trunk/CMakeFiles/std_msgs_generate_messages_py.dir/rule
-.PHONY : idris_sim/trunk/CMakeFiles/std_msgs_generate_messages_py.dir/rule
+idris_sim/trunk/CMakeFiles/geometry_msgs_generate_messages_nodejs.dir/rule:
+	cd /home/matt/Documents/Robot-transporting/workspace/build && $(MAKE) -f CMakeFiles/Makefile2 idris_sim/trunk/CMakeFiles/geometry_msgs_generate_messages_nodejs.dir/rule
+.PHONY : idris_sim/trunk/CMakeFiles/geometry_msgs_generate_messages_nodejs.dir/rule
 
 # Convenience name for target.
-std_msgs_generate_messages_py: idris_sim/trunk/CMakeFiles/std_msgs_generate_messages_py.dir/rule
+geometry_msgs_generate_messages_nodejs: idris_sim/trunk/CMakeFiles/geometry_msgs_generate_messages_nodejs.dir/rule
 
-.PHONY : std_msgs_generate_messages_py
+.PHONY : geometry_msgs_generate_messages_nodejs
 
 # fast build rule for target.
-std_msgs_generate_messages_py/fast:
-	cd /home/matt/Documents/Robot-transporting/workspace/build && $(MAKE) -f idris_sim/trunk/CMakeFiles/std_msgs_generate_messages_py.dir/build.make idris_sim/trunk/CMakeFiles/std_msgs_generate_messages_py.dir/build
-.PHONY : std_msgs_generate_messages_py/fast
+geometry_msgs_generate_messages_nodejs/fast:
+	cd /home/matt/Documents/Robot-transporting/workspace/build && $(MAKE) -f idris_sim/trunk/CMakeFiles/geometry_msgs_generate_messages_nodejs.dir/build.make idris_sim/trunk/CMakeFiles/geometry_msgs_generate_messages_nodejs.dir/build
+.PHONY : geometry_msgs_generate_messages_nodejs/fast
 
 # Convenience name for target.
-idris_sim/trunk/CMakeFiles/nav_msgs_generate_messages_py.dir/rule:
-	cd /home/matt/Documents/Robot-transporting/workspace/build && $(MAKE) -f CMakeFiles/Makefile2 idris_sim/trunk/CMakeFiles/nav_msgs_generate_messages_py.dir/rule
-.PHONY : idris_sim/trunk/CMakeFiles/nav_msgs_generate_messages_py.dir/rule
+idris_sim/trunk/CMakeFiles/tf_generate_messages_lisp.dir/rule:
+	cd /home/matt/Documents/Robot-transporting/workspace/build && $(MAKE) -f CMakeFiles/Makefile2 idris_sim/trunk/CMakeFiles/tf_generate_messages_lisp.dir/rule
+.PHONY : idris_sim/trunk/CMakeFiles/tf_generate_messages_lisp.dir/rule
 
 # Convenience name for target.
-nav_msgs_generate_messages_py: idris_sim/trunk/CMakeFiles/nav_msgs_generate_messages_py.dir/rule
+tf_generate_messages_lisp: idris_sim/trunk/CMakeFiles/tf_generate_messages_lisp.dir/rule
 
-.PHONY : nav_msgs_generate_messages_py
+.PHONY : tf_generate_messages_lisp
 
 # fast build rule for target.
-nav_msgs_generate_messages_py/fast:
-	cd /home/matt/Documents/Robot-transporting/workspace/build && $(MAKE) -f idris_sim/trunk/CMakeFiles/nav_msgs_generate_messages_py.dir/build.make idris_sim/trunk/CMakeFiles/nav_msgs_generate_messages_py.dir/build
-.PHONY : nav_msgs_generate_messages_py/fast
+tf_generate_messages_lisp/fast:
+	cd /home/matt/Documents/Robot-transporting/workspace/build && $(MAKE) -f idris_sim/trunk/CMakeFiles/tf_generate_messages_lisp.dir/build.make idris_sim/trunk/CMakeFiles/tf_generate_messages_lisp.dir/build
+.PHONY : tf_generate_messages_lisp/fast
 
 # Convenience name for target.
-idris_sim/trunk/CMakeFiles/std_msgs_generate_messages_nodejs.dir/rule:
-	cd /home/matt/Documents/Robot-transporting/workspace/build && $(MAKE) -f CMakeFiles/Makefile2 idris_sim/trunk/CMakeFiles/std_msgs_generate_messages_nodejs.dir/rule
-.PHONY : idris_sim/trunk/CMakeFiles/std_msgs_generate_messages_nodejs.dir/rule
+idris_sim/trunk/CMakeFiles/nav_msgs_generate_messages_eus.dir/rule:
+	cd /home/matt/Documents/Robot-transporting/workspace/build && $(MAKE) -f CMakeFiles/Makefile2 idris_sim/trunk/CMakeFiles/nav_msgs_generate_messages_eus.dir/rule
+.PHONY : idris_sim/trunk/CMakeFiles/nav_msgs_generate_messages_eus.dir/rule
 
 # Convenience name for target.
-std_msgs_generate_messages_nodejs: idris_sim/trunk/CMakeFiles/std_msgs_generate_messages_nodejs.dir/rule
+nav_msgs_generate_messages_eus: idris_sim/trunk/CMakeFiles/nav_msgs_generate_messages_eus.dir/rule
 
-.PHONY : std_msgs_generate_messages_nodejs
+.PHONY : nav_msgs_generate_messages_eus
 
 # fast build rule for target.
-std_msgs_generate_messages_nodejs/fast:
-	cd /home/matt/Documents/Robot-transporting/workspace/build && $(MAKE) -f idris_sim/trunk/CMakeFiles/std_msgs_generate_messages_nodejs.dir/build.make idris_sim/trunk/CMakeFiles/std_msgs_generate_messages_nodejs.dir/build
-.PHONY : std_msgs_generate_messages_nodejs/fast
-
-# Convenience name for target.
-idris_sim/trunk/CMakeFiles/std_msgs_generate_messages_eus.dir/rule:
-	cd /home/matt/Documents/Robot-transporting/workspace/build && $(MAKE) -f CMakeFiles/Makefile2 idris_sim/trunk/CMakeFiles/std_msgs_generate_messages_eus.dir/rule
-.PHONY : idris_sim/trunk/CMakeFiles/std_msgs_generate_messages_eus.dir/rule
-
-# Convenience name for target.
-std_msgs_generate_messages_eus: idris_sim/trunk/CMakeFiles/std_msgs_generate_messages_eus.dir/rule
-
-.PHONY : std_msgs_generate_messages_eus
-
-# fast build rule for target.
-std_msgs_generate_messages_eus/fast:
-	cd /home/matt/Documents/Robot-transporting/workspace/build && $(MAKE) -f idris_sim/trunk/CMakeFiles/std_msgs_generate_messages_eus.dir/build.make idris_sim/trunk/CMakeFiles/std_msgs_generate_messages_eus.dir/build
-.PHONY : std_msgs_generate_messages_eus/fast
+nav_msgs_generate_messages_eus/fast:
+	cd /home/matt/Documents/Robot-transporting/workspace/build && $(MAKE) -f idris_sim/trunk/CMakeFiles/nav_msgs_generate_messages_eus.dir/build.make idris_sim/trunk/CMakeFiles/nav_msgs_generate_messages_eus.dir/build
+.PHONY : nav_msgs_generate_messages_eus/fast
 
 # Convenience name for target.
 idris_sim/trunk/CMakeFiles/idris_sim_node.dir/rule:
@@ -453,51 +438,6 @@ actionlib_msgs_generate_messages_nodejs/fast:
 .PHONY : actionlib_msgs_generate_messages_nodejs/fast
 
 # Convenience name for target.
-idris_sim/trunk/CMakeFiles/sensor_msgs_generate_messages_py.dir/rule:
-	cd /home/matt/Documents/Robot-transporting/workspace/build && $(MAKE) -f CMakeFiles/Makefile2 idris_sim/trunk/CMakeFiles/sensor_msgs_generate_messages_py.dir/rule
-.PHONY : idris_sim/trunk/CMakeFiles/sensor_msgs_generate_messages_py.dir/rule
-
-# Convenience name for target.
-sensor_msgs_generate_messages_py: idris_sim/trunk/CMakeFiles/sensor_msgs_generate_messages_py.dir/rule
-
-.PHONY : sensor_msgs_generate_messages_py
-
-# fast build rule for target.
-sensor_msgs_generate_messages_py/fast:
-	cd /home/matt/Documents/Robot-transporting/workspace/build && $(MAKE) -f idris_sim/trunk/CMakeFiles/sensor_msgs_generate_messages_py.dir/build.make idris_sim/trunk/CMakeFiles/sensor_msgs_generate_messages_py.dir/build
-.PHONY : sensor_msgs_generate_messages_py/fast
-
-# Convenience name for target.
-idris_sim/trunk/CMakeFiles/tf_generate_messages_py.dir/rule:
-	cd /home/matt/Documents/Robot-transporting/workspace/build && $(MAKE) -f CMakeFiles/Makefile2 idris_sim/trunk/CMakeFiles/tf_generate_messages_py.dir/rule
-.PHONY : idris_sim/trunk/CMakeFiles/tf_generate_messages_py.dir/rule
-
-# Convenience name for target.
-tf_generate_messages_py: idris_sim/trunk/CMakeFiles/tf_generate_messages_py.dir/rule
-
-.PHONY : tf_generate_messages_py
-
-# fast build rule for target.
-tf_generate_messages_py/fast:
-	cd /home/matt/Documents/Robot-transporting/workspace/build && $(MAKE) -f idris_sim/trunk/CMakeFiles/tf_generate_messages_py.dir/build.make idris_sim/trunk/CMakeFiles/tf_generate_messages_py.dir/build
-.PHONY : tf_generate_messages_py/fast
-
-# Convenience name for target.
-idris_sim/trunk/CMakeFiles/std_msgs_generate_messages_cpp.dir/rule:
-	cd /home/matt/Documents/Robot-transporting/workspace/build && $(MAKE) -f CMakeFiles/Makefile2 idris_sim/trunk/CMakeFiles/std_msgs_generate_messages_cpp.dir/rule
-.PHONY : idris_sim/trunk/CMakeFiles/std_msgs_generate_messages_cpp.dir/rule
-
-# Convenience name for target.
-std_msgs_generate_messages_cpp: idris_sim/trunk/CMakeFiles/std_msgs_generate_messages_cpp.dir/rule
-
-.PHONY : std_msgs_generate_messages_cpp
-
-# fast build rule for target.
-std_msgs_generate_messages_cpp/fast:
-	cd /home/matt/Documents/Robot-transporting/workspace/build && $(MAKE) -f idris_sim/trunk/CMakeFiles/std_msgs_generate_messages_cpp.dir/build.make idris_sim/trunk/CMakeFiles/std_msgs_generate_messages_cpp.dir/build
-.PHONY : std_msgs_generate_messages_cpp/fast
-
-# Convenience name for target.
 idris_sim/trunk/CMakeFiles/nav_msgs_generate_messages_nodejs.dir/rule:
 	cd /home/matt/Documents/Robot-transporting/workspace/build && $(MAKE) -f CMakeFiles/Makefile2 idris_sim/trunk/CMakeFiles/nav_msgs_generate_messages_nodejs.dir/rule
 .PHONY : idris_sim/trunk/CMakeFiles/nav_msgs_generate_messages_nodejs.dir/rule
@@ -526,6 +466,21 @@ rosgraph_msgs_generate_messages_lisp: idris_sim/trunk/CMakeFiles/rosgraph_msgs_g
 rosgraph_msgs_generate_messages_lisp/fast:
 	cd /home/matt/Documents/Robot-transporting/workspace/build && $(MAKE) -f idris_sim/trunk/CMakeFiles/rosgraph_msgs_generate_messages_lisp.dir/build.make idris_sim/trunk/CMakeFiles/rosgraph_msgs_generate_messages_lisp.dir/build
 .PHONY : rosgraph_msgs_generate_messages_lisp/fast
+
+# Convenience name for target.
+idris_sim/trunk/CMakeFiles/nav_msgs_generate_messages_py.dir/rule:
+	cd /home/matt/Documents/Robot-transporting/workspace/build && $(MAKE) -f CMakeFiles/Makefile2 idris_sim/trunk/CMakeFiles/nav_msgs_generate_messages_py.dir/rule
+.PHONY : idris_sim/trunk/CMakeFiles/nav_msgs_generate_messages_py.dir/rule
+
+# Convenience name for target.
+nav_msgs_generate_messages_py: idris_sim/trunk/CMakeFiles/nav_msgs_generate_messages_py.dir/rule
+
+.PHONY : nav_msgs_generate_messages_py
+
+# fast build rule for target.
+nav_msgs_generate_messages_py/fast:
+	cd /home/matt/Documents/Robot-transporting/workspace/build && $(MAKE) -f idris_sim/trunk/CMakeFiles/nav_msgs_generate_messages_py.dir/build.make idris_sim/trunk/CMakeFiles/nav_msgs_generate_messages_py.dir/build
+.PHONY : nav_msgs_generate_messages_py/fast
 
 # Convenience name for target.
 idris_sim/trunk/CMakeFiles/rosgraph_msgs_generate_messages_eus.dir/rule:
@@ -588,96 +543,6 @@ nav_msgs_generate_messages_cpp/fast:
 .PHONY : nav_msgs_generate_messages_cpp/fast
 
 # Convenience name for target.
-idris_sim/trunk/CMakeFiles/actionlib_generate_messages_cpp.dir/rule:
-	cd /home/matt/Documents/Robot-transporting/workspace/build && $(MAKE) -f CMakeFiles/Makefile2 idris_sim/trunk/CMakeFiles/actionlib_generate_messages_cpp.dir/rule
-.PHONY : idris_sim/trunk/CMakeFiles/actionlib_generate_messages_cpp.dir/rule
-
-# Convenience name for target.
-actionlib_generate_messages_cpp: idris_sim/trunk/CMakeFiles/actionlib_generate_messages_cpp.dir/rule
-
-.PHONY : actionlib_generate_messages_cpp
-
-# fast build rule for target.
-actionlib_generate_messages_cpp/fast:
-	cd /home/matt/Documents/Robot-transporting/workspace/build && $(MAKE) -f idris_sim/trunk/CMakeFiles/actionlib_generate_messages_cpp.dir/build.make idris_sim/trunk/CMakeFiles/actionlib_generate_messages_cpp.dir/build
-.PHONY : actionlib_generate_messages_cpp/fast
-
-# Convenience name for target.
-idris_sim/trunk/CMakeFiles/sensor_msgs_generate_messages_nodejs.dir/rule:
-	cd /home/matt/Documents/Robot-transporting/workspace/build && $(MAKE) -f CMakeFiles/Makefile2 idris_sim/trunk/CMakeFiles/sensor_msgs_generate_messages_nodejs.dir/rule
-.PHONY : idris_sim/trunk/CMakeFiles/sensor_msgs_generate_messages_nodejs.dir/rule
-
-# Convenience name for target.
-sensor_msgs_generate_messages_nodejs: idris_sim/trunk/CMakeFiles/sensor_msgs_generate_messages_nodejs.dir/rule
-
-.PHONY : sensor_msgs_generate_messages_nodejs
-
-# fast build rule for target.
-sensor_msgs_generate_messages_nodejs/fast:
-	cd /home/matt/Documents/Robot-transporting/workspace/build && $(MAKE) -f idris_sim/trunk/CMakeFiles/sensor_msgs_generate_messages_nodejs.dir/build.make idris_sim/trunk/CMakeFiles/sensor_msgs_generate_messages_nodejs.dir/build
-.PHONY : sensor_msgs_generate_messages_nodejs/fast
-
-# Convenience name for target.
-idris_sim/trunk/CMakeFiles/roscpp_generate_messages_cpp.dir/rule:
-	cd /home/matt/Documents/Robot-transporting/workspace/build && $(MAKE) -f CMakeFiles/Makefile2 idris_sim/trunk/CMakeFiles/roscpp_generate_messages_cpp.dir/rule
-.PHONY : idris_sim/trunk/CMakeFiles/roscpp_generate_messages_cpp.dir/rule
-
-# Convenience name for target.
-roscpp_generate_messages_cpp: idris_sim/trunk/CMakeFiles/roscpp_generate_messages_cpp.dir/rule
-
-.PHONY : roscpp_generate_messages_cpp
-
-# fast build rule for target.
-roscpp_generate_messages_cpp/fast:
-	cd /home/matt/Documents/Robot-transporting/workspace/build && $(MAKE) -f idris_sim/trunk/CMakeFiles/roscpp_generate_messages_cpp.dir/build.make idris_sim/trunk/CMakeFiles/roscpp_generate_messages_cpp.dir/build
-.PHONY : roscpp_generate_messages_cpp/fast
-
-# Convenience name for target.
-idris_sim/trunk/CMakeFiles/std_msgs_generate_messages_lisp.dir/rule:
-	cd /home/matt/Documents/Robot-transporting/workspace/build && $(MAKE) -f CMakeFiles/Makefile2 idris_sim/trunk/CMakeFiles/std_msgs_generate_messages_lisp.dir/rule
-.PHONY : idris_sim/trunk/CMakeFiles/std_msgs_generate_messages_lisp.dir/rule
-
-# Convenience name for target.
-std_msgs_generate_messages_lisp: idris_sim/trunk/CMakeFiles/std_msgs_generate_messages_lisp.dir/rule
-
-.PHONY : std_msgs_generate_messages_lisp
-
-# fast build rule for target.
-std_msgs_generate_messages_lisp/fast:
-	cd /home/matt/Documents/Robot-transporting/workspace/build && $(MAKE) -f idris_sim/trunk/CMakeFiles/std_msgs_generate_messages_lisp.dir/build.make idris_sim/trunk/CMakeFiles/std_msgs_generate_messages_lisp.dir/build
-.PHONY : std_msgs_generate_messages_lisp/fast
-
-# Convenience name for target.
-idris_sim/trunk/CMakeFiles/tf_generate_messages_cpp.dir/rule:
-	cd /home/matt/Documents/Robot-transporting/workspace/build && $(MAKE) -f CMakeFiles/Makefile2 idris_sim/trunk/CMakeFiles/tf_generate_messages_cpp.dir/rule
-.PHONY : idris_sim/trunk/CMakeFiles/tf_generate_messages_cpp.dir/rule
-
-# Convenience name for target.
-tf_generate_messages_cpp: idris_sim/trunk/CMakeFiles/tf_generate_messages_cpp.dir/rule
-
-.PHONY : tf_generate_messages_cpp
-
-# fast build rule for target.
-tf_generate_messages_cpp/fast:
-	cd /home/matt/Documents/Robot-transporting/workspace/build && $(MAKE) -f idris_sim/trunk/CMakeFiles/tf_generate_messages_cpp.dir/build.make idris_sim/trunk/CMakeFiles/tf_generate_messages_cpp.dir/build
-.PHONY : tf_generate_messages_cpp/fast
-
-# Convenience name for target.
-idris_sim/trunk/CMakeFiles/sensor_msgs_generate_messages_cpp.dir/rule:
-	cd /home/matt/Documents/Robot-transporting/workspace/build && $(MAKE) -f CMakeFiles/Makefile2 idris_sim/trunk/CMakeFiles/sensor_msgs_generate_messages_cpp.dir/rule
-.PHONY : idris_sim/trunk/CMakeFiles/sensor_msgs_generate_messages_cpp.dir/rule
-
-# Convenience name for target.
-sensor_msgs_generate_messages_cpp: idris_sim/trunk/CMakeFiles/sensor_msgs_generate_messages_cpp.dir/rule
-
-.PHONY : sensor_msgs_generate_messages_cpp
-
-# fast build rule for target.
-sensor_msgs_generate_messages_cpp/fast:
-	cd /home/matt/Documents/Robot-transporting/workspace/build && $(MAKE) -f idris_sim/trunk/CMakeFiles/sensor_msgs_generate_messages_cpp.dir/build.make idris_sim/trunk/CMakeFiles/sensor_msgs_generate_messages_cpp.dir/build
-.PHONY : sensor_msgs_generate_messages_cpp/fast
-
-# Convenience name for target.
 idris_sim/trunk/CMakeFiles/rosgraph_msgs_generate_messages_cpp.dir/rule:
 	cd /home/matt/Documents/Robot-transporting/workspace/build && $(MAKE) -f CMakeFiles/Makefile2 idris_sim/trunk/CMakeFiles/rosgraph_msgs_generate_messages_cpp.dir/rule
 .PHONY : idris_sim/trunk/CMakeFiles/rosgraph_msgs_generate_messages_cpp.dir/rule
@@ -691,66 +556,6 @@ rosgraph_msgs_generate_messages_cpp: idris_sim/trunk/CMakeFiles/rosgraph_msgs_ge
 rosgraph_msgs_generate_messages_cpp/fast:
 	cd /home/matt/Documents/Robot-transporting/workspace/build && $(MAKE) -f idris_sim/trunk/CMakeFiles/rosgraph_msgs_generate_messages_cpp.dir/build.make idris_sim/trunk/CMakeFiles/rosgraph_msgs_generate_messages_cpp.dir/build
 .PHONY : rosgraph_msgs_generate_messages_cpp/fast
-
-# Convenience name for target.
-idris_sim/trunk/CMakeFiles/roscpp_generate_messages_lisp.dir/rule:
-	cd /home/matt/Documents/Robot-transporting/workspace/build && $(MAKE) -f CMakeFiles/Makefile2 idris_sim/trunk/CMakeFiles/roscpp_generate_messages_lisp.dir/rule
-.PHONY : idris_sim/trunk/CMakeFiles/roscpp_generate_messages_lisp.dir/rule
-
-# Convenience name for target.
-roscpp_generate_messages_lisp: idris_sim/trunk/CMakeFiles/roscpp_generate_messages_lisp.dir/rule
-
-.PHONY : roscpp_generate_messages_lisp
-
-# fast build rule for target.
-roscpp_generate_messages_lisp/fast:
-	cd /home/matt/Documents/Robot-transporting/workspace/build && $(MAKE) -f idris_sim/trunk/CMakeFiles/roscpp_generate_messages_lisp.dir/build.make idris_sim/trunk/CMakeFiles/roscpp_generate_messages_lisp.dir/build
-.PHONY : roscpp_generate_messages_lisp/fast
-
-# Convenience name for target.
-idris_sim/trunk/CMakeFiles/nav_msgs_generate_messages_lisp.dir/rule:
-	cd /home/matt/Documents/Robot-transporting/workspace/build && $(MAKE) -f CMakeFiles/Makefile2 idris_sim/trunk/CMakeFiles/nav_msgs_generate_messages_lisp.dir/rule
-.PHONY : idris_sim/trunk/CMakeFiles/nav_msgs_generate_messages_lisp.dir/rule
-
-# Convenience name for target.
-nav_msgs_generate_messages_lisp: idris_sim/trunk/CMakeFiles/nav_msgs_generate_messages_lisp.dir/rule
-
-.PHONY : nav_msgs_generate_messages_lisp
-
-# fast build rule for target.
-nav_msgs_generate_messages_lisp/fast:
-	cd /home/matt/Documents/Robot-transporting/workspace/build && $(MAKE) -f idris_sim/trunk/CMakeFiles/nav_msgs_generate_messages_lisp.dir/build.make idris_sim/trunk/CMakeFiles/nav_msgs_generate_messages_lisp.dir/build
-.PHONY : nav_msgs_generate_messages_lisp/fast
-
-# Convenience name for target.
-idris_sim/trunk/CMakeFiles/geometry_msgs_generate_messages_nodejs.dir/rule:
-	cd /home/matt/Documents/Robot-transporting/workspace/build && $(MAKE) -f CMakeFiles/Makefile2 idris_sim/trunk/CMakeFiles/geometry_msgs_generate_messages_nodejs.dir/rule
-.PHONY : idris_sim/trunk/CMakeFiles/geometry_msgs_generate_messages_nodejs.dir/rule
-
-# Convenience name for target.
-geometry_msgs_generate_messages_nodejs: idris_sim/trunk/CMakeFiles/geometry_msgs_generate_messages_nodejs.dir/rule
-
-.PHONY : geometry_msgs_generate_messages_nodejs
-
-# fast build rule for target.
-geometry_msgs_generate_messages_nodejs/fast:
-	cd /home/matt/Documents/Robot-transporting/workspace/build && $(MAKE) -f idris_sim/trunk/CMakeFiles/geometry_msgs_generate_messages_nodejs.dir/build.make idris_sim/trunk/CMakeFiles/geometry_msgs_generate_messages_nodejs.dir/build
-.PHONY : geometry_msgs_generate_messages_nodejs/fast
-
-# Convenience name for target.
-idris_sim/trunk/CMakeFiles/tf_generate_messages_lisp.dir/rule:
-	cd /home/matt/Documents/Robot-transporting/workspace/build && $(MAKE) -f CMakeFiles/Makefile2 idris_sim/trunk/CMakeFiles/tf_generate_messages_lisp.dir/rule
-.PHONY : idris_sim/trunk/CMakeFiles/tf_generate_messages_lisp.dir/rule
-
-# Convenience name for target.
-tf_generate_messages_lisp: idris_sim/trunk/CMakeFiles/tf_generate_messages_lisp.dir/rule
-
-.PHONY : tf_generate_messages_lisp
-
-# fast build rule for target.
-tf_generate_messages_lisp/fast:
-	cd /home/matt/Documents/Robot-transporting/workspace/build && $(MAKE) -f idris_sim/trunk/CMakeFiles/tf_generate_messages_lisp.dir/build.make idris_sim/trunk/CMakeFiles/tf_generate_messages_lisp.dir/build
-.PHONY : tf_generate_messages_lisp/fast
 
 # Convenience name for target.
 idris_sim/trunk/CMakeFiles/roscpp_generate_messages_py.dir/rule:
@@ -811,21 +616,6 @@ geometry_msgs_generate_messages_eus: idris_sim/trunk/CMakeFiles/geometry_msgs_ge
 geometry_msgs_generate_messages_eus/fast:
 	cd /home/matt/Documents/Robot-transporting/workspace/build && $(MAKE) -f idris_sim/trunk/CMakeFiles/geometry_msgs_generate_messages_eus.dir/build.make idris_sim/trunk/CMakeFiles/geometry_msgs_generate_messages_eus.dir/build
 .PHONY : geometry_msgs_generate_messages_eus/fast
-
-# Convenience name for target.
-idris_sim/trunk/CMakeFiles/nav_msgs_generate_messages_eus.dir/rule:
-	cd /home/matt/Documents/Robot-transporting/workspace/build && $(MAKE) -f CMakeFiles/Makefile2 idris_sim/trunk/CMakeFiles/nav_msgs_generate_messages_eus.dir/rule
-.PHONY : idris_sim/trunk/CMakeFiles/nav_msgs_generate_messages_eus.dir/rule
-
-# Convenience name for target.
-nav_msgs_generate_messages_eus: idris_sim/trunk/CMakeFiles/nav_msgs_generate_messages_eus.dir/rule
-
-.PHONY : nav_msgs_generate_messages_eus
-
-# fast build rule for target.
-nav_msgs_generate_messages_eus/fast:
-	cd /home/matt/Documents/Robot-transporting/workspace/build && $(MAKE) -f idris_sim/trunk/CMakeFiles/nav_msgs_generate_messages_eus.dir/build.make idris_sim/trunk/CMakeFiles/nav_msgs_generate_messages_eus.dir/build
-.PHONY : nav_msgs_generate_messages_eus/fast
 
 # Convenience name for target.
 idris_sim/trunk/CMakeFiles/geometry_msgs_generate_messages_cpp.dir/rule:
@@ -918,6 +708,51 @@ actionlib_msgs_generate_messages_py/fast:
 .PHONY : actionlib_msgs_generate_messages_py/fast
 
 # Convenience name for target.
+idris_sim/trunk/CMakeFiles/tf_generate_messages_cpp.dir/rule:
+	cd /home/matt/Documents/Robot-transporting/workspace/build && $(MAKE) -f CMakeFiles/Makefile2 idris_sim/trunk/CMakeFiles/tf_generate_messages_cpp.dir/rule
+.PHONY : idris_sim/trunk/CMakeFiles/tf_generate_messages_cpp.dir/rule
+
+# Convenience name for target.
+tf_generate_messages_cpp: idris_sim/trunk/CMakeFiles/tf_generate_messages_cpp.dir/rule
+
+.PHONY : tf_generate_messages_cpp
+
+# fast build rule for target.
+tf_generate_messages_cpp/fast:
+	cd /home/matt/Documents/Robot-transporting/workspace/build && $(MAKE) -f idris_sim/trunk/CMakeFiles/tf_generate_messages_cpp.dir/build.make idris_sim/trunk/CMakeFiles/tf_generate_messages_cpp.dir/build
+.PHONY : tf_generate_messages_cpp/fast
+
+# Convenience name for target.
+idris_sim/trunk/CMakeFiles/sensor_msgs_generate_messages_cpp.dir/rule:
+	cd /home/matt/Documents/Robot-transporting/workspace/build && $(MAKE) -f CMakeFiles/Makefile2 idris_sim/trunk/CMakeFiles/sensor_msgs_generate_messages_cpp.dir/rule
+.PHONY : idris_sim/trunk/CMakeFiles/sensor_msgs_generate_messages_cpp.dir/rule
+
+# Convenience name for target.
+sensor_msgs_generate_messages_cpp: idris_sim/trunk/CMakeFiles/sensor_msgs_generate_messages_cpp.dir/rule
+
+.PHONY : sensor_msgs_generate_messages_cpp
+
+# fast build rule for target.
+sensor_msgs_generate_messages_cpp/fast:
+	cd /home/matt/Documents/Robot-transporting/workspace/build && $(MAKE) -f idris_sim/trunk/CMakeFiles/sensor_msgs_generate_messages_cpp.dir/build.make idris_sim/trunk/CMakeFiles/sensor_msgs_generate_messages_cpp.dir/build
+.PHONY : sensor_msgs_generate_messages_cpp/fast
+
+# Convenience name for target.
+idris_sim/trunk/CMakeFiles/sensor_msgs_generate_messages_eus.dir/rule:
+	cd /home/matt/Documents/Robot-transporting/workspace/build && $(MAKE) -f CMakeFiles/Makefile2 idris_sim/trunk/CMakeFiles/sensor_msgs_generate_messages_eus.dir/rule
+.PHONY : idris_sim/trunk/CMakeFiles/sensor_msgs_generate_messages_eus.dir/rule
+
+# Convenience name for target.
+sensor_msgs_generate_messages_eus: idris_sim/trunk/CMakeFiles/sensor_msgs_generate_messages_eus.dir/rule
+
+.PHONY : sensor_msgs_generate_messages_eus
+
+# fast build rule for target.
+sensor_msgs_generate_messages_eus/fast:
+	cd /home/matt/Documents/Robot-transporting/workspace/build && $(MAKE) -f idris_sim/trunk/CMakeFiles/sensor_msgs_generate_messages_eus.dir/build.make idris_sim/trunk/CMakeFiles/sensor_msgs_generate_messages_eus.dir/build
+.PHONY : sensor_msgs_generate_messages_eus/fast
+
+# Convenience name for target.
 idris_sim/trunk/CMakeFiles/tf_generate_messages_nodejs.dir/rule:
 	cd /home/matt/Documents/Robot-transporting/workspace/build && $(MAKE) -f CMakeFiles/Makefile2 idris_sim/trunk/CMakeFiles/tf_generate_messages_nodejs.dir/rule
 .PHONY : idris_sim/trunk/CMakeFiles/tf_generate_messages_nodejs.dir/rule
@@ -931,6 +766,96 @@ tf_generate_messages_nodejs: idris_sim/trunk/CMakeFiles/tf_generate_messages_nod
 tf_generate_messages_nodejs/fast:
 	cd /home/matt/Documents/Robot-transporting/workspace/build && $(MAKE) -f idris_sim/trunk/CMakeFiles/tf_generate_messages_nodejs.dir/build.make idris_sim/trunk/CMakeFiles/tf_generate_messages_nodejs.dir/build
 .PHONY : tf_generate_messages_nodejs/fast
+
+# Convenience name for target.
+idris_sim/trunk/CMakeFiles/sensor_msgs_generate_messages_lisp.dir/rule:
+	cd /home/matt/Documents/Robot-transporting/workspace/build && $(MAKE) -f CMakeFiles/Makefile2 idris_sim/trunk/CMakeFiles/sensor_msgs_generate_messages_lisp.dir/rule
+.PHONY : idris_sim/trunk/CMakeFiles/sensor_msgs_generate_messages_lisp.dir/rule
+
+# Convenience name for target.
+sensor_msgs_generate_messages_lisp: idris_sim/trunk/CMakeFiles/sensor_msgs_generate_messages_lisp.dir/rule
+
+.PHONY : sensor_msgs_generate_messages_lisp
+
+# fast build rule for target.
+sensor_msgs_generate_messages_lisp/fast:
+	cd /home/matt/Documents/Robot-transporting/workspace/build && $(MAKE) -f idris_sim/trunk/CMakeFiles/sensor_msgs_generate_messages_lisp.dir/build.make idris_sim/trunk/CMakeFiles/sensor_msgs_generate_messages_lisp.dir/build
+.PHONY : sensor_msgs_generate_messages_lisp/fast
+
+# Convenience name for target.
+idris_sim/trunk/CMakeFiles/actionlib_generate_messages_cpp.dir/rule:
+	cd /home/matt/Documents/Robot-transporting/workspace/build && $(MAKE) -f CMakeFiles/Makefile2 idris_sim/trunk/CMakeFiles/actionlib_generate_messages_cpp.dir/rule
+.PHONY : idris_sim/trunk/CMakeFiles/actionlib_generate_messages_cpp.dir/rule
+
+# Convenience name for target.
+actionlib_generate_messages_cpp: idris_sim/trunk/CMakeFiles/actionlib_generate_messages_cpp.dir/rule
+
+.PHONY : actionlib_generate_messages_cpp
+
+# fast build rule for target.
+actionlib_generate_messages_cpp/fast:
+	cd /home/matt/Documents/Robot-transporting/workspace/build && $(MAKE) -f idris_sim/trunk/CMakeFiles/actionlib_generate_messages_cpp.dir/build.make idris_sim/trunk/CMakeFiles/actionlib_generate_messages_cpp.dir/build
+.PHONY : actionlib_generate_messages_cpp/fast
+
+# Convenience name for target.
+idris_sim/trunk/CMakeFiles/roscpp_generate_messages_cpp.dir/rule:
+	cd /home/matt/Documents/Robot-transporting/workspace/build && $(MAKE) -f CMakeFiles/Makefile2 idris_sim/trunk/CMakeFiles/roscpp_generate_messages_cpp.dir/rule
+.PHONY : idris_sim/trunk/CMakeFiles/roscpp_generate_messages_cpp.dir/rule
+
+# Convenience name for target.
+roscpp_generate_messages_cpp: idris_sim/trunk/CMakeFiles/roscpp_generate_messages_cpp.dir/rule
+
+.PHONY : roscpp_generate_messages_cpp
+
+# fast build rule for target.
+roscpp_generate_messages_cpp/fast:
+	cd /home/matt/Documents/Robot-transporting/workspace/build && $(MAKE) -f idris_sim/trunk/CMakeFiles/roscpp_generate_messages_cpp.dir/build.make idris_sim/trunk/CMakeFiles/roscpp_generate_messages_cpp.dir/build
+.PHONY : roscpp_generate_messages_cpp/fast
+
+# Convenience name for target.
+idris_sim/trunk/CMakeFiles/sensor_msgs_generate_messages_nodejs.dir/rule:
+	cd /home/matt/Documents/Robot-transporting/workspace/build && $(MAKE) -f CMakeFiles/Makefile2 idris_sim/trunk/CMakeFiles/sensor_msgs_generate_messages_nodejs.dir/rule
+.PHONY : idris_sim/trunk/CMakeFiles/sensor_msgs_generate_messages_nodejs.dir/rule
+
+# Convenience name for target.
+sensor_msgs_generate_messages_nodejs: idris_sim/trunk/CMakeFiles/sensor_msgs_generate_messages_nodejs.dir/rule
+
+.PHONY : sensor_msgs_generate_messages_nodejs
+
+# fast build rule for target.
+sensor_msgs_generate_messages_nodejs/fast:
+	cd /home/matt/Documents/Robot-transporting/workspace/build && $(MAKE) -f idris_sim/trunk/CMakeFiles/sensor_msgs_generate_messages_nodejs.dir/build.make idris_sim/trunk/CMakeFiles/sensor_msgs_generate_messages_nodejs.dir/build
+.PHONY : sensor_msgs_generate_messages_nodejs/fast
+
+# Convenience name for target.
+idris_sim/trunk/CMakeFiles/tf_generate_messages_py.dir/rule:
+	cd /home/matt/Documents/Robot-transporting/workspace/build && $(MAKE) -f CMakeFiles/Makefile2 idris_sim/trunk/CMakeFiles/tf_generate_messages_py.dir/rule
+.PHONY : idris_sim/trunk/CMakeFiles/tf_generate_messages_py.dir/rule
+
+# Convenience name for target.
+tf_generate_messages_py: idris_sim/trunk/CMakeFiles/tf_generate_messages_py.dir/rule
+
+.PHONY : tf_generate_messages_py
+
+# fast build rule for target.
+tf_generate_messages_py/fast:
+	cd /home/matt/Documents/Robot-transporting/workspace/build && $(MAKE) -f idris_sim/trunk/CMakeFiles/tf_generate_messages_py.dir/build.make idris_sim/trunk/CMakeFiles/tf_generate_messages_py.dir/build
+.PHONY : tf_generate_messages_py/fast
+
+# Convenience name for target.
+idris_sim/trunk/CMakeFiles/sensor_msgs_generate_messages_py.dir/rule:
+	cd /home/matt/Documents/Robot-transporting/workspace/build && $(MAKE) -f CMakeFiles/Makefile2 idris_sim/trunk/CMakeFiles/sensor_msgs_generate_messages_py.dir/rule
+.PHONY : idris_sim/trunk/CMakeFiles/sensor_msgs_generate_messages_py.dir/rule
+
+# Convenience name for target.
+sensor_msgs_generate_messages_py: idris_sim/trunk/CMakeFiles/sensor_msgs_generate_messages_py.dir/rule
+
+.PHONY : sensor_msgs_generate_messages_py
+
+# fast build rule for target.
+sensor_msgs_generate_messages_py/fast:
+	cd /home/matt/Documents/Robot-transporting/workspace/build && $(MAKE) -f idris_sim/trunk/CMakeFiles/sensor_msgs_generate_messages_py.dir/build.make idris_sim/trunk/CMakeFiles/sensor_msgs_generate_messages_py.dir/build
+.PHONY : sensor_msgs_generate_messages_py/fast
 
 src/idris_sim.o: src/idris_sim.cpp.o
 
@@ -977,52 +902,47 @@ help:
 	@echo "... actionlib_generate_messages_nodejs"
 	@echo "... actionlib_generate_messages_lisp"
 	@echo "... actionlib_generate_messages_eus"
-	@echo "... install/local"
-	@echo "... sensor_msgs_generate_messages_lisp"
-	@echo "... sensor_msgs_generate_messages_eus"
-	@echo "... std_msgs_generate_messages_py"
-	@echo "... install"
-	@echo "... nav_msgs_generate_messages_py"
-	@echo "... std_msgs_generate_messages_nodejs"
-	@echo "... std_msgs_generate_messages_eus"
+	@echo "... edit_cache"
+	@echo "... nav_msgs_generate_messages_lisp"
+	@echo "... roscpp_generate_messages_lisp"
+	@echo "... geometry_msgs_generate_messages_nodejs"
+	@echo "... tf_generate_messages_lisp"
+	@echo "... nav_msgs_generate_messages_eus"
 	@echo "... idris_sim_node"
 	@echo "... rosgraph_msgs_generate_messages_py"
 	@echo "... rosgraph_msgs_generate_messages_nodejs"
 	@echo "... actionlib_msgs_generate_messages_nodejs"
-	@echo "... sensor_msgs_generate_messages_py"
-	@echo "... tf_generate_messages_py"
-	@echo "... std_msgs_generate_messages_cpp"
 	@echo "... nav_msgs_generate_messages_nodejs"
 	@echo "... rosgraph_msgs_generate_messages_lisp"
+	@echo "... install"
+	@echo "... nav_msgs_generate_messages_py"
 	@echo "... rosgraph_msgs_generate_messages_eus"
 	@echo "... actionlib_msgs_generate_messages_cpp"
 	@echo "... tf_generate_messages_eus"
 	@echo "... nav_msgs_generate_messages_cpp"
-	@echo "... rebuild_cache"
-	@echo "... actionlib_generate_messages_cpp"
-	@echo "... sensor_msgs_generate_messages_nodejs"
-	@echo "... roscpp_generate_messages_cpp"
-	@echo "... std_msgs_generate_messages_lisp"
-	@echo "... tf_generate_messages_cpp"
-	@echo "... sensor_msgs_generate_messages_cpp"
 	@echo "... rosgraph_msgs_generate_messages_cpp"
-	@echo "... roscpp_generate_messages_lisp"
-	@echo "... edit_cache"
-	@echo "... nav_msgs_generate_messages_lisp"
-	@echo "... geometry_msgs_generate_messages_nodejs"
-	@echo "... tf_generate_messages_lisp"
 	@echo "... roscpp_generate_messages_py"
 	@echo "... roscpp_generate_messages_nodejs"
 	@echo "... roscpp_generate_messages_eus"
 	@echo "... geometry_msgs_generate_messages_eus"
-	@echo "... nav_msgs_generate_messages_eus"
 	@echo "... geometry_msgs_generate_messages_cpp"
 	@echo "... geometry_msgs_generate_messages_lisp"
 	@echo "... geometry_msgs_generate_messages_py"
 	@echo "... actionlib_msgs_generate_messages_eus"
 	@echo "... actionlib_msgs_generate_messages_lisp"
 	@echo "... actionlib_msgs_generate_messages_py"
+	@echo "... tf_generate_messages_cpp"
+	@echo "... sensor_msgs_generate_messages_cpp"
+	@echo "... sensor_msgs_generate_messages_eus"
 	@echo "... tf_generate_messages_nodejs"
+	@echo "... install/local"
+	@echo "... sensor_msgs_generate_messages_lisp"
+	@echo "... rebuild_cache"
+	@echo "... actionlib_generate_messages_cpp"
+	@echo "... roscpp_generate_messages_cpp"
+	@echo "... sensor_msgs_generate_messages_nodejs"
+	@echo "... tf_generate_messages_py"
+	@echo "... sensor_msgs_generate_messages_py"
 	@echo "... src/idris_sim.o"
 	@echo "... src/idris_sim.i"
 	@echo "... src/idris_sim.s"
