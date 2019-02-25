@@ -6,10 +6,28 @@
 
 #IncludeRegexTransform: 
 
+/home/matt/Documents/Robot-transporting/workspace/devel/include/double_ackermann/DoubleAckermann.h
+string
+-
+vector
+-
+map
+-
+ros/types.h
+-
+ros/serialization.h
+-
+ros/builtin_message_traits.h
+-
+ros/message_operations.h
+-
+
 /home/matt/Documents/Robot-transporting/workspace/src/van_loading/src/idris_sim.cpp
 ros/ros.h
 -
 geometry_msgs/Twist.h
+-
+double_ackermann/DoubleAckermann.h
 -
 std_msgs/Float64.h
 -

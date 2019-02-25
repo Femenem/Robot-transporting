@@ -14,7 +14,7 @@
 #include <ros/ros.h>
 
 #include <geometry_msgs/Twist.h>
-//#include <double_ackermann/DoubleAckermann.h>
+#include <double_ackermann/DoubleAckermann.h>
 #include <std_msgs/Float64.h>
 #include <sensor_msgs/JointState.h>
 #include <tf/transform_broadcaster.h>
@@ -86,8 +86,8 @@ public:
       "/van_loading/rear_left_wheel_controller/command", 10);
     
     // The subscriber for Ackermann messages
-//    ackermann_sub = nh_.subscribe("/van_loading/cmd_ackermann", 10,
-//                                 &idris_driver::cmdAckermannCallback, this);
+    ackermann_sub = nh_.subscribe("/van_loading/cmd_ackermann", 10,
+                                 &idris_driver::cmdAckermannCallback, this);
     
     vel_sub = nh_.subscribe("/van_loading/cmd_vel", 10, 
                            &idris_driver::cmdVelCallback,
@@ -397,33 +397,33 @@ public:
    * 
    * \param cmd The incomming Ackermann message
    */
-//  void cmdAckermannCallback(const double_ackermann::DoubleAckermann& cmd)
-//  {
-//    watchdogTimer.stop();
-//
-//    switch (cmd.ackermann)
-//    {
-//      case 0: //front and back steering
-//        ackermann(cmd.speed, cmd.steering);
-//        break;
-//      case 1: //crabbing
-//        crabAckermann(cmd.speed, cmd.steering);
-//        break;
-//      case 2: //front steering
-//        frontAckermann(cmd.speed, cmd.steering);
-//        break;
-//      case 3: //back steering
-//        rearAckermann(cmd.speed, cmd.steering);
-//        break;
-//      default: //in case Ackermann msg is wrong:
-//        ROS_WARN("ACKERMANN NOT SET CORRECTLY, DEFAULTING TO FRONT STEERING");
-//        frontAckermann(cmd.speed, cmd.steering);
-//        break;
-//    }
-//
-//    sendControl();
-//    watchdogTimer.start();
-//  }
+  void cmdAckermannCallback(const double_ackermann::DoubleAckermann& cmd)
+  {
+    watchdogTimer.stop();
+
+    switch (cmd.ackermann)
+    {
+      case 0: //front and back steering
+        ackermann(cmd.speed, cmd.steering);
+        break;
+      case 1: //crabbing
+        crabAckermann(cmd.speed, cmd.steering);
+        break;
+      case 2: //front steering
+        frontAckermann(cmd.speed, cmd.steering);
+        break;
+      case 3: //back steering
+        rearAckermann(cmd.speed, cmd.steering);
+        break;
+      default: //in case Ackermann msg is wrong:
+        ROS_WARN("ACKERMANN NOT SET CORRECTLY, DEFAULTING TO FRONT STEERING");
+        frontAckermann(cmd.speed, cmd.steering);
+        break;
+    }
+
+    sendControl();
+    watchdogTimer.start();
+  }
 
   /*!
    * \brief Callback function for the Twist messages.
