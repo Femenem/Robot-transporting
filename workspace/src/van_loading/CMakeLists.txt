@@ -206,7 +206,9 @@ catkin_package(
 include_directories(include ${catkin_INCLUDE_DIRS})
 
 add_executable(van_loading_node src/idris_sim.cpp)
+add_executable(get_data_node src/get_data.cpp)
 target_link_libraries(van_loading_node ${catkin_LIBRARIES})
+target_link_libraries(get_data_node ${catkin_LIBRARIES})
 # add_dependencies(idris_sim_node idris_sim_gencpp)
 
 add_dependencies(van_loading_node double_ackermann_generate_messages_cpp)
@@ -222,3 +224,68 @@ launch
 DESTINATION ${CATKIN_PACKAGE_SHARE_DESTINATION}
 )
 
+
+#======================== External Dependencies ===============================
+
+# initially
+set(EXTERNAL_LIBS "")
+set(EXTRA_DEPS "")
+
+
+#--------------------
+# DEPENDENCY:  boost
+#--------------------
+find_package(Boost COMPONENTS thread filesystem system program_options date_time REQUIRED)
+if (Boost_MINOR_VERSION GREATER 47)
+    find_package(Boost COMPONENTS thread filesystem system program_options date_time chrono REQUIRED)
+endif (Boost_MINOR_VERSION GREATER 47)
+include_directories(${Boost_INCLUDE_DIRS})
+set(EXTERNAL_LIBS ${EXTERNAL_LIBS} ${Boost_LIBRARIES})
+
+
+#--------------------
+# DEPENDENCY: eigen 3
+#--------------------
+find_path(EIGEN_INCLUDE_DIR Eigen/Core
+        /usr/local/include/eigen3
+        /usr/include/eigen3
+        )
+
+# Suppress Eigen's warning by adding it to the system's library
+include_directories(SYSTEM "${EIGEN_INCLUDE_DIR}")
+
+#TODO: this should be a more standard way
+#find_package(Eigen3 REQUIRED)
+#message("-- eigen3 , version ${EIGEN_VERSION}")
+
+
+#--------------------
+# DEPENDENCY: nabo
+#--------------------
+find_package(libnabo REQUIRED PATHS ${LIBNABO_INSTALL_DIR})
+#include(libnaboConfig)
+include_directories(${libnabo_INCLUDE_DIRS})
+set(EXTERNAL_LIBS ${EXTERNAL_LIBS} ${libnabo_LIBRARIES})
+message(STATUS "libnabo found, version ${libnabo_VERSION} (include=${libnabo_INCLUDE_DIRS} libs=${libnabo_LIBRARIES})")
+
+target_link_libraries(van_loading_node ${EXTERNAL_LIBS})
+
+list(APPEND CMAKE_MODULE_PATH "${CMAKE_CURRENT_LIST_DIR/libs/}")
+
+foreach(dep slam;gui)
+    # if not building from inside MRPT source tree, find it as a cmake
+    # imported project:
+    if (NOT TARGET mrpt::${dep})
+        find_package(mrpt-${dep} REQUIRED)
+    endif()
+endforeach()
+
+# Add the required libraries for linking:
+foreach(dep slam;gui)
+    target_link_libraries(${sampleName} mrpt::${dep})
+endforeach()
+
+## Set optimized building:
+#if((${CMAKE_CXX_COMPILER_ID} STREQUAL "Clang" OR CMAKE_COMPILER_IS_GNUCXX) AND NOT CMAKE_BUILD_TYPE MATCHES "Debug")
+#    add_compile_options(-O3)
+#endif()

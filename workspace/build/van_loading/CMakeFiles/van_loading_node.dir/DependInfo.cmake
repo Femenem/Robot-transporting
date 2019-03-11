@@ -21,6 +21,9 @@ set(CMAKE_CXX_TARGET_INCLUDE_PATH
   "/home/matt/Documents/Robot-transporting/workspace/devel/include"
   "/opt/ros/melodic/include"
   "/opt/ros/melodic/share/xmlrpcpp/cmake/../../../include/xmlrpcpp"
+  "/usr/include/eigen3"
+  "/usr/local/include"
+  "/home/matt/Documents/Robot-transporting/workspace/src/van_loading/libs"
   )
 
 # Targets to which this target links.

@@ -12,15 +12,56 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="3817600e-58ca-4c57-a204-0110607f377f" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/../../workspace/src/van_loading/src/get_data.cpp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../.idea/Robot-transporting.iml" beforeDir="false" afterPath="$PROJECT_DIR$/../../.idea/Robot-transporting.iml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../.idea/vcs.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../../.idea/vcs.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../../.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../../.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/vcs.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../workspace/build/van_loading/CMakeFiles/van_loading_node.dir/CXX.includecache" beforeDir="false" afterPath="$PROJECT_DIR$/../../workspace/build/van_loading/CMakeFiles/van_loading_node.dir/CXX.includecache" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../workspace/build/van_loading/CMakeFiles/van_loading_node.dir/depend.internal" beforeDir="false" afterPath="$PROJECT_DIR$/../../workspace/build/van_loading/CMakeFiles/van_loading_node.dir/depend.internal" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../workspace/build/van_loading/CMakeFiles/van_loading_node.dir/depend.make" beforeDir="false" afterPath="$PROJECT_DIR$/../../workspace/build/van_loading/CMakeFiles/van_loading_node.dir/depend.make" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../workspace/build/van_loading/CMakeFiles/van_loading_node.dir/src/idris_sim.cpp.o" beforeDir="false" afterPath="$PROJECT_DIR$/../../workspace/build/van_loading/CMakeFiles/van_loading_node.dir/src/idris_sim.cpp.o" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../workspace/devel/lib/van_loading/van_loading_node" beforeDir="false" afterPath="$PROJECT_DIR$/../../workspace/devel/lib/van_loading/van_loading_node" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../workspace/src/van_loading/config/control.yaml" beforeDir="false" afterPath="$PROJECT_DIR$/../../workspace/src/van_loading/config/control.yaml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../workspace/src/van_loading/src/idris_sim.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/../../workspace/src/van_loading/src/idris_sim.cpp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/CMakeLists.txt" beforeDir="false" afterPath="$PROJECT_DIR$/CMakeLists.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeCache.txt" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/CMakeCache.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/CMakeOutput.log" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/CMakeOutput.log" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/Makefile.cmake" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/Makefile.cmake" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/clion-log.txt" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/clion-log.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/icpSpeedTest.dir/CXX.includecache" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/icpSpeedTest.dir/CXX.includecache" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/icpSpeedTest.dir/DependInfo.cmake" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/icpSpeedTest.dir/DependInfo.cmake" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/icpSpeedTest.dir/depend.internal" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/icpSpeedTest.dir/depend.internal" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/icpSpeedTest.dir/depend.make" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/icpSpeedTest.dir/depend.make" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/icpSpeedTest.dir/flags.make" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/icpSpeedTest.dir/flags.make" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/cmake-build-debug/icpSpeedTest.cbp" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/icpSpeedTest.cbp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/main.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/main.cpp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../notes/notes.md" beforeDir="false" afterPath="$PROJECT_DIR$/../../notes/notes.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../workspace/build/CMakeCache.txt" beforeDir="false" afterPath="$PROJECT_DIR$/../../workspace/build/CMakeCache.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../workspace/build/CMakeFiles/Makefile.cmake" beforeDir="false" afterPath="$PROJECT_DIR$/../../workspace/build/CMakeFiles/Makefile.cmake" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../workspace/build/CMakeFiles/Makefile2" beforeDir="false" afterPath="$PROJECT_DIR$/../../workspace/build/CMakeFiles/Makefile2" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../workspace/build/CMakeFiles/TargetDirectories.txt" beforeDir="false" afterPath="$PROJECT_DIR$/../../workspace/build/CMakeFiles/TargetDirectories.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../workspace/build/CMakeFiles/progress.marks" beforeDir="false" afterPath="$PROJECT_DIR$/../../workspace/build/CMakeFiles/progress.marks" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../workspace/build/Makefile" beforeDir="false" afterPath="$PROJECT_DIR$/../../workspace/build/Makefile" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../workspace/build/double_ackermann/trunk/Makefile" beforeDir="false" afterPath="$PROJECT_DIR$/../../workspace/build/double_ackermann/trunk/Makefile" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../workspace/build/gtest/Makefile" beforeDir="false" afterPath="$PROJECT_DIR$/../../workspace/build/gtest/Makefile" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../workspace/build/gtest/googlemock/CMakeFiles/gmock.dir/progress.make" beforeDir="false" afterPath="$PROJECT_DIR$/../../workspace/build/gtest/googlemock/CMakeFiles/gmock.dir/progress.make" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../workspace/build/gtest/googlemock/CMakeFiles/gmock_main.dir/progress.make" beforeDir="false" afterPath="$PROJECT_DIR$/../../workspace/build/gtest/googlemock/CMakeFiles/gmock_main.dir/progress.make" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../workspace/build/gtest/googlemock/Makefile" beforeDir="false" afterPath="$PROJECT_DIR$/../../workspace/build/gtest/googlemock/Makefile" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../workspace/build/gtest/googlemock/gtest/CMakeFiles/gtest.dir/progress.make" beforeDir="false" afterPath="$PROJECT_DIR$/../../workspace/build/gtest/googlemock/gtest/CMakeFiles/gtest.dir/progress.make" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../workspace/build/gtest/googlemock/gtest/CMakeFiles/gtest_main.dir/progress.make" beforeDir="false" afterPath="$PROJECT_DIR$/../../workspace/build/gtest/googlemock/gtest/CMakeFiles/gtest_main.dir/progress.make" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../workspace/build/gtest/googlemock/gtest/Makefile" beforeDir="false" afterPath="$PROJECT_DIR$/../../workspace/build/gtest/googlemock/gtest/Makefile" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../workspace/build/idris_sim/trunk/CMakeFiles/idris_sim_node.dir/progress.make" beforeDir="false" afterPath="$PROJECT_DIR$/../../workspace/build/idris_sim/trunk/CMakeFiles/idris_sim_node.dir/progress.make" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../workspace/build/idris_sim/trunk/Makefile" beforeDir="false" afterPath="$PROJECT_DIR$/../../workspace/build/idris_sim/trunk/Makefile" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../workspace/build/van_loading/CMakeFiles/progress.marks" beforeDir="false" afterPath="$PROJECT_DIR$/../../workspace/build/van_loading/CMakeFiles/progress.marks" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../workspace/build/van_loading/CMakeFiles/van_loading_node.dir/DependInfo.cmake" beforeDir="false" afterPath="$PROJECT_DIR$/../../workspace/build/van_loading/CMakeFiles/van_loading_node.dir/DependInfo.cmake" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../workspace/build/van_loading/CMakeFiles/van_loading_node.dir/build.make" beforeDir="false" afterPath="$PROJECT_DIR$/../../workspace/build/van_loading/CMakeFiles/van_loading_node.dir/build.make" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../workspace/build/van_loading/CMakeFiles/van_loading_node.dir/flags.make" beforeDir="false" afterPath="$PROJECT_DIR$/../../workspace/build/van_loading/CMakeFiles/van_loading_node.dir/flags.make" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../workspace/build/van_loading/CMakeFiles/van_loading_node.dir/link.txt" beforeDir="false" afterPath="$PROJECT_DIR$/../../workspace/build/van_loading/CMakeFiles/van_loading_node.dir/link.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../workspace/build/van_loading/CMakeFiles/van_loading_node.dir/progress.make" beforeDir="false" afterPath="$PROJECT_DIR$/../../workspace/build/van_loading/CMakeFiles/van_loading_node.dir/progress.make" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../workspace/build/van_loading/Makefile" beforeDir="false" afterPath="$PROJECT_DIR$/../../workspace/build/van_loading/Makefile" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../workspace/build/van_loading/catkin_generated/installspace/van_loadingConfig.cmake" beforeDir="false" afterPath="$PROJECT_DIR$/../../workspace/build/van_loading/catkin_generated/installspace/van_loadingConfig.cmake" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../workspace/build/van_loading/catkin_generated/package.cmake" beforeDir="false" afterPath="$PROJECT_DIR$/../../workspace/build/van_loading/catkin_generated/package.cmake" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../workspace/build/van_loading/catkin_generated/stamps/van_loading/package.xml.stamp" beforeDir="false" afterPath="$PROJECT_DIR$/../../workspace/build/van_loading/catkin_generated/stamps/van_loading/package.xml.stamp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../workspace/devel/share/van_loading/cmake/van_loadingConfig.cmake" beforeDir="false" afterPath="$PROJECT_DIR$/../../workspace/devel/share/van_loading/cmake/van_loadingConfig.cmake" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../workspace/src/van_loading/CMakeLists.txt" beforeDir="false" afterPath="$PROJECT_DIR$/../../workspace/src/van_loading/CMakeLists.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../workspace/src/van_loading/description/van/model.sdf" beforeDir="false" afterPath="$PROJECT_DIR$/../../workspace/src/van_loading/description/van/model.sdf" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../workspace/src/van_loading/package.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../../workspace/src/van_loading/package.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../workspace/src/van_loading/src/getData.cpp" beforeDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/cmake-build-debug/" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -32,23 +73,20 @@
   <component name="ExecutionTargetManager" SELECTED_TARGET="CMakeBuildProfile:Debug" />
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file pinned="false" current-in-tab="false">
+      <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/CMakeLists.txt">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="270">
-              <caret line="18" column="46" selection-start-line="18" selection-start-column="46" selection-end-line="18" selection-end-column="46" />
+            <state relative-caret-position="241">
+              <caret line="23" column="13" lean-forward="true" selection-start-line="10" selection-start-column="22" selection-end-line="23" selection-end-column="13" />
             </state>
           </provider>
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
-        <entry file="file:///usr/local/include/pointmatcher/PointMatcher.h">
+        <entry file="file://$PROJECT_DIR$/mrpt-slam-config.cmake">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="4005">
-              <caret line="267" column="8" selection-start-line="267" selection-start-column="8" selection-end-line="267" selection-end-column="8" />
-              <folding>
-                <element signature="e#2021#2047#0" expanded="true" />
-              </folding>
+            <state relative-caret-position="15">
+              <caret line="1" column="13" selection-start-line="1" selection-start-column="13" selection-end-line="1" selection-end-column="30" />
             </state>
           </provider>
         </entry>
@@ -56,8 +94,8 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/data">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="840">
-              <caret line="56" column="428" selection-start-line="56" selection-end-line="57" />
+            <state relative-caret-position="690">
+              <caret line="46" column="332" selection-start-line="46" selection-start-column="332" selection-end-line="46" selection-end-column="332" />
             </state>
           </provider>
         </entry>
@@ -89,14 +127,11 @@
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="true">
+      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/main.cpp">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="300">
-              <caret line="24" column="36" selection-start-line="24" selection-start-column="36" selection-end-line="24" selection-end-column="36" />
-              <folding>
-                <element signature="e#55#81#0" expanded="true" />
-              </folding>
+            <state relative-caret-position="225">
+              <caret line="15" column="21" selection-start-line="15" selection-start-column="21" selection-end-line="15" selection-end-column="21" />
             </state>
           </provider>
         </entry>
@@ -120,6 +155,7 @@
       <list>
         <option value="$PROJECT_DIR$/model.csv" />
         <option value="$PROJECT_DIR$/source.csv" />
+        <option value="$PROJECT_DIR$/Findmrpt-slam.cmake" />
         <option value="$PROJECT_DIR$/main.cpp" />
         <option value="$PROJECT_DIR$/CMakeLists.txt" />
       </list>
@@ -128,8 +164,8 @@
   <component name="ProjectFrameBounds" extendedState="7">
     <option name="x" value="10" />
     <option name="y" value="20" />
-    <option name="width" value="1316" />
-    <option name="height" value="695" />
+    <option name="width" value="1296" />
+    <option name="height" value="691" />
   </component>
   <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
   <component name="ProjectView">
@@ -137,7 +173,6 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
-      <pane id="Scope" />
       <pane id="ProjectPane">
         <subPane>
           <expand>
@@ -145,10 +180,15 @@
               <item name="icpSpeedTest" type="b2602c69:ProjectViewProjectNode" />
               <item name="icpSpeedTest" type="462c0819:PsiDirectoryNode" />
             </path>
+            <path>
+              <item name="icpSpeedTest" type="b2602c69:ProjectViewProjectNode" />
+              <item name="External Libraries" type="cb654da1:ExternalLibrariesNode" />
+            </path>
           </expand>
           <select />
         </subPane>
       </pane>
+      <pane id="Scope" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -189,17 +229,19 @@
       <workItem from="1550668362677" duration="4780000" />
       <workItem from="1550760118033" duration="5074000" />
       <workItem from="1550767466054" duration="655000" />
+      <workItem from="1551793014085" duration="10344000" />
+      <workItem from="1552309225794" duration="954000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="10509000" />
+    <option name="totallyTimeSpent" value="21807000" />
   </component>
   <component name="ToolWindowManager">
-    <frame x="0" y="-1" width="1366" height="741" extended-state="7" />
+    <frame x="0" y="-1" width="1366" height="741" extended-state="6" />
     <editor active="true" />
     <layout>
-      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.24848485" />
+      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.23181818" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="Favorites" order="2" side_tool="true" />
       <window_info anchor="bottom" id="Message" order="0" />
@@ -210,11 +252,11 @@
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
       <window_info anchor="bottom" id="TODO" order="6" />
       <window_info anchor="bottom" id="Database Changes" order="7" />
-      <window_info active="true" anchor="bottom" id="Messages" order="8" visible="true" weight="0.32901135" />
+      <window_info anchor="bottom" id="Messages" order="8" weight="0.32901135" />
       <window_info anchor="bottom" id="Terminal" order="9" />
       <window_info anchor="bottom" id="Event Log" order="10" side_tool="true" />
       <window_info anchor="bottom" id="Version Control" order="11" />
-      <window_info anchor="bottom" id="CMake" order="12" weight="0.32901135" />
+      <window_info active="true" anchor="bottom" id="CMake" order="12" visible="true" weight="0.29983792" />
       <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
       <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
       <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
@@ -225,13 +267,6 @@
     <option name="version" value="1" />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/CMakeLists.txt">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="270">
-          <caret line="18" column="46" selection-start-line="18" selection-start-column="46" selection-end-line="18" selection-end-column="46" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file:///usr/local/include/pointmatcher/PointMatcher.h">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="4005">
@@ -242,10 +277,17 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/mrpt-slam-config.cmake">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="15">
+          <caret line="1" column="13" selection-start-line="1" selection-start-column="13" selection-end-line="1" selection-end-column="30" />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/data">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="840">
-          <caret line="56" column="428" selection-start-line="56" selection-end-line="57" />
+        <state relative-caret-position="690">
+          <caret line="46" column="332" selection-start-line="46" selection-start-column="332" selection-end-line="46" selection-end-column="332" />
         </state>
       </provider>
     </entry>
@@ -279,11 +321,15 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/main.cpp">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="300">
-          <caret line="24" column="36" selection-start-line="24" selection-start-column="36" selection-end-line="24" selection-end-column="36" />
-          <folding>
-            <element signature="e#55#81#0" expanded="true" />
-          </folding>
+        <state relative-caret-position="225">
+          <caret line="15" column="21" selection-start-line="15" selection-start-column="21" selection-end-line="15" selection-end-column="21" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/CMakeLists.txt">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="241">
+          <caret line="23" column="13" lean-forward="true" selection-start-line="10" selection-start-column="22" selection-end-line="23" selection-end-column="13" />
         </state>
       </provider>
     </entry>

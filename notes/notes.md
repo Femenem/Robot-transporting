@@ -8,6 +8,10 @@ MRPT: sudo apt install libftdi-dev freeglut3-dev zlib1g-dev libusb-1.0-0-dev \
       sudo apt install build-essential pkg-config cmake libwxgtk3.0-dev \
       libopencv-dev libeigen3-dev libgtest-dev
 
+      sudo apt-get install ros-melodic-mrpt-slam
+
+
+
 ### Week 11/02/19:
 Van width = ~1.6m
 
@@ -50,3 +54,50 @@ Friday:
 Started using mendeley and updated all (most) sources.
 Tried to fix coltroller issue.
 
+### Week 25/02/19:
+
+Monday:
+Fixed controller issue. Needed to install ros-melodic-effort-controllers and ros-melodic-velocity-controllers
+Got test data by manually echoing the topic.
+
+Tuesday:
+Converted data to csv file format
+
+Wednesday: off
+
+Thursday: off
+
+Friday: off
+
+### Week 04/03/19:
+
+Monday: off
+
+Tuesday:
+Made manual control of robot
+
+Wednesday:
+Took measurements of van
+Made van to scale. Robot slides off ramps.
+
+Thursday:
+Worked on poster
+
+Friday:
+Finished poster and handed in
+
+### Week 11/03/19:
+
+Monday:
+
+
+Tuesday:
+
+
+Wednesday:
+
+
+Thursday:
+
+
+Friday:

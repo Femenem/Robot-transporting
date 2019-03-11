@@ -103,8 +103,8 @@ rebuild_cache/fast: rebuild_cache
 
 # Special rule for the target edit_cache
 edit_cache:
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "No interactive CMake dialog available..."
-	/usr/bin/cmake -E echo No\ interactive\ CMake\ dialog\ available.
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "Running CMake cache editor..."
+	/usr/bin/cmake-gui -H$(CMAKE_SOURCE_DIR) -B$(CMAKE_BINARY_DIR)
 .PHONY : edit_cache
 
 # Special rule for the target edit_cache
@@ -1117,6 +1117,19 @@ sensor_msgs_generate_messages_py/fast:
 .PHONY : sensor_msgs_generate_messages_py/fast
 
 #=============================================================================
+# Target rules for targets named get_data_node
+
+# Build rule for target.
+get_data_node: cmake_check_build_system
+	$(MAKE) -f CMakeFiles/Makefile2 get_data_node
+.PHONY : get_data_node
+
+# fast build rule for target.
+get_data_node/fast:
+	$(MAKE) -f van_loading/CMakeFiles/get_data_node.dir/build.make van_loading/CMakeFiles/get_data_node.dir/build
+.PHONY : get_data_node/fast
+
+#=============================================================================
 # Target rules for targets named van_loading_node
 
 # Build rule for target.
@@ -1215,6 +1228,7 @@ help:
 	@echo "... sensor_msgs_generate_messages_nodejs"
 	@echo "... tf_generate_messages_py"
 	@echo "... sensor_msgs_generate_messages_py"
+	@echo "... get_data_node"
 	@echo "... van_loading_node"
 .PHONY : help
 

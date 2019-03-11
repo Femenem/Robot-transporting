@@ -68,6 +68,18 @@ install/strip/fast: preinstall/fast
 	/usr/bin/cmake -DCMAKE_INSTALL_DO_STRIP=1 -P cmake_install.cmake
 .PHONY : install/strip/fast
 
+# Special rule for the target install
+install: preinstall
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "Install the project..."
+	/usr/bin/cmake -P cmake_install.cmake
+.PHONY : install
+
+# Special rule for the target install
+install/fast: preinstall/fast
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "Install the project..."
+	/usr/bin/cmake -P cmake_install.cmake
+.PHONY : install/fast
+
 # Special rule for the target install/local
 install/local: preinstall
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "Installing only the local directory..."
@@ -103,8 +115,8 @@ list_install_components/fast: list_install_components
 
 # Special rule for the target edit_cache
 edit_cache:
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "No interactive CMake dialog available..."
-	/usr/bin/cmake -E echo No\ interactive\ CMake\ dialog\ available.
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "Running CMake cache editor..."
+	/usr/bin/cmake-gui -H$(CMAKE_SOURCE_DIR) -B$(CMAKE_BINARY_DIR)
 .PHONY : edit_cache
 
 # Special rule for the target edit_cache
@@ -122,18 +134,6 @@ rebuild_cache:
 rebuild_cache/fast: rebuild_cache
 
 .PHONY : rebuild_cache/fast
-
-# Special rule for the target install
-install: preinstall
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "Install the project..."
-	/usr/bin/cmake -P cmake_install.cmake
-.PHONY : install
-
-# Special rule for the target install
-install/fast: preinstall/fast
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "Install the project..."
-	/usr/bin/cmake -P cmake_install.cmake
-.PHONY : install/fast
 
 # The main all target
 all: cmake_check_build_system
@@ -168,6 +168,21 @@ depend:
 .PHONY : depend
 
 # Convenience name for target.
+van_loading/CMakeFiles/get_data_node.dir/rule:
+	cd /home/matt/Documents/Robot-transporting/workspace/build && $(MAKE) -f CMakeFiles/Makefile2 van_loading/CMakeFiles/get_data_node.dir/rule
+.PHONY : van_loading/CMakeFiles/get_data_node.dir/rule
+
+# Convenience name for target.
+get_data_node: van_loading/CMakeFiles/get_data_node.dir/rule
+
+.PHONY : get_data_node
+
+# fast build rule for target.
+get_data_node/fast:
+	cd /home/matt/Documents/Robot-transporting/workspace/build && $(MAKE) -f van_loading/CMakeFiles/get_data_node.dir/build.make van_loading/CMakeFiles/get_data_node.dir/build
+.PHONY : get_data_node/fast
+
+# Convenience name for target.
 van_loading/CMakeFiles/van_loading_node.dir/rule:
 	cd /home/matt/Documents/Robot-transporting/workspace/build && $(MAKE) -f CMakeFiles/Makefile2 van_loading/CMakeFiles/van_loading_node.dir/rule
 .PHONY : van_loading/CMakeFiles/van_loading_node.dir/rule
@@ -181,6 +196,33 @@ van_loading_node: van_loading/CMakeFiles/van_loading_node.dir/rule
 van_loading_node/fast:
 	cd /home/matt/Documents/Robot-transporting/workspace/build && $(MAKE) -f van_loading/CMakeFiles/van_loading_node.dir/build.make van_loading/CMakeFiles/van_loading_node.dir/build
 .PHONY : van_loading_node/fast
+
+src/get_data.o: src/get_data.cpp.o
+
+.PHONY : src/get_data.o
+
+# target to build an object file
+src/get_data.cpp.o:
+	cd /home/matt/Documents/Robot-transporting/workspace/build && $(MAKE) -f van_loading/CMakeFiles/get_data_node.dir/build.make van_loading/CMakeFiles/get_data_node.dir/src/get_data.cpp.o
+.PHONY : src/get_data.cpp.o
+
+src/get_data.i: src/get_data.cpp.i
+
+.PHONY : src/get_data.i
+
+# target to preprocess a source file
+src/get_data.cpp.i:
+	cd /home/matt/Documents/Robot-transporting/workspace/build && $(MAKE) -f van_loading/CMakeFiles/get_data_node.dir/build.make van_loading/CMakeFiles/get_data_node.dir/src/get_data.cpp.i
+.PHONY : src/get_data.cpp.i
+
+src/get_data.s: src/get_data.cpp.s
+
+.PHONY : src/get_data.s
+
+# target to generate assembly for a file
+src/get_data.cpp.s:
+	cd /home/matt/Documents/Robot-transporting/workspace/build && $(MAKE) -f van_loading/CMakeFiles/get_data_node.dir/build.make van_loading/CMakeFiles/get_data_node.dir/src/get_data.cpp.s
+.PHONY : src/get_data.cpp.s
 
 src/idris_sim.o: src/idris_sim.cpp.o
 
@@ -216,13 +258,17 @@ help:
 	@echo "... clean"
 	@echo "... depend"
 	@echo "... install/strip"
+	@echo "... install"
+	@echo "... get_data_node"
 	@echo "... install/local"
 	@echo "... test"
 	@echo "... list_install_components"
 	@echo "... van_loading_node"
 	@echo "... edit_cache"
 	@echo "... rebuild_cache"
-	@echo "... install"
+	@echo "... src/get_data.o"
+	@echo "... src/get_data.i"
+	@echo "... src/get_data.s"
 	@echo "... src/idris_sim.o"
 	@echo "... src/idris_sim.i"
 	@echo "... src/idris_sim.s"

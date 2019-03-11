@@ -23,7 +23,7 @@
         <pose frame=''>0 0 0 0 -0 0</pose>
         <geometry>
           <box>
-            <size>5 1.6 0.01</size>
+            <size>5 1.981 0.01</size>
           </box>
         </geometry>
         <material>
@@ -49,7 +49,7 @@
         <pose frame=''>0 0 0 0 -0 0</pose>
         <geometry>
           <box>
-            <size>5 1.6 0.01</size>
+            <size>5 1.981 0.01</size>
           </box>
         </geometry>
         <surface>
@@ -112,7 +112,7 @@
         </inertia>
         <pose frame=''>0 0 0 0 -0 0</pose>
       </inertial>
-      <pose frame=''>-0.196299 0.001336 -0.113412 7e-06 -0.002504 0.000226</pose>
+      <pose frame=''>-0.152 0.001346 -0.113301 7e-06 -0.002504 0.000226</pose>
       <gravity>1</gravity>
       <self_collide>0</self_collide>
       <kinematic>0</kinematic>
@@ -121,7 +121,7 @@
         <pose frame=''>0 0 0 0 -0 0</pose>
         <geometry>
           <box>
-            <size>0.01 1.6 0.4</size>
+            <size>0.01 1.981 0.4</size>
           </box>
         </geometry>
         <material>
@@ -147,7 +147,7 @@
         <pose frame=''>0 0 0 0 -0 0</pose>
         <geometry>
           <box>
-            <size>0.01 1.6 0.4</size>
+            <size>0.01 1.981 0.4</size>
           </box>
         </geometry>
         <surface>
@@ -219,7 +219,7 @@
         <pose frame=''>0 0 0 0 -0 0</pose>
         <geometry>
           <box>
-            <size>5 1.6 0.01</size>
+            <size>5 1.981 0.01</size>
           </box>
         </geometry>
         <material>
@@ -245,7 +245,7 @@
         <pose frame=''>0 0 0 0 -0 0</pose>
         <geometry>
           <box>
-            <size>5 1.6 0.01</size>
+            <size>5 1.981 0.01</size>
           </box>
         </geometry>
         <surface>
@@ -314,7 +314,7 @@
       <kinematic>0</kinematic>
       <enable_wind>0</enable_wind>
       <visual name='visual'>
-        <pose frame=''>0 0 0 0 -0 0</pose>
+        <pose frame=''>0 0.195 0 0 -0 0</pose>
         <geometry>
           <box>
             <size>5 0.01 2</size>
@@ -340,7 +340,7 @@
       <collision name='collision'>
         <laser_retro>0</laser_retro>
         <max_contacts>10</max_contacts>
-        <pose frame=''>0 0 0 0 -0 0</pose>
+        <pose frame=''>0 0.195 0 0 -0 0</pose>
         <geometry>
           <box>
             <size>5 0.01 2</size>
@@ -406,7 +406,7 @@
         </inertia>
         <pose frame=''>0 0 0 0 -0 0</pose>
       </inertial>
-      <pose frame=''>1.55425 0.00149 0.089664 7e-06 -0.002504 0.000226</pose>
+      <pose frame=''>1.59126 0.001498 0.089757 7e-06 -0.002504 0.000226</pose>
       <gravity>1</gravity>
       <self_collide>0</self_collide>
       <kinematic>0</kinematic>
@@ -415,7 +415,7 @@
         <pose frame=''>0 0 0 0 -0 0</pose>
         <geometry>
           <box>
-            <size>3.5 1.6 0.01</size>
+            <size>3.5 1.981 0.01</size>
           </box>
         </geometry>
         <material>
@@ -441,7 +441,7 @@
         <pose frame=''>0 0 0 0 -0 0</pose>
         <geometry>
           <box>
-            <size>3.5 1.6 0.01</size>
+            <size>3.5 1.981 0.01</size>
           </box>
         </geometry>
         <surface>
@@ -504,13 +504,13 @@
         </inertia>
         <pose frame=''>0 0 0 0 -0 0</pose>
       </inertial>
-      <pose frame=''>0.803701 -0.79368 0.682664 0 -0 0</pose>
+      <pose frame=''>0.79451 -0.805933 0.682641 0 -0 0</pose>
       <gravity>1</gravity>
       <self_collide>0</self_collide>
       <kinematic>0</kinematic>
       <enable_wind>0</enable_wind>
       <visual name='visual'>
-        <pose frame=''>0 0 0 0 -0 0</pose>
+        <pose frame=''>0 -0.195 0 0 -0 0</pose>
         <geometry>
           <box>
             <size>5 0.01 2</size>
@@ -536,7 +536,7 @@
       <collision name='collision'>
         <laser_retro>0</laser_retro>
         <max_contacts>10</max_contacts>
-        <pose frame=''>0 0 0 0 -0 0</pose>
+        <pose frame=''>0 -0.195 0 0 -0 0</pose>
         <geometry>
           <box>
             <size>5 0.01 2</size>
@@ -611,7 +611,7 @@
         <pose frame=''>0 0 0 0 -0 0</pose>
         <geometry>
           <box>
-            <size>0.01 1.6 2</size>
+            <size>0.01 1.981 2</size>
           </box>
         </geometry>
         <material>
@@ -637,7 +637,7 @@
         <pose frame=''>0 0 0 0 -0 0</pose>
         <geometry>
           <box>
-            <size>0.01 1.6 2</size>
+            <size>0.01 1.981 2</size>
           </box>
         </geometry>
         <surface>
@@ -700,16 +700,16 @@
         </inertia>
         <pose frame=''>0 0 0 0 -0 0</pose>
       </inertial>
-      <pose frame=''>-2.11708 -0.471121 -0.568988 0 -0 0</pose>
+      <pose frame=''>-2.34464 -0.582351 -0.568988 0 -0 0</pose>
       <gravity>1</gravity>
       <self_collide>0</self_collide>
       <kinematic>0</kinematic>
       <enable_wind>0</enable_wind>
       <visual name='visual'>
-        <pose frame=''>0 0 0 0 -0.5 0</pose>
+        <pose frame=''>0 0 0 0 -0.37 0</pose>
         <geometry>
           <box>
-            <size>1 0.3 0.05</size>
+            <size>1.4 0.3 0.05</size>
           </box>
         </geometry>
         <material>
@@ -732,10 +732,10 @@
       <collision name='collision'>
         <laser_retro>0</laser_retro>
         <max_contacts>10</max_contacts>
-        <pose frame=''>0 0 0 0 -0.5 0</pose>
+        <pose frame=''>0 0 0 0 -0.37 0</pose>
         <geometry>
           <box>
-            <size>1 0.3 0.05</size>
+            <size>1.4 0.3 0.05</size>
           </box>
         </geometry>
         <surface>
@@ -798,16 +798,16 @@
         </inertia>
         <pose frame=''>0 0 0 0 -0 0</pose>
       </inertial>
-      <pose frame=''>-2.11708 0.447243 -0.568988 0 -0 0</pose>
+      <pose frame=''>-2.34141 0.587917 -0.568988 0 -0 0</pose>
       <gravity>1</gravity>
       <self_collide>0</self_collide>
       <kinematic>0</kinematic>
       <enable_wind>0</enable_wind>
       <visual name='visual'>
-        <pose frame=''>0 0 0 0 -0.5 0</pose>
+        <pose frame=''>0 0 0 0 -0.37 0</pose>
         <geometry>
           <box>
-            <size>1 0.3 0.05</size>
+            <size>1.4 0.3 0.05</size>
           </box>
         </geometry>
         <material>
@@ -830,10 +830,10 @@
       <collision name='collision'>
         <laser_retro>0</laser_retro>
         <max_contacts>10</max_contacts>
-        <pose frame=''>0 0 0 0 -0.5 0</pose>
+        <pose frame=''>0 0 0 0 -0.37 0</pose>
         <geometry>
           <box>
-            <size>1 0.3 0.05</size>
+            <size>1.4 0.3 0.05</size>
           </box>
         </geometry>
         <surface>
@@ -896,16 +896,16 @@
         </inertia>
         <pose frame=''>0 0 0 0 -0 0</pose>
       </inertial>
-      <pose frame=''>-0.55812 -0.497793 -0.12634 7e-06 -0.002504 0.000226</pose>
+      <pose frame=''>-0.828445 -0.589586 -0.127017 7e-06 -0.002504 0.000226</pose>
       <gravity>1</gravity>
       <self_collide>0</self_collide>
       <kinematic>0</kinematic>
       <enable_wind>0</enable_wind>
       <visual name='visual'>
-        <pose frame=''>0 0 0 0 -0.5 0</pose>
+        <pose frame=''>0 0 0 0 -0.3 0</pose>
         <geometry>
           <box>
-            <size>0.8 0.3 0.05</size>
+            <size>1.4 0.3 0.05</size>
           </box>
         </geometry>
         <material>
@@ -928,10 +928,10 @@
       <collision name='collision'>
         <laser_retro>0</laser_retro>
         <max_contacts>10</max_contacts>
-        <pose frame=''>0 0 0 0 -0.5 0</pose>
+        <pose frame=''>0 0 0 0 -0.3 0</pose>
         <geometry>
           <box>
-            <size>0.8 0.3 0.05</size>
+            <size>1.4 0.3 0.05</size>
           </box>
         </geometry>
         <surface>
@@ -994,16 +994,16 @@
         </inertia>
         <pose frame=''>0 0 0 0 -0 0</pose>
       </inertial>
-      <pose frame=''>-0.558332 0.441362 -0.126333 7e-06 -0.002504 0.000226</pose>
+      <pose frame=''>-0.826378 0.588486 -0.127003 7e-06 -0.002504 0.000226</pose>
       <gravity>1</gravity>
       <self_collide>0</self_collide>
       <kinematic>0</kinematic>
       <enable_wind>0</enable_wind>
       <visual name='visual'>
-        <pose frame=''>0 0 0 0 -0.5 0</pose>
+        <pose frame=''>0 0 0 0 -0.3 0</pose>
         <geometry>
           <box>
-            <size>0.8 0.3 0.05</size>
+            <size>1.4 0.3 0.05</size>
           </box>
         </geometry>
         <material>
@@ -1026,10 +1026,10 @@
       <collision name='collision'>
         <laser_retro>0</laser_retro>
         <max_contacts>10</max_contacts>
-        <pose frame=''>0 0 0 0 -0.5 0</pose>
+        <pose frame=''>0 0 0 0 -0.3 0</pose>
         <geometry>
           <box>
-            <size>0.8 0.3 0.05</size>
+            <size>1.4 0.3 0.05</size>
           </box>
         </geometry>
         <surface>

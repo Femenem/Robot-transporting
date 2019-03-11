@@ -175,6 +175,8 @@ set(CMAKE_MAKEFILE_DEPENDS
   "/opt/ros/melodic/share/xmlrpcpp/cmake/xmlrpcpp-extras.cmake"
   "/opt/ros/melodic/share/xmlrpcpp/cmake/xmlrpcppConfig-version.cmake"
   "/opt/ros/melodic/share/xmlrpcpp/cmake/xmlrpcppConfig.cmake"
+  "/usr/local/share/libnabo/cmake/libnaboConfig.cmake"
+  "/usr/local/share/libnabo/cmake/libnaboConfigVersion.cmake"
   "/usr/share/cmake-3.10/Modules/CMakeCInformation.cmake"
   "/usr/share/cmake-3.10/Modules/CMakeCXXInformation.cmake"
   "/usr/share/cmake-3.10/Modules/CMakeCommonLanguageInclude.cmake"
@@ -190,6 +192,7 @@ set(CMAKE_MAKEFILE_DEPENDS
   "/usr/share/cmake-3.10/Modules/Compiler/GNU-C.cmake"
   "/usr/share/cmake-3.10/Modules/Compiler/GNU-CXX.cmake"
   "/usr/share/cmake-3.10/Modules/Compiler/GNU.cmake"
+  "/usr/share/cmake-3.10/Modules/FindBoost.cmake"
   "/usr/share/cmake-3.10/Modules/FindGTest.cmake"
   "/usr/share/cmake-3.10/Modules/FindPackageHandleStandardArgs.cmake"
   "/usr/share/cmake-3.10/Modules/FindPackageMessage.cmake"
@@ -312,5 +315,6 @@ set(CMAKE_DEPEND_INFO_FILES
   "idris_sim/trunk/CMakeFiles/sensor_msgs_generate_messages_nodejs.dir/DependInfo.cmake"
   "idris_sim/trunk/CMakeFiles/tf_generate_messages_py.dir/DependInfo.cmake"
   "idris_sim/trunk/CMakeFiles/sensor_msgs_generate_messages_py.dir/DependInfo.cmake"
+  "van_loading/CMakeFiles/get_data_node.dir/DependInfo.cmake"
   "van_loading/CMakeFiles/van_loading_node.dir/DependInfo.cmake"
   )
