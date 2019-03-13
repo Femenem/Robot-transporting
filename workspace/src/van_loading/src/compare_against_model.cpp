@@ -50,7 +50,7 @@ char MODEL_VALID[] = {
 void compare_laser_data(const sensor_msgs::LaserScan ls){
 
     float SOURCE_RANGES[SCANS_SIZE];
-    for (int i = 0; i < SCANS_SIZE; ++i) { // Copy values
+    for (int i = 0; i < SCANS_SIZE; ++i) { // Copy values from vector to array
         if(ls.ranges[i] > 30){
             SOURCE_RANGES[i] = 30;
         }else {
@@ -147,5 +147,4 @@ int main(int argc, char **argv) {
         ros::spinOnce();
         loopRate.sleep();
     }
-
 }

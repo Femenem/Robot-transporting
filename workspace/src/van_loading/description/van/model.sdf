@@ -3,14 +3,14 @@
   <model name='van'>
     <link name='link_0'>
       <inertial>
-        <mass>1</mass>
+        <mass>200</mass>
         <inertia>
-          <ixx>0.166667</ixx>
+          <ixx>65.4077</ixx>
           <ixy>0</ixy>
           <ixz>0</ixz>
-          <iyy>0.166667</iyy>
+          <iyy>416.668</iyy>
           <iyz>0</iyz>
-          <izz>0.166667</izz>
+          <izz>482.073</izz>
         </inertia>
         <pose frame=''>0 0 0 0 -0 0</pose>
       </inertial>
@@ -55,8 +55,8 @@
         <surface>
           <friction>
             <ode>
-              <mu>1</mu>
-              <mu2>1</mu2>
+              <mu>10</mu>
+              <mu2>10</mu2>
               <fdir1>0 0 0</fdir1>
               <slip1>0</slip1>
               <slip2>0</slip2>
@@ -101,14 +101,14 @@
     </link>
     <link name='link_0_0'>
       <inertial>
-        <mass>1</mass>
+        <mass>150</mass>
         <inertia>
-          <ixx>0.166667</ixx>
+          <ixx>51.0545</ixx>
           <ixy>0</ixy>
           <ixz>0</ixz>
-          <iyy>0.166667</iyy>
+          <iyy>2.00125</iyy>
           <iyz>0</iyz>
-          <izz>0.166667</izz>
+          <izz>49.0558</izz>
         </inertia>
         <pose frame=''>0 0 0 0 -0 0</pose>
       </inertial>
@@ -395,14 +395,14 @@
     </link>
     <link name='link_1_0'>
       <inertial>
-        <mass>1</mass>
+        <mass>200</mass>
         <inertia>
-          <ixx>0.166667</ixx>
+          <ixx>65.4077</ixx>
           <ixy>0</ixy>
           <ixz>0</ixz>
-          <iyy>0.166667</iyy>
+          <iyy>204.168</iyy>
           <iyz>0</iyz>
-          <izz>0.166667</izz>
+          <izz>269.573</izz>
         </inertia>
         <pose frame=''>0 0 0 0 -0 0</pose>
       </inertial>
@@ -689,18 +689,18 @@
     </link>
     <link name='link_3'>
       <inertial>
-        <mass>1</mass>
+        <mass>100</mass>
         <inertia>
-          <ixx>0.166667</ixx>
+          <ixx>0.770833</ixx>
           <ixy>0</ixy>
           <ixz>0</ixz>
-          <iyy>0.166667</iyy>
+          <iyy>16.3542</iyy>
           <iyz>0</iyz>
-          <izz>0.166667</izz>
+          <izz>17.0833</izz>
         </inertia>
         <pose frame=''>0 0 0 0 -0 0</pose>
       </inertial>
-      <pose frame=''>-2.34464 -0.582351 -0.568988 0 -0 0</pose>
+      <pose frame=''>-2.32652 -0.582351 -0.568988 0 -0 0</pose>
       <gravity>1</gravity>
       <self_collide>0</self_collide>
       <kinematic>0</kinematic>
@@ -787,18 +787,18 @@
     </link>
     <link name='link_3_clone'>
       <inertial>
-        <mass>1</mass>
+        <mass>100</mass>
         <inertia>
-          <ixx>0.166667</ixx>
+          <ixx>0.770833</ixx>
           <ixy>0</ixy>
           <ixz>0</ixz>
-          <iyy>0.166667</iyy>
+          <iyy>16.3542</iyy>
           <iyz>0</iyz>
-          <izz>0.166667</izz>
+          <izz>17.0833</izz>
         </inertia>
         <pose frame=''>0 0 0 0 -0 0</pose>
       </inertial>
-      <pose frame=''>-2.34141 0.587917 -0.568988 0 -0 0</pose>
+      <pose frame=''>-2.32659 0.587917 -0.568988 0 -0 0</pose>
       <gravity>1</gravity>
       <self_collide>0</self_collide>
       <kinematic>0</kinematic>
@@ -885,18 +885,18 @@
     </link>
     <link name='link_3_clone_0'>
       <inertial>
-        <mass>1</mass>
+        <mass>100</mass>
         <inertia>
-          <ixx>0.166667</ixx>
+          <ixx>0.770833</ixx>
           <ixy>0</ixy>
           <ixz>0</ixz>
-          <iyy>0.166667</iyy>
+          <iyy>16.3542</iyy>
           <iyz>0</iyz>
-          <izz>0.166667</izz>
+          <izz>17.0833</izz>
         </inertia>
         <pose frame=''>0 0 0 0 -0 0</pose>
       </inertial>
-      <pose frame=''>-0.828445 -0.589586 -0.127017 7e-06 -0.002504 0.000226</pose>
+      <pose frame=''>-0.798898 -0.589579 -0.126943 7e-06 -0.002504 0.000226</pose>
       <gravity>1</gravity>
       <self_collide>0</self_collide>
       <kinematic>0</kinematic>
@@ -983,18 +983,18 @@
     </link>
     <link name='link_3_clone_clone'>
       <inertial>
-        <mass>1</mass>
+        <mass>100</mass>
         <inertia>
-          <ixx>0.166667</ixx>
+          <ixx>0.770833</ixx>
           <ixy>0</ixy>
           <ixz>0</ixz>
-          <iyy>0.166667</iyy>
+          <iyy>16.3542</iyy>
           <iyz>0</iyz>
-          <izz>0.166667</izz>
+          <izz>17.0833</izz>
         </inertia>
         <pose frame=''>0 0 0 0 -0 0</pose>
       </inertial>
-      <pose frame=''>-0.826378 0.588486 -0.127003 7e-06 -0.002504 0.000226</pose>
+      <pose frame=''>-0.804143 0.588491 -0.126947 7e-06 -0.002504 0.000226</pose>
       <gravity>1</gravity>
       <self_collide>0</self_collide>
       <kinematic>0</kinematic>
@@ -1081,14 +1081,14 @@
     </link>
     <link name='link_4'>
       <inertial>
-        <mass>1</mass>
+        <mass>1000</mass>
         <inertia>
-          <ixx>0.145833</ixx>
+          <ixx>20.8333</ixx>
           <ixy>0</ixy>
           <ixz>0</ixz>
-          <iyy>0.145833</iyy>
+          <iyy>20.8333</iyy>
           <iyz>0</iyz>
-          <izz>0.125</izz>
+          <izz>31.25</izz>
         </inertia>
         <pose frame=''>0 0 0 0 -0 0</pose>
       </inertial>
@@ -1181,14 +1181,14 @@
     </link>
     <link name='link_4_clone'>
       <inertial>
-        <mass>1</mass>
+        <mass>1000</mass>
         <inertia>
-          <ixx>0.145833</ixx>
+          <ixx>20.8333</ixx>
           <ixy>0</ixy>
           <ixz>0</ixz>
-          <iyy>0.145833</iyy>
+          <iyy>20.8333</iyy>
           <iyz>0</iyz>
-          <izz>0.125</izz>
+          <izz>31.25</izz>
         </inertia>
         <pose frame=''>0 0 0 0 -0 0</pose>
       </inertial>
@@ -1281,14 +1281,14 @@
     </link>
     <link name='link_4_clone_0'>
       <inertial>
-        <mass>1</mass>
+        <mass>1000</mass>
         <inertia>
-          <ixx>0.145833</ixx>
+          <ixx>20.8333</ixx>
           <ixy>0</ixy>
           <ixz>0</ixz>
-          <iyy>0.145833</iyy>
+          <iyy>20.8333</iyy>
           <iyz>0</iyz>
-          <izz>0.125</izz>
+          <izz>31.25</izz>
         </inertia>
         <pose frame=''>0 0 0 0 -0 0</pose>
       </inertial>
@@ -1381,14 +1381,14 @@
     </link>
     <link name='link_4_clone_1'>
       <inertial>
-        <mass>1</mass>
+        <mass>1000</mass>
         <inertia>
-          <ixx>0.145833</ixx>
+          <ixx>20.8333</ixx>
           <ixy>0</ixy>
           <ixz>0</ixz>
-          <iyy>0.145833</iyy>
+          <iyy>20.8333</iyy>
           <iyz>0</iyz>
-          <izz>0.125</izz>
+          <izz>31.25</izz>
         </inertia>
         <pose frame=''>0 0 0 0 -0 0</pose>
       </inertial>

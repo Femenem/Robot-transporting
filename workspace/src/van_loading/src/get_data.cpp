@@ -11,15 +11,17 @@
 #define MAX_COUNT 180
 
 void handle_laser_data(const sensor_msgs::LaserScan ls){
-    std::cout << "Timestamp:" << ls.header.stamp << "\n";
+    std::ofstream file;
+    file.open("/home/matt/Documents/Robot-transporting/workspace/src/van_loading/data/latest_scan_data.txt", std::ios::app);
+    file << "Timestamp:" << ls.header.stamp << "\n";
     for (int i = 0; i < MAX_COUNT; ++i) {
         if(ls.ranges[i] > 30.0){
-            std::cout << 30.0 << ", ";
+            file << 30.0 << ", ";
         } else{
-            std::cout << ls.ranges[i] << ", ";
+            file << ls.ranges[i] << ", ";
         }
     }
-    std::cout << "\n";
+    file << "\n";
 }
 
 int main(int argc, char **argv) {

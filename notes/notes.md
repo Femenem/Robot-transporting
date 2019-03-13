@@ -94,13 +94,17 @@ Finished poster and handed in
 ### Week 11/03/19:
 
 Monday:
-
+Finally got MRPT to work with cmake.
 
 Tuesday:
-
+Tested ICP works with model and test data.
 
 Wednesday:
-
+Made ICP program that compares real time data with model.
+Fixed controllers (again).
+Improved moving robot program. (added quit button and reset button)
+Get data program now saves all recorded data to file rather than terminal output.
+Made van model heavier and aligned ramps better.
 
 Thursday:
 
