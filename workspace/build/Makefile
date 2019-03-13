@@ -1142,6 +1142,32 @@ van_loading_node/fast:
 	$(MAKE) -f van_loading/CMakeFiles/van_loading_node.dir/build.make van_loading/CMakeFiles/van_loading_node.dir/build
 .PHONY : van_loading_node/fast
 
+#=============================================================================
+# Target rules for targets named test_icp_node
+
+# Build rule for target.
+test_icp_node: cmake_check_build_system
+	$(MAKE) -f CMakeFiles/Makefile2 test_icp_node
+.PHONY : test_icp_node
+
+# fast build rule for target.
+test_icp_node/fast:
+	$(MAKE) -f van_loading/CMakeFiles/test_icp_node.dir/build.make van_loading/CMakeFiles/test_icp_node.dir/build
+.PHONY : test_icp_node/fast
+
+#=============================================================================
+# Target rules for targets named compare_against_model_node
+
+# Build rule for target.
+compare_against_model_node: cmake_check_build_system
+	$(MAKE) -f CMakeFiles/Makefile2 compare_against_model_node
+.PHONY : compare_against_model_node
+
+# fast build rule for target.
+compare_against_model_node/fast:
+	$(MAKE) -f van_loading/CMakeFiles/compare_against_model_node.dir/build.make van_loading/CMakeFiles/compare_against_model_node.dir/build
+.PHONY : compare_against_model_node/fast
+
 # Help Target
 help:
 	@echo "The following are some of the valid targets for this Makefile:"
@@ -1230,6 +1256,8 @@ help:
 	@echo "... sensor_msgs_generate_messages_py"
 	@echo "... get_data_node"
 	@echo "... van_loading_node"
+	@echo "... test_icp_node"
+	@echo "... compare_against_model_node"
 .PHONY : help
 
 

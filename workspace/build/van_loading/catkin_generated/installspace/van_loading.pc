@@ -4,5 +4,5 @@ Name: van_loading
 Description: Description of van_loading
 Version: 0.0.0
 Cflags: 
-Libs: -L/home/matt/Documents/Robot-transporting/workspace/install/lib -lvan_loading
+Libs: -L/home/matt/Documents/Robot-transporting/workspace/install/lib -lvan_loading -llibs/mrpt
 Requires: hardware_interface message_runtime roscpp std_msgs

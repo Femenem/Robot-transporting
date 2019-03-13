@@ -14,6 +14,9 @@
 # EXTERNAL cache entries
 ########################
 
+//Path to a file.
+BOOST_DIR:PATH=/usr/include
+
 //The threading library used by boost-thread
 BOOST_THREAD_LIBRARY:FILEPATH=/usr/lib/x86_64-linux-gnu/libpthread.so
 
@@ -278,6 +281,9 @@ EMPY_EXECUTABLE:FILEPATH=/usr/bin/empy
 //Empy script
 EMPY_SCRIPT:STRING=/usr/bin/empy
 
+//The directory containing a CMake configuration file for Eigen3.
+Eigen3_DIR:PATH=/usr/lib/cmake/eigen3
+
 //The directory containing a CMake configuration file for GMock.
 GMock_DIR:PATH=GMock_DIR-NOTFOUND
 
@@ -308,8 +314,29 @@ LSB_FOUND:BOOL=TRUE
 //Path to a program.
 LSB_RELEASE_EXECUTABLE:FILEPATH=/usr/bin/lsb_release
 
+//The directory containing a CMake configuration file for MRPT.
+MRPT_DIR:PATH=/opt/ros/melodic/share/mrpt
+
 //Path to a program.
 NOSETESTS:FILEPATH=/usr/bin/nosetests-2.7
+
+//CXX compiler flags for OpenMP parallelization
+OpenMP_CXX_FLAGS:STRING=-fopenmp
+
+//CXX compiler libraries for OpenMP parallelization
+OpenMP_CXX_LIB_NAMES:STRING=gomp;pthread
+
+//C compiler flags for OpenMP parallelization
+OpenMP_C_FLAGS:STRING=-fopenmp
+
+//C compiler libraries for OpenMP parallelization
+OpenMP_C_LIB_NAMES:STRING=gomp;pthread
+
+//Path to the gomp library for OpenMP
+OpenMP_gomp_LIBRARY:FILEPATH=/usr/lib/gcc/x86_64-linux-gnu/7/libgomp.so
+
+//Path to the pthread library for OpenMP
+OpenMP_pthread_LIBRARY:FILEPATH=/usr/lib/x86_64-linux-gnu/libpthread.so
 
 //Path to a program.
 PYTHON_EXECUTABLE:FILEPATH=/usr/bin/python2
@@ -328,6 +355,9 @@ RT_LIBRARY:FILEPATH=/usr/lib/x86_64-linux-gnu/librt.so
 
 //Enable debian style python package layout
 SETUPTOOLS_DEB_LAYOUT:BOOL=ON
+
+//Enable OpenMP?
+USE_OPENMP:BOOL=ON
 
 //Path to a file.
 _gmock_INCLUDES:FILEPATH=/usr/include/gmock/gmock.h
@@ -456,11 +486,86 @@ message_generation_DIR:PATH=/opt/ros/melodic/share/message_generation/cmake
 //The directory containing a CMake configuration file for message_runtime.
 message_runtime_DIR:PATH=/opt/ros/melodic/share/message_runtime/cmake
 
+//The directory containing a CMake configuration file for mrpt-bayes.
+mrpt-bayes_DIR:PATH=/home/matt/Documents/Robot-transporting/workspace/src/van_loading/libs/mrpt
+
+//The directory containing a CMake configuration file for mrpt-config.
+mrpt-config_DIR:PATH=/home/matt/Documents/Robot-transporting/workspace/src/van_loading/libs/mrpt
+
+//The directory containing a CMake configuration file for mrpt-containers.
+mrpt-containers_DIR:PATH=/home/matt/Documents/Robot-transporting/workspace/src/van_loading/libs/mrpt
+
+//The directory containing a CMake configuration file for mrpt-core.
+mrpt-core_DIR:PATH=/home/matt/Documents/Robot-transporting/workspace/src/van_loading/libs/mrpt
+
+//The directory containing a CMake configuration file for mrpt-db.
+mrpt-db_DIR:PATH=/home/matt/Documents/Robot-transporting/workspace/src/van_loading/libs/mrpt
+
+//The directory containing a CMake configuration file for mrpt-expr.
+mrpt-expr_DIR:PATH=/home/matt/Documents/Robot-transporting/workspace/src/van_loading/libs/mrpt
+
+//The directory containing a CMake configuration file for mrpt-graphs.
+mrpt-graphs_DIR:PATH=/home/matt/Documents/Robot-transporting/workspace/src/van_loading/libs/mrpt
+
+//The directory containing a CMake configuration file for mrpt-img.
+mrpt-img_DIR:PATH=/home/matt/Documents/Robot-transporting/workspace/src/van_loading/libs/mrpt
+
+//The directory containing a CMake configuration file for mrpt-io.
+mrpt-io_DIR:PATH=/home/matt/Documents/Robot-transporting/workspace/src/van_loading/libs/mrpt
+
+//The directory containing a CMake configuration file for mrpt-kinematics.
+mrpt-kinematics_DIR:PATH=/home/matt/Documents/Robot-transporting/workspace/src/van_loading/libs/mrpt
+
+//The directory containing a CMake configuration file for mrpt-maps.
+mrpt-maps_DIR:PATH=/home/matt/Documents/Robot-transporting/workspace/src/van_loading/libs/mrpt
+
+//The directory containing a CMake configuration file for mrpt-math.
+mrpt-math_DIR:PATH=/home/matt/Documents/Robot-transporting/workspace/src/van_loading/libs/mrpt
+
+//The directory containing a CMake configuration file for mrpt-nanoflann.
+mrpt-nanoflann_DIR:PATH=/home/matt/Documents/Robot-transporting/workspace/src/van_loading/libs/mrpt
+
+//The directory containing a CMake configuration file for mrpt-nav.
+mrpt-nav_DIR:PATH=/home/matt/Documents/Robot-transporting/workspace/src/van_loading/libs/mrpt
+
+//The directory containing a CMake configuration file for mrpt-obs.
+mrpt-obs_DIR:PATH=/home/matt/Documents/Robot-transporting/workspace/src/van_loading/libs/mrpt
+
+//The directory containing a CMake configuration file for mrpt-opengl.
+mrpt-opengl_DIR:PATH=/home/matt/Documents/Robot-transporting/workspace/src/van_loading/libs/mrpt
+
+//The directory containing a CMake configuration file for mrpt-poses.
+mrpt-poses_DIR:PATH=/home/matt/Documents/Robot-transporting/workspace/src/van_loading/libs/mrpt
+
+//The directory containing a CMake configuration file for mrpt-random.
+mrpt-random_DIR:PATH=/home/matt/Documents/Robot-transporting/workspace/src/van_loading/libs/mrpt
+
+//The directory containing a CMake configuration file for mrpt-rtti.
+mrpt-rtti_DIR:PATH=/home/matt/Documents/Robot-transporting/workspace/src/van_loading/libs/mrpt
+
+//The directory containing a CMake configuration file for mrpt-serialization.
+mrpt-serialization_DIR:PATH=/home/matt/Documents/Robot-transporting/workspace/src/van_loading/libs/mrpt
+
 //The directory containing a CMake configuration file for mrpt-slam.
-mrpt-slam_DIR:PATH=mrpt-slam_DIR-NOTFOUND
+mrpt-slam_DIR:PATH=/home/matt/Documents/Robot-transporting/workspace/src/van_loading/libs/mrpt
+
+//The directory containing a CMake configuration file for mrpt-system.
+mrpt-system_DIR:PATH=/home/matt/Documents/Robot-transporting/workspace/src/van_loading/libs/mrpt
+
+//The directory containing a CMake configuration file for mrpt-tfest.
+mrpt-tfest_DIR:PATH=/home/matt/Documents/Robot-transporting/workspace/src/van_loading/libs/mrpt
+
+//The directory containing a CMake configuration file for mrpt-typemeta.
+mrpt-typemeta_DIR:PATH=/home/matt/Documents/Robot-transporting/workspace/src/van_loading/libs/mrpt
+
+//The directory containing a CMake configuration file for mrpt-vision.
+mrpt-vision_DIR:PATH=/home/matt/Documents/Robot-transporting/workspace/src/van_loading/libs/mrpt
 
 //The directory containing a CMake configuration file for mrpt.
 mrpt_DIR:PATH=mrpt_DIR-NOTFOUND
+
+//Path to a library.
+mrpt_LIBRARIES:FILEPATH=mrpt_LIBRARIES-NOTFOUND
 
 //The directory containing a CMake configuration file for nav_msgs.
 nav_msgs_DIR:PATH=/opt/ros/melodic/share/nav_msgs/cmake
@@ -708,6 +813,14 @@ CMAKE_STRIP-ADVANCED:INTERNAL=1
 CMAKE_UNAME:INTERNAL=/bin/uname
 //ADVANCED property for variable: CMAKE_VERBOSE_MAKEFILE
 CMAKE_VERBOSE_MAKEFILE-ADVANCED:INTERNAL=1
+//ADVANCED property for variable: Eigen3_DIR
+Eigen3_DIR-ADVANCED:INTERNAL=1
+//Details about finding OpenMP
+FIND_PACKAGE_MESSAGE_DETAILS_OpenMP:INTERNAL=[TRUE][TRUE][c ][v()]
+//Details about finding OpenMP_C
+FIND_PACKAGE_MESSAGE_DETAILS_OpenMP_C:INTERNAL=[-fopenmp][/usr/lib/gcc/x86_64-linux-gnu/7/libgomp.so][/usr/lib/x86_64-linux-gnu/libpthread.so][v()]
+//Details about finding OpenMP_CXX
+FIND_PACKAGE_MESSAGE_DETAILS_OpenMP_CXX:INTERNAL=[-fopenmp][/usr/lib/gcc/x86_64-linux-gnu/7/libgomp.so][/usr/lib/x86_64-linux-gnu/libpthread.so][v()]
 //Details about finding PythonInterp
 FIND_PACKAGE_MESSAGE_DETAILS_PythonInterp:INTERNAL=[/usr/bin/python2][v2.7.15()]
 //Details about finding Threads
@@ -732,6 +845,30 @@ GTEST_LIBRARY_DEBUG-ADVANCED:INTERNAL=1
 GTEST_MAIN_LIBRARY-ADVANCED:INTERNAL=1
 //ADVANCED property for variable: GTEST_MAIN_LIBRARY_DEBUG
 GTEST_MAIN_LIBRARY_DEBUG-ADVANCED:INTERNAL=1
+//Result of TRY_COMPILE
+OpenMP_COMPILE_RESULT_CXX_fopenmp:INTERNAL=TRUE
+//Result of TRY_COMPILE
+OpenMP_COMPILE_RESULT_C_fopenmp:INTERNAL=TRUE
+//ADVANCED property for variable: OpenMP_CXX_FLAGS
+OpenMP_CXX_FLAGS-ADVANCED:INTERNAL=1
+//ADVANCED property for variable: OpenMP_CXX_LIB_NAMES
+OpenMP_CXX_LIB_NAMES-ADVANCED:INTERNAL=1
+//CXX compiler's OpenMP specification date
+OpenMP_CXX_SPEC_DATE:INTERNAL=201511
+//ADVANCED property for variable: OpenMP_C_FLAGS
+OpenMP_C_FLAGS-ADVANCED:INTERNAL=1
+//ADVANCED property for variable: OpenMP_C_LIB_NAMES
+OpenMP_C_LIB_NAMES-ADVANCED:INTERNAL=1
+//C compiler's OpenMP specification date
+OpenMP_C_SPEC_DATE:INTERNAL=201511
+//Result of TRY_COMPILE
+OpenMP_SPECTEST_CXX_:INTERNAL=TRUE
+//Result of TRY_COMPILE
+OpenMP_SPECTEST_C_:INTERNAL=TRUE
+//ADVANCED property for variable: OpenMP_gomp_LIBRARY
+OpenMP_gomp_LIBRARY-ADVANCED:INTERNAL=1
+//ADVANCED property for variable: OpenMP_pthread_LIBRARY
+OpenMP_pthread_LIBRARY-ADVANCED:INTERNAL=1
 //ADVANCED property for variable: PYTHON_EXECUTABLE
 PYTHON_EXECUTABLE-ADVANCED:INTERNAL=1
 //This needs to be in PYTHONPATH when 'setup.py install' is called.
@@ -750,4 +887,50 @@ _Boost_LIBRARY_DIR_RELEASE_LAST:INTERNAL=/usr/lib/x86_64-linux-gnu
 _Boost_NAMESPACE_LAST:INTERNAL=boost
 //Last used Boost_USE_MULTITHREADED value.
 _Boost_USE_MULTITHREADED_LAST:INTERNAL=TRUE
+//ADVANCED property for variable: mrpt-bayes_DIR
+mrpt-bayes_DIR-ADVANCED:INTERNAL=1
+//ADVANCED property for variable: mrpt-config_DIR
+mrpt-config_DIR-ADVANCED:INTERNAL=1
+//ADVANCED property for variable: mrpt-containers_DIR
+mrpt-containers_DIR-ADVANCED:INTERNAL=1
+//ADVANCED property for variable: mrpt-core_DIR
+mrpt-core_DIR-ADVANCED:INTERNAL=1
+//ADVANCED property for variable: mrpt-db_DIR
+mrpt-db_DIR-ADVANCED:INTERNAL=1
+//ADVANCED property for variable: mrpt-expr_DIR
+mrpt-expr_DIR-ADVANCED:INTERNAL=1
+//ADVANCED property for variable: mrpt-graphs_DIR
+mrpt-graphs_DIR-ADVANCED:INTERNAL=1
+//ADVANCED property for variable: mrpt-img_DIR
+mrpt-img_DIR-ADVANCED:INTERNAL=1
+//ADVANCED property for variable: mrpt-io_DIR
+mrpt-io_DIR-ADVANCED:INTERNAL=1
+//ADVANCED property for variable: mrpt-kinematics_DIR
+mrpt-kinematics_DIR-ADVANCED:INTERNAL=1
+//ADVANCED property for variable: mrpt-maps_DIR
+mrpt-maps_DIR-ADVANCED:INTERNAL=1
+//ADVANCED property for variable: mrpt-math_DIR
+mrpt-math_DIR-ADVANCED:INTERNAL=1
+//ADVANCED property for variable: mrpt-nanoflann_DIR
+mrpt-nanoflann_DIR-ADVANCED:INTERNAL=1
+//ADVANCED property for variable: mrpt-obs_DIR
+mrpt-obs_DIR-ADVANCED:INTERNAL=1
+//ADVANCED property for variable: mrpt-opengl_DIR
+mrpt-opengl_DIR-ADVANCED:INTERNAL=1
+//ADVANCED property for variable: mrpt-poses_DIR
+mrpt-poses_DIR-ADVANCED:INTERNAL=1
+//ADVANCED property for variable: mrpt-random_DIR
+mrpt-random_DIR-ADVANCED:INTERNAL=1
+//ADVANCED property for variable: mrpt-rtti_DIR
+mrpt-rtti_DIR-ADVANCED:INTERNAL=1
+//ADVANCED property for variable: mrpt-serialization_DIR
+mrpt-serialization_DIR-ADVANCED:INTERNAL=1
+//ADVANCED property for variable: mrpt-system_DIR
+mrpt-system_DIR-ADVANCED:INTERNAL=1
+//ADVANCED property for variable: mrpt-tfest_DIR
+mrpt-tfest_DIR-ADVANCED:INTERNAL=1
+//ADVANCED property for variable: mrpt-typemeta_DIR
+mrpt-typemeta_DIR-ADVANCED:INTERNAL=1
+//ADVANCED property for variable: mrpt-vision_DIR
+mrpt-vision_DIR-ADVANCED:INTERNAL=1
 

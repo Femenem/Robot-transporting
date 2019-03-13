@@ -1,2 +1,0 @@
-find_path(mrpt-slam_INCLUDE_DIR PATHS "/home/matt/Documents/Robot-transporting/libs/mrpt" NO_DEFAULT_PATH)
-find_library(mrpt-slam_LIBRARY PATHS "/home/matt/Documents/Robot-transporting/libs/mrpt" NO_DEFAULT_PATH)

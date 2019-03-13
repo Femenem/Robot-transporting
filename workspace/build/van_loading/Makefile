@@ -68,17 +68,15 @@ install/strip/fast: preinstall/fast
 	/usr/bin/cmake -DCMAKE_INSTALL_DO_STRIP=1 -P cmake_install.cmake
 .PHONY : install/strip/fast
 
-# Special rule for the target install
-install: preinstall
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "Install the project..."
-	/usr/bin/cmake -P cmake_install.cmake
-.PHONY : install
+# Special rule for the target list_install_components
+list_install_components:
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "Available install components are: \"Unspecified\""
+.PHONY : list_install_components
 
-# Special rule for the target install
-install/fast: preinstall/fast
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "Install the project..."
-	/usr/bin/cmake -P cmake_install.cmake
-.PHONY : install/fast
+# Special rule for the target list_install_components
+list_install_components/fast: list_install_components
+
+.PHONY : list_install_components/fast
 
 # Special rule for the target install/local
 install/local: preinstall
@@ -103,16 +101,6 @@ test/fast: test
 
 .PHONY : test/fast
 
-# Special rule for the target list_install_components
-list_install_components:
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "Available install components are: \"Unspecified\""
-.PHONY : list_install_components
-
-# Special rule for the target list_install_components
-list_install_components/fast: list_install_components
-
-.PHONY : list_install_components/fast
-
 # Special rule for the target edit_cache
 edit_cache:
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "Running CMake cache editor..."
@@ -123,6 +111,18 @@ edit_cache:
 edit_cache/fast: edit_cache
 
 .PHONY : edit_cache/fast
+
+# Special rule for the target install
+install: preinstall
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "Install the project..."
+	/usr/bin/cmake -P cmake_install.cmake
+.PHONY : install
+
+# Special rule for the target install
+install/fast: preinstall/fast
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "Install the project..."
+	/usr/bin/cmake -P cmake_install.cmake
+.PHONY : install/fast
 
 # Special rule for the target rebuild_cache
 rebuild_cache:
@@ -197,6 +197,63 @@ van_loading_node/fast:
 	cd /home/matt/Documents/Robot-transporting/workspace/build && $(MAKE) -f van_loading/CMakeFiles/van_loading_node.dir/build.make van_loading/CMakeFiles/van_loading_node.dir/build
 .PHONY : van_loading_node/fast
 
+# Convenience name for target.
+van_loading/CMakeFiles/test_icp_node.dir/rule:
+	cd /home/matt/Documents/Robot-transporting/workspace/build && $(MAKE) -f CMakeFiles/Makefile2 van_loading/CMakeFiles/test_icp_node.dir/rule
+.PHONY : van_loading/CMakeFiles/test_icp_node.dir/rule
+
+# Convenience name for target.
+test_icp_node: van_loading/CMakeFiles/test_icp_node.dir/rule
+
+.PHONY : test_icp_node
+
+# fast build rule for target.
+test_icp_node/fast:
+	cd /home/matt/Documents/Robot-transporting/workspace/build && $(MAKE) -f van_loading/CMakeFiles/test_icp_node.dir/build.make van_loading/CMakeFiles/test_icp_node.dir/build
+.PHONY : test_icp_node/fast
+
+# Convenience name for target.
+van_loading/CMakeFiles/compare_against_model_node.dir/rule:
+	cd /home/matt/Documents/Robot-transporting/workspace/build && $(MAKE) -f CMakeFiles/Makefile2 van_loading/CMakeFiles/compare_against_model_node.dir/rule
+.PHONY : van_loading/CMakeFiles/compare_against_model_node.dir/rule
+
+# Convenience name for target.
+compare_against_model_node: van_loading/CMakeFiles/compare_against_model_node.dir/rule
+
+.PHONY : compare_against_model_node
+
+# fast build rule for target.
+compare_against_model_node/fast:
+	cd /home/matt/Documents/Robot-transporting/workspace/build && $(MAKE) -f van_loading/CMakeFiles/compare_against_model_node.dir/build.make van_loading/CMakeFiles/compare_against_model_node.dir/build
+.PHONY : compare_against_model_node/fast
+
+src/compare_against_model.o: src/compare_against_model.cpp.o
+
+.PHONY : src/compare_against_model.o
+
+# target to build an object file
+src/compare_against_model.cpp.o:
+	cd /home/matt/Documents/Robot-transporting/workspace/build && $(MAKE) -f van_loading/CMakeFiles/compare_against_model_node.dir/build.make van_loading/CMakeFiles/compare_against_model_node.dir/src/compare_against_model.cpp.o
+.PHONY : src/compare_against_model.cpp.o
+
+src/compare_against_model.i: src/compare_against_model.cpp.i
+
+.PHONY : src/compare_against_model.i
+
+# target to preprocess a source file
+src/compare_against_model.cpp.i:
+	cd /home/matt/Documents/Robot-transporting/workspace/build && $(MAKE) -f van_loading/CMakeFiles/compare_against_model_node.dir/build.make van_loading/CMakeFiles/compare_against_model_node.dir/src/compare_against_model.cpp.i
+.PHONY : src/compare_against_model.cpp.i
+
+src/compare_against_model.s: src/compare_against_model.cpp.s
+
+.PHONY : src/compare_against_model.s
+
+# target to generate assembly for a file
+src/compare_against_model.cpp.s:
+	cd /home/matt/Documents/Robot-transporting/workspace/build && $(MAKE) -f van_loading/CMakeFiles/compare_against_model_node.dir/build.make van_loading/CMakeFiles/compare_against_model_node.dir/src/compare_against_model.cpp.s
+.PHONY : src/compare_against_model.cpp.s
+
 src/get_data.o: src/get_data.cpp.o
 
 .PHONY : src/get_data.o
@@ -251,6 +308,33 @@ src/idris_sim.cpp.s:
 	cd /home/matt/Documents/Robot-transporting/workspace/build && $(MAKE) -f van_loading/CMakeFiles/van_loading_node.dir/build.make van_loading/CMakeFiles/van_loading_node.dir/src/idris_sim.cpp.s
 .PHONY : src/idris_sim.cpp.s
 
+src/test_icp.o: src/test_icp.cpp.o
+
+.PHONY : src/test_icp.o
+
+# target to build an object file
+src/test_icp.cpp.o:
+	cd /home/matt/Documents/Robot-transporting/workspace/build && $(MAKE) -f van_loading/CMakeFiles/test_icp_node.dir/build.make van_loading/CMakeFiles/test_icp_node.dir/src/test_icp.cpp.o
+.PHONY : src/test_icp.cpp.o
+
+src/test_icp.i: src/test_icp.cpp.i
+
+.PHONY : src/test_icp.i
+
+# target to preprocess a source file
+src/test_icp.cpp.i:
+	cd /home/matt/Documents/Robot-transporting/workspace/build && $(MAKE) -f van_loading/CMakeFiles/test_icp_node.dir/build.make van_loading/CMakeFiles/test_icp_node.dir/src/test_icp.cpp.i
+.PHONY : src/test_icp.cpp.i
+
+src/test_icp.s: src/test_icp.cpp.s
+
+.PHONY : src/test_icp.s
+
+# target to generate assembly for a file
+src/test_icp.cpp.s:
+	cd /home/matt/Documents/Robot-transporting/workspace/build && $(MAKE) -f van_loading/CMakeFiles/test_icp_node.dir/build.make van_loading/CMakeFiles/test_icp_node.dir/src/test_icp.cpp.s
+.PHONY : src/test_icp.cpp.s
+
 # Help Target
 help:
 	@echo "The following are some of the valid targets for this Makefile:"
@@ -258,20 +342,28 @@ help:
 	@echo "... clean"
 	@echo "... depend"
 	@echo "... install/strip"
-	@echo "... install"
+	@echo "... list_install_components"
 	@echo "... get_data_node"
 	@echo "... install/local"
 	@echo "... test"
-	@echo "... list_install_components"
 	@echo "... van_loading_node"
 	@echo "... edit_cache"
+	@echo "... install"
+	@echo "... test_icp_node"
 	@echo "... rebuild_cache"
+	@echo "... compare_against_model_node"
+	@echo "... src/compare_against_model.o"
+	@echo "... src/compare_against_model.i"
+	@echo "... src/compare_against_model.s"
 	@echo "... src/get_data.o"
 	@echo "... src/get_data.i"
 	@echo "... src/get_data.s"
 	@echo "... src/idris_sim.o"
 	@echo "... src/idris_sim.i"
 	@echo "... src/idris_sim.s"
+	@echo "... src/test_icp.o"
+	@echo "... src/test_icp.i"
+	@echo "... src/test_icp.s"
 .PHONY : help
 
 

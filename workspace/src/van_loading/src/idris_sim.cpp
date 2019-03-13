@@ -28,7 +28,7 @@
 
 // Uncomment the below to compile the bits of code that allow us to still steer
 // the robot despite the bug in gazebo that has to do with position controllers.
-//#define POSCTRL
+#define POSCTRL
 
 class idris_driver
 {
@@ -720,7 +720,7 @@ int main(int argc, char **argv)
   ros::init(argc, argv, "van_loading");
   ros::NodeHandle n;
   //Construct our node..
-    idris_driver van_loading(n);
+    idris_driver idris_sim(n);
 
   ros::spin();
 }

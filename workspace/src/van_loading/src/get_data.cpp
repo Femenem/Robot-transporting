@@ -29,7 +29,6 @@ int main(int argc, char **argv) {
     ros::Rate loopRate(50);
     ros::Subscriber laserSub = nh.subscribe("/van_loading/front_laser/scan", 1, handle_laser_data);
     while(ros::ok()){
-
         ros::spinOnce();
         loopRate.sleep();
     }

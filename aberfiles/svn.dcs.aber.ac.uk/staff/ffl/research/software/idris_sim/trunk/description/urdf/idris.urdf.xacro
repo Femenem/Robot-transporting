@@ -1,0 +1,361 @@
+<?xml version="1.0"?>
+<robot
+  xmlns:xacro="http://www.ros.org/wiki/xacro"
+  name="idris_sim">
+
+  <!--
+xmlns:gazebo="http://playerstage.sourceforge.net/gazebo/xmlschema/#gz"
+  xmlns:model="http://playerstage.sourceforge.net/gazebo/xmlschema/#model"
+  xmlns:sensor="http://playerstage.sourceforge.net/gazebo/xmlschema/#sensor"
+  xmlns:body="http://playerstage.sourceforge.net/gazebo/xmlschema/#body"
+  xmlns:geom="http://playerstage.sourceforge.net/gazebo/xmlschema/#geom"
+  xmlns:joint="http://playerstage.sourceforge.net/gazebo/xmlschema/#joint"
+  xmlns:controller="http://playerstage.sourceforge.net/gazebo/xmlschema/#controller"
+  xmlns:interface="http://playerstage.sourceforge.net/gazebo/xmlschema/#interface"
+  xmlns:rendering="http://playerstage.sourceforge.net/gazebo/xmlschema/#rendering"
+  xmlns:physics="http://playerstage.sourceforge.net/gazebo/xmlschema/#physics"
+-->
+  <xacro:property name="chassis_length" value="1.5" />
+  <xacro:property name="chassis_width" value="0.5" />
+  <xacro:property name="chassis_height" value="0.5" />
+  <xacro:property name="wheel_width" value="0.2" />
+  <xacro:property name="wheel_radius" value="0.4" />
+  <xacro:property name="ground_clearance" value="0.25" />
+  <xacro:property name="chassis_to_wheel" value="0.35" />
+  <xacro:property name="axle_separation" value="1.21" />
+  <xacro:property name="axle_width" value="1.2" />
+  
+  <xacro:property name="PI" value="3.14159265359" />
+
+  <material name="Grey">
+    <color rgba="0.8 0.8 0.8 1.0"/>
+  </material>
+  <material name="Black">
+    <color rgba="0 0 0 1.0"/>
+  </material>
+  <material name="Yellow">
+    <color rgba="1.0 1.0 0 1.0"/>
+  </material>
+
+  <!-- 
+  This creates the wheels and their axles.
+  
+  prefix is to give the wheels different names: front_right, front_left, rear_right and rear_left
+  front is 1 for front and -1 for rear
+  side is 1 for right, -1 for left
+  -->
+  <xacro:macro name="wheel" params="prefix front side">
+    <!-- Wheel -->
+    <link name="${prefix}_wheel">
+     <collision>
+       <origin rpy="${pi/2} 0 0" />
+       <geometry>
+         <cylinder length="${wheel_width}" radius="${wheel_radius}" />
+       </geometry>
+     </collision>
+     <visual>
+        <origin rpy="${pi/2} 0 0" />
+        <geometry>
+          <cylinder length="${wheel_width}" radius="${wheel_radius}" />
+        </geometry>
+        <material name="Black"/>
+      </visual>
+      <inertial>
+        <origin xyz="0 0 0" rpy="0 0 0"/>
+        <mass value="20"/>
+        <inertia
+          ixx="20.0" ixy="0.0" ixz="0.0"
+                    iyy="20.0" iyz="0.0"
+                              izz="20.0"/>
+      </inertial>
+    </link>
+    <gazebo reference="${prefix}_wheel">
+      <kp>1000000.0</kp>
+      <kd>100.0</kd>
+      <mu1>1.0</mu1>
+      <mu2>1.0</mu2>
+      <material>Gazebo/Black</material>
+    </gazebo>
+      
+    <!-- Axle -->
+    <link name="${prefix}_axle">
+      <visual>
+        <origin rpy="${pi/2} 0 0" xyz="0 ${side * wheel_width} 0"/>
+        <geometry>
+          <cylinder length="${wheel_width}" radius="0.1" />
+        </geometry>
+        <material name="Grey"/>
+      </visual>
+      <inertial>
+        <origin xyz="0 0 0" rpy="0 0 0"/>
+        <mass value="1"/>
+        <inertia
+          ixx="1.0" ixy="0.0"  ixz="0.0"
+                     iyy="1.0" iyz="0.0"
+                                izz="1.0"/>
+      </inertial>
+    </link>
+    <gazebo reference="${prefix}_axle">
+      <selfCollide>false</selfCollide>
+      <material>Gazebo/Grey</material>
+    </gazebo>
+    <joint name="chassis_to_${prefix}_axle_joint" type="revolute">
+      <parent link="chassis" />
+      <child link="${prefix}_axle" />
+      <limit lower="${-20*pi/180}" upper="${20*pi/180}"
+             effort="1000" velocity="0.5" />
+      <origin
+        xyz="${front * axle_separation / 2.0}
+             ${-side * axle_width / 2.0}
+             ${-(chassis_height / 2.0 + 0.1)}"
+      />
+      <axis xyz="0 0 -1"/>
+    </joint>
+
+    <joint name="${prefix}_axle_to_wheel_joint" type="continuous">
+      <parent link="${prefix}_axle"/>
+      <child link="${prefix}_wheel"/>
+      <origin xyz="0 0 0" />
+      <axis xyz="0 1 0"/>
+    </joint>
+
+    <transmission name="trans_${prefix}_steering">
+      <type>transmission_interface/SimpleTransmission</type>
+      <joint name="chassis_to_${prefix}_axle_joint">
+
+        <hardwareInterface>hardware_interface/PositionJointInterface</hardwareInterface>
+<!--
+        <hardwareInterface>hardware_interface/EffortJointInterface</hardwareInterface>
+-->
+      </joint>
+      <actuator name="${prefix}_steering_motor">
+        <mechanicalReduction>1</mechanicalReduction>
+      </actuator>
+    </transmission>
+
+    <transmission name="trans_${prefix}_wheel">
+      <type>transmission_interface/SimpleTransmission</type>
+      <joint name="${prefix}_axle_to_wheel_joint">
+        <hardwareInterface>hardware_interface/VelocityJointInterface</hardwareInterface>
+      </joint>
+      <actuator name="${prefix}_wheel_motor">
+        <mechanicalReduction>1</mechanicalReduction>
+      </actuator>
+    </transmission>
+  </xacro:macro>
+
+  <!-- 
+  This creates the lasers.
+  
+  prefix is to give the lasers different names: front, rear
+  front is 1 for front and -1 for rear
+  -->
+  <xacro:macro name="laser" params="prefix front">
+    <link name="${prefix}_laser_link">
+      <collision>
+        <origin xyz="0 0 0" rpy="0 0 0"/>
+        <geometry>
+          <box size="0.1 0.1 0.1"/>
+        </geometry>
+      </collision>
+<!--
+      <visual>
+        <origin xyz="0 0 0" rpy="0 0 0"/>
+        <geometry>
+          <mesh filename="$(find idris_sim)/description/meshes/hokuyo.dae"/>
+        </geometry>
+      </visual>
+-->
+      <inertial>
+        <mass value="1e-5" />
+        <origin xyz="0 0 0" rpy="0 0 0"/>
+        <inertia ixx="1e-6" ixy="0" ixz="0" iyy="1e-6" iyz="0" izz="1e-6" />
+      </inertial>
+    </link>
+    <gazebo reference="${prefix}_laser_link">
+      <sensor type="ray" name="${prefix}_laser_sensor">
+        <pose>0 0 0 0 0 0</pose>
+        <visualize>true</visualize>
+        <update_rate>40</update_rate>
+        <ray>
+          <scan>
+            <horizontal>
+              <samples>180</samples>
+              <resolution>1</resolution>
+              <min_angle>${-PI / 2}</min_angle>
+              <max_angle>${PI / 2}</max_angle>
+            </horizontal>
+          </scan>
+          <range>
+            <min>0.10</min>
+            <max>30.0</max>
+            <resolution>0.01</resolution>
+          </range>
+          <noise>
+            <type>gaussian</type>
+            <mean>0.0</mean>
+            <stddev>0.01</stddev>
+          </noise>
+        </ray>
+        <plugin name="gazebo_ros_laser_controller"
+                filename="libgazebo_ros_laser.so">
+          <topicName>/idris_sim/${prefix}_laser/scan</topicName>
+          <frameName>${prefix}_laser_link</frameName>
+        </plugin>
+      </sensor>
+    </gazebo>
+
+    <joint name="${prefix}_laser_joint" type="fixed">
+      <axis xyz="0 1 0" />
+      <xacro:if value="${front == 1}">
+        <origin xyz="${front * (chassis_length*0.5+0.45)} 0 ${-chassis_height*0.5}"
+                rpy="0 0 0"/>
+      </xacro:if>
+      <xacro:if value="${front == -1}">
+        <origin xyz="${front * (chassis_length*0.5+0.45)} 0 ${-chassis_height*0.5}"
+                rpy="0 0 ${PI}"/>
+      </xacro:if>
+      <parent link="base_link"/>
+      <child link="${prefix}_laser_link"/>
+    </joint>
+  </xacro:macro>
+
+  
+  <!--
+  Base link to act as a reference.
+  -->
+  <link name="base_link"/>
+  <gazebo reference="base_link">
+  </gazebo>
+  
+  <!--
+  Main chassis
+  -->
+  <link name="chassis">
+    <collision>
+    <!--      <origin xyz="0 0 ${chassis_height + ground_clearance}"/>-->
+      <origin xyz="0 0 0"/>
+      <geometry>
+        <box size="${chassis_length} ${chassis_width} ${chassis_height}"/>
+      </geometry>
+    </collision>
+    <visual>
+      <!--      <origin xyz="0 0 ${chassis_height + ground_clearance}"/>-->
+      <origin xyz="0 0 0"/>
+      <geometry>
+        <box size="${chassis_length} ${chassis_width} ${chassis_height}"/>
+      </geometry>
+      <material name="Grey"/>
+    </visual>
+    <inertial>
+      <origin xyz="0 0 0" rpy="0 0 0"/>
+      <mass value="300"/>
+      <inertia
+        ixx="300" ixy="0.0" ixz="0.0"
+                  iyy="300" iyz="0.0"
+                            izz="300"/>
+    </inertial>
+  </link>
+  <gazebo reference="chassis">
+    <material>Gazebo/Grey</material>
+  </gazebo>
+
+  <joint name="base_link_to_chassis_joint" type="fixed">
+    <parent link="base_link"/>
+    <child link="chassis"/>
+  </joint>
+
+  <!-- Keyboard -->
+  <link name="keyboard">
+    <collision>
+      <origin xyz="0 0 0" />
+      <geometry>
+        <box size="0.1 0.4 0.01" />
+      </geometry>
+    </collision>
+    <visual>
+      <origin xyz="0 0 0" />
+      <geometry>
+        <box size="0.1 0.4 0.01" />
+      </geometry>
+      <material name="Yellow"/>
+    </visual>
+    <inertial>
+      <origin xyz="0 0 0" rpy="0 0 0"/>
+      <mass value="0.1"/>
+      <inertia
+        ixx="1" ixy="0.0" ixz="0.0"
+                  iyy="1" iyz="0.0"
+                            izz="1"/>
+    </inertial>
+  </link>
+  <gazebo reference="keyboard">
+    <material>Gazebo/Yellow</material>
+  </gazebo>
+  <joint name="base_to_keyboard" type="fixed">
+    <origin xyz="${-chassis_length/2+0.1} 0 ${chassis_height/2}" />
+    <parent link="base_link" />
+    <child link="keyboard" />
+  </joint>
+
+  <!-- Monitor -->
+  <link name="monitor">
+    <collision>
+      <origin xyz="0 0 0" />
+      <geometry>
+        <box size="0.15 0.3 0.2" />
+      </geometry>
+    </collision>
+    <visual>
+      <origin xyz="0 0 0" />
+      <geometry>
+        <box size="0.15 0.3 0.2" />
+      </geometry>
+      <material name="Grey"/>
+    </visual>
+    <inertial>
+      <origin xyz="0 0 0" rpy="0 0 0"/>
+      <mass value="0.1"/>
+      <inertia
+        ixx="1" ixy="0.0" ixz="0.0"
+                  iyy="1" iyz="0.0"
+                            izz="1"/>
+    </inertial>
+  </link>
+  <gazebo reference="monitor">
+    <material>Gazebo/Grey</material>
+  </gazebo>
+  <joint name="base_to_monitor" type="fixed">
+    <origin xyz="${-chassis_length/2+0.3} 0 ${chassis_height/2}"
+            rpy="0 ${PI/3} 0" />
+    <parent link="base_link" />
+    <child link="monitor" />
+  </joint>
+
+  <!-- Wheels -->
+  <xacro:wheel prefix="front_right" front="1" side="1" />
+  <xacro:wheel prefix="front_left" front="1" side="-1" />
+  <xacro:wheel prefix="rear_right" front="-1" side="1" />
+  <xacro:wheel prefix="rear_left" front="-1" side="-1" />
+
+  <!-- Lasers -->
+  <xacro:laser prefix="front" front="1" />
+  <xacro:laser prefix="rear" front="-1" />
+  
+  <gazebo>
+    <plugin name="odometry" filename="libgazebo_ros_p3d.so">
+      <alwaysOn>true</alwaysOn>
+      <updateRate>100.0</updateRate>
+      <robotNamespace>/idris_sim</robotNamespace>
+      <topicName>odom</topicName>
+      <bodyName>base_link</bodyName>
+      <frameName>map</frameName>
+    </plugin>
+    
+    <plugin name="gazebo_ros_control" filename="libgazebo_ros_control.so">
+      <robotNamespace>/idris_sim</robotNamespace>
+      <robotSimType>gazebo_ros_control/DefaultRobotHWSim</robotSimType>
+    </plugin>
+  </gazebo>
+
+</robot>

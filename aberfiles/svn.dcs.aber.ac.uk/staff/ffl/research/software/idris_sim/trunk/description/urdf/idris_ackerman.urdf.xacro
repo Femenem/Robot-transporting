@@ -1,0 +1,393 @@
+<?xml version="1.0"?>
+<robot
+  xmlns:gazebo="http://playerstage.sourceforge.net/gazebo/xmlschema/#gz"
+  xmlns:model="http://playerstage.sourceforge.net/gazebo/xmlschema/#model"
+  xmlns:sensor="http://playerstage.sourceforge.net/gazebo/xmlschema/#sensor"
+  xmlns:body="http://playerstage.sourceforge.net/gazebo/xmlschema/#body"
+  xmlns:geom="http://playerstage.sourceforge.net/gazebo/xmlschema/#geom"
+  xmlns:joint="http://playerstage.sourceforge.net/gazebo/xmlschema/#joint"
+  xmlns:controller="http://playerstage.sourceforge.net/gazebo/xmlschema/#controller"
+  xmlns:interface="http://playerstage.sourceforge.net/gazebo/xmlschema/#interface"
+  xmlns:rendering="http://playerstage.sourceforge.net/gazebo/xmlschema/#rendering"
+  xmlns:physics="http://playerstage.sourceforge.net/gazebo/xmlschema/#physics"
+  xmlns:xacro="http://www.ros.org/wiki/xacro"
+  name="idris">
+
+  <xacro:property name="chassis_length" value="2.0" />
+  <xacro:property name="chassis_width" value="0.5" />
+  <xacro:property name="chassis_height" value="0.5" />
+  <xacro:property name="wheel_width" value="0.2" />
+  <xacro:property name="wheel_radius" value="0.4" />
+  <xacro:property name="ground_clearance" value="0.25" />
+  <xacro:property name="chassis_to_wheel" value="0.4" />
+  
+  <material name="Red">
+    <color rgba="1.0 0 0 1.0"/>
+  </material>
+  <material name="Green">
+    <color rgba="0 1.0 0 1.0"/>
+  </material>
+  <material name="Grey">
+    <color rgba="0.8 0.8 0.8 1.0"/>
+  </material>
+  <material name="Black">
+    <color rgba="0 0 0 1.0"/>
+  </material>
+
+  <!-- 
+  This creates the wheels and their axles.
+  
+  prefix is to give the wheels different names: front_right, front_left, rear_right and rear_left
+  front is 1 for front and -1 for rear
+  side is 1 for right, -1 for left
+  -->
+  <xacro:macro name="wheel" params="prefix front side">
+    <link name="${prefix}_wheel">
+     <collision>
+       <origin rpy="${pi/2} 0 0" />
+       <geometry>
+         <cylinder length="${wheel_width}" radius="${wheel_radius}" />
+       </geometry>
+     </collision>
+     <visual>
+        <origin rpy="${pi/2} 0 0" />
+        <geometry>
+          <cylinder length="${wheel_width}" radius="${wheel_radius}" />
+        </geometry>
+        <material name="Black"/>
+      </visual>
+      <inertial>
+        <origin xyz="0 0 0" rpy="0 0 0"/>
+        <mass value="20"/>
+        <inertia
+          ixx="1.0" ixy="0.0" ixz="0.0"
+          iyy="1.0" iyz="0.0"
+          izz="1.0"/>
+      </inertial>
+    </link>
+    <gazebo reference="${prefix}_wheel">
+      <mu1>0.2</mu1>
+      <mu2>0.2</mu2>
+      <material>Gazebo/Black</material>
+    </gazebo>
+
+    <link name="${prefix}_axle">
+      <visual>
+        <origin rpy="${pi/2} 0 0" />
+        <geometry>
+          <cylinder length="${wheel_width * 1.1}" radius="0.1" />
+        </geometry>
+        <material name="Grey"/>
+      </visual>
+      <inertial>
+        <origin xyz="0 0 0" rpy="0 0 0"/>
+        <mass value="1"/>
+        <inertia
+          ixx="1.0" ixy="0.0" ixz="0.0"
+          iyy="1.0" iyz="0.0"
+          izz="1.0"/>
+      </inertial>
+    </link>
+    <gazebo reference="${prefix}_axle">
+      <mu1>0.2</mu1>
+      <mu2>0.2</mu2>
+      <material>Gazebo/Grey</material>
+    </gazebo>
+
+    <joint name="chassis_to_${prefix}_axle_joint" type="revolute">
+      <parent link="chassis" />
+      <child link="${prefix}_axle" />
+      <limit lower="${-20*pi/180}" upper="${20*pi/180}" effort="1" velocity="0.5" />
+      <origin
+        xyz="${front * chassis_length/2} ${-side * (chassis_width + chassis_to_wheel)} ${-(chassis_height/2 + 0.1)}"
+      />
+      <axis xyz="0 0 -1"/>
+    </joint>
+
+    <joint name="${prefix}_axle_to_wheel_joint" type="continuous">
+      <parent link="${prefix}_axle"/>
+      <child link="${prefix}_wheel"/>
+      <origin xyz="0 0 0" />
+      <axis xyz="0 1 0"/>
+    </joint>
+  </xacro:macro>
+
+  <!-- 
+  This creates the front and rear Ackermann steering hardware.
+  
+  prefix is to give the axles different names: front and rear
+  front is 1 for front and -1 for rear
+  -->
+  <xacro:macro name="steering" params="prefix front">
+    <!-- Ackermann link -->
+    <!-- Joins to the Car body -->
+    <link name="${prefix}_ackermann">
+      <inertial>
+        <mass value="0.01" />
+        <origin xyz="0 0 0" /> 
+        <inertia  ixx="0.01" ixy="0.0"  ixz="0.0"  iyy="0.01"  iyz="0.0"  izz="0.01" />
+      </inertial>
+      <visual>
+        <origin xyz="0 0 0" rpy="${pi/2} 0 0" />
+        <geometry>
+          <cylinder length="${2.0*(chassis_width + chassis_to_wheel)}" radius="0.01" />
+        </geometry>
+        <material name="Green"/>
+      </visual>
+    </link>
+    <gazebo reference="front_link">
+      <material>Gazebo/Green</material>
+    </gazebo>
+    <joint name="${prefix}_joint" type="fixed">
+      <parent link="chassis"/>
+      <child link="${prefix}_ackermann"/>
+      <origin xyz="${front * chassis_length/2} 0.0 ${-(chassis_height/2 + 0.1)}"/>
+    </joint>
+    
+    <!-- a link aligned with the steer direction -->
+    <link name="${prefix}_steering">
+      <inertial>
+        <mass value="0.01" />
+        <origin xyz="0 0 0" />
+        <inertia  ixx="0.01" ixy="0.0"  ixz="0.0"  iyy="0.01"  iyz="0.0"  izz="0.01" />
+      </inertial>
+      <visual>
+        <origin xyz="-0.1 0 0" />
+        <geometry>
+          <box size="0.2 0.01 0.01" />
+        </geometry>
+        <material name="Green"/>
+      </visual>
+    </link>
+    <gazebo reference="${prefix}_steer_link">
+      <material>Gazebo/Green</material>
+    </gazebo>
+    <joint name="${prefix}_steering_joint" type="revolute" >
+      <limit lower="${-20*pi/180}" upper="${20*pi/180}" effort="100" velocity="10" />
+      <axis xyz="0 0 1" />
+      <parent link="${prefix}_ackermann" />
+      <child link="${prefix}_steering" />
+      <origin xyz="0.0 0.0 0.0" rpy="0 0 0" />
+    </joint>
+    
+    <!-- Right and left steering arms -->
+    <link name="${prefix}_right_steering_arm">
+      <visual>
+        <origin xyz="-0.1 0 0" rpy="0 ${pi/2} 0" />
+        <geometry>
+          <cylinder length="0.2" radius="0.01" />
+        </geometry>
+        <material name="Green"/>
+      </visual>
+      <inertial>
+        <origin xyz="0 0 0" rpy="0 0 0"/>
+        <mass value="1"/>
+        <inertia
+          ixx="1.0" ixy="0.0" ixz="0.0"
+          iyy="1.0" iyz="0.0"
+          izz="1.0"/>
+      </inertial>
+    </link>
+    <gazebo reference="${prefix}_right_steering_arm">
+      <mu1>0.2</mu1>
+      <mu2>0.2</mu2>
+      <material>Gazebo/Green</material>
+    </gazebo>
+    <joint name="${prefix}_right_arm_joint" type="revolute" >
+      <limit lower="${-20*pi/180}" upper="${20*pi/180}" effort="100" velocity="10" />
+      <axis xyz="0 0 1" />
+      <parent link="${prefix}_ackermann" />
+      <child link="${prefix}_right_steering_arm" />
+      <origin xyz="0.0 ${-(chassis_width + chassis_to_wheel)} 0.0" rpy="0 0 0" />
+    </joint>
+
+    <link name="${prefix}_left_steering_arm">
+      <visual>
+        <origin xyz="-0.1 0 0" rpy="0 ${pi/2} 0" />
+        <geometry>
+          <cylinder length="0.2" radius="0.01" />
+        </geometry>
+        <material name="Green"/>
+      </visual>
+      <inertial>
+        <origin xyz="0 0 0" rpy="0 0 0"/>
+        <mass value="1"/>
+        <inertia
+          ixx="1.0" ixy="0.0" ixz="0.0"
+          iyy="1.0" iyz="0.0"
+          izz="1.0"/>
+      </inertial>
+    </link>
+    <gazebo reference="${prefix}_left_steering_arm">
+      <mu1>0.2</mu1>
+      <mu2>0.2</mu2>
+      <material>Gazebo/Green</material>
+    </gazebo>
+    <joint name="${prefix}_left_arm_joint" type="revolute" >
+      <limit lower="${-20*pi/180}" upper="${20*pi/180}" effort="100" velocity="10" />
+      <axis xyz="0 0 1" />
+      <parent link="${prefix}_ackermann" />
+      <child link="${prefix}_left_steering_arm" />
+      <origin xyz="0.0 ${(chassis_width + chassis_to_wheel)} 0.0" rpy="0 0 0" />
+    </joint>
+
+    <!-- the Ackerman bar -->
+    <link name="${prefix}_ackermann_bar">
+      <inertial>
+        <mass value="0.01" />
+        <origin xyz="0 0 0" /> 
+        <inertia  ixx="0.01" ixy="0.0"  ixz="0.0"  iyy="0.01"  iyz="0.0"  izz="0.01" />
+      </inertial>
+      <visual>
+        <origin xyz="0 0 0" rpy="${pi/2} 0 0" />
+        <geometry>
+          <cylinder length="${2.0*(chassis_width + chassis_to_wheel)}" radius="0.01" />
+        </geometry>
+        <material name="Green"/>
+      </visual>
+    </link>
+    <gazebo reference="${prefix}_ackermann_bar">
+        <material>Gazebo/Green</material>
+    </gazebo>
+    <joint name="${prefix}_ackermann_joint" type="revolute" >
+      <limit lower="${-20*pi/180}" upper="${20*pi/180}" effort="100" velocity="10" />
+      <axis xyz="0 0 1" />
+      <parent link="${prefix}_steering" />
+      <child link="${prefix}_ackermann_bar" />
+      <origin xyz="-0.2 0 0" rpy="0 0 0" />
+    </joint>
+
+    <!-- Gazebo Ackermann loop joints -->
+    <gazebo>
+      <joint:hinge name="${prefix}_ackermann_left_bar_joint">
+        <body1>${prefix}_ackermann_bar</body1>
+        <body2>${prefix}_left_steering_arm</body2>
+        <anchor>${prefix}_ackermann_bar</anchor>
+        <axis>0 0 1</axis>
+        <anchorOffset>0 ${(chassis_width + chassis_to_wheel)} 0</anchorOffset>
+      </joint:hinge>
+    </gazebo>
+    <gazebo>
+      <joint:hinge name="${prefix}_ackermann_right_bar_joint">
+        <body1>${prefix}_ackermann_bar</body1>
+        <body2>${prefix}_right_steering_arm</body2>
+        <anchor>${prefix}_ackermann_bar</anchor>
+        <axis>0 0 1</axis>
+        <anchorOffset>0 ${-(chassis_width + chassis_to_wheel)} 0</anchorOffset>
+      </joint:hinge>
+    </gazebo>
+  </xacro:macro>
+  
+  <!--
+  Base like to act as a reference.
+  -->
+  <link name="base_link"/>
+  <gazebo reference="base_link">
+  </gazebo>
+
+  <!--
+  Main chassis
+  -->
+  <link name="chassis">
+    <collision>
+      <geometry>
+        <box size="${chassis_length} ${chassis_width} ${chassis_height}"/>
+      </geometry>
+    </collision>
+    <visual>
+      <geometry>
+        <box size="${chassis_length} ${chassis_width} ${chassis_height}"/>
+      </geometry>
+    </visual>
+    <inertial>
+      <origin xyz="0 0 1" rpy="0 0 0"/>
+      <mass value="300"/>
+      <inertia
+        ixx="1.0" ixy="0.0" ixz="0.0"
+        iyy="1.0" iyz="0.0"
+        izz="1.0"/>
+    </inertial>
+  </link>
+  <gazebo reference="chassis">
+    <material>Gazebo/Grey</material>
+  </gazebo>
+
+  <joint name="base_link_to_chassis_joint" type="fixed">
+    <parent link="base_link"/>
+    <child link="chassis"/>
+    <origin xyz="0 0 ${chassis_height + ground_clearance}"/>
+  </joint>
+
+  <xacro:wheel prefix="front_right" front="1" side="1" />
+  <xacro:wheel prefix="front_left" front="1" side="-1" />
+  <xacro:wheel prefix="rear_right" front="-1" side="1" />
+  <xacro:wheel prefix="rear_left" front="-1" side="-1" />
+
+  <xacro:steering prefix="front" front="1" />
+ 
+  <transmission name="trans_front_steering">
+    <type>transmission_interface/SimpleTransmission</type>
+    <joint name="chassis_to_front_right_axle_joint">
+      <hardwareInterface>hardware_interface/PositionJointInterface</hardwareInterface>
+    </joint>
+    <actuator name="front_steering_motor">
+      <mechanicalReduction>1</mechanicalReduction>
+    </actuator>
+  </transmission>
+
+  <transmission name="trans_rear_steering">
+    <type>transmission_interface/SimpleTransmission</type>
+    <joint name="chassis_to_rear_right_axle_joint">
+      <hardwareInterface>hardware_interface/PositionJointInterface</hardwareInterface>
+    </joint>
+    <actuator name="rear_steering_motor">
+      <mechanicalReduction>1</mechanicalReduction>
+    </actuator>
+  </transmission>
+
+  <transmission name="transfront_right_wheel">
+    <type>transmission_interface/SimpleTransmission</type>
+    <joint name="front_right_axle_to_wheel_joint">
+      <hardwareInterface>hardware_interface/EffortJointInterface</hardwareInterface>
+    </joint>
+    <actuator name="front_right_wheel_motor">
+      <hardwareInterface>hardware_interface/EffortJointInterface</hardwareInterface>
+      <mechanicalReduction>1</mechanicalReduction>
+    </actuator>
+  </transmission>
+
+  <gazebo>
+    <!--
+    <controller:ackermann_plugin name="front_ackermann_controller"
+                                 plugin="libackermann_plugin.so">
+      <alwaysOn>true</alwaysOn>
+      <update>100</update>
+      <updateRate>100.0</updateRate>
+      <leftJoint>back_left_wheel_joint</leftJoint>
+      <rightJoint>back_right_wheel_joint</rightJoint>
+      <steerJoint>steer_joint</steerJoint>
+      <wheelSeparationWidth>0.16</wheelSeparationWidth>
+      <wheelSeparationLength>0.32</wheelSeparationLength>
+      <wheelDiameter>0.041</wheelDiameter>
+      <driveTorque>5</driveTorque>
+      <steerTorque>5</steerTorque>
+      <interface:position name="position_iface_0" />
+      <robotNamespace>/</robotNamespace>
+      <topicName>pilot/drive</topicName>
+    </controller:ackermann_plugin>
+    -->
+    
+    <plugin name="odometry" filename="libgazebo_ros_p3d.so">
+      <updateRate>100.0</updateRate>
+      <robotNamespace>/idris</robotNamespace>
+      <topicName>odom</topicName>
+      <bodyName>base_link</bodyName>
+    </plugin>
+    
+    <plugin name="gazebo_ros_control" filename="libgazebo_ros_control.so">
+      <robotNamespace>/idris</robotNamespace>
+      <robotSimType>gazebo_ros_control/DefaultRobotHWSim</robotSimType>
+    </plugin>
+  </gazebo>
+
+</robot>

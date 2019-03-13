@@ -13,56 +13,103 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="f9060fcd-25f4-4347-bcb2-66858ea378a6" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/workspace/src/van_loading/src/get_data.cpp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/Robot-transporting.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/Robot-transporting.iml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/vcs.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/libs/icpSpeedTest/.idea/vcs.xml" beforeDir="false" afterPath="$PROJECT_DIR$/libs/icpSpeedTest/.idea/vcs.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/libs/icpSpeedTest/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/libs/icpSpeedTest/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/libs/icpSpeedTest/CMakeLists.txt" beforeDir="false" afterPath="$PROJECT_DIR$/libs/icpSpeedTest/CMakeLists.txt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/libs/icpSpeedTest/cmake-build-debug/CMakeCache.txt" beforeDir="false" afterPath="$PROJECT_DIR$/libs/icpSpeedTest/cmake-build-debug/CMakeCache.txt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/libs/icpSpeedTest/cmake-build-debug/CMakeFiles/CMakeOutput.log" beforeDir="false" afterPath="$PROJECT_DIR$/libs/icpSpeedTest/cmake-build-debug/CMakeFiles/CMakeOutput.log" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/libs/icpSpeedTest/cmake-build-debug/CMakeFiles/Makefile.cmake" beforeDir="false" afterPath="$PROJECT_DIR$/libs/icpSpeedTest/cmake-build-debug/CMakeFiles/Makefile.cmake" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/libs/icpSpeedTest/cmake-build-debug/CMakeFiles/clion-log.txt" beforeDir="false" afterPath="$PROJECT_DIR$/libs/icpSpeedTest/cmake-build-debug/CMakeFiles/clion-log.txt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/libs/icpSpeedTest/cmake-build-debug/CMakeFiles/icpSpeedTest.dir/CXX.includecache" beforeDir="false" afterPath="$PROJECT_DIR$/libs/icpSpeedTest/cmake-build-debug/CMakeFiles/icpSpeedTest.dir/CXX.includecache" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/libs/icpSpeedTest/cmake-build-debug/CMakeFiles/icpSpeedTest.dir/DependInfo.cmake" beforeDir="false" afterPath="$PROJECT_DIR$/libs/icpSpeedTest/cmake-build-debug/CMakeFiles/icpSpeedTest.dir/DependInfo.cmake" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/libs/icpSpeedTest/cmake-build-debug/CMakeFiles/icpSpeedTest.dir/depend.internal" beforeDir="false" afterPath="$PROJECT_DIR$/libs/icpSpeedTest/cmake-build-debug/CMakeFiles/icpSpeedTest.dir/depend.internal" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/libs/icpSpeedTest/cmake-build-debug/CMakeFiles/icpSpeedTest.dir/depend.make" beforeDir="false" afterPath="$PROJECT_DIR$/libs/icpSpeedTest/cmake-build-debug/CMakeFiles/icpSpeedTest.dir/depend.make" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/libs/icpSpeedTest/cmake-build-debug/CMakeFiles/icpSpeedTest.dir/flags.make" beforeDir="false" afterPath="$PROJECT_DIR$/libs/icpSpeedTest/cmake-build-debug/CMakeFiles/icpSpeedTest.dir/flags.make" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/libs/icpSpeedTest/cmake-build-debug/icpSpeedTest.cbp" beforeDir="false" afterPath="$PROJECT_DIR$/libs/icpSpeedTest/cmake-build-debug/icpSpeedTest.cbp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/libs/icpSpeedTest/main.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/libs/icpSpeedTest/main.cpp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/libs/cmake-build-debug/CMakeFiles/clion-log.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/libs/icpSpeedTest/.idea/encodings.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/libs/icpSpeedTest/.idea/icpSpeedTest.iml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/libs/icpSpeedTest/.idea/misc.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/libs/icpSpeedTest/.idea/modules.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/libs/icpSpeedTest/.idea/vcs.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/libs/icpSpeedTest/.idea/workspace.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/libs/icpSpeedTest/CMakeLists.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/libs/icpSpeedTest/cmake-build-debug/CMakeCache.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/libs/icpSpeedTest/cmake-build-debug/CMakeFiles/3.13.1/CMakeCCompiler.cmake" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/libs/icpSpeedTest/cmake-build-debug/CMakeFiles/3.13.1/CMakeCXXCompiler.cmake" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/libs/icpSpeedTest/cmake-build-debug/CMakeFiles/3.13.1/CMakeDetermineCompilerABI_C.bin" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/libs/icpSpeedTest/cmake-build-debug/CMakeFiles/3.13.1/CMakeDetermineCompilerABI_CXX.bin" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/libs/icpSpeedTest/cmake-build-debug/CMakeFiles/3.13.1/CMakeSystem.cmake" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/libs/icpSpeedTest/cmake-build-debug/CMakeFiles/3.13.1/CompilerIdC/CMakeCCompilerId.c" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/libs/icpSpeedTest/cmake-build-debug/CMakeFiles/3.13.1/CompilerIdC/a.out" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/libs/icpSpeedTest/cmake-build-debug/CMakeFiles/3.13.1/CompilerIdCXX/CMakeCXXCompilerId.cpp" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/libs/icpSpeedTest/cmake-build-debug/CMakeFiles/3.13.1/CompilerIdCXX/a.out" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/libs/icpSpeedTest/cmake-build-debug/CMakeFiles/CMakeDirectoryInformation.cmake" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/libs/icpSpeedTest/cmake-build-debug/CMakeFiles/CMakeError.log" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/libs/icpSpeedTest/cmake-build-debug/CMakeFiles/CMakeOutput.log" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/libs/icpSpeedTest/cmake-build-debug/CMakeFiles/Makefile.cmake" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/libs/icpSpeedTest/cmake-build-debug/CMakeFiles/Makefile2" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/libs/icpSpeedTest/cmake-build-debug/CMakeFiles/Progress/1" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/libs/icpSpeedTest/cmake-build-debug/CMakeFiles/Progress/2" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/libs/icpSpeedTest/cmake-build-debug/CMakeFiles/Progress/count.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/libs/icpSpeedTest/cmake-build-debug/CMakeFiles/TargetDirectories.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/libs/icpSpeedTest/cmake-build-debug/CMakeFiles/clion-environment.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/libs/icpSpeedTest/cmake-build-debug/CMakeFiles/clion-log.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/libs/icpSpeedTest/cmake-build-debug/CMakeFiles/cmake.check_cache" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/libs/icpSpeedTest/cmake-build-debug/CMakeFiles/feature_tests.bin" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/libs/icpSpeedTest/cmake-build-debug/CMakeFiles/feature_tests.c" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/libs/icpSpeedTest/cmake-build-debug/CMakeFiles/feature_tests.cxx" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/libs/icpSpeedTest/cmake-build-debug/CMakeFiles/icpSpeedTest.dir/CXX.includecache" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/libs/icpSpeedTest/cmake-build-debug/CMakeFiles/icpSpeedTest.dir/DependInfo.cmake" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/libs/icpSpeedTest/cmake-build-debug/CMakeFiles/icpSpeedTest.dir/build.make" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/libs/icpSpeedTest/cmake-build-debug/CMakeFiles/icpSpeedTest.dir/cmake_clean.cmake" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/libs/icpSpeedTest/cmake-build-debug/CMakeFiles/icpSpeedTest.dir/depend.internal" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/libs/icpSpeedTest/cmake-build-debug/CMakeFiles/icpSpeedTest.dir/depend.make" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/libs/icpSpeedTest/cmake-build-debug/CMakeFiles/icpSpeedTest.dir/flags.make" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/libs/icpSpeedTest/cmake-build-debug/CMakeFiles/icpSpeedTest.dir/link.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/libs/icpSpeedTest/cmake-build-debug/CMakeFiles/icpSpeedTest.dir/main.cpp.o" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/libs/icpSpeedTest/cmake-build-debug/CMakeFiles/icpSpeedTest.dir/progress.make" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/libs/icpSpeedTest/cmake-build-debug/CMakeFiles/progress.marks" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/libs/icpSpeedTest/cmake-build-debug/Makefile" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/libs/icpSpeedTest/cmake-build-debug/cmake_install.cmake" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/libs/icpSpeedTest/cmake-build-debug/icpSpeedTest.cbp" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/libs/icpSpeedTest/data" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/libs/icpSpeedTest/main.cpp" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/libs/icpSpeedTest/model.csv" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/libs/icpSpeedTest/mrpt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/libs/icpSpeedTest/mrpt-slam-config.cmake" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/libs/icpSpeedTest/source.csv" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/notes/notes.md" beforeDir="false" afterPath="$PROJECT_DIR$/notes/notes.md" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/workspace/build/CMakeCache.txt" beforeDir="false" afterPath="$PROJECT_DIR$/workspace/build/CMakeCache.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/workspace/build/CMakeFiles/CMakeOutput.log" beforeDir="false" afterPath="$PROJECT_DIR$/workspace/build/CMakeFiles/CMakeOutput.log" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/workspace/build/CMakeFiles/Makefile.cmake" beforeDir="false" afterPath="$PROJECT_DIR$/workspace/build/CMakeFiles/Makefile.cmake" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/workspace/build/CMakeFiles/Makefile2" beforeDir="false" afterPath="$PROJECT_DIR$/workspace/build/CMakeFiles/Makefile2" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/workspace/build/CMakeFiles/TargetDirectories.txt" beforeDir="false" afterPath="$PROJECT_DIR$/workspace/build/CMakeFiles/TargetDirectories.txt" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/workspace/build/CMakeFiles/progress.marks" beforeDir="false" afterPath="$PROJECT_DIR$/workspace/build/CMakeFiles/progress.marks" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/workspace/build/Makefile" beforeDir="false" afterPath="$PROJECT_DIR$/workspace/build/Makefile" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/workspace/build/double_ackermann/trunk/Makefile" beforeDir="false" afterPath="$PROJECT_DIR$/workspace/build/double_ackermann/trunk/Makefile" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/workspace/build/gtest/Makefile" beforeDir="false" afterPath="$PROJECT_DIR$/workspace/build/gtest/Makefile" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/workspace/build/double_ackermann/trunk/CMakeFiles/double_ackermann_generate_messages_cpp.dir/progress.make" beforeDir="false" afterPath="$PROJECT_DIR$/workspace/build/double_ackermann/trunk/CMakeFiles/double_ackermann_generate_messages_cpp.dir/progress.make" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/workspace/build/double_ackermann/trunk/CMakeFiles/double_ackermann_generate_messages_eus.dir/progress.make" beforeDir="false" afterPath="$PROJECT_DIR$/workspace/build/double_ackermann/trunk/CMakeFiles/double_ackermann_generate_messages_eus.dir/progress.make" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/workspace/build/double_ackermann/trunk/CMakeFiles/double_ackermann_generate_messages_lisp.dir/progress.make" beforeDir="false" afterPath="$PROJECT_DIR$/workspace/build/double_ackermann/trunk/CMakeFiles/double_ackermann_generate_messages_lisp.dir/progress.make" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/workspace/build/double_ackermann/trunk/CMakeFiles/double_ackermann_generate_messages_nodejs.dir/progress.make" beforeDir="false" afterPath="$PROJECT_DIR$/workspace/build/double_ackermann/trunk/CMakeFiles/double_ackermann_generate_messages_nodejs.dir/progress.make" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/workspace/build/double_ackermann/trunk/CMakeFiles/double_ackermann_generate_messages_py.dir/progress.make" beforeDir="false" afterPath="$PROJECT_DIR$/workspace/build/double_ackermann/trunk/CMakeFiles/double_ackermann_generate_messages_py.dir/progress.make" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/workspace/build/gtest/googlemock/CMakeFiles/gmock.dir/progress.make" beforeDir="false" afterPath="$PROJECT_DIR$/workspace/build/gtest/googlemock/CMakeFiles/gmock.dir/progress.make" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/workspace/build/gtest/googlemock/CMakeFiles/gmock_main.dir/progress.make" beforeDir="false" afterPath="$PROJECT_DIR$/workspace/build/gtest/googlemock/CMakeFiles/gmock_main.dir/progress.make" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/workspace/build/gtest/googlemock/Makefile" beforeDir="false" afterPath="$PROJECT_DIR$/workspace/build/gtest/googlemock/Makefile" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/workspace/build/gtest/googlemock/gtest/CMakeFiles/gtest.dir/progress.make" beforeDir="false" afterPath="$PROJECT_DIR$/workspace/build/gtest/googlemock/gtest/CMakeFiles/gtest.dir/progress.make" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/workspace/build/gtest/googlemock/gtest/CMakeFiles/gtest_main.dir/progress.make" beforeDir="false" afterPath="$PROJECT_DIR$/workspace/build/gtest/googlemock/gtest/CMakeFiles/gtest_main.dir/progress.make" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/workspace/build/gtest/googlemock/gtest/Makefile" beforeDir="false" afterPath="$PROJECT_DIR$/workspace/build/gtest/googlemock/gtest/Makefile" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/workspace/build/idris_sim/trunk/CMakeFiles/idris_sim_node.dir/progress.make" beforeDir="false" afterPath="$PROJECT_DIR$/workspace/build/idris_sim/trunk/CMakeFiles/idris_sim_node.dir/progress.make" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/workspace/build/idris_sim/trunk/Makefile" beforeDir="false" afterPath="$PROJECT_DIR$/workspace/build/idris_sim/trunk/Makefile" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/workspace/build/van_loading/CMakeFiles/get_data_node.dir/DependInfo.cmake" beforeDir="false" afterPath="$PROJECT_DIR$/workspace/build/van_loading/CMakeFiles/get_data_node.dir/DependInfo.cmake" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/workspace/build/van_loading/CMakeFiles/get_data_node.dir/flags.make" beforeDir="false" afterPath="$PROJECT_DIR$/workspace/build/van_loading/CMakeFiles/get_data_node.dir/flags.make" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/workspace/build/van_loading/CMakeFiles/get_data_node.dir/progress.make" beforeDir="false" afterPath="$PROJECT_DIR$/workspace/build/van_loading/CMakeFiles/get_data_node.dir/progress.make" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/workspace/build/van_loading/CMakeFiles/progress.marks" beforeDir="false" afterPath="$PROJECT_DIR$/workspace/build/van_loading/CMakeFiles/progress.marks" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/workspace/build/van_loading/CMakeFiles/van_loading_node.dir/DependInfo.cmake" beforeDir="false" afterPath="$PROJECT_DIR$/workspace/build/van_loading/CMakeFiles/van_loading_node.dir/DependInfo.cmake" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/workspace/build/van_loading/CMakeFiles/van_loading_node.dir/build.make" beforeDir="false" afterPath="$PROJECT_DIR$/workspace/build/van_loading/CMakeFiles/van_loading_node.dir/build.make" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/workspace/build/van_loading/CMakeFiles/van_loading_node.dir/flags.make" beforeDir="false" afterPath="$PROJECT_DIR$/workspace/build/van_loading/CMakeFiles/van_loading_node.dir/flags.make" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/workspace/build/van_loading/CMakeFiles/van_loading_node.dir/link.txt" beforeDir="false" afterPath="$PROJECT_DIR$/workspace/build/van_loading/CMakeFiles/van_loading_node.dir/link.txt" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/workspace/build/van_loading/CMakeFiles/van_loading_node.dir/progress.make" beforeDir="false" afterPath="$PROJECT_DIR$/workspace/build/van_loading/CMakeFiles/van_loading_node.dir/progress.make" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/workspace/build/van_loading/CMakeFiles/van_loading_node.dir/src/idris_sim.cpp.o" beforeDir="false" afterPath="$PROJECT_DIR$/workspace/build/van_loading/CMakeFiles/van_loading_node.dir/src/idris_sim.cpp.o" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/workspace/build/van_loading/Makefile" beforeDir="false" afterPath="$PROJECT_DIR$/workspace/build/van_loading/Makefile" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/workspace/build/van_loading/catkin_generated/installspace/van_loading.pc" beforeDir="false" afterPath="$PROJECT_DIR$/workspace/build/van_loading/catkin_generated/installspace/van_loading.pc" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/workspace/build/van_loading/catkin_generated/installspace/van_loadingConfig.cmake" beforeDir="false" afterPath="$PROJECT_DIR$/workspace/build/van_loading/catkin_generated/installspace/van_loadingConfig.cmake" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/workspace/build/van_loading/catkin_generated/package.cmake" beforeDir="false" afterPath="$PROJECT_DIR$/workspace/build/van_loading/catkin_generated/package.cmake" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/workspace/build/van_loading/catkin_generated/stamps/van_loading/package.xml.stamp" beforeDir="false" afterPath="$PROJECT_DIR$/workspace/build/van_loading/catkin_generated/stamps/van_loading/package.xml.stamp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/workspace/build/van_loading/catkin_generated/pkg.develspace.context.pc.py" beforeDir="false" afterPath="$PROJECT_DIR$/workspace/build/van_loading/catkin_generated/pkg.develspace.context.pc.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/workspace/build/van_loading/catkin_generated/pkg.installspace.context.pc.py" beforeDir="false" afterPath="$PROJECT_DIR$/workspace/build/van_loading/catkin_generated/pkg.installspace.context.pc.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/workspace/devel/lib/pkgconfig/van_loading.pc" beforeDir="false" afterPath="$PROJECT_DIR$/workspace/devel/lib/pkgconfig/van_loading.pc" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/workspace/devel/lib/van_loading/van_loading_node" beforeDir="false" afterPath="$PROJECT_DIR$/workspace/devel/lib/van_loading/van_loading_node" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/workspace/devel/share/van_loading/cmake/van_loadingConfig.cmake" beforeDir="false" afterPath="$PROJECT_DIR$/workspace/devel/share/van_loading/cmake/van_loadingConfig.cmake" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/workspace/src/van_loading/CMakeLists.txt" beforeDir="false" afterPath="$PROJECT_DIR$/workspace/src/van_loading/CMakeLists.txt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/workspace/src/van_loading/description/van/model.sdf" beforeDir="false" afterPath="$PROJECT_DIR$/workspace/src/van_loading/description/van/model.sdf" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/workspace/src/van_loading/package.xml" beforeDir="false" afterPath="$PROJECT_DIR$/workspace/src/van_loading/package.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/workspace/src/van_loading/src/getData.cpp" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/workspace/src/van_loading/Findmrpt.cmake" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/workspace/src/van_loading/config/control.yaml" beforeDir="false" afterPath="$PROJECT_DIR$/workspace/src/van_loading/config/control.yaml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/workspace/src/van_loading/description/urdf/display.launch" beforeDir="false" afterPath="$PROJECT_DIR$/workspace/src/van_loading/description/urdf/display.launch" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/workspace/src/van_loading/description/urdf/idris.urdf.xacro" beforeDir="false" afterPath="$PROJECT_DIR$/workspace/src/van_loading/description/urdf/idris.urdf.xacro" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/workspace/src/van_loading/launch/van.launch" beforeDir="false" afterPath="$PROJECT_DIR$/workspace/src/van_loading/launch/van.launch" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/workspace/src/van_loading/src/get_data.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/workspace/src/van_loading/src/get_data.cpp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/workspace/src/van_loading/src/idris_sim.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/workspace/src/van_loading/src/idris_sim.cpp" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/libs/cmake-build-debug/" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -76,17 +123,8 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/notes/notes.md">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="1530">
-              <caret line="102" column="7" selection-start-line="102" selection-start-column="7" selection-end-line="102" selection-end-column="7" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/workspace/src/double_ackermann/trunk/msg/DoubleAckermann.msg">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="165">
-              <caret line="11" column="14" selection-start-line="11" selection-start-column="5" selection-end-line="11" selection-end-column="14" />
+            <state relative-caret-position="180">
+              <caret line="12" column="11" selection-start-line="12" selection-start-column="11" selection-end-line="12" selection-end-column="11" />
             </state>
           </provider>
         </entry>
@@ -94,49 +132,26 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/workspace/src/van_loading/src/get_data.cpp">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="210">
-              <caret line="21" column="22" selection-start-line="21" selection-start-column="22" selection-end-line="21" selection-end-column="22" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/workspace/src/van_loading/CMakeLists.txt">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="75">
-              <caret line="272" selection-start-line="272" selection-end-line="272" selection-end-column="64" />
+            <state relative-caret-position="225">
+              <caret line="15" column="8" selection-start-line="15" selection-start-column="8" selection-end-line="15" selection-end-column="8" />
             </state>
           </provider>
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/workspace/src/van_loading/Findmrpt.cmake">
-          <provider selected="true" editor-type-id="text-editor" />
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/workspace/src/van_loading/package.xml">
+        <entry file="file://$PROJECT_DIR$/workspace/src/van_loading/src/test_icp.cpp">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="135">
-              <caret line="9" column="51" selection-start-line="9" selection-start-column="51" selection-end-line="9" selection-end-column="51" />
+            <state relative-caret-position="345">
+              <caret line="29" selection-start-line="29" selection-end-line="35" selection-end-column="20" />
             </state>
           </provider>
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/workspace/src/van_loading/src/idris_sim.cpp">
+        <entry file="file://$PROJECT_DIR$/workspace/src/van_loading/src/compare_against_model.cpp">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="390">
-              <caret line="26" column="17" selection-start-line="26" selection-start-column="17" selection-end-line="26" selection-end-column="17" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/libs/icpSpeedTest/data">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="120">
-              <caret line="8" column="1104" selection-start-line="8" selection-start-column="1104" selection-end-line="8" selection-end-column="1104" />
+            <state relative-caret-position="285">
+              <caret line="49" column="30" selection-start-line="49" selection-start-column="30" selection-end-line="49" selection-end-column="30" />
             </state>
           </provider>
         </entry>
@@ -144,8 +159,45 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/workspace/src/van_loading/config/control.yaml">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="660">
-              <caret line="44" column="30" selection-start-line="44" selection-start-column="10" selection-end-line="44" selection-end-column="30" />
+            <state relative-caret-position="-60">
+              <caret line="8" column="53" selection-start-line="8" selection-start-column="53" selection-end-line="8" selection-end-column="53" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/workspace/src/van_loading/description/urdf/idris.urdf.xacro">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="151">
+              <caret line="341" column="42" selection-start-line="341" selection-start-column="42" selection-end-line="341" selection-end-column="42" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/workspace/src/van_loading/src/idris_sim.cpp">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="180">
+              <caret line="79" column="46" selection-start-line="79" selection-start-column="38" selection-end-line="79" selection-end-column="46" />
+              <folding>
+                <element signature="e#2861#3033#0" expanded="true" />
+                <element signature="e#4262#4321#0" expanded="true" />
+                <element signature="e#5261#5326#0" expanded="true" />
+                <element signature="e#6857#6920#0" expanded="true" />
+                <element signature="e#8325#8396#0" expanded="true" />
+                <element signature="e#9450#9519#0" expanded="true" />
+                <element signature="e#12686#14187#0" expanded="true" />
+                <element signature="e#16803#17690#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/workspace/src/van_loading/launch/van.launch">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="180">
+              <caret line="33" column="77" lean-forward="true" selection-start-line="33" selection-start-column="77" selection-end-line="33" selection-end-column="77" />
             </state>
           </provider>
         </entry>
@@ -165,7 +217,6 @@
       <find>ackerman</find>
       <find>idris_driver</find>
       <find>Ackermann</find>
-      <find>idris_sim</find>
       <find>eig</find>
       <find>EXTERNAL_LIBS</find>
       <find>contrib</find>
@@ -177,12 +228,21 @@
       <find>inf</find>
       <find>set</find>
       <find>list</find>
+      <find>dim</find>
+      <find>idris_sim</find>
+      <find>skip_window</find>
+      <find>scan2</find>
+      <find>package</find>
+      <find>controll</find>
+      <find>ICP_method</find>
+      <find>control.yaml</find>
     </findStrings>
     <replaceStrings>
-      <replace>van_loading</replace>
       <replace>,</replace>
       <replace>[0-9]\</replace>
       <replace>0.0</replace>
+      <replace>van_loading</replace>
+      <replace>source</replace>
     </replaceStrings>
   </component>
   <component name="Git.Settings">
@@ -197,24 +257,27 @@
         <option value="$PROJECT_DIR$/workspace/src/idris_sim/trunk/msg/Ackerman.msg" />
         <option value="$PROJECT_DIR$/workspace/src/idris_sim/trunk/CMakeLists.txt" />
         <option value="$PROJECT_DIR$/workspace/src/idris_sim/trunk/src/idris_sim.cpp" />
-        <option value="$PROJECT_DIR$/workspace/src/van_loading/description/urdf/idris.urdf.xacro" />
         <option value="$PROJECT_DIR$/libs/icpSpeedTest.cpp" />
         <option value="$PROJECT_DIR$/libs/CMakeLists.txt" />
         <option value="$PROJECT_DIR$/libs/icpSpeedTest/main.cpp" />
         <option value="$PROJECT_DIR$/libs/icpSpeedTest/data" />
         <option value="$PROJECT_DIR$/libs/icpSpeedTest/model.csv" />
-        <option value="$PROJECT_DIR$/workspace/src/van_loading/launch/van.launch" />
-        <option value="$PROJECT_DIR$/workspace/src/van_loading/config/control.yaml" />
         <option value="$PROJECT_DIR$/workspace/src/van_loading/src/move_idris.cpp" />
         <option value="$PROJECT_DIR$/workspace/src/van_loading/scripts/move_idris.py" />
         <option value="$PROJECT_DIR$/workspace/src/van_loading/src/move_idris.py" />
-        <option value="$PROJECT_DIR$/workspace/src/van_loading/src/idris_sim.cpp" />
         <option value="$PROJECT_DIR$/workspace/src/van_loading/data/source.csv" />
-        <option value="$PROJECT_DIR$/notes/notes.md" />
         <option value="$PROJECT_DIR$/workspace/src/van_loading/package.xml" />
         <option value="$PROJECT_DIR$/workspace/src/van_loading/src/getData.cpp" />
+        <option value="$PROJECT_DIR$/notes/notes.md" />
         <option value="$PROJECT_DIR$/workspace/src/van_loading/src/get_data.cpp" />
+        <option value="$PROJECT_DIR$/workspace/src/van_loading/src/idris_sim.cpp" />
+        <option value="$PROJECT_DIR$/workspace/src/van_loading/description/urdf/idris.urdf.xacro" />
+        <option value="$PROJECT_DIR$/workspace/src/van_loading/description/urdf/display.launch" />
+        <option value="$PROJECT_DIR$/workspace/src/van_loading/src/test_icp.cpp" />
         <option value="$PROJECT_DIR$/workspace/src/van_loading/CMakeLists.txt" />
+        <option value="$PROJECT_DIR$/workspace/src/van_loading/config/control.yaml" />
+        <option value="$PROJECT_DIR$/workspace/src/van_loading/src/compare_against_model.cpp" />
+        <option value="$PROJECT_DIR$/workspace/src/van_loading/launch/van.launch" />
       </list>
     </option>
   </component>
@@ -244,7 +307,83 @@
             <path>
               <item name="Robot-transporting" type="b2602c69:ProjectViewProjectNode" />
               <item name="Robot-transporting" type="462c0819:PsiDirectoryNode" />
-              <item name="libs" type="462c0819:PsiDirectoryNode" />
+              <item name="aberfiles" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="Robot-transporting" type="b2602c69:ProjectViewProjectNode" />
+              <item name="Robot-transporting" type="462c0819:PsiDirectoryNode" />
+              <item name="aberfiles" type="462c0819:PsiDirectoryNode" />
+              <item name="svn.dcs.aber.ac.uk" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="Robot-transporting" type="b2602c69:ProjectViewProjectNode" />
+              <item name="Robot-transporting" type="462c0819:PsiDirectoryNode" />
+              <item name="aberfiles" type="462c0819:PsiDirectoryNode" />
+              <item name="svn.dcs.aber.ac.uk" type="462c0819:PsiDirectoryNode" />
+              <item name="staff" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="Robot-transporting" type="b2602c69:ProjectViewProjectNode" />
+              <item name="Robot-transporting" type="462c0819:PsiDirectoryNode" />
+              <item name="aberfiles" type="462c0819:PsiDirectoryNode" />
+              <item name="svn.dcs.aber.ac.uk" type="462c0819:PsiDirectoryNode" />
+              <item name="staff" type="462c0819:PsiDirectoryNode" />
+              <item name="ffl" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="Robot-transporting" type="b2602c69:ProjectViewProjectNode" />
+              <item name="Robot-transporting" type="462c0819:PsiDirectoryNode" />
+              <item name="aberfiles" type="462c0819:PsiDirectoryNode" />
+              <item name="svn.dcs.aber.ac.uk" type="462c0819:PsiDirectoryNode" />
+              <item name="staff" type="462c0819:PsiDirectoryNode" />
+              <item name="ffl" type="462c0819:PsiDirectoryNode" />
+              <item name="research" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="Robot-transporting" type="b2602c69:ProjectViewProjectNode" />
+              <item name="Robot-transporting" type="462c0819:PsiDirectoryNode" />
+              <item name="aberfiles" type="462c0819:PsiDirectoryNode" />
+              <item name="svn.dcs.aber.ac.uk" type="462c0819:PsiDirectoryNode" />
+              <item name="staff" type="462c0819:PsiDirectoryNode" />
+              <item name="ffl" type="462c0819:PsiDirectoryNode" />
+              <item name="research" type="462c0819:PsiDirectoryNode" />
+              <item name="software" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="Robot-transporting" type="b2602c69:ProjectViewProjectNode" />
+              <item name="Robot-transporting" type="462c0819:PsiDirectoryNode" />
+              <item name="aberfiles" type="462c0819:PsiDirectoryNode" />
+              <item name="svn.dcs.aber.ac.uk" type="462c0819:PsiDirectoryNode" />
+              <item name="staff" type="462c0819:PsiDirectoryNode" />
+              <item name="ffl" type="462c0819:PsiDirectoryNode" />
+              <item name="research" type="462c0819:PsiDirectoryNode" />
+              <item name="software" type="462c0819:PsiDirectoryNode" />
+              <item name="idris_sim" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="Robot-transporting" type="b2602c69:ProjectViewProjectNode" />
+              <item name="Robot-transporting" type="462c0819:PsiDirectoryNode" />
+              <item name="aberfiles" type="462c0819:PsiDirectoryNode" />
+              <item name="svn.dcs.aber.ac.uk" type="462c0819:PsiDirectoryNode" />
+              <item name="staff" type="462c0819:PsiDirectoryNode" />
+              <item name="ffl" type="462c0819:PsiDirectoryNode" />
+              <item name="research" type="462c0819:PsiDirectoryNode" />
+              <item name="software" type="462c0819:PsiDirectoryNode" />
+              <item name="idris_sim" type="462c0819:PsiDirectoryNode" />
+              <item name="trunk" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="Robot-transporting" type="b2602c69:ProjectViewProjectNode" />
+              <item name="Robot-transporting" type="462c0819:PsiDirectoryNode" />
+              <item name="aberfiles" type="462c0819:PsiDirectoryNode" />
+              <item name="svn.dcs.aber.ac.uk" type="462c0819:PsiDirectoryNode" />
+              <item name="staff" type="462c0819:PsiDirectoryNode" />
+              <item name="ffl" type="462c0819:PsiDirectoryNode" />
+              <item name="research" type="462c0819:PsiDirectoryNode" />
+              <item name="software" type="462c0819:PsiDirectoryNode" />
+              <item name="idris_sim" type="462c0819:PsiDirectoryNode" />
+              <item name="trunk" type="462c0819:PsiDirectoryNode" />
+              <item name="config" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="Robot-transporting" type="b2602c69:ProjectViewProjectNode" />
@@ -275,7 +414,32 @@
               <item name="workspace" type="462c0819:PsiDirectoryNode" />
               <item name="src" type="462c0819:PsiDirectoryNode" />
               <item name="van_loading" type="462c0819:PsiDirectoryNode" />
-              <item name="libs" type="462c0819:PsiDirectoryNode" />
+              <item name="config" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="Robot-transporting" type="b2602c69:ProjectViewProjectNode" />
+              <item name="Robot-transporting" type="462c0819:PsiDirectoryNode" />
+              <item name="workspace" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="van_loading" type="462c0819:PsiDirectoryNode" />
+              <item name="description" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="Robot-transporting" type="b2602c69:ProjectViewProjectNode" />
+              <item name="Robot-transporting" type="462c0819:PsiDirectoryNode" />
+              <item name="workspace" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="van_loading" type="462c0819:PsiDirectoryNode" />
+              <item name="description" type="462c0819:PsiDirectoryNode" />
+              <item name="urdf" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="Robot-transporting" type="b2602c69:ProjectViewProjectNode" />
+              <item name="Robot-transporting" type="462c0819:PsiDirectoryNode" />
+              <item name="workspace" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="van_loading" type="462c0819:PsiDirectoryNode" />
+              <item name="launch" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="Robot-transporting" type="b2602c69:ProjectViewProjectNode" />
@@ -300,15 +464,18 @@
     <property name="settings.editor.selected.configurable" value="CMakeSettings" />
   </component>
   <component name="RecentsManager">
-    <key name="CopyFile.RECENT_KEYS">
-      <recent name="$PROJECT_DIR$/workspace/src/van_loading" />
-      <recent name="$PROJECT_DIR$/workspace/src/van_loading/description" />
-    </key>
     <key name="MoveFile.RECENT_KEYS">
       <recent name="$PROJECT_DIR$/workspace/src/van_loading" />
       <recent name="$PROJECT_DIR$/workspace/src/van_loading/libs" />
       <recent name="$PROJECT_DIR$/workspace/src/van_loading/data" />
       <recent name="$PROJECT_DIR$/workspace/src/van_loading/src" />
+    </key>
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/workspace/src/van_loading/config" />
+      <recent name="$PROJECT_DIR$/workspace/src/van_loading/src" />
+      <recent name="$PROJECT_DIR$/workspace/src/van_loading/description" />
+      <recent name="$PROJECT_DIR$/workspace/src/van_loading/libs" />
+      <recent name="$PROJECT_DIR$/workspace/src/van_loading" />
     </key>
   </component>
   <component name="RunAnythingCache">
@@ -353,17 +520,18 @@
       <workItem from="1550767465687" duration="8500000" />
       <workItem from="1551793014082" duration="19628000" />
       <workItem from="1552309224600" duration="4244000" />
+      <workItem from="1552318448747" duration="19756000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="67434000" />
+    <option name="totallyTimeSpent" value="87190000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="-1" width="1366" height="741" extended-state="6" />
     <editor active="true" />
     <layout>
-      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.275" />
+      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.27954546" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="Favorites" order="2" side_tool="true" />
       <window_info anchor="bottom" id="Message" order="0" />
@@ -378,7 +546,7 @@
       <window_info anchor="bottom" id="Terminal" order="9" />
       <window_info anchor="bottom" id="Event Log" order="10" side_tool="true" />
       <window_info anchor="bottom" id="Messages" order="11" weight="0.32901135" />
-      <window_info active="true" anchor="bottom" id="CMake" order="12" visible="true" weight="0.32901135" />
+      <window_info anchor="bottom" id="CMake" order="12" weight="0.32901135" />
       <window_info anchor="bottom" id="Inspection Results" order="13" weight="0.32901135" />
       <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
       <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
@@ -390,22 +558,6 @@
     <option name="version" value="1" />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/aberfiles/idris_sim/trunk/src/idris_sim.cpp">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="149">
-          <caret line="706" column="19" lean-forward="true" selection-start-line="706" selection-start-column="19" selection-end-line="706" selection-end-column="19" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/aberfiles/idris_sim/trunk/launch/all.launch">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-90" />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/workspace/launch/all.launch" />
-    <entry file="file://$PROJECT_DIR$/aberfiles/idris_sim/trunk/CMakeLists.txt">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
     <entry file="file://$PROJECT_DIR$/aberfiles/idris_sim/trunk/package.xml">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="192">
@@ -460,36 +612,9 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/workspace/src/van_loading/description/meshes/hokuyo.dae">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="60">
-          <caret line="4" column="35" selection-start-line="4" selection-start-column="35" selection-end-line="4" selection-end-column="35" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/workspace/src/van_loading/description/urdf/idris.urdf.xacro">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="5295">
-          <caret line="353" column="34" selection-start-line="353" selection-start-column="34" selection-end-line="353" selection-end-column="34" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/workspace/src/van_loading/description/urdf/idris_ackerman.urdf.xacro">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/workspace/src/van_loading/description/urdf/urdf.rviz">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
     <entry file="file://$PROJECT_DIR$/libs/CMakeLists.txt" />
     <entry file="file://$PROJECT_DIR$/libs/icpSpeedTest.cpp" />
     <entry file="file://$PROJECT_DIR$/workspace/src/2019-02-20-16-15-24.bag" />
-    <entry file="file://$PROJECT_DIR$/workspace/src/van_loading/launch/van.launch">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="420">
-          <caret line="28" column="51" selection-start-line="28" selection-start-column="51" selection-end-line="28" selection-end-column="51" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/libs/icpSpeedTest/model.csv">
       <provider selected="true" editor-type-id="csv-text-editor" />
       <provider editor-type-id="csv-table-editor">
@@ -540,13 +665,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/libs/libpointmatcher/CMakeLists.txt">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-1657">
-          <caret line="380" selection-start-line="380" selection-end-line="380" selection-end-column="52" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/workspace/src/van_loading/src/move_idris.cpp" />
     <entry file="file://$PROJECT_DIR$/workspace/src/van_loading/data/source.csv">
       <provider selected="true" editor-type-id="csv-text-editor">
@@ -584,32 +702,10 @@
         <state showInfoPanel="true" fixedHeaders="false" rowLines="3" />
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/notes/notes.md">
-      <provider editor-type-id="sourcemapFileViewerProvider" />
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1530">
-          <caret line="102" column="7" selection-start-line="102" selection-start-column="7" selection-end-line="102" selection-end-column="7" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/workspace/src/double_ackermann/trunk/msg/DoubleAckermann.msg">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="165">
           <caret line="11" column="14" selection-start-line="11" selection-start-column="5" selection-end-line="11" selection-end-column="14" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/workspace/src/van_loading/package.xml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="135">
-          <caret line="9" column="51" selection-start-line="9" selection-start-column="51" selection-end-line="9" selection-end-column="51" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/workspace/src/van_loading/src/idris_sim.cpp">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="390">
-          <caret line="26" column="17" selection-start-line="26" selection-start-column="17" selection-end-line="26" selection-end-column="17" />
         </state>
       </provider>
     </entry>
@@ -620,27 +716,157 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/workspace/src/van_loading/config/control.yaml">
+    <entry file="file://$PROJECT_DIR$/notes/notes.md">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="660">
-          <caret line="44" column="30" selection-start-line="44" selection-start-column="10" selection-end-line="44" selection-end-column="30" />
+        <state relative-caret-position="180">
+          <caret line="12" column="11" selection-start-line="12" selection-start-column="11" selection-end-line="12" selection-end-column="11" />
+        </state>
+      </provider>
+      <provider editor-type-id="sourcemapFileViewerProvider" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/workspace/src/van_loading/libs/libicp/icp">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/workspace/src/van_loading/Findmrpt.cmake">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/workspace/src/van_loading/package.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="135">
+          <caret line="9" column="51" selection-start-line="9" selection-start-column="51" selection-end-line="9" selection-end-column="51" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/libs/libicp/src/icpPointToPlane.cpp">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="45">
+          <caret line="30" column="73" lean-forward="true" selection-start-line="30" selection-start-column="73" selection-end-line="30" selection-end-column="73" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/libs/libicp/src/icp.cpp">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-1301" />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/libs/libpointmatcher/CMakeLists.txt">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="870">
+          <caret line="275" column="7" lean-forward="true" selection-start-line="275" selection-start-column="7" selection-end-line="275" selection-end-column="7" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/libs/libicp/CMakeLists.txt">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="268">
+          <caret line="32" column="19" selection-start-line="32" selection-start-column="19" selection-end-line="32" selection-end-column="38" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/libs/libicp/src/demo.cpp">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="585">
+          <caret line="39" column="34" lean-forward="true" selection-start-line="39" selection-start-column="34" selection-end-line="39" selection-end-column="34" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/workspace/src/van_loading/libs/mrpt/mrpt-config.cmake">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="270">
+          <caret line="18" column="63" selection-start-line="16" selection-start-column="5" selection-end-line="18" selection-end-column="63" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/aberfiles/svn.dcs.aber.ac.uk/staff/ffl/research/software/idris_sim/trunk/config/control.yaml">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/workspace/src/van_loading/description/urdf/urdf.rviz">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-26" />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/workspace/src/van_loading/description/urdf/idris_ackerman.urdf.xacro">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-56" />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/workspace/src/van_loading/CMakeLists.txt">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="220">
+          <caret line="283" column="29" selection-start-line="283" selection-start-column="29" selection-end-line="283" selection-end-column="29" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/workspace/src/van_loading/src/idris_sim.cpp">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="180">
+          <caret line="79" column="46" selection-start-line="79" selection-start-column="38" selection-end-line="79" selection-end-column="46" />
+          <folding>
+            <element signature="e#2861#3033#0" expanded="true" />
+            <element signature="e#4262#4321#0" expanded="true" />
+            <element signature="e#5261#5326#0" expanded="true" />
+            <element signature="e#6857#6920#0" expanded="true" />
+            <element signature="e#8325#8396#0" expanded="true" />
+            <element signature="e#9450#9519#0" expanded="true" />
+            <element signature="e#12686#14187#0" expanded="true" />
+            <element signature="e#16803#17690#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/workspace/src/van_loading/description/meshes/hokuyo.dae">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="177">
+          <caret line="14" column="14" lean-forward="true" selection-start-line="14" selection-start-column="14" selection-end-line="14" selection-end-column="14" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/workspace/src/van_loading/description/urdf/display.launch">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="75">
+          <caret line="5" column="64" selection-start-line="5" selection-start-column="43" selection-end-line="5" selection-end-column="64" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/workspace/src/van_loading/description/urdf/idris.urdf.xacro">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="151">
+          <caret line="341" column="42" selection-start-line="341" selection-start-column="42" selection-end-line="341" selection-end-column="42" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/workspace/src/van_loading/src/test_icp.cpp">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="345">
+          <caret line="29" selection-start-line="29" selection-end-line="35" selection-end-column="20" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/workspace/src/van_loading/src/get_data.cpp">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="210">
-          <caret line="21" column="22" selection-start-line="21" selection-start-column="22" selection-end-line="21" selection-end-column="22" />
+        <state relative-caret-position="225">
+          <caret line="15" column="8" selection-start-line="15" selection-start-column="8" selection-end-line="15" selection-end-column="8" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/workspace/src/van_loading/Findmrpt.cmake">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/workspace/src/van_loading/CMakeLists.txt">
+    <entry file="file://$PROJECT_DIR$/workspace/src/van_loading/src/compare_against_model.cpp">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="75">
-          <caret line="272" selection-start-line="272" selection-end-line="272" selection-end-column="64" />
+        <state relative-caret-position="285">
+          <caret line="49" column="30" selection-start-line="49" selection-start-column="30" selection-end-line="49" selection-end-column="30" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/workspace/src/van_loading/config/control.yaml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-60">
+          <caret line="8" column="53" selection-start-line="8" selection-start-column="53" selection-end-line="8" selection-end-column="53" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/workspace/src/van_loading/launch/van.launch">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="180">
+          <caret line="33" column="77" lean-forward="true" selection-start-line="33" selection-start-column="77" selection-end-line="33" selection-end-column="77" />
         </state>
       </provider>
     </entry>

@@ -107,7 +107,7 @@ find_package(catkin REQUIRED COMPONENTS
 ## DEPENDS: system dependencies of this project that dependent projects also need
 catkin_package(
 #  INCLUDE_DIRS include
-  LIBRARIES van_loading
+  LIBRARIES van_loading libs/mrpt
   CATKIN_DEPENDS hardware_interface message_runtime roscpp std_msgs
 #  DEPENDS system_lib
 )
@@ -120,7 +120,7 @@ catkin_package(
 ## Your package locations should be listed before other locations
 # include_directories(include)
 #include_directories(
-#  ${catkin_INCLUDE_DIRS}
+#  libs/libicp/src
 #)
 
 ## Declare a C++ library
@@ -200,9 +200,6 @@ catkin_package(
 
 ## Add folders to be run by python nosetests
 # catkin_add_nosetests(test)
-
-
-
 include_directories(include ${catkin_INCLUDE_DIRS})
 
 add_executable(van_loading_node src/idris_sim.cpp)
@@ -224,13 +221,11 @@ launch
 DESTINATION ${CATKIN_PACKAGE_SHARE_DESTINATION}
 )
 
-
 #======================== External Dependencies ===============================
 
 # initially
 set(EXTERNAL_LIBS "")
 set(EXTRA_DEPS "")
-
 
 #--------------------
 # DEPENDENCY:  boost
@@ -270,22 +265,43 @@ message(STATUS "libnabo found, version ${libnabo_VERSION} (include=${libnabo_INC
 
 target_link_libraries(van_loading_node ${EXTERNAL_LIBS})
 
-list(APPEND CMAKE_MODULE_PATH "${CMAKE_CURRENT_LIST_DIR/libs/}")
+### MRPT:
 
-foreach(dep slam;gui)
-    # if not building from inside MRPT source tree, find it as a cmake
-    # imported project:
-    if (NOT TARGET mrpt::${dep})
-        find_package(mrpt-${dep} REQUIRED)
-    endif()
-endforeach()
+set(CMAKE_PREFIX_PATH ${CMAKE_PREFIX_PATH} libs/mrpt)
 
-# Add the required libraries for linking:
-foreach(dep slam;gui)
-    target_link_libraries(${sampleName} mrpt::${dep})
-endforeach()
+find_package(mrpt-slam)
+find_package(mrpt-nav)
+add_executable(test_icp_node src/test_icp.cpp)
+target_link_libraries(test_icp_node mrpt::slam mrpt::nav)
 
-## Set optimized building:
-#if((${CMAKE_CXX_COMPILER_ID} STREQUAL "Clang" OR CMAKE_COMPILER_IS_GNUCXX) AND NOT CMAKE_BUILD_TYPE MATCHES "Debug")
-#    add_compile_options(-O3)
-#endif()
+add_executable(compare_against_model_node src/compare_against_model.cpp)
+target_link_libraries(compare_against_model_node mrpt::slam mrpt::nav ${catkin_LIBRARIES})
+
+### Libicp
+
+# directories
+#set (LIBICP_SRC_DIR libs/libcp/src)
+#FIND_PATH(BOOST_DIR "boost")
+#
+## include directory
+#include_directories("${LIBICP_SRC_DIR}")
+#include_directories("${BOOST_DIR}")
+#
+## determine if OpenMP can/should be used
+#option(USE_OPENMP "Enable OpenMP?" ON) # set to OFF to disable
+#if(USE_OPENMP)
+#    FIND_PACKAGE(OpenMP)
+#    if(OPENMP_FOUND OR OpenMP_FOUND)
+#        message(STATUS "OpenMP flags = ${OpenMP_CXX_FLAGS}")
+#        set(CMAKE_C_FLAGS "${CMAKE_C_FLAGS} ${OpenMP_C_FLAGS}")
+#        set(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} ${OpenMP_CXX_FLAGS}")
+#    else(OPENMP_FOUND OR OpenMP_FOUND)
+#        message(STATUS "OpenMP not supported")
+#    endif(OPENMP_FOUND OR OpenMP_FOUND)
+#endif(USE_OPENMP)
+#
+## sources
+#FILE(GLOB LIBICP_SRC_FILES "libs/libcp/src/*.cpp")
+
+
+#target_link_libraries(test_icp_node ${catkin_LIBRARIES} ${LIBICP_SRC_FILES})

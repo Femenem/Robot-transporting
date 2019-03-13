@@ -10,6 +10,11 @@ MRPT: sudo apt install libftdi-dev freeglut3-dev zlib1g-dev libusb-1.0-0-dev \
 
       sudo apt-get install ros-melodic-mrpt-slam
 
+      MRPT:
+      sudo add-apt-repository ppa:joseluisblancoc/mrpt
+      sudo apt-get update
+      sudo apt-get install libmrpt-dev mrpt-apps
+
 
 
 ### Week 11/02/19:
