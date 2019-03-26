@@ -1,6 +1,6 @@
 # generated from catkin/cmake/template/pkg.context.pc.in
 CATKIN_PACKAGE_PREFIX = ""
-PROJECT_PKG_CONFIG_INCLUDE_DIRS = "".split(';') if "" != "" else []
+PROJECT_PKG_CONFIG_INCLUDE_DIRS = "/home/matt/Documents/Robot-transporting/workspace/devel/include".split(';') if "/home/matt/Documents/Robot-transporting/workspace/devel/include" != "" else []
 PROJECT_CATKIN_DEPENDS = "hardware_interface;message_runtime;roscpp;std_msgs".replace(';', ' ')
 PKG_CONFIG_LIBRARIES_WITH_PREFIX = "-lvan_loading;-llibs/mrpt".split(';') if "-lvan_loading;-llibs/mrpt" != "" else []
 PROJECT_NAME = "van_loading"

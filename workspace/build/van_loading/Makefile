@@ -68,16 +68,6 @@ install/strip/fast: preinstall/fast
 	/usr/bin/cmake -DCMAKE_INSTALL_DO_STRIP=1 -P cmake_install.cmake
 .PHONY : install/strip/fast
 
-# Special rule for the target list_install_components
-list_install_components:
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "Available install components are: \"Unspecified\""
-.PHONY : list_install_components
-
-# Special rule for the target list_install_components
-list_install_components/fast: list_install_components
-
-.PHONY : list_install_components/fast
-
 # Special rule for the target install/local
 install/local: preinstall
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "Installing only the local directory..."
@@ -89,28 +79,6 @@ install/local/fast: preinstall/fast
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "Installing only the local directory..."
 	/usr/bin/cmake -DCMAKE_INSTALL_LOCAL_ONLY=1 -P cmake_install.cmake
 .PHONY : install/local/fast
-
-# Special rule for the target test
-test:
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "Running tests..."
-	/usr/bin/ctest --force-new-ctest-process $(ARGS)
-.PHONY : test
-
-# Special rule for the target test
-test/fast: test
-
-.PHONY : test/fast
-
-# Special rule for the target edit_cache
-edit_cache:
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "Running CMake cache editor..."
-	/usr/bin/cmake-gui -H$(CMAKE_SOURCE_DIR) -B$(CMAKE_BINARY_DIR)
-.PHONY : edit_cache
-
-# Special rule for the target edit_cache
-edit_cache/fast: edit_cache
-
-.PHONY : edit_cache/fast
 
 # Special rule for the target install
 install: preinstall
@@ -134,6 +102,38 @@ rebuild_cache:
 rebuild_cache/fast: rebuild_cache
 
 .PHONY : rebuild_cache/fast
+
+# Special rule for the target edit_cache
+edit_cache:
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "Running CMake cache editor..."
+	/usr/bin/cmake-gui -H$(CMAKE_SOURCE_DIR) -B$(CMAKE_BINARY_DIR)
+.PHONY : edit_cache
+
+# Special rule for the target edit_cache
+edit_cache/fast: edit_cache
+
+.PHONY : edit_cache/fast
+
+# Special rule for the target list_install_components
+list_install_components:
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "Available install components are: \"Unspecified\""
+.PHONY : list_install_components
+
+# Special rule for the target list_install_components
+list_install_components/fast: list_install_components
+
+.PHONY : list_install_components/fast
+
+# Special rule for the target test
+test:
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "Running tests..."
+	/usr/bin/ctest --force-new-ctest-process $(ARGS)
+.PHONY : test
+
+# Special rule for the target test
+test/fast: test
+
+.PHONY : test/fast
 
 # The main all target
 all: cmake_check_build_system
@@ -168,19 +168,19 @@ depend:
 .PHONY : depend
 
 # Convenience name for target.
-van_loading/CMakeFiles/get_data_node.dir/rule:
-	cd /home/matt/Documents/Robot-transporting/workspace/build && $(MAKE) -f CMakeFiles/Makefile2 van_loading/CMakeFiles/get_data_node.dir/rule
-.PHONY : van_loading/CMakeFiles/get_data_node.dir/rule
+van_loading/CMakeFiles/van_loading_geneus.dir/rule:
+	cd /home/matt/Documents/Robot-transporting/workspace/build && $(MAKE) -f CMakeFiles/Makefile2 van_loading/CMakeFiles/van_loading_geneus.dir/rule
+.PHONY : van_loading/CMakeFiles/van_loading_geneus.dir/rule
 
 # Convenience name for target.
-get_data_node: van_loading/CMakeFiles/get_data_node.dir/rule
+van_loading_geneus: van_loading/CMakeFiles/van_loading_geneus.dir/rule
 
-.PHONY : get_data_node
+.PHONY : van_loading_geneus
 
 # fast build rule for target.
-get_data_node/fast:
-	cd /home/matt/Documents/Robot-transporting/workspace/build && $(MAKE) -f van_loading/CMakeFiles/get_data_node.dir/build.make van_loading/CMakeFiles/get_data_node.dir/build
-.PHONY : get_data_node/fast
+van_loading_geneus/fast:
+	cd /home/matt/Documents/Robot-transporting/workspace/build && $(MAKE) -f van_loading/CMakeFiles/van_loading_geneus.dir/build.make van_loading/CMakeFiles/van_loading_geneus.dir/build
+.PHONY : van_loading_geneus/fast
 
 # Convenience name for target.
 van_loading/CMakeFiles/van_loading_node.dir/rule:
@@ -198,88 +198,226 @@ van_loading_node/fast:
 .PHONY : van_loading_node/fast
 
 # Convenience name for target.
-van_loading/CMakeFiles/test_icp_node.dir/rule:
-	cd /home/matt/Documents/Robot-transporting/workspace/build && $(MAKE) -f CMakeFiles/Makefile2 van_loading/CMakeFiles/test_icp_node.dir/rule
-.PHONY : van_loading/CMakeFiles/test_icp_node.dir/rule
+van_loading/CMakeFiles/van_loading_gencpp.dir/rule:
+	cd /home/matt/Documents/Robot-transporting/workspace/build && $(MAKE) -f CMakeFiles/Makefile2 van_loading/CMakeFiles/van_loading_gencpp.dir/rule
+.PHONY : van_loading/CMakeFiles/van_loading_gencpp.dir/rule
 
 # Convenience name for target.
-test_icp_node: van_loading/CMakeFiles/test_icp_node.dir/rule
+van_loading_gencpp: van_loading/CMakeFiles/van_loading_gencpp.dir/rule
 
-.PHONY : test_icp_node
+.PHONY : van_loading_gencpp
 
 # fast build rule for target.
-test_icp_node/fast:
-	cd /home/matt/Documents/Robot-transporting/workspace/build && $(MAKE) -f van_loading/CMakeFiles/test_icp_node.dir/build.make van_loading/CMakeFiles/test_icp_node.dir/build
-.PHONY : test_icp_node/fast
+van_loading_gencpp/fast:
+	cd /home/matt/Documents/Robot-transporting/workspace/build && $(MAKE) -f van_loading/CMakeFiles/van_loading_gencpp.dir/build.make van_loading/CMakeFiles/van_loading_gencpp.dir/build
+.PHONY : van_loading_gencpp/fast
 
 # Convenience name for target.
-van_loading/CMakeFiles/compare_against_model_node.dir/rule:
-	cd /home/matt/Documents/Robot-transporting/workspace/build && $(MAKE) -f CMakeFiles/Makefile2 van_loading/CMakeFiles/compare_against_model_node.dir/rule
-.PHONY : van_loading/CMakeFiles/compare_against_model_node.dir/rule
+van_loading/CMakeFiles/record_path_node.dir/rule:
+	cd /home/matt/Documents/Robot-transporting/workspace/build && $(MAKE) -f CMakeFiles/Makefile2 van_loading/CMakeFiles/record_path_node.dir/rule
+.PHONY : van_loading/CMakeFiles/record_path_node.dir/rule
 
 # Convenience name for target.
-compare_against_model_node: van_loading/CMakeFiles/compare_against_model_node.dir/rule
+record_path_node: van_loading/CMakeFiles/record_path_node.dir/rule
 
-.PHONY : compare_against_model_node
+.PHONY : record_path_node
 
 # fast build rule for target.
-compare_against_model_node/fast:
-	cd /home/matt/Documents/Robot-transporting/workspace/build && $(MAKE) -f van_loading/CMakeFiles/compare_against_model_node.dir/build.make van_loading/CMakeFiles/compare_against_model_node.dir/build
-.PHONY : compare_against_model_node/fast
+record_path_node/fast:
+	cd /home/matt/Documents/Robot-transporting/workspace/build && $(MAKE) -f van_loading/CMakeFiles/record_path_node.dir/build.make van_loading/CMakeFiles/record_path_node.dir/build
+.PHONY : record_path_node/fast
 
-src/compare_against_model.o: src/compare_against_model.cpp.o
+# Convenience name for target.
+van_loading/CMakeFiles/van_loading_generate_messages_eus.dir/rule:
+	cd /home/matt/Documents/Robot-transporting/workspace/build && $(MAKE) -f CMakeFiles/Makefile2 van_loading/CMakeFiles/van_loading_generate_messages_eus.dir/rule
+.PHONY : van_loading/CMakeFiles/van_loading_generate_messages_eus.dir/rule
 
-.PHONY : src/compare_against_model.o
+# Convenience name for target.
+van_loading_generate_messages_eus: van_loading/CMakeFiles/van_loading_generate_messages_eus.dir/rule
+
+.PHONY : van_loading_generate_messages_eus
+
+# fast build rule for target.
+van_loading_generate_messages_eus/fast:
+	cd /home/matt/Documents/Robot-transporting/workspace/build && $(MAKE) -f van_loading/CMakeFiles/van_loading_generate_messages_eus.dir/build.make van_loading/CMakeFiles/van_loading_generate_messages_eus.dir/build
+.PHONY : van_loading_generate_messages_eus/fast
+
+# Convenience name for target.
+van_loading/CMakeFiles/van_loading_genpy.dir/rule:
+	cd /home/matt/Documents/Robot-transporting/workspace/build && $(MAKE) -f CMakeFiles/Makefile2 van_loading/CMakeFiles/van_loading_genpy.dir/rule
+.PHONY : van_loading/CMakeFiles/van_loading_genpy.dir/rule
+
+# Convenience name for target.
+van_loading_genpy: van_loading/CMakeFiles/van_loading_genpy.dir/rule
+
+.PHONY : van_loading_genpy
+
+# fast build rule for target.
+van_loading_genpy/fast:
+	cd /home/matt/Documents/Robot-transporting/workspace/build && $(MAKE) -f van_loading/CMakeFiles/van_loading_genpy.dir/build.make van_loading/CMakeFiles/van_loading_genpy.dir/build
+.PHONY : van_loading_genpy/fast
+
+# Convenience name for target.
+van_loading/CMakeFiles/van_loading_generate_messages_cpp.dir/rule:
+	cd /home/matt/Documents/Robot-transporting/workspace/build && $(MAKE) -f CMakeFiles/Makefile2 van_loading/CMakeFiles/van_loading_generate_messages_cpp.dir/rule
+.PHONY : van_loading/CMakeFiles/van_loading_generate_messages_cpp.dir/rule
+
+# Convenience name for target.
+van_loading_generate_messages_cpp: van_loading/CMakeFiles/van_loading_generate_messages_cpp.dir/rule
+
+.PHONY : van_loading_generate_messages_cpp
+
+# fast build rule for target.
+van_loading_generate_messages_cpp/fast:
+	cd /home/matt/Documents/Robot-transporting/workspace/build && $(MAKE) -f van_loading/CMakeFiles/van_loading_generate_messages_cpp.dir/build.make van_loading/CMakeFiles/van_loading_generate_messages_cpp.dir/build
+.PHONY : van_loading_generate_messages_cpp/fast
+
+# Convenience name for target.
+van_loading/CMakeFiles/van_loading_generate_messages.dir/rule:
+	cd /home/matt/Documents/Robot-transporting/workspace/build && $(MAKE) -f CMakeFiles/Makefile2 van_loading/CMakeFiles/van_loading_generate_messages.dir/rule
+.PHONY : van_loading/CMakeFiles/van_loading_generate_messages.dir/rule
+
+# Convenience name for target.
+van_loading_generate_messages: van_loading/CMakeFiles/van_loading_generate_messages.dir/rule
+
+.PHONY : van_loading_generate_messages
+
+# fast build rule for target.
+van_loading_generate_messages/fast:
+	cd /home/matt/Documents/Robot-transporting/workspace/build && $(MAKE) -f van_loading/CMakeFiles/van_loading_generate_messages.dir/build.make van_loading/CMakeFiles/van_loading_generate_messages.dir/build
+.PHONY : van_loading_generate_messages/fast
+
+# Convenience name for target.
+van_loading/CMakeFiles/_van_loading_generate_messages_check_deps_ICPDirection.dir/rule:
+	cd /home/matt/Documents/Robot-transporting/workspace/build && $(MAKE) -f CMakeFiles/Makefile2 van_loading/CMakeFiles/_van_loading_generate_messages_check_deps_ICPDirection.dir/rule
+.PHONY : van_loading/CMakeFiles/_van_loading_generate_messages_check_deps_ICPDirection.dir/rule
+
+# Convenience name for target.
+_van_loading_generate_messages_check_deps_ICPDirection: van_loading/CMakeFiles/_van_loading_generate_messages_check_deps_ICPDirection.dir/rule
+
+.PHONY : _van_loading_generate_messages_check_deps_ICPDirection
+
+# fast build rule for target.
+_van_loading_generate_messages_check_deps_ICPDirection/fast:
+	cd /home/matt/Documents/Robot-transporting/workspace/build && $(MAKE) -f van_loading/CMakeFiles/_van_loading_generate_messages_check_deps_ICPDirection.dir/build.make van_loading/CMakeFiles/_van_loading_generate_messages_check_deps_ICPDirection.dir/build
+.PHONY : _van_loading_generate_messages_check_deps_ICPDirection/fast
+
+# Convenience name for target.
+van_loading/CMakeFiles/van_loading_genlisp.dir/rule:
+	cd /home/matt/Documents/Robot-transporting/workspace/build && $(MAKE) -f CMakeFiles/Makefile2 van_loading/CMakeFiles/van_loading_genlisp.dir/rule
+.PHONY : van_loading/CMakeFiles/van_loading_genlisp.dir/rule
+
+# Convenience name for target.
+van_loading_genlisp: van_loading/CMakeFiles/van_loading_genlisp.dir/rule
+
+.PHONY : van_loading_genlisp
+
+# fast build rule for target.
+van_loading_genlisp/fast:
+	cd /home/matt/Documents/Robot-transporting/workspace/build && $(MAKE) -f van_loading/CMakeFiles/van_loading_genlisp.dir/build.make van_loading/CMakeFiles/van_loading_genlisp.dir/build
+.PHONY : van_loading_genlisp/fast
+
+# Convenience name for target.
+van_loading/CMakeFiles/van_loading_generate_messages_py.dir/rule:
+	cd /home/matt/Documents/Robot-transporting/workspace/build && $(MAKE) -f CMakeFiles/Makefile2 van_loading/CMakeFiles/van_loading_generate_messages_py.dir/rule
+.PHONY : van_loading/CMakeFiles/van_loading_generate_messages_py.dir/rule
+
+# Convenience name for target.
+van_loading_generate_messages_py: van_loading/CMakeFiles/van_loading_generate_messages_py.dir/rule
+
+.PHONY : van_loading_generate_messages_py
+
+# fast build rule for target.
+van_loading_generate_messages_py/fast:
+	cd /home/matt/Documents/Robot-transporting/workspace/build && $(MAKE) -f van_loading/CMakeFiles/van_loading_generate_messages_py.dir/build.make van_loading/CMakeFiles/van_loading_generate_messages_py.dir/build
+.PHONY : van_loading_generate_messages_py/fast
+
+# Convenience name for target.
+van_loading/CMakeFiles/van_loading_generate_messages_nodejs.dir/rule:
+	cd /home/matt/Documents/Robot-transporting/workspace/build && $(MAKE) -f CMakeFiles/Makefile2 van_loading/CMakeFiles/van_loading_generate_messages_nodejs.dir/rule
+.PHONY : van_loading/CMakeFiles/van_loading_generate_messages_nodejs.dir/rule
+
+# Convenience name for target.
+van_loading_generate_messages_nodejs: van_loading/CMakeFiles/van_loading_generate_messages_nodejs.dir/rule
+
+.PHONY : van_loading_generate_messages_nodejs
+
+# fast build rule for target.
+van_loading_generate_messages_nodejs/fast:
+	cd /home/matt/Documents/Robot-transporting/workspace/build && $(MAKE) -f van_loading/CMakeFiles/van_loading_generate_messages_nodejs.dir/build.make van_loading/CMakeFiles/van_loading_generate_messages_nodejs.dir/build
+.PHONY : van_loading_generate_messages_nodejs/fast
+
+# Convenience name for target.
+van_loading/CMakeFiles/van_loading_generate_messages_lisp.dir/rule:
+	cd /home/matt/Documents/Robot-transporting/workspace/build && $(MAKE) -f CMakeFiles/Makefile2 van_loading/CMakeFiles/van_loading_generate_messages_lisp.dir/rule
+.PHONY : van_loading/CMakeFiles/van_loading_generate_messages_lisp.dir/rule
+
+# Convenience name for target.
+van_loading_generate_messages_lisp: van_loading/CMakeFiles/van_loading_generate_messages_lisp.dir/rule
+
+.PHONY : van_loading_generate_messages_lisp
+
+# fast build rule for target.
+van_loading_generate_messages_lisp/fast:
+	cd /home/matt/Documents/Robot-transporting/workspace/build && $(MAKE) -f van_loading/CMakeFiles/van_loading_generate_messages_lisp.dir/build.make van_loading/CMakeFiles/van_loading_generate_messages_lisp.dir/build
+.PHONY : van_loading_generate_messages_lisp/fast
+
+# Convenience name for target.
+van_loading/CMakeFiles/van_loading_gennodejs.dir/rule:
+	cd /home/matt/Documents/Robot-transporting/workspace/build && $(MAKE) -f CMakeFiles/Makefile2 van_loading/CMakeFiles/van_loading_gennodejs.dir/rule
+.PHONY : van_loading/CMakeFiles/van_loading_gennodejs.dir/rule
+
+# Convenience name for target.
+van_loading_gennodejs: van_loading/CMakeFiles/van_loading_gennodejs.dir/rule
+
+.PHONY : van_loading_gennodejs
+
+# fast build rule for target.
+van_loading_gennodejs/fast:
+	cd /home/matt/Documents/Robot-transporting/workspace/build && $(MAKE) -f van_loading/CMakeFiles/van_loading_gennodejs.dir/build.make van_loading/CMakeFiles/van_loading_gennodejs.dir/build
+.PHONY : van_loading_gennodejs/fast
+
+# Convenience name for target.
+van_loading/CMakeFiles/icp_compare_node.dir/rule:
+	cd /home/matt/Documents/Robot-transporting/workspace/build && $(MAKE) -f CMakeFiles/Makefile2 van_loading/CMakeFiles/icp_compare_node.dir/rule
+.PHONY : van_loading/CMakeFiles/icp_compare_node.dir/rule
+
+# Convenience name for target.
+icp_compare_node: van_loading/CMakeFiles/icp_compare_node.dir/rule
+
+.PHONY : icp_compare_node
+
+# fast build rule for target.
+icp_compare_node/fast:
+	cd /home/matt/Documents/Robot-transporting/workspace/build && $(MAKE) -f van_loading/CMakeFiles/icp_compare_node.dir/build.make van_loading/CMakeFiles/icp_compare_node.dir/build
+.PHONY : icp_compare_node/fast
+
+src/compare_icp.o: src/compare_icp.cpp.o
+
+.PHONY : src/compare_icp.o
 
 # target to build an object file
-src/compare_against_model.cpp.o:
-	cd /home/matt/Documents/Robot-transporting/workspace/build && $(MAKE) -f van_loading/CMakeFiles/compare_against_model_node.dir/build.make van_loading/CMakeFiles/compare_against_model_node.dir/src/compare_against_model.cpp.o
-.PHONY : src/compare_against_model.cpp.o
+src/compare_icp.cpp.o:
+	cd /home/matt/Documents/Robot-transporting/workspace/build && $(MAKE) -f van_loading/CMakeFiles/icp_compare_node.dir/build.make van_loading/CMakeFiles/icp_compare_node.dir/src/compare_icp.cpp.o
+.PHONY : src/compare_icp.cpp.o
 
-src/compare_against_model.i: src/compare_against_model.cpp.i
+src/compare_icp.i: src/compare_icp.cpp.i
 
-.PHONY : src/compare_against_model.i
-
-# target to preprocess a source file
-src/compare_against_model.cpp.i:
-	cd /home/matt/Documents/Robot-transporting/workspace/build && $(MAKE) -f van_loading/CMakeFiles/compare_against_model_node.dir/build.make van_loading/CMakeFiles/compare_against_model_node.dir/src/compare_against_model.cpp.i
-.PHONY : src/compare_against_model.cpp.i
-
-src/compare_against_model.s: src/compare_against_model.cpp.s
-
-.PHONY : src/compare_against_model.s
-
-# target to generate assembly for a file
-src/compare_against_model.cpp.s:
-	cd /home/matt/Documents/Robot-transporting/workspace/build && $(MAKE) -f van_loading/CMakeFiles/compare_against_model_node.dir/build.make van_loading/CMakeFiles/compare_against_model_node.dir/src/compare_against_model.cpp.s
-.PHONY : src/compare_against_model.cpp.s
-
-src/get_data.o: src/get_data.cpp.o
-
-.PHONY : src/get_data.o
-
-# target to build an object file
-src/get_data.cpp.o:
-	cd /home/matt/Documents/Robot-transporting/workspace/build && $(MAKE) -f van_loading/CMakeFiles/get_data_node.dir/build.make van_loading/CMakeFiles/get_data_node.dir/src/get_data.cpp.o
-.PHONY : src/get_data.cpp.o
-
-src/get_data.i: src/get_data.cpp.i
-
-.PHONY : src/get_data.i
+.PHONY : src/compare_icp.i
 
 # target to preprocess a source file
-src/get_data.cpp.i:
-	cd /home/matt/Documents/Robot-transporting/workspace/build && $(MAKE) -f van_loading/CMakeFiles/get_data_node.dir/build.make van_loading/CMakeFiles/get_data_node.dir/src/get_data.cpp.i
-.PHONY : src/get_data.cpp.i
+src/compare_icp.cpp.i:
+	cd /home/matt/Documents/Robot-transporting/workspace/build && $(MAKE) -f van_loading/CMakeFiles/icp_compare_node.dir/build.make van_loading/CMakeFiles/icp_compare_node.dir/src/compare_icp.cpp.i
+.PHONY : src/compare_icp.cpp.i
 
-src/get_data.s: src/get_data.cpp.s
+src/compare_icp.s: src/compare_icp.cpp.s
 
-.PHONY : src/get_data.s
+.PHONY : src/compare_icp.s
 
 # target to generate assembly for a file
-src/get_data.cpp.s:
-	cd /home/matt/Documents/Robot-transporting/workspace/build && $(MAKE) -f van_loading/CMakeFiles/get_data_node.dir/build.make van_loading/CMakeFiles/get_data_node.dir/src/get_data.cpp.s
-.PHONY : src/get_data.cpp.s
+src/compare_icp.cpp.s:
+	cd /home/matt/Documents/Robot-transporting/workspace/build && $(MAKE) -f van_loading/CMakeFiles/icp_compare_node.dir/build.make van_loading/CMakeFiles/icp_compare_node.dir/src/compare_icp.cpp.s
+.PHONY : src/compare_icp.cpp.s
 
 src/idris_sim.o: src/idris_sim.cpp.o
 
@@ -308,32 +446,32 @@ src/idris_sim.cpp.s:
 	cd /home/matt/Documents/Robot-transporting/workspace/build && $(MAKE) -f van_loading/CMakeFiles/van_loading_node.dir/build.make van_loading/CMakeFiles/van_loading_node.dir/src/idris_sim.cpp.s
 .PHONY : src/idris_sim.cpp.s
 
-src/test_icp.o: src/test_icp.cpp.o
+src/record_path.o: src/record_path.cpp.o
 
-.PHONY : src/test_icp.o
+.PHONY : src/record_path.o
 
 # target to build an object file
-src/test_icp.cpp.o:
-	cd /home/matt/Documents/Robot-transporting/workspace/build && $(MAKE) -f van_loading/CMakeFiles/test_icp_node.dir/build.make van_loading/CMakeFiles/test_icp_node.dir/src/test_icp.cpp.o
-.PHONY : src/test_icp.cpp.o
+src/record_path.cpp.o:
+	cd /home/matt/Documents/Robot-transporting/workspace/build && $(MAKE) -f van_loading/CMakeFiles/record_path_node.dir/build.make van_loading/CMakeFiles/record_path_node.dir/src/record_path.cpp.o
+.PHONY : src/record_path.cpp.o
 
-src/test_icp.i: src/test_icp.cpp.i
+src/record_path.i: src/record_path.cpp.i
 
-.PHONY : src/test_icp.i
+.PHONY : src/record_path.i
 
 # target to preprocess a source file
-src/test_icp.cpp.i:
-	cd /home/matt/Documents/Robot-transporting/workspace/build && $(MAKE) -f van_loading/CMakeFiles/test_icp_node.dir/build.make van_loading/CMakeFiles/test_icp_node.dir/src/test_icp.cpp.i
-.PHONY : src/test_icp.cpp.i
+src/record_path.cpp.i:
+	cd /home/matt/Documents/Robot-transporting/workspace/build && $(MAKE) -f van_loading/CMakeFiles/record_path_node.dir/build.make van_loading/CMakeFiles/record_path_node.dir/src/record_path.cpp.i
+.PHONY : src/record_path.cpp.i
 
-src/test_icp.s: src/test_icp.cpp.s
+src/record_path.s: src/record_path.cpp.s
 
-.PHONY : src/test_icp.s
+.PHONY : src/record_path.s
 
 # target to generate assembly for a file
-src/test_icp.cpp.s:
-	cd /home/matt/Documents/Robot-transporting/workspace/build && $(MAKE) -f van_loading/CMakeFiles/test_icp_node.dir/build.make van_loading/CMakeFiles/test_icp_node.dir/src/test_icp.cpp.s
-.PHONY : src/test_icp.cpp.s
+src/record_path.cpp.s:
+	cd /home/matt/Documents/Robot-transporting/workspace/build && $(MAKE) -f van_loading/CMakeFiles/record_path_node.dir/build.make van_loading/CMakeFiles/record_path_node.dir/src/record_path.cpp.s
+.PHONY : src/record_path.cpp.s
 
 # Help Target
 help:
@@ -342,28 +480,36 @@ help:
 	@echo "... clean"
 	@echo "... depend"
 	@echo "... install/strip"
-	@echo "... list_install_components"
-	@echo "... get_data_node"
 	@echo "... install/local"
-	@echo "... test"
-	@echo "... van_loading_node"
-	@echo "... edit_cache"
 	@echo "... install"
-	@echo "... test_icp_node"
 	@echo "... rebuild_cache"
-	@echo "... compare_against_model_node"
-	@echo "... src/compare_against_model.o"
-	@echo "... src/compare_against_model.i"
-	@echo "... src/compare_against_model.s"
-	@echo "... src/get_data.o"
-	@echo "... src/get_data.i"
-	@echo "... src/get_data.s"
+	@echo "... edit_cache"
+	@echo "... van_loading_geneus"
+	@echo "... van_loading_node"
+	@echo "... list_install_components"
+	@echo "... van_loading_gencpp"
+	@echo "... record_path_node"
+	@echo "... van_loading_generate_messages_eus"
+	@echo "... van_loading_genpy"
+	@echo "... van_loading_generate_messages_cpp"
+	@echo "... van_loading_generate_messages"
+	@echo "... _van_loading_generate_messages_check_deps_ICPDirection"
+	@echo "... van_loading_genlisp"
+	@echo "... van_loading_generate_messages_py"
+	@echo "... van_loading_generate_messages_nodejs"
+	@echo "... van_loading_generate_messages_lisp"
+	@echo "... van_loading_gennodejs"
+	@echo "... icp_compare_node"
+	@echo "... test"
+	@echo "... src/compare_icp.o"
+	@echo "... src/compare_icp.i"
+	@echo "... src/compare_icp.s"
 	@echo "... src/idris_sim.o"
 	@echo "... src/idris_sim.i"
 	@echo "... src/idris_sim.s"
-	@echo "... src/test_icp.o"
-	@echo "... src/test_icp.i"
-	@echo "... src/test_icp.s"
+	@echo "... src/record_path.o"
+	@echo "... src/record_path.i"
+	@echo "... src/record_path.s"
 .PHONY : help
 
 

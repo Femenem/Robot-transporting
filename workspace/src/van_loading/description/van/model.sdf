@@ -55,9 +55,9 @@
         <surface>
           <friction>
             <ode>
-              <mu>10</mu>
-              <mu2>10</mu2>
-              <fdir1>0 0 0</fdir1>
+              <mu>1</mu>
+              <mu2>1</mu2>
+              <fdir1>1 0 0</fdir1>
               <slip1>0</slip1>
               <slip2>0</slip2>
             </ode>
@@ -83,8 +83,8 @@
               <soft_cfm>0</soft_cfm>
               <soft_erp>0.2</soft_erp>
               <kp>1e+13</kp>
-              <kd>1</kd>
-              <max_vel>0.01</max_vel>
+              <kd>1e+13</kd>
+              <max_vel>0</max_vel>
               <min_depth>0</min_depth>
             </ode>
             <bullet>
@@ -93,7 +93,7 @@
               <soft_cfm>0</soft_cfm>
               <soft_erp>0.2</soft_erp>
               <kp>1e+13</kp>
-              <kd>1</kd>
+              <kd>1e+13</kd>
             </bullet>
           </contact>
         </surface>
@@ -181,8 +181,8 @@
               <soft_cfm>0</soft_cfm>
               <soft_erp>0.2</soft_erp>
               <kp>1e+13</kp>
-              <kd>1</kd>
-              <max_vel>0.01</max_vel>
+              <kd>1e+13</kd>
+              <max_vel>0</max_vel>
               <min_depth>0</min_depth>
             </ode>
             <bullet>
@@ -191,7 +191,7 @@
               <soft_cfm>0</soft_cfm>
               <soft_erp>0.2</soft_erp>
               <kp>1e+13</kp>
-              <kd>1</kd>
+              <kd>1e+13</kd>
             </bullet>
           </contact>
         </surface>
@@ -279,8 +279,8 @@
               <soft_cfm>0</soft_cfm>
               <soft_erp>0.2</soft_erp>
               <kp>1e+13</kp>
-              <kd>1</kd>
-              <max_vel>0.01</max_vel>
+              <kd>1e+13</kd>
+              <max_vel>0</max_vel>
               <min_depth>0</min_depth>
             </ode>
             <bullet>
@@ -289,7 +289,7 @@
               <soft_cfm>0</soft_cfm>
               <soft_erp>0.2</soft_erp>
               <kp>1e+13</kp>
-              <kd>1</kd>
+              <kd>1e+13</kd>
             </bullet>
           </contact>
         </surface>
@@ -314,7 +314,7 @@
       <kinematic>0</kinematic>
       <enable_wind>0</enable_wind>
       <visual name='visual'>
-        <pose frame=''>0 0.195 0 0 -0 0</pose>
+        <pose frame=''>0 0.185 0 0 -0 0</pose>
         <geometry>
           <box>
             <size>5 0.01 2</size>
@@ -340,7 +340,7 @@
       <collision name='collision'>
         <laser_retro>0</laser_retro>
         <max_contacts>10</max_contacts>
-        <pose frame=''>0 0.195 0 0 -0 0</pose>
+        <pose frame=''>0 0.185 0 0 -0 0</pose>
         <geometry>
           <box>
             <size>5 0.01 2</size>
@@ -377,8 +377,8 @@
               <soft_cfm>0</soft_cfm>
               <soft_erp>0.2</soft_erp>
               <kp>1e+13</kp>
-              <kd>1</kd>
-              <max_vel>0.01</max_vel>
+              <kd>1e+13</kd>
+              <max_vel>0</max_vel>
               <min_depth>0</min_depth>
             </ode>
             <bullet>
@@ -387,7 +387,7 @@
               <soft_cfm>0</soft_cfm>
               <soft_erp>0.2</soft_erp>
               <kp>1e+13</kp>
-              <kd>1</kd>
+              <kd>1e+13</kd>
             </bullet>
           </contact>
         </surface>
@@ -475,8 +475,8 @@
               <soft_cfm>0</soft_cfm>
               <soft_erp>0.2</soft_erp>
               <kp>1e+13</kp>
-              <kd>1</kd>
-              <max_vel>0.01</max_vel>
+              <kd>1e+13</kd>
+              <max_vel>0</max_vel>
               <min_depth>0</min_depth>
             </ode>
             <bullet>
@@ -485,7 +485,7 @@
               <soft_cfm>0</soft_cfm>
               <soft_erp>0.2</soft_erp>
               <kp>1e+13</kp>
-              <kd>1</kd>
+              <kd>1e+13</kd>
             </bullet>
           </contact>
         </surface>
@@ -510,7 +510,7 @@
       <kinematic>0</kinematic>
       <enable_wind>0</enable_wind>
       <visual name='visual'>
-        <pose frame=''>0 -0.195 0 0 -0 0</pose>
+        <pose frame=''>0 -0.185 0 0 -0 0</pose>
         <geometry>
           <box>
             <size>5 0.01 2</size>
@@ -536,7 +536,7 @@
       <collision name='collision'>
         <laser_retro>0</laser_retro>
         <max_contacts>10</max_contacts>
-        <pose frame=''>0 -0.195 0 0 -0 0</pose>
+        <pose frame=''>0 -0.185 0 0 -0 0</pose>
         <geometry>
           <box>
             <size>5 0.01 2</size>
@@ -573,8 +573,8 @@
               <soft_cfm>0</soft_cfm>
               <soft_erp>0.2</soft_erp>
               <kp>1e+13</kp>
-              <kd>1</kd>
-              <max_vel>0.01</max_vel>
+              <kd>1e+13</kd>
+              <max_vel>0</max_vel>
               <min_depth>0</min_depth>
             </ode>
             <bullet>
@@ -583,7 +583,7 @@
               <soft_cfm>0</soft_cfm>
               <soft_erp>0.2</soft_erp>
               <kp>1e+13</kp>
-              <kd>1</kd>
+              <kd>1e+13</kd>
             </bullet>
           </contact>
         </surface>
@@ -608,7 +608,7 @@
       <kinematic>0</kinematic>
       <enable_wind>0</enable_wind>
       <visual name='visual'>
-        <pose frame=''>0 0 0 0 -0 0</pose>
+        <pose frame=''>-0.01 0 0 0 -0 0</pose>
         <geometry>
           <box>
             <size>0.01 1.981 2</size>
@@ -634,7 +634,7 @@
       <collision name='collision'>
         <laser_retro>0</laser_retro>
         <max_contacts>10</max_contacts>
-        <pose frame=''>0 0 0 0 -0 0</pose>
+        <pose frame=''>-0.01 0 0 0 -0 0</pose>
         <geometry>
           <box>
             <size>0.01 1.981 2</size>
@@ -671,8 +671,8 @@
               <soft_cfm>0</soft_cfm>
               <soft_erp>0.2</soft_erp>
               <kp>1e+13</kp>
-              <kd>1</kd>
-              <max_vel>0.01</max_vel>
+              <kd>1e+13</kd>
+              <max_vel>0</max_vel>
               <min_depth>0</min_depth>
             </ode>
             <bullet>
@@ -681,7 +681,7 @@
               <soft_cfm>0</soft_cfm>
               <soft_erp>0.2</soft_erp>
               <kp>1e+13</kp>
-              <kd>1</kd>
+              <kd>1e+13</kd>
             </bullet>
           </contact>
         </surface>
@@ -769,8 +769,8 @@
               <soft_cfm>0</soft_cfm>
               <soft_erp>0.2</soft_erp>
               <kp>1e+13</kp>
-              <kd>1</kd>
-              <max_vel>0.01</max_vel>
+              <kd>1e+13</kd>
+              <max_vel>0</max_vel>
               <min_depth>0</min_depth>
             </ode>
             <bullet>
@@ -779,7 +779,7 @@
               <soft_cfm>0</soft_cfm>
               <soft_erp>0.2</soft_erp>
               <kp>1e+13</kp>
-              <kd>1</kd>
+              <kd>1e+13</kd>
             </bullet>
           </contact>
         </surface>
@@ -867,8 +867,8 @@
               <soft_cfm>0</soft_cfm>
               <soft_erp>0.2</soft_erp>
               <kp>1e+13</kp>
-              <kd>1</kd>
-              <max_vel>0.01</max_vel>
+              <kd>1e+13</kd>
+              <max_vel>0</max_vel>
               <min_depth>0</min_depth>
             </ode>
             <bullet>
@@ -877,7 +877,7 @@
               <soft_cfm>0</soft_cfm>
               <soft_erp>0.2</soft_erp>
               <kp>1e+13</kp>
-              <kd>1</kd>
+              <kd>1e+13</kd>
             </bullet>
           </contact>
         </surface>
@@ -965,8 +965,8 @@
               <soft_cfm>0</soft_cfm>
               <soft_erp>0.2</soft_erp>
               <kp>1e+13</kp>
-              <kd>1</kd>
-              <max_vel>0.01</max_vel>
+              <kd>1e+13</kd>
+              <max_vel>0</max_vel>
               <min_depth>0</min_depth>
             </ode>
             <bullet>
@@ -975,7 +975,7 @@
               <soft_cfm>0</soft_cfm>
               <soft_erp>0.2</soft_erp>
               <kp>1e+13</kp>
-              <kd>1</kd>
+              <kd>1e+13</kd>
             </bullet>
           </contact>
         </surface>
@@ -1063,8 +1063,8 @@
               <soft_cfm>0</soft_cfm>
               <soft_erp>0.2</soft_erp>
               <kp>1e+13</kp>
-              <kd>1</kd>
-              <max_vel>0.01</max_vel>
+              <kd>1e+13</kd>
+              <max_vel>0</max_vel>
               <min_depth>0</min_depth>
             </ode>
             <bullet>
@@ -1073,7 +1073,7 @@
               <soft_cfm>0</soft_cfm>
               <soft_erp>0.2</soft_erp>
               <kp>1e+13</kp>
-              <kd>1</kd>
+              <kd>1e+13</kd>
             </bullet>
           </contact>
         </surface>
@@ -1163,8 +1163,8 @@
               <soft_cfm>0</soft_cfm>
               <soft_erp>0.2</soft_erp>
               <kp>1e+13</kp>
-              <kd>1</kd>
-              <max_vel>0.01</max_vel>
+              <kd>1e+13</kd>
+              <max_vel>0</max_vel>
               <min_depth>0</min_depth>
             </ode>
             <bullet>
@@ -1173,7 +1173,7 @@
               <soft_cfm>0</soft_cfm>
               <soft_erp>0.2</soft_erp>
               <kp>1e+13</kp>
-              <kd>1</kd>
+              <kd>1e+13</kd>
             </bullet>
           </contact>
         </surface>
@@ -1263,8 +1263,8 @@
               <soft_cfm>0</soft_cfm>
               <soft_erp>0.2</soft_erp>
               <kp>1e+13</kp>
-              <kd>1</kd>
-              <max_vel>0.01</max_vel>
+              <kd>1e+13</kd>
+              <max_vel>0</max_vel>
               <min_depth>0</min_depth>
             </ode>
             <bullet>
@@ -1273,7 +1273,7 @@
               <soft_cfm>0</soft_cfm>
               <soft_erp>0.2</soft_erp>
               <kp>1e+13</kp>
-              <kd>1</kd>
+              <kd>1e+13</kd>
             </bullet>
           </contact>
         </surface>
@@ -1363,8 +1363,8 @@
               <soft_cfm>0</soft_cfm>
               <soft_erp>0.2</soft_erp>
               <kp>1e+13</kp>
-              <kd>1</kd>
-              <max_vel>0.01</max_vel>
+              <kd>1e+13</kd>
+              <max_vel>0</max_vel>
               <min_depth>0</min_depth>
             </ode>
             <bullet>
@@ -1373,7 +1373,7 @@
               <soft_cfm>0</soft_cfm>
               <soft_erp>0.2</soft_erp>
               <kp>1e+13</kp>
-              <kd>1</kd>
+              <kd>1e+13</kd>
             </bullet>
           </contact>
         </surface>
@@ -1463,8 +1463,8 @@
               <soft_cfm>0</soft_cfm>
               <soft_erp>0.2</soft_erp>
               <kp>1e+13</kp>
-              <kd>1</kd>
-              <max_vel>0.01</max_vel>
+              <kd>1e+13</kd>
+              <max_vel>0</max_vel>
               <min_depth>0</min_depth>
             </ode>
             <bullet>
@@ -1473,7 +1473,7 @@
               <soft_cfm>0</soft_cfm>
               <soft_erp>0.2</soft_erp>
               <kp>1e+13</kp>
-              <kd>1</kd>
+              <kd>1e+13</kd>
             </bullet>
           </contact>
         </surface>

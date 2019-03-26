@@ -57,38 +57,38 @@ include van_loading/CMakeFiles/compare_against_model_node.dir/progress.make
 # Include the compile flags for this target's objects.
 include van_loading/CMakeFiles/compare_against_model_node.dir/flags.make
 
-van_loading/CMakeFiles/compare_against_model_node.dir/src/compare_against_model.cpp.o: van_loading/CMakeFiles/compare_against_model_node.dir/flags.make
-van_loading/CMakeFiles/compare_against_model_node.dir/src/compare_against_model.cpp.o: /home/matt/Documents/Robot-transporting/workspace/src/van_loading/src/compare_against_model.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/matt/Documents/Robot-transporting/workspace/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_1) "Building CXX object van_loading/CMakeFiles/compare_against_model_node.dir/src/compare_against_model.cpp.o"
-	cd /home/matt/Documents/Robot-transporting/workspace/build/van_loading && /usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/compare_against_model_node.dir/src/compare_against_model.cpp.o -c /home/matt/Documents/Robot-transporting/workspace/src/van_loading/src/compare_against_model.cpp
+van_loading/CMakeFiles/compare_against_model_node.dir/src/icp_compare.cpp.o: van_loading/CMakeFiles/compare_against_model_node.dir/flags.make
+van_loading/CMakeFiles/compare_against_model_node.dir/src/icp_compare.cpp.o: /home/matt/Documents/Robot-transporting/workspace/src/van_loading/src/icp_compare.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/matt/Documents/Robot-transporting/workspace/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_1) "Building CXX object van_loading/CMakeFiles/compare_against_model_node.dir/src/icp_compare.cpp.o"
+	cd /home/matt/Documents/Robot-transporting/workspace/build/van_loading && /usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/compare_against_model_node.dir/src/icp_compare.cpp.o -c /home/matt/Documents/Robot-transporting/workspace/src/van_loading/src/icp_compare.cpp
 
-van_loading/CMakeFiles/compare_against_model_node.dir/src/compare_against_model.cpp.i: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/compare_against_model_node.dir/src/compare_against_model.cpp.i"
-	cd /home/matt/Documents/Robot-transporting/workspace/build/van_loading && /usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/matt/Documents/Robot-transporting/workspace/src/van_loading/src/compare_against_model.cpp > CMakeFiles/compare_against_model_node.dir/src/compare_against_model.cpp.i
+van_loading/CMakeFiles/compare_against_model_node.dir/src/icp_compare.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/compare_against_model_node.dir/src/icp_compare.cpp.i"
+	cd /home/matt/Documents/Robot-transporting/workspace/build/van_loading && /usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/matt/Documents/Robot-transporting/workspace/src/van_loading/src/icp_compare.cpp > CMakeFiles/compare_against_model_node.dir/src/icp_compare.cpp.i
 
-van_loading/CMakeFiles/compare_against_model_node.dir/src/compare_against_model.cpp.s: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/compare_against_model_node.dir/src/compare_against_model.cpp.s"
-	cd /home/matt/Documents/Robot-transporting/workspace/build/van_loading && /usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/matt/Documents/Robot-transporting/workspace/src/van_loading/src/compare_against_model.cpp -o CMakeFiles/compare_against_model_node.dir/src/compare_against_model.cpp.s
+van_loading/CMakeFiles/compare_against_model_node.dir/src/icp_compare.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/compare_against_model_node.dir/src/icp_compare.cpp.s"
+	cd /home/matt/Documents/Robot-transporting/workspace/build/van_loading && /usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/matt/Documents/Robot-transporting/workspace/src/van_loading/src/icp_compare.cpp -o CMakeFiles/compare_against_model_node.dir/src/icp_compare.cpp.s
 
-van_loading/CMakeFiles/compare_against_model_node.dir/src/compare_against_model.cpp.o.requires:
+van_loading/CMakeFiles/compare_against_model_node.dir/src/icp_compare.cpp.o.requires:
 
-.PHONY : van_loading/CMakeFiles/compare_against_model_node.dir/src/compare_against_model.cpp.o.requires
+.PHONY : van_loading/CMakeFiles/compare_against_model_node.dir/src/icp_compare.cpp.o.requires
 
-van_loading/CMakeFiles/compare_against_model_node.dir/src/compare_against_model.cpp.o.provides: van_loading/CMakeFiles/compare_against_model_node.dir/src/compare_against_model.cpp.o.requires
-	$(MAKE) -f van_loading/CMakeFiles/compare_against_model_node.dir/build.make van_loading/CMakeFiles/compare_against_model_node.dir/src/compare_against_model.cpp.o.provides.build
-.PHONY : van_loading/CMakeFiles/compare_against_model_node.dir/src/compare_against_model.cpp.o.provides
+van_loading/CMakeFiles/compare_against_model_node.dir/src/icp_compare.cpp.o.provides: van_loading/CMakeFiles/compare_against_model_node.dir/src/icp_compare.cpp.o.requires
+	$(MAKE) -f van_loading/CMakeFiles/compare_against_model_node.dir/build.make van_loading/CMakeFiles/compare_against_model_node.dir/src/icp_compare.cpp.o.provides.build
+.PHONY : van_loading/CMakeFiles/compare_against_model_node.dir/src/icp_compare.cpp.o.provides
 
-van_loading/CMakeFiles/compare_against_model_node.dir/src/compare_against_model.cpp.o.provides.build: van_loading/CMakeFiles/compare_against_model_node.dir/src/compare_against_model.cpp.o
+van_loading/CMakeFiles/compare_against_model_node.dir/src/icp_compare.cpp.o.provides.build: van_loading/CMakeFiles/compare_against_model_node.dir/src/icp_compare.cpp.o
 
 
 # Object files for target compare_against_model_node
 compare_against_model_node_OBJECTS = \
-"CMakeFiles/compare_against_model_node.dir/src/compare_against_model.cpp.o"
+"CMakeFiles/compare_against_model_node.dir/src/icp_compare.cpp.o"
 
 # External object files for target compare_against_model_node
 compare_against_model_node_EXTERNAL_OBJECTS =
 
-/home/matt/Documents/Robot-transporting/workspace/devel/lib/van_loading/compare_against_model_node: van_loading/CMakeFiles/compare_against_model_node.dir/src/compare_against_model.cpp.o
+/home/matt/Documents/Robot-transporting/workspace/devel/lib/van_loading/compare_against_model_node: van_loading/CMakeFiles/compare_against_model_node.dir/src/icp_compare.cpp.o
 /home/matt/Documents/Robot-transporting/workspace/devel/lib/van_loading/compare_against_model_node: van_loading/CMakeFiles/compare_against_model_node.dir/build.make
 /home/matt/Documents/Robot-transporting/workspace/devel/lib/van_loading/compare_against_model_node: /home/matt/Documents/Robot-transporting/workspace/src/van_loading/libs/mrpt/lib/libmrpt-slam.so.1.9.9
 /home/matt/Documents/Robot-transporting/workspace/devel/lib/van_loading/compare_against_model_node: /home/matt/Documents/Robot-transporting/workspace/src/van_loading/libs/mrpt/lib/libmrpt-nav.so.1.9.9
@@ -149,7 +149,7 @@ van_loading/CMakeFiles/compare_against_model_node.dir/build: /home/matt/Document
 
 .PHONY : van_loading/CMakeFiles/compare_against_model_node.dir/build
 
-van_loading/CMakeFiles/compare_against_model_node.dir/requires: van_loading/CMakeFiles/compare_against_model_node.dir/src/compare_against_model.cpp.o.requires
+van_loading/CMakeFiles/compare_against_model_node.dir/requires: van_loading/CMakeFiles/compare_against_model_node.dir/src/icp_compare.cpp.o.requires
 
 .PHONY : van_loading/CMakeFiles/compare_against_model_node.dir/requires
 

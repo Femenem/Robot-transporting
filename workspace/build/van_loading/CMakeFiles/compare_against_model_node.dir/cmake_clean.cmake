@@ -1,5 +1,5 @@
 file(REMOVE_RECURSE
-  "CMakeFiles/compare_against_model_node.dir/src/compare_against_model.cpp.o"
+  "CMakeFiles/compare_against_model_node.dir/src/icp_compare.cpp.o"
   "/home/matt/Documents/Robot-transporting/workspace/devel/lib/van_loading/compare_against_model_node.pdb"
   "/home/matt/Documents/Robot-transporting/workspace/devel/lib/van_loading/compare_against_model_node"
 )

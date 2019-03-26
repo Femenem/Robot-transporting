@@ -38,10 +38,10 @@ def key_to_movement():
         if key == 'q':
             return  # Exit
 
-        if movement.speed > 2.0:
-            movement.speed = 2.0
-        if movement.speed < -2.0:
-            movement.speed = -2.0
+        if movement.speed > 1.0:
+            movement.speed = 1.0
+        if movement.speed < -1.0:
+            movement.speed = -1.0
 
         if movement.steering > 2.0:
             movement.steering = 2.0

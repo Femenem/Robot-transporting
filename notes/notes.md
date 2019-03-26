@@ -107,6 +107,30 @@ Get data program now saves all recorded data to file rather than terminal output
 Made van model heavier and aligned ramps better.
 
 Thursday:
-
+Update trello.
 
 Friday:
+Look at min-depth in gazebo. For contact with surfaces
+
+### Week 18/03/19:
+
+Monday:
+Did demonstration. Went ok.
+Possibly use PID to control.
+
+Tuesday:
+Fixed bouncing issue in van. Set max_vel to 0.0 instead of 0.1
+
+Wednesday:
+
+
+Thursday:
+Added states.
+Added version 0.1 of automated movement.
+Manual control of states.
+ICP compare changed to class.
+ICP compare loads from file.
+
+Friday:
+Limited sensor data to middle 80 because of too little variance when comparing inf to inf.
+Change state no longer works, idk why.

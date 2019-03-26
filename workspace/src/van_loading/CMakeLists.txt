@@ -8,14 +8,16 @@ add_definitions(-std=c++11)
 ## if COMPONENTS list like find_package(catkin REQUIRED COMPONENTS xyz)
 ## is used, also find other catkin packages
 find_package(catkin REQUIRED COMPONENTS
-  double_ackermann
-  hardware_interface
-  message_runtime
-  nav_msgs
-  roscpp
-  std_msgs
-  tf
-)
+        double_ackermann
+        hardware_interface
+        message_runtime
+        nav_msgs
+        roscpp
+        std_msgs
+        tf
+        genmsg
+        message_generation
+        )
 
 ## System dependencies are found with CMake's conventions
 # find_package(Boost REQUIRED COMPONENTS system)
@@ -51,10 +53,10 @@ find_package(catkin REQUIRED COMPONENTS
 ##   * add every package in MSG_DEP_SET to generate_messages(DEPENDENCIES ...)
 
 ## Generate messages in the 'msg' folder
-# add_message_files(
-#    FILES
-#    Ackermann.msg
-# )
+add_message_files(
+        FILES
+        ICPDirection.msg
+)
 
 ## Generate services in the 'srv' folder
 # add_service_files(
@@ -71,10 +73,12 @@ find_package(catkin REQUIRED COMPONENTS
 # )
 
 ## Generate added messages and services with any dependencies listed here
-#generate_messages(
-#  DEPENDENCIES
-#  std_msgs  # Or other packages containing msgs
-#)
+generate_messages(
+        DEPENDENCIES
+        std_msgs  # Or other packages containing msgs
+        double_ackermann
+        van_loading
+)
 
 ################################################
 ## Declare ROS dynamic reconfigure parameters ##
@@ -106,10 +110,10 @@ find_package(catkin REQUIRED COMPONENTS
 ## CATKIN_DEPENDS: catkin_packages dependent projects also need
 ## DEPENDS: system dependencies of this project that dependent projects also need
 catkin_package(
-#  INCLUDE_DIRS include
-  LIBRARIES van_loading libs/mrpt
-  CATKIN_DEPENDS hardware_interface message_runtime roscpp std_msgs
-#  DEPENDS system_lib
+        #  INCLUDE_DIRS include
+        LIBRARIES van_loading libs/mrpt
+        CATKIN_DEPENDS hardware_interface message_runtime roscpp std_msgs
+        #  DEPENDS system_lib
 )
 
 ###########
@@ -203,23 +207,24 @@ catkin_package(
 include_directories(include ${catkin_INCLUDE_DIRS})
 
 add_executable(van_loading_node src/idris_sim.cpp)
-add_executable(get_data_node src/get_data.cpp)
+add_executable(record_path_node src/record_path.cpp)
 target_link_libraries(van_loading_node ${catkin_LIBRARIES})
-target_link_libraries(get_data_node ${catkin_LIBRARIES})
+target_link_libraries(record_path_node ${catkin_LIBRARIES})
 # add_dependencies(idris_sim_node idris_sim_gencpp)
 
 add_dependencies(van_loading_node double_ackermann_generate_messages_cpp)
 
 ## Mark other files for installation (e.g. launch and bag files, etc.)
 install(FILES
-  launch/idris_sim.launch
-  DESTINATION ${CATKIN_PACKAGE_SHARE_DESTINATION}
-)
+        launch/idris_sim.launch
+        launch/van.launch
+        DESTINATION ${CATKIN_PACKAGE_SHARE_DESTINATION}
+        )
 
 install(DIRECTORY
-launch
-DESTINATION ${CATKIN_PACKAGE_SHARE_DESTINATION}
-)
+        launch
+        DESTINATION ${CATKIN_PACKAGE_SHARE_DESTINATION}
+        )
 
 #======================== External Dependencies ===============================
 
@@ -266,16 +271,17 @@ message(STATUS "libnabo found, version ${libnabo_VERSION} (include=${libnabo_INC
 target_link_libraries(van_loading_node ${EXTERNAL_LIBS})
 
 ### MRPT:
-
 set(CMAKE_PREFIX_PATH ${CMAKE_PREFIX_PATH} libs/mrpt)
 
 find_package(mrpt-slam)
 find_package(mrpt-nav)
-add_executable(test_icp_node src/test_icp.cpp)
-target_link_libraries(test_icp_node mrpt::slam mrpt::nav)
+#add_executable(test_icp_node src/test_icp.cpp)
+#target_link_libraries(test_icp_node mrpt::slam mrpt::nav)
 
-add_executable(compare_against_model_node src/compare_against_model.cpp)
-target_link_libraries(compare_against_model_node mrpt::slam mrpt::nav ${catkin_LIBRARIES})
+add_executable(icp_compare_node src/compare_icp.cpp)
+add_dependencies(icp_compare_node double_ackermann_generate_messages_cpp)
+target_link_libraries(icp_compare_node mrpt::slam mrpt::nav ${catkin_LIBRARIES})
+
 
 ### Libicp
 

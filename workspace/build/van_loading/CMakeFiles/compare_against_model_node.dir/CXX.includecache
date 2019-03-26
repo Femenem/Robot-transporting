@@ -6,6 +6,22 @@
 
 #IncludeRegexTransform: 
 
+/home/matt/Documents/Robot-transporting/workspace/devel/include/van_loading/ICPDirection.h
+string
+-
+vector
+-
+map
+-
+ros/types.h
+-
+ros/serialization.h
+-
+ros/builtin_message_traits.h
+-
+ros/message_operations.h
+-
+
 /home/matt/Documents/Robot-transporting/workspace/src/van_loading/libs/mrpt/include/mrpt-configuration/unix/mrpt/config.h
 
 /home/matt/Documents/Robot-transporting/workspace/src/van_loading/libs/mrpt/libs/config/include/mrpt/config/CLoadableOptions.h
@@ -686,11 +702,13 @@ mrpt/typemeta/xassert.h
 stdexcept
 -
 
-/home/matt/Documents/Robot-transporting/workspace/src/van_loading/src/compare_against_model.cpp
+/home/matt/Documents/Robot-transporting/workspace/src/van_loading/src/icp_compare.cpp
 ros/ros.h
 /home/matt/Documents/Robot-transporting/workspace/src/van_loading/src/ros/ros.h
 sensor_msgs/LaserScan.h
 /home/matt/Documents/Robot-transporting/workspace/src/van_loading/src/sensor_msgs/LaserScan.h
+van_loading/ICPDirection.h
+/home/matt/Documents/Robot-transporting/workspace/src/van_loading/src/van_loading/ICPDirection.h
 iostream
 -
 fstream
