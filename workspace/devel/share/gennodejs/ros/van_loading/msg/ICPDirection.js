@@ -21,6 +21,7 @@ class ICPDirection {
       this.x = null;
       this.y = null;
       this.angle = null;
+      this.goodness = null;
     }
     else {
       if (initObj.hasOwnProperty('x')) {
@@ -41,6 +42,12 @@ class ICPDirection {
       else {
         this.angle = 0.0;
       }
+      if (initObj.hasOwnProperty('goodness')) {
+        this.goodness = initObj.goodness
+      }
+      else {
+        this.goodness = 0.0;
+      }
     }
   }
 
@@ -52,6 +59,8 @@ class ICPDirection {
     bufferOffset = _serializer.float32(obj.y, buffer, bufferOffset);
     // Serialize message field [angle]
     bufferOffset = _serializer.float32(obj.angle, buffer, bufferOffset);
+    // Serialize message field [goodness]
+    bufferOffset = _serializer.float32(obj.goodness, buffer, bufferOffset);
     return bufferOffset;
   }
 
@@ -65,11 +74,13 @@ class ICPDirection {
     data.y = _deserializer.float32(buffer, bufferOffset);
     // Deserialize message field [angle]
     data.angle = _deserializer.float32(buffer, bufferOffset);
+    // Deserialize message field [goodness]
+    data.goodness = _deserializer.float32(buffer, bufferOffset);
     return data;
   }
 
   static getMessageSize(object) {
-    return 12;
+    return 16;
   }
 
   static datatype() {
@@ -79,7 +90,7 @@ class ICPDirection {
 
   static md5sum() {
     //Returns md5sum for a message object
-    return '39617ea5ffa910b78cdf07b659b77ce4';
+    return 'ec2458f4ae291f686f0f7664eab3bac0';
   }
 
   static messageDefinition() {
@@ -93,6 +104,9 @@ class ICPDirection {
     
     # angle to turn, positive to right, degrees
     float32 angle
+    
+    # how well the models fit together
+    float32 goodness
     `;
   }
 
@@ -121,6 +135,13 @@ class ICPDirection {
     }
     else {
       resolved.angle = 0.0
+    }
+
+    if (msg.goodness !== undefined) {
+      resolved.goodness = msg.goodness;
+    }
+    else {
+      resolved.goodness = 0.0
     }
 
     return resolved;

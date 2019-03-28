@@ -14,7 +14,7 @@
 #include <string>
 
 #define MAX_COUNT 180
-#define SNAPSHOT_DISTANCE 0.50  // ~50cm
+#define SNAPSHOT_DISTANCE 1.5  // ~1m
 
 // TODO: Change into class. When class is destroyed, make new file with number of lines at top?
 // TODO: Capture snapshots of the laserscan depending on how fast the robot is traveling
@@ -26,11 +26,7 @@ public:
         this->numberOfSnapshots = 0;
         this->distanceTraveled = SNAPSHOT_DISTANCE; // Take a snapshot at the start
         this->laserSub = nh.subscribe("/van_loading/front_laser/scan", 1, &record_path::handle_laser_data, this);
-        this->speedSub = nh.subscribe("/van_loading/cmd_ackermann", 1, &record_path::update_current_speed, this);
-        this->distanceTimer = nh.createTimer(ros::Duration(0.3) /* 100ms */,
-                        &record_path::update_distance,
-                        this,
-                        false /* not oneshot */);
+        this->speedSub = nh.subscribe("/van_loading/cmd_ackermann", 1, &record_path::new_movement_command, this);
         this->startTime = std::chrono::system_clock::now();
         this->now = std::time(0); // Get now time
         this->timestamp = std::localtime(&now); // Convert to local time
@@ -50,11 +46,21 @@ public:
         this->file.close();
     }
 
-    void update_current_speed(const double_ackermann::DoubleAckermann& cmd){
-        if(this->currentSpeed != cmd.speed){ // If speed has changed
-            // Change tracked speed
-            this->currentSpeed = cmd.speed;
+    void new_movement_command(const double_ackermann::DoubleAckermann& cmd){
+        double distanceToAdd;
+        this->endTime = std::chrono::system_clock::now(); // End timer
+        std::chrono::duration<double> timeElapsed = this->endTime - this->startTime;
+        // If timeElspsed > 300ms then robot stopped after 300ms.
+        if (timeElapsed.count() > 0.3){
+            distanceToAdd = 0.3 * this->currentSpeed;
+        } else {
+            distanceToAdd = timeElapsed.count() * this->currentSpeed;
         }
+        this->distanceTraveled = this->distanceTraveled + distanceToAdd;
+        // On next laser scan if distanceTraveled is over the threshold, snapshot is taken.
+
+        this->currentSpeed = cmd.speed;
+        this->startTime = std::chrono::system_clock::now();
     }
 
     void handle_laser_data(const sensor_msgs::LaserScan ls){
@@ -76,33 +82,18 @@ public:
         }
     }
 
-    void update_distance(const ros::TimerEvent&){
-        this->endTime = std::chrono::system_clock::now(); // End timer
-        std::chrono::duration<double> timeElapsed = this->endTime - this->startTime;
-        float speed = currentSpeed; // Copy value so we don't change with it
-        if (speed < 0.0){ // Speed less than 0
-            speed = speed * -1; // Convert to positive number
-        }
-        double distanceToAdd = timeElapsed.count() * speed;
-        this->distanceTraveled = this->distanceTraveled + distanceToAdd;
-        this->startTime = std::chrono::system_clock::now(); // Restart timer
-        std::cout << std::to_string(this->distanceTraveled);
-    }
-
 private:
     std::ofstream file;
     ros::Subscriber laserSub;
     ros::Subscriber speedSub;
-    ros::Timer distanceTimer;
     std::time_t now;
     std::tm* timestamp;
     std::string fileString;
     float currentSpeed; // meters/s
-    float distanceTraveled; // meters
+    double distanceTraveled; // meters
     std::chrono::time_point<std::chrono::system_clock> startTime;
     std::chrono::time_point<std::chrono::system_clock> endTime;
     int numberOfSnapshots;
-
 
     bool take_snapshot(){
         if (this->distanceTraveled >= SNAPSHOT_DISTANCE){
@@ -113,7 +104,6 @@ private:
         }
     }
 };
-
 
 
 int main(int argc, char **argv) {

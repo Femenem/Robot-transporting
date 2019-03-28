@@ -118,11 +118,13 @@
 /home/matt/Documents/Robot-transporting/workspace/build/van_loading/CMakeFiles/install.dir
 /home/matt/Documents/Robot-transporting/workspace/build/van_loading/CMakeFiles/rebuild_cache.dir
 /home/matt/Documents/Robot-transporting/workspace/build/van_loading/CMakeFiles/edit_cache.dir
+/home/matt/Documents/Robot-transporting/workspace/build/van_loading/CMakeFiles/test.dir
 /home/matt/Documents/Robot-transporting/workspace/build/van_loading/CMakeFiles/van_loading_geneus.dir
 /home/matt/Documents/Robot-transporting/workspace/build/van_loading/CMakeFiles/van_loading_node.dir
 /home/matt/Documents/Robot-transporting/workspace/build/van_loading/CMakeFiles/list_install_components.dir
 /home/matt/Documents/Robot-transporting/workspace/build/van_loading/CMakeFiles/van_loading_gencpp.dir
 /home/matt/Documents/Robot-transporting/workspace/build/van_loading/CMakeFiles/record_path_node.dir
+/home/matt/Documents/Robot-transporting/workspace/build/van_loading/CMakeFiles/automated_control_node.dir
 /home/matt/Documents/Robot-transporting/workspace/build/van_loading/CMakeFiles/van_loading_generate_messages_eus.dir
 /home/matt/Documents/Robot-transporting/workspace/build/van_loading/CMakeFiles/van_loading_genpy.dir
 /home/matt/Documents/Robot-transporting/workspace/build/van_loading/CMakeFiles/van_loading_generate_messages_cpp.dir
@@ -134,4 +136,3 @@
 /home/matt/Documents/Robot-transporting/workspace/build/van_loading/CMakeFiles/van_loading_generate_messages_lisp.dir
 /home/matt/Documents/Robot-transporting/workspace/build/van_loading/CMakeFiles/van_loading_gennodejs.dir
 /home/matt/Documents/Robot-transporting/workspace/build/van_loading/CMakeFiles/icp_compare_node.dir
-/home/matt/Documents/Robot-transporting/workspace/build/van_loading/CMakeFiles/test.dir

@@ -402,6 +402,7 @@ set(CMAKE_DEPEND_INFO_FILES
   "van_loading/CMakeFiles/van_loading_node.dir/DependInfo.cmake"
   "van_loading/CMakeFiles/van_loading_gencpp.dir/DependInfo.cmake"
   "van_loading/CMakeFiles/record_path_node.dir/DependInfo.cmake"
+  "van_loading/CMakeFiles/automated_control_node.dir/DependInfo.cmake"
   "van_loading/CMakeFiles/van_loading_generate_messages_eus.dir/DependInfo.cmake"
   "van_loading/CMakeFiles/van_loading_genpy.dir/DependInfo.cmake"
   "van_loading/CMakeFiles/van_loading_generate_messages_cpp.dir/DependInfo.cmake"

@@ -134,3 +134,23 @@ ICP compare loads from file.
 Friday:
 Limited sensor data to middle 80 because of too little variance when comparing inf to inf.
 Change state no longer works, idk why.
+
+## Week 25/03/19:
+
+Monday:
+Made version 0.1 of recording program.
+
+Tuesday:
+Fixed state not publishing.
+Fixed catkin_make issues.
+Updated recording program. Still need to get it to count distance properly.
+Updated ICP node to work with any number of states.
+
+Wednesday:
+Fixed recording program. Now works as planned.
+Edited ICP algorithm values. Set alpha to 0 and corresponding_points_decimation to 2.
+Alpha = 0
+
+Thursday:
+
+Friday:

@@ -5,4 +5,6 @@
           Y
           ANGLE-VAL
           ANGLE
+          GOODNESS-VAL
+          GOODNESS
 ))

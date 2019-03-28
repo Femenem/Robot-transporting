@@ -4,7 +4,7 @@
 
 #include "ros/ros.h"
 #include "sensor_msgs/LaserScan.h"
-#include "std_msgs/Int8.h"
+#include "std_msgs/Int16.h"
 #include "van_loading/ICPDirection.h"
 
 #include <iostream>
@@ -32,7 +32,7 @@ using namespace std;
 char MODEL_VALID[] = {
         0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0,
         0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0,
-        0, 0, 0, 0, 0, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1,
+        1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1,
         1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1,
         1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1,
         1, 1, 1, 1, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0,
@@ -48,11 +48,16 @@ public:
         ROS_INFO("Model state subscribed.");
         this->laserSub = nh.subscribe("/van_loading/front_laser/scan", 1, &icp_compare::compare_laser_data, this);
         ROS_INFO("Laser scan subscribed.");
-        this->directionPub = nh.advertise<van_loading::ICPDirection>("/van_loading/ICP_direction", 10);
+        this->directionPub = nh.advertise<van_loading::ICPDirection>("/van_loading/ICP_direction", 1);
+        this->numberOfStatesPub = nh.advertise<std_msgs::Int16>("/van_loading/number_of_states", 1, true); // Latched
+
         // Load model data
         this->numberOfStates = 0;
         this->state = 0; // Starting state
         models = this->load_models();
+        std_msgs::Int16 sendNumberOfStates;
+        sendNumberOfStates.data = this->numberOfStates;
+        this->numberOfStatesPub.publish(sendNumberOfStates);
 
         ROS_INFO("ICP node ready.");
     }
@@ -61,7 +66,7 @@ public:
 
     }
 
-    void update_state(const std_msgs::Int8 newState){
+    void update_state(const std_msgs::Int16 newState){
         this->state = newState.data;
         cout << "Current state" << this->state;
     }
@@ -153,12 +158,12 @@ public:
 
         // configuration options for the icp algorithm
         ICP.options.maxIterations = 200;
-        ICP.options.thresholdAng = DEG2RAD(15.0f);
-        ICP.options.thresholdDist = 2.0f;
-        ICP.options.ALFA = 0.5f;
+        ICP.options.thresholdAng = DEG2RAD(5.0f);
+        ICP.options.thresholdDist = 5.5f;
+        ICP.options.ALFA = 0.0f;
         ICP.options.smallestThresholdDist = 0.01f;
-        ICP.options.doRANSAC = true;
-        ICP.options.corresponding_points_decimation = 1;
+        ICP.options.doRANSAC = false;
+        ICP.options.corresponding_points_decimation = 2;
 
 //    ICP.options.dumpToConsole();
         // -----------------------------------------------------
@@ -200,15 +205,16 @@ public:
         direction.x = vector[0];
         direction.y = vector[1];
         direction.angle = vector[2];
+        direction.goodness = info.goodness;
+        std::cout << "Goodness: " << std::to_string(direction.goodness) << std::endl;
 
         directionPub.publish(direction);
-        std::cout << "Help?";
-
     }
 
 private:
     ros::Subscriber laserSub;
     ros::Subscriber stateSub;
+    ros::Publisher numberOfStatesPub;
     ros::Publisher directionPub;
     int state;
     int numberOfStates;

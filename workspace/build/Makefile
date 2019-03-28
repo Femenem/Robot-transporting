@@ -1169,6 +1169,19 @@ record_path_node/fast:
 .PHONY : record_path_node/fast
 
 #=============================================================================
+# Target rules for targets named automated_control_node
+
+# Build rule for target.
+automated_control_node: cmake_check_build_system
+	$(MAKE) -f CMakeFiles/Makefile2 automated_control_node
+.PHONY : automated_control_node
+
+# fast build rule for target.
+automated_control_node/fast:
+	$(MAKE) -f van_loading/CMakeFiles/automated_control_node.dir/build.make van_loading/CMakeFiles/automated_control_node.dir/build
+.PHONY : automated_control_node/fast
+
+#=============================================================================
 # Target rules for targets named van_loading_generate_messages_eus
 
 # Build rule for target.
@@ -1401,6 +1414,7 @@ help:
 	@echo "... van_loading_node"
 	@echo "... van_loading_gencpp"
 	@echo "... record_path_node"
+	@echo "... automated_control_node"
 	@echo "... van_loading_generate_messages_eus"
 	@echo "... van_loading_genpy"
 	@echo "... van_loading_generate_messages_cpp"

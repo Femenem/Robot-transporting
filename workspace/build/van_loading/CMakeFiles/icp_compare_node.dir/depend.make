@@ -136,7 +136,7 @@ van_loading/CMakeFiles/icp_compare_node.dir/src/compare_icp.cpp.o: /opt/ros/melo
 van_loading/CMakeFiles/icp_compare_node.dir/src/compare_icp.cpp.o: /opt/ros/melodic/include/rosconsole/macros_generated.h
 van_loading/CMakeFiles/icp_compare_node.dir/src/compare_icp.cpp.o: /opt/ros/melodic/include/sensor_msgs/LaserScan.h
 van_loading/CMakeFiles/icp_compare_node.dir/src/compare_icp.cpp.o: /opt/ros/melodic/include/std_msgs/Header.h
-van_loading/CMakeFiles/icp_compare_node.dir/src/compare_icp.cpp.o: /opt/ros/melodic/include/std_msgs/Int8.h
+van_loading/CMakeFiles/icp_compare_node.dir/src/compare_icp.cpp.o: /opt/ros/melodic/include/std_msgs/Int16.h
 van_loading/CMakeFiles/icp_compare_node.dir/src/compare_icp.cpp.o: /opt/ros/melodic/include/xmlrpcpp/XmlRpcDecl.h
 van_loading/CMakeFiles/icp_compare_node.dir/src/compare_icp.cpp.o: /opt/ros/melodic/include/xmlrpcpp/XmlRpcValue.h
 van_loading/CMakeFiles/icp_compare_node.dir/src/compare_icp.cpp.o: /usr/include/eigen3/Eigen/Cholesky

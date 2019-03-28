@@ -14,7 +14,7 @@
 
 (defclass van_loading::ICPDirection
   :super ros::object
-  :slots (_x _y _angle ))
+  :slots (_x _y _angle _goodness ))
 
 (defmethod van_loading::ICPDirection
   (:init
@@ -22,11 +22,13 @@
     ((:x __x) 0.0)
     ((:y __y) 0.0)
     ((:angle __angle) 0.0)
+    ((:goodness __goodness) 0.0)
     )
    (send-super :init)
    (setq _x (float __x))
    (setq _y (float __y))
    (setq _angle (float __angle))
+   (setq _goodness (float __goodness))
    self)
   (:x
    (&optional __x)
@@ -37,6 +39,9 @@
   (:angle
    (&optional __angle)
    (if __angle (setq _angle __angle)) _angle)
+  (:goodness
+   (&optional __goodness)
+   (if __goodness (setq _goodness __goodness)) _goodness)
   (:serialization-length
    ()
    (+
@@ -45,6 +50,8 @@
     ;; float32 _y
     4
     ;; float32 _angle
+    4
+    ;; float32 _goodness
     4
     ))
   (:serialize
@@ -57,6 +64,8 @@
        (sys::poke _y (send s :buffer) (send s :count) :float) (incf (stream-count s) 4)
      ;; float32 _angle
        (sys::poke _angle (send s :buffer) (send s :count) :float) (incf (stream-count s) 4)
+     ;; float32 _goodness
+       (sys::poke _goodness (send s :buffer) (send s :count) :float) (incf (stream-count s) 4)
      ;;
      (if (null strm) (get-output-stream-string s))))
   (:deserialize
@@ -67,11 +76,13 @@
      (setq _y (sys::peek buf ptr- :float)) (incf ptr- 4)
    ;; float32 _angle
      (setq _angle (sys::peek buf ptr- :float)) (incf ptr- 4)
+   ;; float32 _goodness
+     (setq _goodness (sys::peek buf ptr- :float)) (incf ptr- 4)
    ;;
    self)
   )
 
-(setf (get van_loading::ICPDirection :md5sum-) "39617ea5ffa910b78cdf07b659b77ce4")
+(setf (get van_loading::ICPDirection :md5sum-) "ec2458f4ae291f686f0f7664eab3bac0")
 (setf (get van_loading::ICPDirection :datatype-) "van_loading/ICPDirection")
 (setf (get van_loading::ICPDirection :definition-)
       "# x distance (forward/back)
@@ -82,10 +93,13 @@ float32 y
 
 # angle to turn, positive to right, degrees
 float32 angle
+
+# how well the models fit together
+float32 goodness
 ")
 
 
 
-(provide :van_loading/ICPDirection "39617ea5ffa910b78cdf07b659b77ce4")
+(provide :van_loading/ICPDirection "ec2458f4ae291f686f0f7664eab3bac0")
 
 

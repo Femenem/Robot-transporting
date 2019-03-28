@@ -707,8 +707,8 @@ ros/ros.h
 /home/matt/Documents/Robot-transporting/workspace/src/van_loading/src/ros/ros.h
 sensor_msgs/LaserScan.h
 /home/matt/Documents/Robot-transporting/workspace/src/van_loading/src/sensor_msgs/LaserScan.h
-std_msgs/Int8.h
-/home/matt/Documents/Robot-transporting/workspace/src/van_loading/src/std_msgs/Int8.h
+std_msgs/Int16.h
+/home/matt/Documents/Robot-transporting/workspace/src/van_loading/src/std_msgs/Int16.h
 van_loading/ICPDirection.h
 /home/matt/Documents/Robot-transporting/workspace/src/van_loading/src/van_loading/ICPDirection.h
 iostream
@@ -1414,7 +1414,7 @@ ros/builtin_message_traits.h
 ros/message_operations.h
 -
 
-/opt/ros/melodic/include/std_msgs/Int8.h
+/opt/ros/melodic/include/std_msgs/Int16.h
 string
 -
 vector

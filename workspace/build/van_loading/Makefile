@@ -114,16 +114,6 @@ edit_cache/fast: edit_cache
 
 .PHONY : edit_cache/fast
 
-# Special rule for the target list_install_components
-list_install_components:
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "Available install components are: \"Unspecified\""
-.PHONY : list_install_components
-
-# Special rule for the target list_install_components
-list_install_components/fast: list_install_components
-
-.PHONY : list_install_components/fast
-
 # Special rule for the target test
 test:
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "Running tests..."
@@ -134,6 +124,16 @@ test:
 test/fast: test
 
 .PHONY : test/fast
+
+# Special rule for the target list_install_components
+list_install_components:
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "Available install components are: \"Unspecified\""
+.PHONY : list_install_components
+
+# Special rule for the target list_install_components
+list_install_components/fast: list_install_components
+
+.PHONY : list_install_components/fast
 
 # The main all target
 all: cmake_check_build_system
@@ -226,6 +226,21 @@ record_path_node: van_loading/CMakeFiles/record_path_node.dir/rule
 record_path_node/fast:
 	cd /home/matt/Documents/Robot-transporting/workspace/build && $(MAKE) -f van_loading/CMakeFiles/record_path_node.dir/build.make van_loading/CMakeFiles/record_path_node.dir/build
 .PHONY : record_path_node/fast
+
+# Convenience name for target.
+van_loading/CMakeFiles/automated_control_node.dir/rule:
+	cd /home/matt/Documents/Robot-transporting/workspace/build && $(MAKE) -f CMakeFiles/Makefile2 van_loading/CMakeFiles/automated_control_node.dir/rule
+.PHONY : van_loading/CMakeFiles/automated_control_node.dir/rule
+
+# Convenience name for target.
+automated_control_node: van_loading/CMakeFiles/automated_control_node.dir/rule
+
+.PHONY : automated_control_node
+
+# fast build rule for target.
+automated_control_node/fast:
+	cd /home/matt/Documents/Robot-transporting/workspace/build && $(MAKE) -f van_loading/CMakeFiles/automated_control_node.dir/build.make van_loading/CMakeFiles/automated_control_node.dir/build
+.PHONY : automated_control_node/fast
 
 # Convenience name for target.
 van_loading/CMakeFiles/van_loading_generate_messages_eus.dir/rule:
@@ -392,6 +407,33 @@ icp_compare_node/fast:
 	cd /home/matt/Documents/Robot-transporting/workspace/build && $(MAKE) -f van_loading/CMakeFiles/icp_compare_node.dir/build.make van_loading/CMakeFiles/icp_compare_node.dir/build
 .PHONY : icp_compare_node/fast
 
+src/automated_control.o: src/automated_control.cpp.o
+
+.PHONY : src/automated_control.o
+
+# target to build an object file
+src/automated_control.cpp.o:
+	cd /home/matt/Documents/Robot-transporting/workspace/build && $(MAKE) -f van_loading/CMakeFiles/automated_control_node.dir/build.make van_loading/CMakeFiles/automated_control_node.dir/src/automated_control.cpp.o
+.PHONY : src/automated_control.cpp.o
+
+src/automated_control.i: src/automated_control.cpp.i
+
+.PHONY : src/automated_control.i
+
+# target to preprocess a source file
+src/automated_control.cpp.i:
+	cd /home/matt/Documents/Robot-transporting/workspace/build && $(MAKE) -f van_loading/CMakeFiles/automated_control_node.dir/build.make van_loading/CMakeFiles/automated_control_node.dir/src/automated_control.cpp.i
+.PHONY : src/automated_control.cpp.i
+
+src/automated_control.s: src/automated_control.cpp.s
+
+.PHONY : src/automated_control.s
+
+# target to generate assembly for a file
+src/automated_control.cpp.s:
+	cd /home/matt/Documents/Robot-transporting/workspace/build && $(MAKE) -f van_loading/CMakeFiles/automated_control_node.dir/build.make van_loading/CMakeFiles/automated_control_node.dir/src/automated_control.cpp.s
+.PHONY : src/automated_control.cpp.s
+
 src/compare_icp.o: src/compare_icp.cpp.o
 
 .PHONY : src/compare_icp.o
@@ -484,11 +526,13 @@ help:
 	@echo "... install"
 	@echo "... rebuild_cache"
 	@echo "... edit_cache"
+	@echo "... test"
 	@echo "... van_loading_geneus"
 	@echo "... van_loading_node"
 	@echo "... list_install_components"
 	@echo "... van_loading_gencpp"
 	@echo "... record_path_node"
+	@echo "... automated_control_node"
 	@echo "... van_loading_generate_messages_eus"
 	@echo "... van_loading_genpy"
 	@echo "... van_loading_generate_messages_cpp"
@@ -500,7 +544,9 @@ help:
 	@echo "... van_loading_generate_messages_lisp"
 	@echo "... van_loading_gennodejs"
 	@echo "... icp_compare_node"
-	@echo "... test"
+	@echo "... src/automated_control.o"
+	@echo "... src/automated_control.i"
+	@echo "... src/automated_control.s"
 	@echo "... src/compare_icp.o"
 	@echo "... src/compare_icp.i"
 	@echo "... src/compare_icp.s"

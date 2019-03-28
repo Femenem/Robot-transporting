@@ -21,6 +21,11 @@
     :reader angle
     :initarg :angle
     :type cl:float
+    :initform 0.0)
+   (goodness
+    :reader goodness
+    :initarg :goodness
+    :type cl:float
     :initform 0.0))
 )
 
@@ -46,6 +51,11 @@
 (cl:defmethod angle-val ((m <ICPDirection>))
   (roslisp-msg-protocol:msg-deprecation-warning "Using old-style slot reader van_loading-msg:angle-val is deprecated.  Use van_loading-msg:angle instead.")
   (angle m))
+
+(cl:ensure-generic-function 'goodness-val :lambda-list '(m))
+(cl:defmethod goodness-val ((m <ICPDirection>))
+  (roslisp-msg-protocol:msg-deprecation-warning "Using old-style slot reader van_loading-msg:goodness-val is deprecated.  Use van_loading-msg:goodness instead.")
+  (goodness m))
 (cl:defmethod roslisp-msg-protocol:serialize ((msg <ICPDirection>) ostream)
   "Serializes a message object of type '<ICPDirection>"
   (cl:let ((bits (roslisp-utils:encode-single-float-bits (cl:slot-value msg 'x))))
@@ -59,6 +69,11 @@
     (cl:write-byte (cl:ldb (cl:byte 8 16) bits) ostream)
     (cl:write-byte (cl:ldb (cl:byte 8 24) bits) ostream))
   (cl:let ((bits (roslisp-utils:encode-single-float-bits (cl:slot-value msg 'angle))))
+    (cl:write-byte (cl:ldb (cl:byte 8 0) bits) ostream)
+    (cl:write-byte (cl:ldb (cl:byte 8 8) bits) ostream)
+    (cl:write-byte (cl:ldb (cl:byte 8 16) bits) ostream)
+    (cl:write-byte (cl:ldb (cl:byte 8 24) bits) ostream))
+  (cl:let ((bits (roslisp-utils:encode-single-float-bits (cl:slot-value msg 'goodness))))
     (cl:write-byte (cl:ldb (cl:byte 8 0) bits) ostream)
     (cl:write-byte (cl:ldb (cl:byte 8 8) bits) ostream)
     (cl:write-byte (cl:ldb (cl:byte 8 16) bits) ostream)
@@ -84,6 +99,12 @@
       (cl:setf (cl:ldb (cl:byte 8 16) bits) (cl:read-byte istream))
       (cl:setf (cl:ldb (cl:byte 8 24) bits) (cl:read-byte istream))
     (cl:setf (cl:slot-value msg 'angle) (roslisp-utils:decode-single-float-bits bits)))
+    (cl:let ((bits 0))
+      (cl:setf (cl:ldb (cl:byte 8 0) bits) (cl:read-byte istream))
+      (cl:setf (cl:ldb (cl:byte 8 8) bits) (cl:read-byte istream))
+      (cl:setf (cl:ldb (cl:byte 8 16) bits) (cl:read-byte istream))
+      (cl:setf (cl:ldb (cl:byte 8 24) bits) (cl:read-byte istream))
+    (cl:setf (cl:slot-value msg 'goodness) (roslisp-utils:decode-single-float-bits bits)))
   msg
 )
 (cl:defmethod roslisp-msg-protocol:ros-datatype ((msg (cl:eql '<ICPDirection>)))
@@ -94,18 +115,19 @@
   "van_loading/ICPDirection")
 (cl:defmethod roslisp-msg-protocol:md5sum ((type (cl:eql '<ICPDirection>)))
   "Returns md5sum for a message object of type '<ICPDirection>"
-  "39617ea5ffa910b78cdf07b659b77ce4")
+  "ec2458f4ae291f686f0f7664eab3bac0")
 (cl:defmethod roslisp-msg-protocol:md5sum ((type (cl:eql 'ICPDirection)))
   "Returns md5sum for a message object of type 'ICPDirection"
-  "39617ea5ffa910b78cdf07b659b77ce4")
+  "ec2458f4ae291f686f0f7664eab3bac0")
 (cl:defmethod roslisp-msg-protocol:message-definition ((type (cl:eql '<ICPDirection>)))
   "Returns full string definition for message of type '<ICPDirection>"
-  (cl:format cl:nil "# x distance (forward/back)~%float32 x~%~%# y distance (left/right)~%float32 y~%~%# angle to turn, positive to right, degrees~%float32 angle~%~%"))
+  (cl:format cl:nil "# x distance (forward/back)~%float32 x~%~%# y distance (left/right)~%float32 y~%~%# angle to turn, positive to right, degrees~%float32 angle~%~%# how well the models fit together~%float32 goodness~%~%"))
 (cl:defmethod roslisp-msg-protocol:message-definition ((type (cl:eql 'ICPDirection)))
   "Returns full string definition for message of type 'ICPDirection"
-  (cl:format cl:nil "# x distance (forward/back)~%float32 x~%~%# y distance (left/right)~%float32 y~%~%# angle to turn, positive to right, degrees~%float32 angle~%~%"))
+  (cl:format cl:nil "# x distance (forward/back)~%float32 x~%~%# y distance (left/right)~%float32 y~%~%# angle to turn, positive to right, degrees~%float32 angle~%~%# how well the models fit together~%float32 goodness~%~%"))
 (cl:defmethod roslisp-msg-protocol:serialization-length ((msg <ICPDirection>))
   (cl:+ 0
+     4
      4
      4
      4
@@ -116,4 +138,5 @@
     (cl:cons ':x (x msg))
     (cl:cons ':y (y msg))
     (cl:cons ':angle (angle msg))
+    (cl:cons ':goodness (goodness msg))
 ))

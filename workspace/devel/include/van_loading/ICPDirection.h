@@ -26,12 +26,14 @@ struct ICPDirection_
   ICPDirection_()
     : x(0.0)
     , y(0.0)
-    , angle(0.0)  {
+    , angle(0.0)
+    , goodness(0.0)  {
     }
   ICPDirection_(const ContainerAllocator& _alloc)
     : x(0.0)
     , y(0.0)
-    , angle(0.0)  {
+    , angle(0.0)
+    , goodness(0.0)  {
   (void)_alloc;
     }
 
@@ -45,6 +47,9 @@ struct ICPDirection_
 
    typedef float _angle_type;
   _angle_type angle;
+
+   typedef float _goodness_type;
+  _goodness_type goodness;
 
 
 
@@ -124,12 +129,12 @@ struct MD5Sum< ::van_loading::ICPDirection_<ContainerAllocator> >
 {
   static const char* value()
   {
-    return "39617ea5ffa910b78cdf07b659b77ce4";
+    return "ec2458f4ae291f686f0f7664eab3bac0";
   }
 
   static const char* value(const ::van_loading::ICPDirection_<ContainerAllocator>&) { return value(); }
-  static const uint64_t static_value1 = 0x39617ea5ffa910b7ULL;
-  static const uint64_t static_value2 = 0x8cdf07b659b77ce4ULL;
+  static const uint64_t static_value1 = 0xec2458f4ae291f68ULL;
+  static const uint64_t static_value2 = 0x6f0f7664eab3bac0ULL;
 };
 
 template<class ContainerAllocator>
@@ -156,6 +161,9 @@ float32 y\n\
 \n\
 # angle to turn, positive to right, degrees\n\
 float32 angle\n\
+\n\
+# how well the models fit together\n\
+float32 goodness\n\
 ";
   }
 
@@ -177,6 +185,7 @@ namespace serialization
       stream.next(m.x);
       stream.next(m.y);
       stream.next(m.angle);
+      stream.next(m.goodness);
     }
 
     ROS_DECLARE_ALLINONE_SERIALIZER
@@ -201,6 +210,8 @@ struct Printer< ::van_loading::ICPDirection_<ContainerAllocator> >
     Printer<float>::stream(s, indent + "  ", v.y);
     s << indent << "angle: ";
     Printer<float>::stream(s, indent + "  ", v.angle);
+    s << indent << "goodness: ";
+    Printer<float>::stream(s, indent + "  ", v.goodness);
   }
 };
 
