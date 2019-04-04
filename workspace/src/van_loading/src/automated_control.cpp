@@ -4,11 +4,11 @@
 
 #include "ros/ros.h"
 #include "van_loading/ICPDirection.h"
-#include <double_ackermann/DoubleAckermann.h>
+#include <geometry_msgs/Twist.h>
 #include <std_msgs/Float32.h>
 #include <std_msgs/Int16.h>
 
-#define AVERAGE_NUMBER 3
+#define AVERAGE_NUMBER 10
 
 class automated_control{
 public:
@@ -17,6 +17,12 @@ public:
         this->numberOfStates = 0;
         this->stateTracker = 0;
         this->stateWentDown = false;
+        this->speedKp = 0.8;
+        this->steeringKp = 0.8;
+        this->targetSpeed = 0.0;
+        this->targetSteering = 0.0;
+        this->currentSpeed = 0.0;
+        this->currentSteering = 0.0;
         this->directionSub = nh.subscribe("/van_loading/ICP_direction",
                 1,
                 &automated_control::store_movement,
@@ -25,8 +31,10 @@ public:
                 1,
                 &automated_control::set_number_of_states,
                 this);
-        this->moveCommandPub = nh.advertise<double_ackermann::DoubleAckermann>("van_loading/cmd_ackermann", 10);
+        this->moveCommandPub = nh.advertise<geometry_msgs::Twist>("/van_loading/cmd_vel", 1);
         this->changeStatePub = nh.advertise<std_msgs::Int16>("van_loading/ICP_model_state", 1);
+        this->sendMovementTimer = nh.createTimer(ros::Duration(0.3), &automated_control::update_movement,
+                this);
         ROS_INFO("Automated control ready.");
     }
 
@@ -75,40 +83,73 @@ public:
         this->numberOfStates = number.data-1;
     }
 
+    void update_movement(const ros::TimerEvent&){
+        float setSpeed = 0.0; // Default for errors
+        float setSteering = 0.0;  // Default for errors
+        geometry_msgs::Twist movement;
+        setSpeed = speedKp * (this->targetSpeed - this->currentSpeed); // Kp * error
+        setSteering = steeringKp * (this->targetSteering - this->currentSteering); // Kp * error
+        this->currentSpeed = this->currentSpeed + setSpeed;
+        this->currentSteering = this->currentSteering + setSteering;
+
+        movement.linear.x = this->currentSpeed;
+        movement.angular.z = this->currentSteering;
+        this->moveCommandPub.publish(movement);
+
+        std::cout << "Target- " << "Speed: " << std::to_string(this->targetSpeed) <<
+                  " Steering: " << std::to_string(this->targetSteering) << std::endl;
+        std::cout << "Moving- " << "Speed: " << std::to_string(this->currentSpeed) <<
+                  " Steering: " << std::to_string(this->currentSteering) << std::endl;
+    }
+
 private:
+    // Updates target speed/changes state
     void move_robot(van_loading::ICPDirection direction){
-        double_ackermann::DoubleAckermann directionToSend;
-        if(direction.x < 0.1 && direction.x > -0.1){ // Close enough to move on
+        if(direction.x < 0.05 && direction.x > -0.05){ // Close enough to move on
             if(this->stateTracker == this->numberOfStates){ // FINISHED
-                ROS_INFO("Robot is at the goal.");
+//                ROS_INFO("Robot is at the goal.");
                 ros::shutdown();
                 return;
             } else { // Not finished so move on
-                ROS_INFO("Close enough to goal, moving state forwards");
+//                ROS_INFO("Close enough to goal, moving state forwards");
                 this->stateTracker++;
                 std_msgs::Int16 state;
                 state.data = this->stateTracker;
                 this->changeStatePub.publish(state);
-                directionToSend.speed = 0.0;
+                this->targetSpeed = 0.0;
+            }
+        } else{ // Speed calculation
+            this->targetSpeed = (direction.x * -1) *2 ; // Invert because values are backwards.
+            // * 2 because we are slow af.
+        }
+        // Cap speed to 1m/s
+        if(this->targetSpeed > 1.0){
+            this->targetSpeed = 1.0;
+        }
+
+        // Steering calculation
+        if(direction.y > 0.05 || direction.y < -0.05){ // Y position is far enough out to need a turn
+            this->targetSteering = deg_to_rad(direction.y) * -1; // * 20 to make it faster
+            if (direction.angle > 2.0){ // If angle is far out, add it to calculation
+                this->targetSteering = this->targetSteering + direction.angle;
+            }
+            if (this->targetSteering < 1){
+                this->targetSteering = this->targetSteering * 20;
             }
         } else{
-            directionToSend.speed = (direction.x * -1); // Invert because values are backwards
-            if (directionToSend.speed < 0.8){ // If speed is low enough, make it faster
-                directionToSend.speed = directionToSend.speed * 1.5;
-            }
+            this->targetSteering = 0.0;
         }
-        if(direction.y > 0.05 || direction.y < -0.05){ // Y position is far enough out to need a turn
-            directionToSend.steering = deg_to_rad(direction.y) * -1; // * 20 to make it faster
-            if (directionToSend.steering < 0.1){
-                directionToSend.steering = directionToSend.steering * 100;
-            }
+        if(this->targetSpeed < 0.0){ // Going backwards so switch steering
+            this->targetSteering = this->targetSteering * -1;
         }
-        directionToSend.ackermann = 2; // Front ackermann
-        this->moveCommandPub.publish(directionToSend);
-        std::cout << "Moving- " << "Speed: " << std::to_string(directionToSend.speed) <<
-        " Steering: " << std::to_string(directionToSend.steering) << std::endl;
-        std::cout << "Current state: " << std::to_string(this->stateTracker) <<
-        " Number of states: " << std::to_string(this->numberOfStates) << std::endl;
+
+
+//        std::cout << "Current state: " << std::to_string(this->stateTracker) <<
+//        " Number of states: " << std::to_string(this->numberOfStates) << std::endl;
+    }
+
+    float get_speed_error(float ){
+
     }
 
     float deg_to_rad(float degree){
@@ -147,9 +188,16 @@ private:
     ros::Subscriber numberOfStatesSub;
     ros::Publisher moveCommandPub;
     ros::Publisher changeStatePub;
+    ros::Timer sendMovementTimer;
     int stateTracker;
     int numberOfStates;
     int valueCount;
+    float speedKp;
+    float steeringKp;
+    float currentSpeed;
+    float currentSteering;
+    float targetSpeed;
+    float targetSteering;
     bool stateWentDown;
     van_loading::ICPDirection directions[AVERAGE_NUMBER];
 };

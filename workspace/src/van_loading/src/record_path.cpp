@@ -14,7 +14,7 @@
 #include <string>
 
 #define MAX_COUNT 180
-#define SNAPSHOT_DISTANCE 1.5  // ~1m
+#define SNAPSHOT_DISTANCE 0.50  // ~0.5m
 
 // TODO: Change into class. When class is destroyed, make new file with number of lines at top?
 // TODO: Capture snapshots of the laserscan depending on how fast the robot is traveling

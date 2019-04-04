@@ -14,50 +14,19 @@
   <component name="ChangeListManager">
     <list default="true" id="f9060fcd-25f4-4347-bcb2-66858ea378a6" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/notes/notes.md" beforeDir="false" afterPath="$PROJECT_DIR$/notes/notes.md" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/workspace/build/CMakeFiles/Makefile.cmake" beforeDir="false" afterPath="$PROJECT_DIR$/workspace/build/CMakeFiles/Makefile.cmake" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/workspace/build/CMakeFiles/Makefile2" beforeDir="false" afterPath="$PROJECT_DIR$/workspace/build/CMakeFiles/Makefile2" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/workspace/build/CMakeFiles/TargetDirectories.txt" beforeDir="false" afterPath="$PROJECT_DIR$/workspace/build/CMakeFiles/TargetDirectories.txt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/workspace/build/CMakeFiles/progress.marks" beforeDir="false" afterPath="$PROJECT_DIR$/workspace/build/CMakeFiles/progress.marks" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/workspace/build/Makefile" beforeDir="false" afterPath="$PROJECT_DIR$/workspace/build/Makefile" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/workspace/build/double_ackermann/trunk/CMakeFiles/double_ackermann_generate_messages_cpp.dir/progress.make" beforeDir="false" afterPath="$PROJECT_DIR$/workspace/build/double_ackermann/trunk/CMakeFiles/double_ackermann_generate_messages_cpp.dir/progress.make" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/workspace/build/double_ackermann/trunk/CMakeFiles/double_ackermann_generate_messages_eus.dir/progress.make" beforeDir="false" afterPath="$PROJECT_DIR$/workspace/build/double_ackermann/trunk/CMakeFiles/double_ackermann_generate_messages_eus.dir/progress.make" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/workspace/build/double_ackermann/trunk/CMakeFiles/double_ackermann_generate_messages_lisp.dir/progress.make" beforeDir="false" afterPath="$PROJECT_DIR$/workspace/build/double_ackermann/trunk/CMakeFiles/double_ackermann_generate_messages_lisp.dir/progress.make" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/workspace/build/double_ackermann/trunk/CMakeFiles/double_ackermann_generate_messages_nodejs.dir/progress.make" beforeDir="false" afterPath="$PROJECT_DIR$/workspace/build/double_ackermann/trunk/CMakeFiles/double_ackermann_generate_messages_nodejs.dir/progress.make" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/workspace/build/double_ackermann/trunk/CMakeFiles/double_ackermann_generate_messages_py.dir/progress.make" beforeDir="false" afterPath="$PROJECT_DIR$/workspace/build/double_ackermann/trunk/CMakeFiles/double_ackermann_generate_messages_py.dir/progress.make" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/workspace/build/gtest/googlemock/CMakeFiles/gmock.dir/progress.make" beforeDir="false" afterPath="$PROJECT_DIR$/workspace/build/gtest/googlemock/CMakeFiles/gmock.dir/progress.make" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/workspace/build/gtest/googlemock/CMakeFiles/gmock_main.dir/progress.make" beforeDir="false" afterPath="$PROJECT_DIR$/workspace/build/gtest/googlemock/CMakeFiles/gmock_main.dir/progress.make" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/workspace/build/gtest/googlemock/gtest/CMakeFiles/gtest.dir/progress.make" beforeDir="false" afterPath="$PROJECT_DIR$/workspace/build/gtest/googlemock/gtest/CMakeFiles/gtest.dir/progress.make" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/workspace/build/gtest/googlemock/gtest/CMakeFiles/gtest_main.dir/progress.make" beforeDir="false" afterPath="$PROJECT_DIR$/workspace/build/gtest/googlemock/gtest/CMakeFiles/gtest_main.dir/progress.make" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/workspace/build/idris_sim/trunk/CMakeFiles/idris_sim_node.dir/progress.make" beforeDir="false" afterPath="$PROJECT_DIR$/workspace/build/idris_sim/trunk/CMakeFiles/idris_sim_node.dir/progress.make" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/workspace/build/van_loading/CMakeFiles/icp_compare_node.dir/CXX.includecache" beforeDir="false" afterPath="$PROJECT_DIR$/workspace/build/van_loading/CMakeFiles/icp_compare_node.dir/CXX.includecache" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/workspace/build/van_loading/CMakeFiles/icp_compare_node.dir/depend.internal" beforeDir="false" afterPath="$PROJECT_DIR$/workspace/build/van_loading/CMakeFiles/icp_compare_node.dir/depend.internal" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/workspace/build/van_loading/CMakeFiles/icp_compare_node.dir/depend.make" beforeDir="false" afterPath="$PROJECT_DIR$/workspace/build/van_loading/CMakeFiles/icp_compare_node.dir/depend.make" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/workspace/build/van_loading/CMakeFiles/icp_compare_node.dir/progress.make" beforeDir="false" afterPath="$PROJECT_DIR$/workspace/build/van_loading/CMakeFiles/icp_compare_node.dir/progress.make" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/workspace/build/van_loading/CMakeFiles/automated_control_node.dir/CXX.includecache" beforeDir="false" afterPath="$PROJECT_DIR$/workspace/build/van_loading/CMakeFiles/automated_control_node.dir/CXX.includecache" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/workspace/build/van_loading/CMakeFiles/automated_control_node.dir/depend.internal" beforeDir="false" afterPath="$PROJECT_DIR$/workspace/build/van_loading/CMakeFiles/automated_control_node.dir/depend.internal" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/workspace/build/van_loading/CMakeFiles/automated_control_node.dir/depend.make" beforeDir="false" afterPath="$PROJECT_DIR$/workspace/build/van_loading/CMakeFiles/automated_control_node.dir/depend.make" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/workspace/build/van_loading/CMakeFiles/automated_control_node.dir/src/automated_control.cpp.o" beforeDir="false" afterPath="$PROJECT_DIR$/workspace/build/van_loading/CMakeFiles/automated_control_node.dir/src/automated_control.cpp.o" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/workspace/build/van_loading/CMakeFiles/icp_compare_node.dir/src/compare_icp.cpp.o" beforeDir="false" afterPath="$PROJECT_DIR$/workspace/build/van_loading/CMakeFiles/icp_compare_node.dir/src/compare_icp.cpp.o" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/workspace/build/van_loading/CMakeFiles/progress.marks" beforeDir="false" afterPath="$PROJECT_DIR$/workspace/build/van_loading/CMakeFiles/progress.marks" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/workspace/build/van_loading/CMakeFiles/record_path_node.dir/progress.make" beforeDir="false" afterPath="$PROJECT_DIR$/workspace/build/van_loading/CMakeFiles/record_path_node.dir/progress.make" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/workspace/build/van_loading/CMakeFiles/record_path_node.dir/src/record_path.cpp.o" beforeDir="false" afterPath="$PROJECT_DIR$/workspace/build/van_loading/CMakeFiles/record_path_node.dir/src/record_path.cpp.o" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/workspace/build/van_loading/CMakeFiles/van_loading_generate_messages_cpp.dir/progress.make" beforeDir="false" afterPath="$PROJECT_DIR$/workspace/build/van_loading/CMakeFiles/van_loading_generate_messages_cpp.dir/progress.make" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/workspace/build/van_loading/CMakeFiles/van_loading_generate_messages_eus.dir/progress.make" beforeDir="false" afterPath="$PROJECT_DIR$/workspace/build/van_loading/CMakeFiles/van_loading_generate_messages_eus.dir/progress.make" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/workspace/build/van_loading/CMakeFiles/van_loading_generate_messages_lisp.dir/progress.make" beforeDir="false" afterPath="$PROJECT_DIR$/workspace/build/van_loading/CMakeFiles/van_loading_generate_messages_lisp.dir/progress.make" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/workspace/build/van_loading/CMakeFiles/van_loading_generate_messages_nodejs.dir/progress.make" beforeDir="false" afterPath="$PROJECT_DIR$/workspace/build/van_loading/CMakeFiles/van_loading_generate_messages_nodejs.dir/progress.make" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/workspace/build/van_loading/CMakeFiles/van_loading_generate_messages_py.dir/progress.make" beforeDir="false" afterPath="$PROJECT_DIR$/workspace/build/van_loading/CMakeFiles/van_loading_generate_messages_py.dir/progress.make" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/workspace/build/van_loading/CMakeFiles/van_loading_node.dir/progress.make" beforeDir="false" afterPath="$PROJECT_DIR$/workspace/build/van_loading/CMakeFiles/van_loading_node.dir/progress.make" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/workspace/build/van_loading/Makefile" beforeDir="false" afterPath="$PROJECT_DIR$/workspace/build/van_loading/Makefile" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/workspace/devel/include/van_loading/ICPDirection.h" beforeDir="false" afterPath="$PROJECT_DIR$/workspace/devel/include/van_loading/ICPDirection.h" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/workspace/devel/lib/python2.7/dist-packages/van_loading/msg/_ICPDirection.py" beforeDir="false" afterPath="$PROJECT_DIR$/workspace/devel/lib/python2.7/dist-packages/van_loading/msg/_ICPDirection.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/workspace/devel/lib/van_loading/automated_control_node" beforeDir="false" afterPath="$PROJECT_DIR$/workspace/devel/lib/van_loading/automated_control_node" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/workspace/devel/lib/van_loading/icp_compare_node" beforeDir="false" afterPath="$PROJECT_DIR$/workspace/devel/lib/van_loading/icp_compare_node" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/workspace/devel/lib/van_loading/record_path_node" beforeDir="false" afterPath="$PROJECT_DIR$/workspace/devel/lib/van_loading/record_path_node" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/workspace/devel/share/common-lisp/ros/van_loading/msg/ICPDirection.lisp" beforeDir="false" afterPath="$PROJECT_DIR$/workspace/devel/share/common-lisp/ros/van_loading/msg/ICPDirection.lisp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/workspace/devel/share/common-lisp/ros/van_loading/msg/_package_ICPDirection.lisp" beforeDir="false" afterPath="$PROJECT_DIR$/workspace/devel/share/common-lisp/ros/van_loading/msg/_package_ICPDirection.lisp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/workspace/devel/share/gennodejs/ros/van_loading/msg/ICPDirection.js" beforeDir="false" afterPath="$PROJECT_DIR$/workspace/devel/share/gennodejs/ros/van_loading/msg/ICPDirection.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/workspace/devel/share/roseus/ros/van_loading/msg/ICPDirection.l" beforeDir="false" afterPath="$PROJECT_DIR$/workspace/devel/share/roseus/ros/van_loading/msg/ICPDirection.l" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/workspace/src/van_loading/CMakeLists.txt" beforeDir="false" afterPath="$PROJECT_DIR$/workspace/src/van_loading/CMakeLists.txt" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/workspace/src/van_loading/config/model.csv" beforeDir="false" afterPath="$PROJECT_DIR$/workspace/src/van_loading/config/model.csv" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/workspace/src/van_loading/data/28-2:141824.csv" beforeDir="false" afterPath="$PROJECT_DIR$/workspace/src/van_loading/data/28-2:141824.csv" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/workspace/src/van_loading/launch/van.launch" beforeDir="false" afterPath="$PROJECT_DIR$/workspace/src/van_loading/launch/van.launch" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/workspace/src/van_loading/msg/ICPDirection.msg" beforeDir="false" afterPath="$PROJECT_DIR$/workspace/src/van_loading/msg/ICPDirection.msg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/workspace/src/van_loading/src/change_state.py" beforeDir="false" afterPath="$PROJECT_DIR$/workspace/src/van_loading/src/change_state.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/workspace/src/van_loading/src/automated_control.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/workspace/src/van_loading/src/automated_control.cpp" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/workspace/src/van_loading/src/compare_icp.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/workspace/src/van_loading/src/compare_icp.cpp" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/workspace/src/van_loading/src/record_path.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/workspace/src/van_loading/src/record_path.cpp" afterDir="false" />
     </list>
@@ -71,40 +40,37 @@
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/workspace/src/van_loading/CMakeLists.txt">
+        <entry file="file://$PROJECT_DIR$/workspace/src/van_loading/launch/van.launch">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="214">
-              <caret line="213" column="65" selection-start-line="213" selection-start-column="65" selection-end-line="213" selection-end-column="65" />
+            <state relative-caret-position="335">
+              <caret line="28" column="42" selection-start-line="28" selection-start-column="42" selection-end-line="28" selection-end-column="42" />
             </state>
           </provider>
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/workspace/src/van_loading/src/automated_movement.py">
+        <entry file="file://$PROJECT_DIR$/workspace/src/van_loading/src/compare_icp.cpp">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="327">
-              <caret line="38" column="25" selection-start-line="38" selection-start-column="17" selection-end-line="38" selection-end-column="25" />
-              <folding>
-                <element signature="e#22#34#0" expanded="true" />
-              </folding>
+            <state relative-caret-position="2730">
+              <caret line="212" column="6" selection-start-line="212" selection-start-column="6" selection-end-line="212" selection-end-column="6" />
             </state>
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="false">
+      <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/workspace/src/van_loading/src/automated_control.cpp">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="735">
-              <caret line="49" column="69" selection-start-line="49" selection-start-column="69" selection-end-line="49" selection-end-column="69" />
+            <state relative-caret-position="285">
+              <caret line="136" column="65" selection-start-line="136" selection-start-column="65" selection-end-line="136" selection-end-column="65" />
             </state>
           </provider>
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/workspace/src/van_loading/data/28-2:172955.csv">
+        <entry file="file://$PROJECT_DIR$/workspace/src/van_loading/config/model.csv">
           <provider selected="true" editor-type-id="csv-text-editor">
-            <state relative-caret-position="375">
-              <caret line="25" column="50" selection-end-line="34" />
+            <state relative-caret-position="461">
+              <caret line="42" selection-start-line="42" selection-end-line="42" />
             </state>
           </provider>
           <provider editor-type-id="csv-table-editor">
@@ -113,37 +79,10 @@
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/workspace/src/van_loading/launch/van.launch">
+        <entry file="file://$PROJECT_DIR$/workspace/src/van_loading/src/record_path.cpp">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="420">
-              <caret line="28" column="54" selection-start-line="28" selection-start-column="54" selection-end-line="28" selection-end-column="54" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/workspace/src/van_loading/msg/ICPDirection.msg">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="135">
-              <caret line="9" column="34" selection-start-line="9" selection-start-column="34" selection-end-line="9" selection-end-column="34" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/workspace/src/double_ackermann/trunk/msg/DoubleAckermann.msg">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="15">
-              <caret line="1" column="13" selection-start-line="1" selection-start-column="8" selection-end-line="1" selection-end-column="13" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/workspace/src/van_loading/src/compare_icp.cpp">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="215">
-              <caret line="33" column="40" lean-forward="true" selection-start-line="33" selection-start-column="40" selection-end-line="33" selection-end-column="40" />
+            <state relative-caret-position="-75">
+              <caret line="16" column="39" selection-start-line="16" selection-start-column="39" selection-end-line="16" selection-end-column="39" />
             </state>
           </provider>
         </entry>
@@ -151,8 +90,8 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/workspace/src/van_loading/src/idris_sim.cpp">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-7260">
-              <caret line="72" column="47" selection-start-line="72" selection-start-column="47" selection-end-line="72" selection-end-column="47" />
+            <state relative-caret-position="1119">
+              <caret line="166" column="46" selection-start-line="166" selection-start-column="24" selection-end-line="166" selection-end-column="46" />
               <folding>
                 <element signature="e#2861#3033#0" expanded="true" />
                 <element signature="e#4262#4321#0" expanded="true" />
@@ -164,18 +103,6 @@
                 <element signature="e#16803#17690#0" expanded="true" />
               </folding>
             </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/workspace/src/van_loading/config/model.csv">
-          <provider selected="true" editor-type-id="csv-text-editor">
-            <state relative-caret-position="510">
-              <caret line="34" selection-start-line="34" selection-end-line="34" />
-            </state>
-          </provider>
-          <provider editor-type-id="csv-table-editor">
-            <state showInfoPanel="true" fixedHeaders="false" rowLines="3" />
           </provider>
         </entry>
       </file>
@@ -215,12 +142,12 @@
       <find>update_distance</find>
       <find>watchdogTimer</find>
       <find>1</find>
-      <find>0</find>
       <find>watchdogCallback</find>
       <find>compare</find>
       <find>startTime</find>
       <find>Int8</find>
       <find>moveCommand</find>
+      <find>0</find>
     </findStrings>
     <replaceStrings>
       <replace>,</replace>
@@ -275,10 +202,11 @@
         <option value="$PROJECT_DIR$/workspace/src/van_loading/msg/ICPDirection.msg" />
         <option value="$PROJECT_DIR$/workspace/src/van_loading/CMakeLists.txt" />
         <option value="$PROJECT_DIR$/workspace/src/van_loading/launch/van.launch" />
+        <option value="$PROJECT_DIR$/workspace/src/van_loading/data/28-2:141824.csv" />
         <option value="$PROJECT_DIR$/workspace/src/van_loading/src/record_path.cpp" />
         <option value="$PROJECT_DIR$/workspace/src/van_loading/config/model.csv" />
-        <option value="$PROJECT_DIR$/workspace/src/van_loading/src/automated_control.cpp" />
         <option value="$PROJECT_DIR$/workspace/src/van_loading/src/compare_icp.cpp" />
+        <option value="$PROJECT_DIR$/workspace/src/van_loading/src/automated_control.cpp" />
       </list>
     </option>
   </component>
@@ -297,6 +225,7 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
+      <pane id="Scope" />
       <pane id="ProjectPane">
         <subPane>
           <expand>
@@ -400,7 +329,6 @@
           <select />
         </subPane>
       </pane>
-      <pane id="Scope" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -476,17 +404,18 @@
       <workItem from="1553250351897" duration="4368000" />
       <workItem from="1553519050087" duration="2780000" />
       <workItem from="1553550851273" duration="43534000" />
+      <workItem from="1553852638819" duration="10704000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="174215000" />
+    <option name="totallyTimeSpent" value="184919000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="-1" width="1366" height="741" extended-state="6" />
     <editor active="true" />
     <layout>
-      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.3068182" />
+      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.3121212" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="Favorites" order="2" side_tool="true" />
       <window_info anchor="bottom" id="Message" order="0" />
@@ -513,37 +442,6 @@
     <option name="version" value="1" />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/libs/icpSpeedTest/data" />
-    <entry file="file://$PROJECT_DIR$/workspace/src/van_loading/libs/libicp/icp">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/workspace/src/van_loading/Findmrpt.cmake" />
-    <entry file="file://$PROJECT_DIR$/libs/libicp/src/icpPointToPlane.cpp">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="45">
-          <caret line="30" column="73" lean-forward="true" selection-start-line="30" selection-start-column="73" selection-end-line="30" selection-end-column="73" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/libs/libicp/src/icp.cpp">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-1301" />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/libs/libpointmatcher/CMakeLists.txt">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="870">
-          <caret line="275" column="7" lean-forward="true" selection-start-line="275" selection-start-column="7" selection-end-line="275" selection-end-column="7" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/libs/libicp/CMakeLists.txt">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="268">
-          <caret line="32" column="19" selection-start-line="32" selection-start-column="19" selection-end-line="32" selection-end-column="38" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/libs/libicp/src/demo.cpp">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="585">
@@ -644,18 +542,8 @@
         <state showInfoPanel="true" fixedHeaders="false" rowLines="3" />
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/workspace/src/van_loading/data225233036.csv">
-      <provider selected="true" editor-type-id="csv-text-editor" />
-      <provider editor-type-id="csv-table-editor">
-        <state showInfoPanel="true" fixedHeaders="false" rowLines="3" />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/workspace/src/van_loading/data/25-2:233416.csv">
-      <provider selected="true" editor-type-id="csv-text-editor" />
-      <provider editor-type-id="csv-table-editor">
-        <state showInfoPanel="true" fixedHeaders="false" rowLines="3" />
-      </provider>
-    </entry>
+    <entry file="file://$PROJECT_DIR$/workspace/src/van_loading/data225233036.csv" />
+    <entry file="file://$PROJECT_DIR$/workspace/src/van_loading/data/25-2:233416.csv" />
     <entry file="file://$PROJECT_DIR$/workspace/src/van_loading/src/test_icp.cpp">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="15">
@@ -663,13 +551,7 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/workspace/src/van_loading/src/icp_compare.cpp">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="120">
-          <caret line="56" selection-start-line="56" selection-end-line="56" />
-        </state>
-      </provider>
-    </entry>
+    <entry file="file://$PROJECT_DIR$/workspace/src/van_loading/src/icp_compare.cpp" />
     <entry file="file://$PROJECT_DIR$/workspace/src/van_loading/data/26-2:141650.csv">
       <provider selected="true" editor-type-id="csv-text-editor">
         <state relative-caret-position="79">
@@ -722,16 +604,6 @@
         <state showInfoPanel="true" fixedHeaders="false" rowLines="3" />
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/workspace/src/van_loading/data/27-2:144550.csv">
-      <provider selected="true" editor-type-id="csv-text-editor">
-        <state relative-caret-position="-680">
-          <caret selection-end-line="77" />
-        </state>
-      </provider>
-      <provider editor-type-id="csv-table-editor">
-        <state showInfoPanel="true" fixedHeaders="false" rowLines="3" />
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/workspace/src/van_loading/src/move_idris.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="225">
@@ -747,16 +619,6 @@
       </provider>
       <provider editor-type-id="sourcemapFileViewerProvider" />
     </entry>
-    <entry file="file://$PROJECT_DIR$/workspace/src/van_loading/data/28-2:141824.csv">
-      <provider selected="true" editor-type-id="csv-text-editor">
-        <state relative-caret-position="360">
-          <caret line="24" column="53" selection-end-line="29" />
-        </state>
-      </provider>
-      <provider editor-type-id="csv-table-editor">
-        <state showInfoPanel="true" fixedHeaders="false" rowLines="3" />
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/workspace/src/van_loading/src/change_state.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="105">
@@ -767,10 +629,156 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/workspace/src/van_loading/launch/all.launch">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/workspace/src/van_loading/CMakeLists.txt">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="3195">
+          <caret line="213" column="65" selection-start-line="213" selection-start-column="65" selection-end-line="213" selection-end-column="65" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/workspace/src/van_loading/src/automated_movement.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="540">
+          <caret line="38" column="25" selection-start-line="38" selection-start-column="17" selection-end-line="38" selection-end-column="25" />
+          <folding>
+            <element signature="e#22#34#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/workspace/src/van_loading/msg/ICPDirection.msg">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="135">
+          <caret line="9" column="34" selection-start-line="9" selection-start-column="34" selection-end-line="9" selection-end-column="34" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/workspace/src/double_ackermann/trunk/msg/DoubleAckermann.msg">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="15">
+          <caret line="1" column="13" selection-start-line="1" selection-start-column="8" selection-end-line="1" selection-end-column="13" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/workspace/src/van_loading/data/28-2:172955.csv">
+      <provider selected="true" editor-type-id="csv-text-editor">
+        <state relative-caret-position="333">
+          <caret line="25" column="50" selection-end-line="34" />
+        </state>
+      </provider>
+      <provider editor-type-id="csv-table-editor">
+        <state showInfoPanel="true" fixedHeaders="false" rowLines="3" />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/workspace/src/van_loading/data/29-2:101240.csv">
+      <provider selected="true" editor-type-id="csv-text-editor">
+        <state relative-caret-position="150">
+          <caret line="10" selection-end-line="10" />
+        </state>
+      </provider>
+      <provider editor-type-id="csv-table-editor">
+        <state showInfoPanel="true" fixedHeaders="false" rowLines="3" />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/workspace/src/van_loading/data/27-2:144550.csv">
+      <provider selected="true" editor-type-id="csv-text-editor">
+        <state>
+          <caret selection-end-line="77" />
+        </state>
+      </provider>
+      <provider editor-type-id="csv-table-editor">
+        <state showInfoPanel="true" fixedHeaders="false" rowLines="3" />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/workspace/src/van_loading/data/26-2:163628.csv">
+      <provider selected="true" editor-type-id="csv-text-editor" />
+      <provider editor-type-id="csv-table-editor">
+        <state showInfoPanel="true" fixedHeaders="false" rowLines="3" />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/workspace/src/van_loading/data/26-2:155224.csv">
+      <provider selected="true" editor-type-id="csv-text-editor" />
+      <provider editor-type-id="csv-table-editor">
+        <state showInfoPanel="true" fixedHeaders="false" rowLines="3" />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/workspace/src/van_loading/data/28-2:141516.csv">
+      <provider selected="true" editor-type-id="csv-text-editor" />
+      <provider editor-type-id="csv-table-editor">
+        <state showInfoPanel="true" fixedHeaders="false" rowLines="3" />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/workspace/src/van_loading/data/28-2:141824.csv">
+      <provider selected="true" editor-type-id="csv-text-editor">
+        <state>
+          <caret selection-end-line="17" />
+        </state>
+      </provider>
+      <provider editor-type-id="csv-table-editor">
+        <state showInfoPanel="true" fixedHeaders="false" rowLines="3" />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/workspace/src/van_loading/data/29-2:102410.csv">
+      <provider selected="true" editor-type-id="csv-text-editor">
+        <state relative-caret-position="315">
+          <caret line="21" selection-start-line="21" selection-end-line="21" />
+        </state>
+      </provider>
+      <provider editor-type-id="csv-table-editor">
+        <state showInfoPanel="true" fixedHeaders="false" rowLines="3" />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/workspace/src/van_loading/data/29-2:104017.csv">
+      <provider selected="true" editor-type-id="csv-text-editor">
+        <state>
+          <caret selection-end-line="42" />
+        </state>
+      </provider>
+      <provider editor-type-id="csv-table-editor">
+        <state showInfoPanel="true" fixedHeaders="false" rowLines="3" />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/workspace/src/van_loading/config/model.csv">
+      <provider selected="true" editor-type-id="csv-text-editor">
+        <state relative-caret-position="461">
+          <caret line="42" selection-start-line="42" selection-end-line="42" />
+        </state>
+      </provider>
+      <provider editor-type-id="csv-table-editor">
+        <state showInfoPanel="true" fixedHeaders="false" rowLines="3" />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/workspace/src/van_loading/data/29-2:10322.csv">
+      <provider selected="true" editor-type-id="csv-text-editor">
+        <state relative-caret-position="270">
+          <caret line="18" column="35" selection-end-line="27" />
+        </state>
+      </provider>
+      <provider editor-type-id="csv-table-editor">
+        <state showInfoPanel="true" fixedHeaders="false" rowLines="3" />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/workspace/src/van_loading/launch/van.launch">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="335">
+          <caret line="28" column="42" selection-start-line="28" selection-start-column="42" selection-end-line="28" selection-end-column="42" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/workspace/src/van_loading/src/record_path.cpp">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-75">
+          <caret line="16" column="39" selection-start-line="16" selection-start-column="39" selection-end-line="16" selection-end-column="39" />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/workspace/src/van_loading/src/idris_sim.cpp">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-7260">
-          <caret line="72" column="47" selection-start-line="72" selection-start-column="47" selection-end-line="72" selection-end-column="47" />
+        <state relative-caret-position="1119">
+          <caret line="166" column="46" selection-start-line="166" selection-start-column="24" selection-end-line="166" selection-end-column="46" />
           <folding>
             <element signature="e#2861#3033#0" expanded="true" />
             <element signature="e#4262#4321#0" expanded="true" />
@@ -784,85 +792,17 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/workspace/src/van_loading/src/automated_movement.py">
+    <entry file="file://$PROJECT_DIR$/workspace/src/van_loading/src/compare_icp.cpp">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="327">
-          <caret line="38" column="25" selection-start-line="38" selection-start-column="17" selection-end-line="38" selection-end-column="25" />
-          <folding>
-            <element signature="e#22#34#0" expanded="true" />
-          </folding>
+        <state relative-caret-position="2730">
+          <caret line="212" column="6" selection-start-line="212" selection-start-column="6" selection-end-line="212" selection-end-column="6" />
         </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/workspace/src/van_loading/CMakeLists.txt">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="214">
-          <caret line="213" column="65" selection-start-line="213" selection-start-column="65" selection-end-line="213" selection-end-column="65" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/workspace/src/double_ackermann/trunk/msg/DoubleAckermann.msg">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="15">
-          <caret line="1" column="13" selection-start-line="1" selection-start-column="8" selection-end-line="1" selection-end-column="13" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/workspace/src/van_loading/msg/ICPDirection.msg">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="135">
-          <caret line="9" column="34" selection-start-line="9" selection-start-column="34" selection-end-line="9" selection-end-column="34" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/workspace/src/van_loading/launch/all.launch">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/workspace/src/van_loading/launch/van.launch">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="420">
-          <caret line="28" column="54" selection-start-line="28" selection-start-column="54" selection-end-line="28" selection-end-column="54" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/workspace/src/van_loading/src/record_path.cpp">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="240">
-          <caret line="16" column="29" selection-start-line="16" selection-start-column="29" selection-end-line="16" selection-end-column="29" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/workspace/src/van_loading/data/28-2:172955.csv">
-      <provider selected="true" editor-type-id="csv-text-editor">
-        <state relative-caret-position="375">
-          <caret line="25" column="50" selection-end-line="34" />
-        </state>
-      </provider>
-      <provider editor-type-id="csv-table-editor">
-        <state showInfoPanel="true" fixedHeaders="false" rowLines="3" />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/workspace/src/van_loading/config/model.csv">
-      <provider selected="true" editor-type-id="csv-text-editor">
-        <state relative-caret-position="510">
-          <caret line="34" selection-start-line="34" selection-end-line="34" />
-        </state>
-      </provider>
-      <provider editor-type-id="csv-table-editor">
-        <state showInfoPanel="true" fixedHeaders="false" rowLines="3" />
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/workspace/src/van_loading/src/automated_control.cpp">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="735">
-          <caret line="49" column="69" selection-start-line="49" selection-start-column="69" selection-end-line="49" selection-end-column="69" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/workspace/src/van_loading/src/compare_icp.cpp">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="215">
-          <caret line="33" column="40" lean-forward="true" selection-start-line="33" selection-start-column="40" selection-end-line="33" selection-end-column="40" />
+        <state relative-caret-position="285">
+          <caret line="136" column="65" selection-start-line="136" selection-start-column="65" selection-end-line="136" selection-end-column="65" />
         </state>
       </provider>
     </entry>

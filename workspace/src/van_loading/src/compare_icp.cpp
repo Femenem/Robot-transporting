@@ -28,16 +28,17 @@ using namespace mrpt::poses;
 using namespace std;
 
 #define SCAN_SIZE 180
+#define DEBUG
 
 char MODEL_VALID[] = {
-        0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0,
-        0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0,
         1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1,
         1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1,
         1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1,
-        1, 1, 1, 1, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0,
-        0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0,
-        0, 0, 0, 0, 0}; // Only look at the middle 60 values
+        1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1,
+        1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1,
+        1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1,
+        1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1,
+        1, 1, 1, 1, 1}; // Only look at the middle 60 values or not?
 
 
 class icp_compare
@@ -179,7 +180,7 @@ public:
 
         CPosePDF::Ptr pdf =
                 ICP.Align(&m1, &m2, initialPose, &runningTime, (void*)&info);
-
+#ifdef DEBUG
         printf(
                 "ICP run in %.02fms, %d iterations (%.02fms/iter), %.01f%% goodness\n "
                 "-> ",
@@ -187,16 +188,17 @@ public:
                 runningTime * 1000.0f / info.nIterations, info.goodness * 100);
 
         cout << "Mean of estimation: " << pdf->getMeanVal() << endl << endl;
+#endif
 
         CPosePDFGaussian gPdf;
         gPdf.copyFrom(*pdf);
-
+#ifdef DEBUG
         cout << "Covariance of estimation: " << endl << gPdf.cov << endl;
 
         cout << " std(x): " << sqrt(gPdf.cov(0, 0)) << endl;
         cout << " std(y): " << sqrt(gPdf.cov(1, 1)) << endl;
         cout << " std(phi): " << RAD2DEG(sqrt(gPdf.cov(2, 2))) << " (deg)" << endl;
-
+#endif
         CPose2D icpEstimate = pdf->getMeanVal();
         mrpt::math::dynamic_vector<double> vector;
         icpEstimate.getAsVector(vector);
@@ -206,8 +208,9 @@ public:
         direction.y = vector[1];
         direction.angle = vector[2];
         direction.goodness = info.goodness;
+#ifdef DEBUG
         std::cout << "Goodness: " << std::to_string(direction.goodness) << std::endl;
-
+#endif
         directionPub.publish(direction);
     }
 
