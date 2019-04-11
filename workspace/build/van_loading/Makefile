@@ -168,6 +168,21 @@ depend:
 .PHONY : depend
 
 # Convenience name for target.
+van_loading/CMakeFiles/icp_compare_node.dir/rule:
+	cd /home/matt/Documents/Robot-transporting/workspace/build && $(MAKE) -f CMakeFiles/Makefile2 van_loading/CMakeFiles/icp_compare_node.dir/rule
+.PHONY : van_loading/CMakeFiles/icp_compare_node.dir/rule
+
+# Convenience name for target.
+icp_compare_node: van_loading/CMakeFiles/icp_compare_node.dir/rule
+
+.PHONY : icp_compare_node
+
+# fast build rule for target.
+icp_compare_node/fast:
+	cd /home/matt/Documents/Robot-transporting/workspace/build && $(MAKE) -f van_loading/CMakeFiles/icp_compare_node.dir/build.make van_loading/CMakeFiles/icp_compare_node.dir/build
+.PHONY : icp_compare_node/fast
+
+# Convenience name for target.
 van_loading/CMakeFiles/van_loading_geneus.dir/rule:
 	cd /home/matt/Documents/Robot-transporting/workspace/build && $(MAKE) -f CMakeFiles/Makefile2 van_loading/CMakeFiles/van_loading_geneus.dir/rule
 .PHONY : van_loading/CMakeFiles/van_loading_geneus.dir/rule
@@ -228,21 +243,6 @@ record_path_node/fast:
 .PHONY : record_path_node/fast
 
 # Convenience name for target.
-van_loading/CMakeFiles/automated_control_node.dir/rule:
-	cd /home/matt/Documents/Robot-transporting/workspace/build && $(MAKE) -f CMakeFiles/Makefile2 van_loading/CMakeFiles/automated_control_node.dir/rule
-.PHONY : van_loading/CMakeFiles/automated_control_node.dir/rule
-
-# Convenience name for target.
-automated_control_node: van_loading/CMakeFiles/automated_control_node.dir/rule
-
-.PHONY : automated_control_node
-
-# fast build rule for target.
-automated_control_node/fast:
-	cd /home/matt/Documents/Robot-transporting/workspace/build && $(MAKE) -f van_loading/CMakeFiles/automated_control_node.dir/build.make van_loading/CMakeFiles/automated_control_node.dir/build
-.PHONY : automated_control_node/fast
-
-# Convenience name for target.
 van_loading/CMakeFiles/van_loading_generate_messages_eus.dir/rule:
 	cd /home/matt/Documents/Robot-transporting/workspace/build && $(MAKE) -f CMakeFiles/Makefile2 van_loading/CMakeFiles/van_loading_generate_messages_eus.dir/rule
 .PHONY : van_loading/CMakeFiles/van_loading_generate_messages_eus.dir/rule
@@ -286,6 +286,36 @@ van_loading_generate_messages_cpp: van_loading/CMakeFiles/van_loading_generate_m
 van_loading_generate_messages_cpp/fast:
 	cd /home/matt/Documents/Robot-transporting/workspace/build && $(MAKE) -f van_loading/CMakeFiles/van_loading_generate_messages_cpp.dir/build.make van_loading/CMakeFiles/van_loading_generate_messages_cpp.dir/build
 .PHONY : van_loading_generate_messages_cpp/fast
+
+# Convenience name for target.
+van_loading/CMakeFiles/automated_control_node.dir/rule:
+	cd /home/matt/Documents/Robot-transporting/workspace/build && $(MAKE) -f CMakeFiles/Makefile2 van_loading/CMakeFiles/automated_control_node.dir/rule
+.PHONY : van_loading/CMakeFiles/automated_control_node.dir/rule
+
+# Convenience name for target.
+automated_control_node: van_loading/CMakeFiles/automated_control_node.dir/rule
+
+.PHONY : automated_control_node
+
+# fast build rule for target.
+automated_control_node/fast:
+	cd /home/matt/Documents/Robot-transporting/workspace/build && $(MAKE) -f van_loading/CMakeFiles/automated_control_node.dir/build.make van_loading/CMakeFiles/automated_control_node.dir/build
+.PHONY : automated_control_node/fast
+
+# Convenience name for target.
+van_loading/CMakeFiles/laserscan_filter_node.dir/rule:
+	cd /home/matt/Documents/Robot-transporting/workspace/build && $(MAKE) -f CMakeFiles/Makefile2 van_loading/CMakeFiles/laserscan_filter_node.dir/rule
+.PHONY : van_loading/CMakeFiles/laserscan_filter_node.dir/rule
+
+# Convenience name for target.
+laserscan_filter_node: van_loading/CMakeFiles/laserscan_filter_node.dir/rule
+
+.PHONY : laserscan_filter_node
+
+# fast build rule for target.
+laserscan_filter_node/fast:
+	cd /home/matt/Documents/Robot-transporting/workspace/build && $(MAKE) -f van_loading/CMakeFiles/laserscan_filter_node.dir/build.make van_loading/CMakeFiles/laserscan_filter_node.dir/build
+.PHONY : laserscan_filter_node/fast
 
 # Convenience name for target.
 van_loading/CMakeFiles/van_loading_generate_messages.dir/rule:
@@ -392,21 +422,6 @@ van_loading_gennodejs/fast:
 	cd /home/matt/Documents/Robot-transporting/workspace/build && $(MAKE) -f van_loading/CMakeFiles/van_loading_gennodejs.dir/build.make van_loading/CMakeFiles/van_loading_gennodejs.dir/build
 .PHONY : van_loading_gennodejs/fast
 
-# Convenience name for target.
-van_loading/CMakeFiles/icp_compare_node.dir/rule:
-	cd /home/matt/Documents/Robot-transporting/workspace/build && $(MAKE) -f CMakeFiles/Makefile2 van_loading/CMakeFiles/icp_compare_node.dir/rule
-.PHONY : van_loading/CMakeFiles/icp_compare_node.dir/rule
-
-# Convenience name for target.
-icp_compare_node: van_loading/CMakeFiles/icp_compare_node.dir/rule
-
-.PHONY : icp_compare_node
-
-# fast build rule for target.
-icp_compare_node/fast:
-	cd /home/matt/Documents/Robot-transporting/workspace/build && $(MAKE) -f van_loading/CMakeFiles/icp_compare_node.dir/build.make van_loading/CMakeFiles/icp_compare_node.dir/build
-.PHONY : icp_compare_node/fast
-
 src/automated_control.o: src/automated_control.cpp.o
 
 .PHONY : src/automated_control.o
@@ -488,6 +503,33 @@ src/idris_sim.cpp.s:
 	cd /home/matt/Documents/Robot-transporting/workspace/build && $(MAKE) -f van_loading/CMakeFiles/van_loading_node.dir/build.make van_loading/CMakeFiles/van_loading_node.dir/src/idris_sim.cpp.s
 .PHONY : src/idris_sim.cpp.s
 
+src/laserscan_filter.o: src/laserscan_filter.cpp.o
+
+.PHONY : src/laserscan_filter.o
+
+# target to build an object file
+src/laserscan_filter.cpp.o:
+	cd /home/matt/Documents/Robot-transporting/workspace/build && $(MAKE) -f van_loading/CMakeFiles/laserscan_filter_node.dir/build.make van_loading/CMakeFiles/laserscan_filter_node.dir/src/laserscan_filter.cpp.o
+.PHONY : src/laserscan_filter.cpp.o
+
+src/laserscan_filter.i: src/laserscan_filter.cpp.i
+
+.PHONY : src/laserscan_filter.i
+
+# target to preprocess a source file
+src/laserscan_filter.cpp.i:
+	cd /home/matt/Documents/Robot-transporting/workspace/build && $(MAKE) -f van_loading/CMakeFiles/laserscan_filter_node.dir/build.make van_loading/CMakeFiles/laserscan_filter_node.dir/src/laserscan_filter.cpp.i
+.PHONY : src/laserscan_filter.cpp.i
+
+src/laserscan_filter.s: src/laserscan_filter.cpp.s
+
+.PHONY : src/laserscan_filter.s
+
+# target to generate assembly for a file
+src/laserscan_filter.cpp.s:
+	cd /home/matt/Documents/Robot-transporting/workspace/build && $(MAKE) -f van_loading/CMakeFiles/laserscan_filter_node.dir/build.make van_loading/CMakeFiles/laserscan_filter_node.dir/src/laserscan_filter.cpp.s
+.PHONY : src/laserscan_filter.cpp.s
+
 src/record_path.o: src/record_path.cpp.o
 
 .PHONY : src/record_path.o
@@ -527,15 +569,17 @@ help:
 	@echo "... rebuild_cache"
 	@echo "... edit_cache"
 	@echo "... test"
+	@echo "... icp_compare_node"
 	@echo "... van_loading_geneus"
 	@echo "... van_loading_node"
 	@echo "... list_install_components"
 	@echo "... van_loading_gencpp"
 	@echo "... record_path_node"
-	@echo "... automated_control_node"
 	@echo "... van_loading_generate_messages_eus"
 	@echo "... van_loading_genpy"
 	@echo "... van_loading_generate_messages_cpp"
+	@echo "... automated_control_node"
+	@echo "... laserscan_filter_node"
 	@echo "... van_loading_generate_messages"
 	@echo "... _van_loading_generate_messages_check_deps_ICPDirection"
 	@echo "... van_loading_genlisp"
@@ -543,7 +587,6 @@ help:
 	@echo "... van_loading_generate_messages_nodejs"
 	@echo "... van_loading_generate_messages_lisp"
 	@echo "... van_loading_gennodejs"
-	@echo "... icp_compare_node"
 	@echo "... src/automated_control.o"
 	@echo "... src/automated_control.i"
 	@echo "... src/automated_control.s"
@@ -553,6 +596,9 @@ help:
 	@echo "... src/idris_sim.o"
 	@echo "... src/idris_sim.i"
 	@echo "... src/idris_sim.s"
+	@echo "... src/laserscan_filter.o"
+	@echo "... src/laserscan_filter.i"
+	@echo "... src/laserscan_filter.s"
 	@echo "... src/record_path.o"
 	@echo "... src/record_path.i"
 	@echo "... src/record_path.s"

@@ -1,0 +1,12 @@
+<launch>
+    <!--
+        Laserscan filter TODO
+    -->
+
+    <node pkg="laser_filters" type="scan_to_scan_filter_chain"
+          name="laser_filter">
+        <rosparam command="load" file="$(find van_loading)/config/filters.yaml" />
+        <remap from="/van_loading/front_laser/scan" to="base_scan" />
+    </node>
+
+</launch>

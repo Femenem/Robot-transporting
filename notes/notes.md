@@ -154,3 +154,29 @@ Alpha = 0
 Thursday:
 
 Friday:
+
+# Week 01/04/19
+
+Monday:
+
+Tuesday:
+Updated commands to use cmd_vel instead of double_ackermann.
+Updated steering to be mirrored when reversing.
+
+Wednesday:
+Added PID (k) controllers to speed and steering.
+
+Thursday:
+Did Job assignment.
+
+Friday (meeting):
+LOOKUP BANDING BOX FOR LASERSCAN TO FILTER SCAN RESULTS
+
+# Week 08/04/19:
+
+Monday:
+ADDED DEPENDACNY, LASER-FILTERS << Difficult issue
+
+Tuesday:
+Hacked about with the filters manual etc.
+Check what values the filter gives from source.

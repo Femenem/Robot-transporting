@@ -27,18 +27,9 @@ using namespace mrpt::math;
 using namespace mrpt::poses;
 using namespace std;
 
-#define SCAN_SIZE 180
-#define DEBUG
+#define SCAN_SIZE 80
 
-char MODEL_VALID[] = {
-        1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1,
-        1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1,
-        1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1,
-        1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1,
-        1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1,
-        1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1,
-        1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1,
-        1, 1, 1, 1, 1}; // Only look at the middle 60 values or not?
+#define DEBUG
 
 
 class icp_compare
@@ -47,7 +38,7 @@ public:
     icp_compare(ros::NodeHandle nh){
         this->stateSub = nh.subscribe("/van_loading/ICP_model_state", 1, &icp_compare::update_state, this);
         ROS_INFO("Model state subscribed.");
-        this->laserSub = nh.subscribe("/van_loading/front_laser/scan", 1, &icp_compare::compare_laser_data, this);
+        this->laserSub = nh.subscribe("/van_loading/front_laser/scan_filtered", 1, &icp_compare::compare_laser_data, this);
         ROS_INFO("Laser scan subscribed.");
         this->directionPub = nh.advertise<van_loading::ICPDirection>("/van_loading/ICP_direction", 1);
         this->numberOfStatesPub = nh.advertise<std_msgs::Int16>("/van_loading/number_of_states", 1, true); // Latched
@@ -55,7 +46,7 @@ public:
         // Load model data
         this->numberOfStates = 0;
         this->state = 0; // Starting state
-        models = this->load_models();
+        models = load_models();
         std_msgs::Int16 sendNumberOfStates;
         sendNumberOfStates.data = this->numberOfStates;
         this->numberOfStatesPub.publish(sendNumberOfStates);
@@ -72,12 +63,11 @@ public:
         cout << "Current state" << this->state;
     }
 
-    float** load_models(){
+    std::vector<std::vector<float> > load_models(){
         std::ifstream data("/home/matt/Documents/Robot-transporting/workspace/src/van_loading/config/model.csv");
-        std::vector<std::vector<float>> values;
         std::vector<float> valueline;
         std::string item;
-        float ** model;
+        std::vector<std::vector<float> > model;
         for (string line; getline(data, line); )
         {
             std::istringstream in(line);
@@ -87,22 +77,9 @@ public:
                 valueline.push_back(atof(item.c_str()));
             }
 
-            values.push_back(valueline);
+            model.push_back(valueline);
             valueline.clear();
             this->numberOfStates++; // Counting each line as a new state
-        }
-        model = new float*[this->numberOfStates];
-        ROS_INFO("Test");
-        for (int i = 0; i < numberOfStates; ++i) { // Convert from vector to array for ready for ICP
-            model[i] = new float[SCAN_SIZE];
-            for (int j = 0; j < SCAN_SIZE; ++j) {
-                if(values[i][j] >= 30){
-                    model[i][j] = 30.0f;
-                } else{
-                    model[i][j] = values[i][j];
-                }
-//                cout << MODEL_RANGES[i][j]; // DEBUG
-            }
         }
         return model;
     }
@@ -110,14 +87,24 @@ public:
     void compare_laser_data(const sensor_msgs::LaserScan ls){
         float SOURCE_RANGES[SCAN_SIZE];
         float MODEL_RANGES[SCAN_SIZE];
+        char MODEL_VALID[SCAN_SIZE];
         for (int i = 0; i < SCAN_SIZE; ++i) { // Copy values from vector to array
-            if(ls.ranges[i] > 30){
-                SOURCE_RANGES[i] = 30.0f;
-            }else {
+            if(ls.ranges[i] == -1){ // Invalid value
+                SOURCE_RANGES[i] = 5.0f;
+                MODEL_VALID[i] = 1;
+                if(models[state][i] == -1){ // Both invalid, don't count it
+                    MODEL_VALID[i] = 1;
+                    models[state][i] = 5.0f;
+                }
+            }else { // Source is valid
                 SOURCE_RANGES[i] = ls.ranges[i];
+                MODEL_VALID[i] = 1;
+                if(models[state][i] == -1){ // Source valid but model not.
+                    models[state][i] = 5.0f;
+                }
             }
-            MODEL_RANGES[i] = this->models[this->state][i];
-//        cout << SOURCE_RANGES[i] << ":" << MODEL_RANGES[this->state][i] << ", "; // DEBUG
+            MODEL_RANGES[i] = models[state][i];
+        cout << to_string(MODEL_VALID[i]) << "::" << SOURCE_RANGES[i] << ":" << MODEL_RANGES[i] << ", "; // DEBUG
         }
         CSimplePointsMap m1, m2;
         float runningTime;
@@ -153,18 +140,18 @@ public:
          */
 
         //	select which algorithm version to use
-        //	ICP.options.ICP_algorithm = icpLevenbergMarquardt;
+//        	ICP.options.ICP_algorithm = icpLevenbergMarquardt;
         ICP.options.ICP_algorithm = icpClassic;
 //    ICP.options.ICP_algorithm = (TICPAlgorithm)ICP_method;
 
         // configuration options for the icp algorithm
         ICP.options.maxIterations = 200;
-        ICP.options.thresholdAng = DEG2RAD(5.0f);
-        ICP.options.thresholdDist = 5.5f;
+        ICP.options.thresholdAng = DEG2RAD(2.0f);
+        ICP.options.thresholdDist = 2.5f;
         ICP.options.ALFA = 0.0f;
         ICP.options.smallestThresholdDist = 0.01f;
         ICP.options.doRANSAC = false;
-        ICP.options.corresponding_points_decimation = 2;
+        ICP.options.corresponding_points_decimation = 5;
 
 //    ICP.options.dumpToConsole();
         // -----------------------------------------------------
@@ -176,7 +163,7 @@ public:
          * Additional arguments are provided to investigate the performance of the
          * algorithm
          */
-        CPose2D initialPose(0.0f, 0.0f, (float)DEG2RAD(0.0f));
+        CPose2D initialPose(-0.20f, 0.0f, (float)DEG2RAD(0.0f));
 
         CPosePDF::Ptr pdf =
                 ICP.Align(&m1, &m2, initialPose, &runningTime, (void*)&info);
@@ -210,6 +197,7 @@ public:
         direction.goodness = info.goodness;
 #ifdef DEBUG
         std::cout << "Goodness: " << std::to_string(direction.goodness) << std::endl;
+        std::cout << "Current state:" << std::to_string(state) << std::endl;
 #endif
         directionPub.publish(direction);
     }
@@ -221,7 +209,7 @@ private:
     ros::Publisher directionPub;
     int state;
     int numberOfStates;
-    float ** models;
+    std::vector<std::vector<float> > models; // 2d vector
 };
 
 int main(int argc, char **argv) {

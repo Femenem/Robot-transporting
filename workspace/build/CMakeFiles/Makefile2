@@ -2573,23 +2573,26 @@ clean: idris_sim/trunk/CMakeFiles/sensor_msgs_generate_messages_py.dir/clean
 # Directory level rules for directory van_loading
 
 # Convenience name for "all" pass in the directory.
+van_loading/all: van_loading/CMakeFiles/icp_compare_node.dir/all
 van_loading/all: van_loading/CMakeFiles/van_loading_node.dir/all
 van_loading/all: van_loading/CMakeFiles/record_path_node.dir/all
 van_loading/all: van_loading/CMakeFiles/automated_control_node.dir/all
+van_loading/all: van_loading/CMakeFiles/laserscan_filter_node.dir/all
 van_loading/all: van_loading/CMakeFiles/van_loading_generate_messages.dir/all
-van_loading/all: van_loading/CMakeFiles/icp_compare_node.dir/all
 
 .PHONY : van_loading/all
 
 # Convenience name for "clean" pass in the directory.
+van_loading/clean: van_loading/CMakeFiles/icp_compare_node.dir/clean
 van_loading/clean: van_loading/CMakeFiles/van_loading_geneus.dir/clean
 van_loading/clean: van_loading/CMakeFiles/van_loading_node.dir/clean
 van_loading/clean: van_loading/CMakeFiles/van_loading_gencpp.dir/clean
 van_loading/clean: van_loading/CMakeFiles/record_path_node.dir/clean
-van_loading/clean: van_loading/CMakeFiles/automated_control_node.dir/clean
 van_loading/clean: van_loading/CMakeFiles/van_loading_generate_messages_eus.dir/clean
 van_loading/clean: van_loading/CMakeFiles/van_loading_genpy.dir/clean
 van_loading/clean: van_loading/CMakeFiles/van_loading_generate_messages_cpp.dir/clean
+van_loading/clean: van_loading/CMakeFiles/automated_control_node.dir/clean
+van_loading/clean: van_loading/CMakeFiles/laserscan_filter_node.dir/clean
 van_loading/clean: van_loading/CMakeFiles/van_loading_generate_messages.dir/clean
 van_loading/clean: van_loading/CMakeFiles/_van_loading_generate_messages_check_deps_ICPDirection.dir/clean
 van_loading/clean: van_loading/CMakeFiles/van_loading_genlisp.dir/clean
@@ -2597,7 +2600,6 @@ van_loading/clean: van_loading/CMakeFiles/van_loading_generate_messages_py.dir/c
 van_loading/clean: van_loading/CMakeFiles/van_loading_generate_messages_nodejs.dir/clean
 van_loading/clean: van_loading/CMakeFiles/van_loading_generate_messages_lisp.dir/clean
 van_loading/clean: van_loading/CMakeFiles/van_loading_gennodejs.dir/clean
-van_loading/clean: van_loading/CMakeFiles/icp_compare_node.dir/clean
 
 .PHONY : van_loading/clean
 
@@ -2605,6 +2607,43 @@ van_loading/clean: van_loading/CMakeFiles/icp_compare_node.dir/clean
 van_loading/preinstall:
 
 .PHONY : van_loading/preinstall
+
+#=============================================================================
+# Target rules for target van_loading/CMakeFiles/icp_compare_node.dir
+
+# All Build rule for target.
+van_loading/CMakeFiles/icp_compare_node.dir/all: double_ackermann/trunk/CMakeFiles/double_ackermann_generate_messages_cpp.dir/all
+	$(MAKE) -f van_loading/CMakeFiles/icp_compare_node.dir/build.make van_loading/CMakeFiles/icp_compare_node.dir/depend
+	$(MAKE) -f van_loading/CMakeFiles/icp_compare_node.dir/build.make van_loading/CMakeFiles/icp_compare_node.dir/build
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/matt/Documents/Robot-transporting/workspace/build/CMakeFiles --progress-num=21,22 "Built target icp_compare_node"
+.PHONY : van_loading/CMakeFiles/icp_compare_node.dir/all
+
+# Include target in all.
+all: van_loading/CMakeFiles/icp_compare_node.dir/all
+
+.PHONY : all
+
+# Build rule for subdir invocation for target.
+van_loading/CMakeFiles/icp_compare_node.dir/rule: cmake_check_build_system
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/matt/Documents/Robot-transporting/workspace/build/CMakeFiles 3
+	$(MAKE) -f CMakeFiles/Makefile2 van_loading/CMakeFiles/icp_compare_node.dir/all
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/matt/Documents/Robot-transporting/workspace/build/CMakeFiles 0
+.PHONY : van_loading/CMakeFiles/icp_compare_node.dir/rule
+
+# Convenience name for target.
+icp_compare_node: van_loading/CMakeFiles/icp_compare_node.dir/rule
+
+.PHONY : icp_compare_node
+
+# clean rule for target.
+van_loading/CMakeFiles/icp_compare_node.dir/clean:
+	$(MAKE) -f van_loading/CMakeFiles/icp_compare_node.dir/build.make van_loading/CMakeFiles/icp_compare_node.dir/clean
+.PHONY : van_loading/CMakeFiles/icp_compare_node.dir/clean
+
+# clean rule for target.
+clean: van_loading/CMakeFiles/icp_compare_node.dir/clean
+
+.PHONY : clean
 
 #=============================================================================
 # Target rules for target van_loading/CMakeFiles/van_loading_geneus.dir
@@ -2645,7 +2684,7 @@ clean: van_loading/CMakeFiles/van_loading_geneus.dir/clean
 van_loading/CMakeFiles/van_loading_node.dir/all: double_ackermann/trunk/CMakeFiles/double_ackermann_generate_messages_cpp.dir/all
 	$(MAKE) -f van_loading/CMakeFiles/van_loading_node.dir/build.make van_loading/CMakeFiles/van_loading_node.dir/depend
 	$(MAKE) -f van_loading/CMakeFiles/van_loading_node.dir/build.make van_loading/CMakeFiles/van_loading_node.dir/build
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/matt/Documents/Robot-transporting/workspace/build/CMakeFiles --progress-num=34,35 "Built target van_loading_node"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/matt/Documents/Robot-transporting/workspace/build/CMakeFiles --progress-num=36,37 "Built target van_loading_node"
 .PHONY : van_loading/CMakeFiles/van_loading_node.dir/all
 
 # Include target in all.
@@ -2714,7 +2753,7 @@ clean: van_loading/CMakeFiles/van_loading_gencpp.dir/clean
 van_loading/CMakeFiles/record_path_node.dir/all:
 	$(MAKE) -f van_loading/CMakeFiles/record_path_node.dir/build.make van_loading/CMakeFiles/record_path_node.dir/depend
 	$(MAKE) -f van_loading/CMakeFiles/record_path_node.dir/build.make van_loading/CMakeFiles/record_path_node.dir/build
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/matt/Documents/Robot-transporting/workspace/build/CMakeFiles --progress-num=25,26 "Built target record_path_node"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/matt/Documents/Robot-transporting/workspace/build/CMakeFiles --progress-num=27,28 "Built target record_path_node"
 .PHONY : van_loading/CMakeFiles/record_path_node.dir/all
 
 # Include target in all.
@@ -2745,43 +2784,6 @@ clean: van_loading/CMakeFiles/record_path_node.dir/clean
 .PHONY : clean
 
 #=============================================================================
-# Target rules for target van_loading/CMakeFiles/automated_control_node.dir
-
-# All Build rule for target.
-van_loading/CMakeFiles/automated_control_node.dir/all:
-	$(MAKE) -f van_loading/CMakeFiles/automated_control_node.dir/build.make van_loading/CMakeFiles/automated_control_node.dir/depend
-	$(MAKE) -f van_loading/CMakeFiles/automated_control_node.dir/build.make van_loading/CMakeFiles/automated_control_node.dir/build
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/matt/Documents/Robot-transporting/workspace/build/CMakeFiles --progress-num=1,2 "Built target automated_control_node"
-.PHONY : van_loading/CMakeFiles/automated_control_node.dir/all
-
-# Include target in all.
-all: van_loading/CMakeFiles/automated_control_node.dir/all
-
-.PHONY : all
-
-# Build rule for subdir invocation for target.
-van_loading/CMakeFiles/automated_control_node.dir/rule: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/matt/Documents/Robot-transporting/workspace/build/CMakeFiles 2
-	$(MAKE) -f CMakeFiles/Makefile2 van_loading/CMakeFiles/automated_control_node.dir/all
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/matt/Documents/Robot-transporting/workspace/build/CMakeFiles 0
-.PHONY : van_loading/CMakeFiles/automated_control_node.dir/rule
-
-# Convenience name for target.
-automated_control_node: van_loading/CMakeFiles/automated_control_node.dir/rule
-
-.PHONY : automated_control_node
-
-# clean rule for target.
-van_loading/CMakeFiles/automated_control_node.dir/clean:
-	$(MAKE) -f van_loading/CMakeFiles/automated_control_node.dir/build.make van_loading/CMakeFiles/automated_control_node.dir/clean
-.PHONY : van_loading/CMakeFiles/automated_control_node.dir/clean
-
-# clean rule for target.
-clean: van_loading/CMakeFiles/automated_control_node.dir/clean
-
-.PHONY : clean
-
-#=============================================================================
 # Target rules for target van_loading/CMakeFiles/van_loading_generate_messages_eus.dir
 
 # All Build rule for target.
@@ -2790,7 +2792,7 @@ van_loading/CMakeFiles/van_loading_generate_messages_eus.dir/all: double_ackerma
 van_loading/CMakeFiles/van_loading_generate_messages_eus.dir/all: van_loading/CMakeFiles/_van_loading_generate_messages_check_deps_ICPDirection.dir/all
 	$(MAKE) -f van_loading/CMakeFiles/van_loading_generate_messages_eus.dir/build.make van_loading/CMakeFiles/van_loading_generate_messages_eus.dir/depend
 	$(MAKE) -f van_loading/CMakeFiles/van_loading_generate_messages_eus.dir/build.make van_loading/CMakeFiles/van_loading_generate_messages_eus.dir/build
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/matt/Documents/Robot-transporting/workspace/build/CMakeFiles --progress-num=28,29 "Built target van_loading_generate_messages_eus"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/matt/Documents/Robot-transporting/workspace/build/CMakeFiles --progress-num=30,31 "Built target van_loading_generate_messages_eus"
 .PHONY : van_loading/CMakeFiles/van_loading_generate_messages_eus.dir/all
 
 # Build rule for subdir invocation for target.
@@ -2856,7 +2858,7 @@ van_loading/CMakeFiles/van_loading_generate_messages_cpp.dir/all: double_ackerma
 van_loading/CMakeFiles/van_loading_generate_messages_cpp.dir/all: van_loading/CMakeFiles/_van_loading_generate_messages_check_deps_ICPDirection.dir/all
 	$(MAKE) -f van_loading/CMakeFiles/van_loading_generate_messages_cpp.dir/build.make van_loading/CMakeFiles/van_loading_generate_messages_cpp.dir/depend
 	$(MAKE) -f van_loading/CMakeFiles/van_loading_generate_messages_cpp.dir/build.make van_loading/CMakeFiles/van_loading_generate_messages_cpp.dir/build
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/matt/Documents/Robot-transporting/workspace/build/CMakeFiles --progress-num=27 "Built target van_loading_generate_messages_cpp"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/matt/Documents/Robot-transporting/workspace/build/CMakeFiles --progress-num=29 "Built target van_loading_generate_messages_cpp"
 .PHONY : van_loading/CMakeFiles/van_loading_generate_messages_cpp.dir/all
 
 # Build rule for subdir invocation for target.
@@ -2878,6 +2880,80 @@ van_loading/CMakeFiles/van_loading_generate_messages_cpp.dir/clean:
 
 # clean rule for target.
 clean: van_loading/CMakeFiles/van_loading_generate_messages_cpp.dir/clean
+
+.PHONY : clean
+
+#=============================================================================
+# Target rules for target van_loading/CMakeFiles/automated_control_node.dir
+
+# All Build rule for target.
+van_loading/CMakeFiles/automated_control_node.dir/all:
+	$(MAKE) -f van_loading/CMakeFiles/automated_control_node.dir/build.make van_loading/CMakeFiles/automated_control_node.dir/depend
+	$(MAKE) -f van_loading/CMakeFiles/automated_control_node.dir/build.make van_loading/CMakeFiles/automated_control_node.dir/build
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/matt/Documents/Robot-transporting/workspace/build/CMakeFiles --progress-num=1,2 "Built target automated_control_node"
+.PHONY : van_loading/CMakeFiles/automated_control_node.dir/all
+
+# Include target in all.
+all: van_loading/CMakeFiles/automated_control_node.dir/all
+
+.PHONY : all
+
+# Build rule for subdir invocation for target.
+van_loading/CMakeFiles/automated_control_node.dir/rule: cmake_check_build_system
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/matt/Documents/Robot-transporting/workspace/build/CMakeFiles 2
+	$(MAKE) -f CMakeFiles/Makefile2 van_loading/CMakeFiles/automated_control_node.dir/all
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/matt/Documents/Robot-transporting/workspace/build/CMakeFiles 0
+.PHONY : van_loading/CMakeFiles/automated_control_node.dir/rule
+
+# Convenience name for target.
+automated_control_node: van_loading/CMakeFiles/automated_control_node.dir/rule
+
+.PHONY : automated_control_node
+
+# clean rule for target.
+van_loading/CMakeFiles/automated_control_node.dir/clean:
+	$(MAKE) -f van_loading/CMakeFiles/automated_control_node.dir/build.make van_loading/CMakeFiles/automated_control_node.dir/clean
+.PHONY : van_loading/CMakeFiles/automated_control_node.dir/clean
+
+# clean rule for target.
+clean: van_loading/CMakeFiles/automated_control_node.dir/clean
+
+.PHONY : clean
+
+#=============================================================================
+# Target rules for target van_loading/CMakeFiles/laserscan_filter_node.dir
+
+# All Build rule for target.
+van_loading/CMakeFiles/laserscan_filter_node.dir/all:
+	$(MAKE) -f van_loading/CMakeFiles/laserscan_filter_node.dir/build.make van_loading/CMakeFiles/laserscan_filter_node.dir/depend
+	$(MAKE) -f van_loading/CMakeFiles/laserscan_filter_node.dir/build.make van_loading/CMakeFiles/laserscan_filter_node.dir/build
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/matt/Documents/Robot-transporting/workspace/build/CMakeFiles --progress-num=25,26 "Built target laserscan_filter_node"
+.PHONY : van_loading/CMakeFiles/laserscan_filter_node.dir/all
+
+# Include target in all.
+all: van_loading/CMakeFiles/laserscan_filter_node.dir/all
+
+.PHONY : all
+
+# Build rule for subdir invocation for target.
+van_loading/CMakeFiles/laserscan_filter_node.dir/rule: cmake_check_build_system
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/matt/Documents/Robot-transporting/workspace/build/CMakeFiles 2
+	$(MAKE) -f CMakeFiles/Makefile2 van_loading/CMakeFiles/laserscan_filter_node.dir/all
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/matt/Documents/Robot-transporting/workspace/build/CMakeFiles 0
+.PHONY : van_loading/CMakeFiles/laserscan_filter_node.dir/rule
+
+# Convenience name for target.
+laserscan_filter_node: van_loading/CMakeFiles/laserscan_filter_node.dir/rule
+
+.PHONY : laserscan_filter_node
+
+# clean rule for target.
+van_loading/CMakeFiles/laserscan_filter_node.dir/clean:
+	$(MAKE) -f van_loading/CMakeFiles/laserscan_filter_node.dir/build.make van_loading/CMakeFiles/laserscan_filter_node.dir/clean
+.PHONY : van_loading/CMakeFiles/laserscan_filter_node.dir/clean
+
+# clean rule for target.
+clean: van_loading/CMakeFiles/laserscan_filter_node.dir/clean
 
 .PHONY : clean
 
@@ -2995,7 +3071,7 @@ van_loading/CMakeFiles/van_loading_generate_messages_py.dir/all: double_ackerman
 van_loading/CMakeFiles/van_loading_generate_messages_py.dir/all: van_loading/CMakeFiles/_van_loading_generate_messages_check_deps_ICPDirection.dir/all
 	$(MAKE) -f van_loading/CMakeFiles/van_loading_generate_messages_py.dir/build.make van_loading/CMakeFiles/van_loading_generate_messages_py.dir/depend
 	$(MAKE) -f van_loading/CMakeFiles/van_loading_generate_messages_py.dir/build.make van_loading/CMakeFiles/van_loading_generate_messages_py.dir/build
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/matt/Documents/Robot-transporting/workspace/build/CMakeFiles --progress-num=32,33 "Built target van_loading_generate_messages_py"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/matt/Documents/Robot-transporting/workspace/build/CMakeFiles --progress-num=34,35 "Built target van_loading_generate_messages_py"
 .PHONY : van_loading/CMakeFiles/van_loading_generate_messages_py.dir/all
 
 # Build rule for subdir invocation for target.
@@ -3029,7 +3105,7 @@ van_loading/CMakeFiles/van_loading_generate_messages_nodejs.dir/all: double_acke
 van_loading/CMakeFiles/van_loading_generate_messages_nodejs.dir/all: van_loading/CMakeFiles/_van_loading_generate_messages_check_deps_ICPDirection.dir/all
 	$(MAKE) -f van_loading/CMakeFiles/van_loading_generate_messages_nodejs.dir/build.make van_loading/CMakeFiles/van_loading_generate_messages_nodejs.dir/depend
 	$(MAKE) -f van_loading/CMakeFiles/van_loading_generate_messages_nodejs.dir/build.make van_loading/CMakeFiles/van_loading_generate_messages_nodejs.dir/build
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/matt/Documents/Robot-transporting/workspace/build/CMakeFiles --progress-num=31 "Built target van_loading_generate_messages_nodejs"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/matt/Documents/Robot-transporting/workspace/build/CMakeFiles --progress-num=33 "Built target van_loading_generate_messages_nodejs"
 .PHONY : van_loading/CMakeFiles/van_loading_generate_messages_nodejs.dir/all
 
 # Build rule for subdir invocation for target.
@@ -3063,7 +3139,7 @@ van_loading/CMakeFiles/van_loading_generate_messages_lisp.dir/all: double_ackerm
 van_loading/CMakeFiles/van_loading_generate_messages_lisp.dir/all: van_loading/CMakeFiles/_van_loading_generate_messages_check_deps_ICPDirection.dir/all
 	$(MAKE) -f van_loading/CMakeFiles/van_loading_generate_messages_lisp.dir/build.make van_loading/CMakeFiles/van_loading_generate_messages_lisp.dir/depend
 	$(MAKE) -f van_loading/CMakeFiles/van_loading_generate_messages_lisp.dir/build.make van_loading/CMakeFiles/van_loading_generate_messages_lisp.dir/build
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/matt/Documents/Robot-transporting/workspace/build/CMakeFiles --progress-num=30 "Built target van_loading_generate_messages_lisp"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/matt/Documents/Robot-transporting/workspace/build/CMakeFiles --progress-num=32 "Built target van_loading_generate_messages_lisp"
 .PHONY : van_loading/CMakeFiles/van_loading_generate_messages_lisp.dir/all
 
 # Build rule for subdir invocation for target.
@@ -3117,43 +3193,6 @@ van_loading/CMakeFiles/van_loading_gennodejs.dir/clean:
 
 # clean rule for target.
 clean: van_loading/CMakeFiles/van_loading_gennodejs.dir/clean
-
-.PHONY : clean
-
-#=============================================================================
-# Target rules for target van_loading/CMakeFiles/icp_compare_node.dir
-
-# All Build rule for target.
-van_loading/CMakeFiles/icp_compare_node.dir/all: double_ackermann/trunk/CMakeFiles/double_ackermann_generate_messages_cpp.dir/all
-	$(MAKE) -f van_loading/CMakeFiles/icp_compare_node.dir/build.make van_loading/CMakeFiles/icp_compare_node.dir/depend
-	$(MAKE) -f van_loading/CMakeFiles/icp_compare_node.dir/build.make van_loading/CMakeFiles/icp_compare_node.dir/build
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/matt/Documents/Robot-transporting/workspace/build/CMakeFiles --progress-num=21,22 "Built target icp_compare_node"
-.PHONY : van_loading/CMakeFiles/icp_compare_node.dir/all
-
-# Include target in all.
-all: van_loading/CMakeFiles/icp_compare_node.dir/all
-
-.PHONY : all
-
-# Build rule for subdir invocation for target.
-van_loading/CMakeFiles/icp_compare_node.dir/rule: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/matt/Documents/Robot-transporting/workspace/build/CMakeFiles 3
-	$(MAKE) -f CMakeFiles/Makefile2 van_loading/CMakeFiles/icp_compare_node.dir/all
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/matt/Documents/Robot-transporting/workspace/build/CMakeFiles 0
-.PHONY : van_loading/CMakeFiles/icp_compare_node.dir/rule
-
-# Convenience name for target.
-icp_compare_node: van_loading/CMakeFiles/icp_compare_node.dir/rule
-
-.PHONY : icp_compare_node
-
-# clean rule for target.
-van_loading/CMakeFiles/icp_compare_node.dir/clean:
-	$(MAKE) -f van_loading/CMakeFiles/icp_compare_node.dir/build.make van_loading/CMakeFiles/icp_compare_node.dir/clean
-.PHONY : van_loading/CMakeFiles/icp_compare_node.dir/clean
-
-# clean rule for target.
-clean: van_loading/CMakeFiles/icp_compare_node.dir/clean
 
 .PHONY : clean
 

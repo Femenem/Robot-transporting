@@ -8,7 +8,9 @@
 #include <std_msgs/Float32.h>
 #include <std_msgs/Int16.h>
 
-#define AVERAGE_NUMBER 10
+#define AVERAGE_NUMBER 3
+#define DEBUG
+#define AUTOMATIC_STATE
 
 class automated_control{
 public:
@@ -17,7 +19,7 @@ public:
         this->numberOfStates = 0;
         this->stateTracker = 0;
         this->stateWentDown = false;
-        this->speedKp = 0.8;
+        this->speedKp = 0.15;
         this->steeringKp = 0.8;
         this->targetSpeed = 0.0;
         this->targetSteering = 0.0;
@@ -45,18 +47,18 @@ public:
         this->directions[this->valueCount] = direction; // store this direction
         this->valueCount++;
         if (this->valueCount >= AVERAGE_NUMBER){
-            ROS_INFO("Calculating movement");
+//            ROS_INFO("Calculating movement");
             // calculate average and send command
             van_loading::ICPDirection averageDirection = calculate_average();
-            if(averageDirection.goodness > 0.8){ // Its an accurate reading if above 80%
-                ROS_INFO("Model match good, moving robot");
+            if(averageDirection.goodness > 0.7){ // Its an accurate reading if above 80%
+//                ROS_INFO("Model match good, moving robot");
                 move_robot(averageDirection); // Safely move
             } else { // Not accurate reading so change state
                 // Go back 1, if still inaccurate, forward 2
                 ROS_INFO("Model not a good enough match, changing state");
                 std::cout << "Goodness: " << std::to_string(averageDirection.goodness) << std::endl;
                 // TODO: bug above, memory issue if not printing out.
-
+#ifdef AUTOMATIC_STATE
                 if(this->stateTracker == 0){ // At the start so go up a state
                     this->stateTracker++;
                     this->stateWentDown = false;
@@ -73,6 +75,7 @@ public:
                 state.data = this->stateTracker;
                 this->changeStatePub.publish(state);
                 std::cout << "New state: " << std::to_string(this->stateTracker) << std::endl;
+#endif
             }
 
             this->valueCount = 0; // Reset average value count
@@ -95,67 +98,106 @@ public:
         movement.linear.x = this->currentSpeed;
         movement.angular.z = this->currentSteering;
         this->moveCommandPub.publish(movement);
-
+#ifdef DEBUG
         std::cout << "Target- " << "Speed: " << std::to_string(this->targetSpeed) <<
                   " Steering: " << std::to_string(this->targetSteering) << std::endl;
         std::cout << "Moving- " << "Speed: " << std::to_string(this->currentSpeed) <<
                   " Steering: " << std::to_string(this->currentSteering) << std::endl;
+        std::cout << "Current state: " << std::to_string(stateTracker) << std::endl;
+#endif
     }
 
 private:
     // Updates target speed/changes state
     void move_robot(van_loading::ICPDirection direction){
-        if(direction.x < 0.05 && direction.x > -0.05){ // Close enough to move on
+        /**
+         * Check if we are close enough to finish/move on
+         */
+        if((direction.x < 0.1 && direction.x > -0.1)){ // Close enough to move on
             if(this->stateTracker == this->numberOfStates){ // FINISHED
-//                ROS_INFO("Robot is at the goal.");
+                ROS_INFO("Robot is at the goal.");
                 ros::shutdown();
                 return;
             } else { // Not finished so move on
-//                ROS_INFO("Close enough to goal, moving state forwards");
-                this->stateTracker++;
-                std_msgs::Int16 state;
-                state.data = this->stateTracker;
-                this->changeStatePub.publish(state);
+                ROS_INFO("Close enough to goal, moving state forwards");
+#ifdef AUTOMATIC_STATE
+                increment_state();
+#endif
                 this->targetSpeed = 0.0;
             }
-        } else{ // Speed calculation
-            this->targetSpeed = (direction.x * -1) *2 ; // Invert because values are backwards.
-            // * 2 because we are slow af.
         }
-        // Cap speed to 1m/s
-        if(this->targetSpeed > 1.0){
-            this->targetSpeed = 1.0;
-        }
+        /**
+         * Not close enough to move on so move closer
+         */
+        else { // Not close enough yet
+            /**
+             * Check for any errors
+             */
+//            if ((direction.x < -0.8 || direction.x > 0.8) && stateTracker != 0) {  // If likely to be missing a state
+//                ROS_INFO("Missing a checkpoint?");
+//                if (direction.x < -0.8) { // Meant to be going forwards
+//#ifdef AUTOMATIC_STATE
+//                    decrement_state();
+//#endif
+//                } else { // Meant to be going backwards
+//#ifdef AUTOMATIC_STATE
+//                    increment_state();
+//#endif
+//                }
+//                // Out of bounds for next checkpoint and not first value
+//                this->targetSpeed = 0.0;
+//            } else{ // On track
+                // Calculate speed
+                this->targetSpeed = (direction.x * -1) * 2; // Invert because values are backwards.
+                // * 2 because we are slow af.
 
-        // Steering calculation
-        if(direction.y > 0.05 || direction.y < -0.05){ // Y position is far enough out to need a turn
-            this->targetSteering = deg_to_rad(direction.y) * -1; // * 20 to make it faster
-            if (direction.angle > 2.0){ // If angle is far out, add it to calculation
-                this->targetSteering = this->targetSteering + direction.angle;
-            }
-            if (this->targetSteering < 1){
-                this->targetSteering = this->targetSteering * 20;
-            }
-        } else{
-            this->targetSteering = 0.0;
-        }
-        if(this->targetSpeed < 0.0){ // Going backwards so switch steering
-            this->targetSteering = this->targetSteering * -1;
-        }
+                // Cap speed to 1m/s
+                if (this->targetSpeed > 1.0) {
+                    this->targetSpeed = 1.0;
+                }
+
+                // Steering calculation
+                if (direction.y > 0.02 || direction.y < -0.02) { // Y position is far enough out to need a turn
+                    this->targetSteering = deg_to_rad(direction.y) * -1; // * 20 to make it faster
+                    if (direction.angle > 2.0) { // If angle is far out, add it to calculation
+                        this->targetSteering = this->targetSteering + direction.angle;
+                    }
+                    if (this->targetSteering < 1) {
+                        this->targetSteering = this->targetSteering * 100;
+                    }
+                } else {
+                    this->targetSteering = 0.0;
+                }
+                if (this->targetSpeed < 0.0) { // Going backwards so switch steering
+                    this->targetSteering = this->targetSteering * -1;
+                }
 
 
 //        std::cout << "Current state: " << std::to_string(this->stateTracker) <<
 //        " Number of states: " << std::to_string(this->numberOfStates) << std::endl;
-    }
-
-    float get_speed_error(float ){
-
+//            }
+        }
     }
 
     float deg_to_rad(float degree){
         return (degree * 3.142)/180;
     }
 
+    void increment_state(){
+        ROS_INFO("Incrementing state");
+        stateTracker++;
+        std_msgs::Int16 state;
+        state.data = stateTracker;
+        changeStatePub.publish(state);
+    }
+
+    void decrement_state(){
+        ROS_INFO("Decrementing state");
+        stateTracker--;
+        std_msgs::Int16 state;
+        state.data = stateTracker;
+        changeStatePub.publish(state);
+    }
 
     van_loading::ICPDirection calculate_average(){
         float x;

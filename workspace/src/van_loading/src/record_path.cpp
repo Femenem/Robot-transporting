@@ -4,7 +4,7 @@
 
 #include "ros/ros.h"
 #include "sensor_msgs/LaserScan.h"
-#include <double_ackermann/DoubleAckermann.h>
+#include <geometry_msgs/Twist.h>
 
 #include <ctime>
 #include <chrono>
@@ -13,8 +13,8 @@
 #include <fstream>
 #include <string>
 
-#define MAX_COUNT 180
-#define SNAPSHOT_DISTANCE 0.50  // ~0.5m
+#define MAX_COUNT 80 // getting middle 80 values
+#define SNAPSHOT_DISTANCE 0.20  // ~0.5m
 
 // TODO: Change into class. When class is destroyed, make new file with number of lines at top?
 // TODO: Capture snapshots of the laserscan depending on how fast the robot is traveling
@@ -25,8 +25,8 @@ public:
         this->currentSpeed = 0;
         this->numberOfSnapshots = 0;
         this->distanceTraveled = SNAPSHOT_DISTANCE; // Take a snapshot at the start
-        this->laserSub = nh.subscribe("/van_loading/front_laser/scan", 1, &record_path::handle_laser_data, this);
-        this->speedSub = nh.subscribe("/van_loading/cmd_ackermann", 1, &record_path::new_movement_command, this);
+        this->laserSub = nh.subscribe("/van_loading/front_laser/scan_filtered", 1, &record_path::handle_laser_data, this);
+        this->speedSub = nh.subscribe("/van_loading/cmd_vel", 1, &record_path::new_movement_command, this);
         this->startTime = std::chrono::system_clock::now();
         this->now = std::time(0); // Get now time
         this->timestamp = std::localtime(&now); // Convert to local time
@@ -46,10 +46,13 @@ public:
         this->file.close();
     }
 
-    void new_movement_command(const double_ackermann::DoubleAckermann& cmd){
+    void new_movement_command(const geometry_msgs::Twist& cmd){
         double distanceToAdd;
         this->endTime = std::chrono::system_clock::now(); // End timer
         std::chrono::duration<double> timeElapsed = this->endTime - this->startTime;
+        if(currentSpeed < 0){
+            currentSpeed = currentSpeed * -1; // Make positive value instead
+        }
         // If timeElspsed > 300ms then robot stopped after 300ms.
         if (timeElapsed.count() > 0.3){
             distanceToAdd = 0.3 * this->currentSpeed;
@@ -59,18 +62,15 @@ public:
         this->distanceTraveled = this->distanceTraveled + distanceToAdd;
         // On next laser scan if distanceTraveled is over the threshold, snapshot is taken.
 
-        this->currentSpeed = cmd.speed;
+        this->currentSpeed = cmd.linear.x;
         this->startTime = std::chrono::system_clock::now();
     }
 
     void handle_laser_data(const sensor_msgs::LaserScan ls){
+        // TODO Grab 5 laserscans and make average of them
         if(take_snapshot()){ // Computes distance traveled from last snapshot
             for (int i = 0; i < MAX_COUNT; ++i) {
-                if(ls.ranges[i] > 30.0){
-                    this->file << 30.0;
-                } else{
-                    this->file << ls.ranges[i];
-                }
+                this->file << ls.ranges[i]; // Copy value to file
                 if(i != MAX_COUNT-1) { // Not the final value then do CSV.
                     this->file << ",";
                 }
