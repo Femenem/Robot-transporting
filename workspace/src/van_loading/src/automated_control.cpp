@@ -57,31 +57,14 @@ public:
                 wentForward.insert(wentForward.begin() + stateTracker, false);
             }
         }
-//        if(stateTracker != 0){
-//            if(stateTracker < 10){ // Low enough to only look at last state
-//                if(wentForward[stateTracker-1] != wentForward[stateTracker]){ // Changed direction
-//                    ROS_INFO("Wrong direction? Advancing state.");
-//                    increment_state();
-//                }
-//            } else{ // Look at last 5 states
-//                if(wentForward[stateTracker] == true){
-////                    std::cout << "Went Forward." << std::endl;
-//                }
-//                if(wentForward[stateTracker-1] != wentForward[stateTracker] &&
-//                    wentForward[stateTracker-2] != wentForward[stateTracker] &&
-//                    wentForward[stateTracker-3] != wentForward[stateTracker] &&
-//                    wentForward[stateTracker-4] != wentForward[stateTracker] &&
-//                    wentForward[stateTracker-5] != wentForward[stateTracker] &&
-//                    wentForward[stateTracker-6] != wentForward[stateTracker] &&
-//                    wentForward[stateTracker-7] != wentForward[stateTracker] &&
-//                    wentForward[stateTracker-8] != wentForward[stateTracker] &&
-//                    wentForward[stateTracker-9] != wentForward[stateTracker] &&
-//                    wentForward[stateTracker-10] != wentForward[stateTracker] ){ // Last 10 states done't match this
-//                    ROS_INFO("Wrong direction? Advancing state.");
-//                    increment_state();
-//                }
-//            }
-//        }
+        if(stateTracker != 0) {
+            if (stateTracker > 5) { // Past 5 states we should know the direction
+                if (wentForward[stateTracker - 1] != wentForward[stateTracker]) { // Changed direction
+                    ROS_INFO("Wrong direction? Advancing state.");
+                    increment_state();
+                }
+            }
+        }
         directions[valueCount] = direction; // store this direction
         valueCount++;
         if (valueCount >= AVERAGE_NUMBER){
@@ -144,7 +127,7 @@ private:
         /**
          * Check if we are close enough to finish/move on
          */
-        if((direction.x < 0.35 && direction.x > -0.35)){ // Close enough to move on (just above snapshot distance)
+        if((direction.x < 0.25 && direction.x > -0.25)){ // Close enough to move on (just above snapshot distance)
             if(stateTracker == numberOfStates){ // FINISHED
                 ROS_INFO("Robot is at the goal.");
                 ros::shutdown();
@@ -203,7 +186,7 @@ private:
                 } else {
                     targetSteering = 0.0;
                 }
-                if (targetSpeed < 0.0) { // Going backwards so switch steering
+                if (currentSpeed < 0.0) { // Going backwards so switch steering
                     targetSteering = targetSteering * -1;
                 }
 

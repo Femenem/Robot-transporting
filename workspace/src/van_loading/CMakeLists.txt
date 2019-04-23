@@ -266,13 +266,13 @@ include_directories(SYSTEM "${EIGEN_INCLUDE_DIR}")
 #--------------------
 # DEPENDENCY: nabo
 #--------------------
-find_package(libnabo REQUIRED PATHS ${LIBNABO_INSTALL_DIR})
-#include(libnaboConfig)
-include_directories(${libnabo_INCLUDE_DIRS})
-set(EXTERNAL_LIBS ${EXTERNAL_LIBS} ${libnabo_LIBRARIES})
-message(STATUS "libnabo found, version ${libnabo_VERSION} (include=${libnabo_INCLUDE_DIRS} libs=${libnabo_LIBRARIES})")
-
-target_link_libraries(van_loading_node ${EXTERNAL_LIBS})
+#find_package(libnabo REQUIRED PATHS ${LIBNABO_INSTALL_DIR})
+##include(libnaboConfig)
+#include_directories(${libnabo_INCLUDE_DIRS})
+#set(EXTERNAL_LIBS ${EXTERNAL_LIBS} ${libnabo_LIBRARIES})
+#message(STATUS "libnabo found, version ${libnabo_VERSION} (include=${libnabo_INCLUDE_DIRS} libs=${libnabo_LIBRARIES})")
+#
+#target_link_libraries(van_loading_node ${EXTERNAL_LIBS})
 
 ### MRPT:
 set(CMAKE_PREFIX_PATH ${CMAKE_PREFIX_PATH} libs/mrpt)
