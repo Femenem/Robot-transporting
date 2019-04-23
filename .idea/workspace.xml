@@ -13,7 +13,6 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="f9060fcd-25f4-4347-bcb2-66858ea378a6" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/reports/mmp-student" beforeDir="false" afterPath="$PROJECT_DIR$/reports/mmp-student" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/reports/mmp-student/Project Report/LaTeX Template/Chapters_Engineering/chapter1.tex" beforeDir="false" afterPath="$PROJECT_DIR$/reports/mmp-student/Project Report/LaTeX Template/Chapters_Engineering/chapter1.tex" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/reports/mmp-student/Project Report/LaTeX Template/Chapters_Engineering/chapter2.tex" beforeDir="false" afterPath="$PROJECT_DIR$/reports/mmp-student/Project Report/LaTeX Template/Chapters_Engineering/chapter2.tex" afterDir="false" />
@@ -26,23 +25,7 @@
       <change beforePath="$PROJECT_DIR$/reports/mmp-student/Project Report/LaTeX Template/FrontMatter/declaration.tex" beforeDir="false" afterPath="$PROJECT_DIR$/reports/mmp-student/Project Report/LaTeX Template/FrontMatter/declaration.tex" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/reports/mmp-student/Project Report/LaTeX Template/mmp-report.pdf" beforeDir="false" afterPath="$PROJECT_DIR$/reports/mmp-student/Project Report/LaTeX Template/mmp-report.pdf" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/reports/mmp-student/Project Report/LaTeX Template/mmp-report.tex" beforeDir="false" afterPath="$PROJECT_DIR$/reports/mmp-student/Project Report/LaTeX Template/mmp-report.tex" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/workspace/build/CMakeFiles/Makefile.cmake" beforeDir="false" afterPath="$PROJECT_DIR$/workspace/build/CMakeFiles/Makefile.cmake" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/workspace/build/van_loading/CMakeFiles/automated_control_node.dir/DependInfo.cmake" beforeDir="false" afterPath="$PROJECT_DIR$/workspace/build/van_loading/CMakeFiles/automated_control_node.dir/DependInfo.cmake" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/workspace/build/van_loading/CMakeFiles/automated_control_node.dir/flags.make" beforeDir="false" afterPath="$PROJECT_DIR$/workspace/build/van_loading/CMakeFiles/automated_control_node.dir/flags.make" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/workspace/build/van_loading/CMakeFiles/automated_control_node.dir/src/automated_control.cpp.o" beforeDir="false" afterPath="$PROJECT_DIR$/workspace/build/van_loading/CMakeFiles/automated_control_node.dir/src/automated_control.cpp.o" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/workspace/build/van_loading/CMakeFiles/icp_compare_node.dir/DependInfo.cmake" beforeDir="false" afterPath="$PROJECT_DIR$/workspace/build/van_loading/CMakeFiles/icp_compare_node.dir/DependInfo.cmake" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/workspace/build/van_loading/CMakeFiles/icp_compare_node.dir/flags.make" beforeDir="false" afterPath="$PROJECT_DIR$/workspace/build/van_loading/CMakeFiles/icp_compare_node.dir/flags.make" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/workspace/build/van_loading/CMakeFiles/laserscan_filter_node.dir/DependInfo.cmake" beforeDir="false" afterPath="$PROJECT_DIR$/workspace/build/van_loading/CMakeFiles/laserscan_filter_node.dir/DependInfo.cmake" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/workspace/build/van_loading/CMakeFiles/laserscan_filter_node.dir/flags.make" beforeDir="false" afterPath="$PROJECT_DIR$/workspace/build/van_loading/CMakeFiles/laserscan_filter_node.dir/flags.make" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/workspace/build/van_loading/CMakeFiles/record_path_node.dir/DependInfo.cmake" beforeDir="false" afterPath="$PROJECT_DIR$/workspace/build/van_loading/CMakeFiles/record_path_node.dir/DependInfo.cmake" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/workspace/build/van_loading/CMakeFiles/record_path_node.dir/flags.make" beforeDir="false" afterPath="$PROJECT_DIR$/workspace/build/van_loading/CMakeFiles/record_path_node.dir/flags.make" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/workspace/build/van_loading/CMakeFiles/van_loading_node.dir/DependInfo.cmake" beforeDir="false" afterPath="$PROJECT_DIR$/workspace/build/van_loading/CMakeFiles/van_loading_node.dir/DependInfo.cmake" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/workspace/build/van_loading/CMakeFiles/van_loading_node.dir/build.make" beforeDir="false" afterPath="$PROJECT_DIR$/workspace/build/van_loading/CMakeFiles/van_loading_node.dir/build.make" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/workspace/build/van_loading/CMakeFiles/van_loading_node.dir/flags.make" beforeDir="false" afterPath="$PROJECT_DIR$/workspace/build/van_loading/CMakeFiles/van_loading_node.dir/flags.make" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/workspace/build/van_loading/CMakeFiles/van_loading_node.dir/link.txt" beforeDir="false" afterPath="$PROJECT_DIR$/workspace/build/van_loading/CMakeFiles/van_loading_node.dir/link.txt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/workspace/devel/lib/van_loading/automated_control_node" beforeDir="false" afterPath="$PROJECT_DIR$/workspace/devel/lib/van_loading/automated_control_node" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/workspace/src/van_loading/CMakeLists.txt" beforeDir="false" afterPath="$PROJECT_DIR$/workspace/src/van_loading/CMakeLists.txt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/workspace/src/van_loading/src/automated_control.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/workspace/src/van_loading/src/automated_control.cpp" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/libs/cmake-build-debug/" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -56,7 +39,7 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file pinned="false" current-in-tab="true">
+      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/workspace/src/van_loading/src/automated_control.cpp">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="165">
@@ -74,11 +57,11 @@
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="false">
+      <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/workspace/src/van_loading/CMakeLists.txt">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="286">
-              <caret line="273" column="1" selection-start-line="273" selection-start-column="1" selection-end-line="273" selection-end-column="1" />
+            <state relative-caret-position="301">
+              <caret line="274" column="28" lean-forward="true" selection-start-line="268" selection-start-column="17" selection-end-line="274" selection-end-column="28" />
             </state>
           </provider>
         </entry>
@@ -338,8 +321,8 @@
         <option value="$PROJECT_DIR$/workspace/src/van_loading/src/record_path.cpp" />
         <option value="$PROJECT_DIR$/workspace/src/van_loading/launch/automated_robot.launch" />
         <option value="$PROJECT_DIR$/workspace/src/van_loading/src/compare_icp.cpp" />
-        <option value="$PROJECT_DIR$/workspace/src/van_loading/CMakeLists.txt" />
         <option value="$PROJECT_DIR$/workspace/src/van_loading/src/automated_control.cpp" />
+        <option value="$PROJECT_DIR$/workspace/src/van_loading/CMakeLists.txt" />
       </list>
     </option>
   </component>
@@ -483,12 +466,12 @@
       <workItem from="1554392839818" duration="32441000" />
       <workItem from="1554912606083" duration="16315000" />
       <workItem from="1555418763055" duration="31854000" />
-      <workItem from="1556009119081" duration="2846000" />
+      <workItem from="1556009119081" duration="3062000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="268529000" />
+    <option name="totallyTimeSpent" value="268745000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="-1" width="1366" height="741" extended-state="6" />
@@ -733,13 +716,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/workspace/src/van_loading/CMakeLists.txt">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="286">
-          <caret line="273" column="1" selection-start-line="273" selection-start-column="1" selection-end-line="273" selection-end-column="1" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/workspace/src/van_loading/config/model.csv">
       <provider selected="true" editor-type-id="csv-text-editor" />
       <provider editor-type-id="csv-table-editor">
@@ -831,6 +807,13 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="165">
           <caret line="188" column="32" selection-start-line="188" selection-start-column="32" selection-end-line="188" selection-end-column="32" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/workspace/src/van_loading/CMakeLists.txt">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="301">
+          <caret line="274" column="28" lean-forward="true" selection-start-line="268" selection-start-column="17" selection-end-line="274" selection-end-column="28" />
         </state>
       </provider>
     </entry>
