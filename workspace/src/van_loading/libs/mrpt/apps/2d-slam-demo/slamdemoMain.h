@@ -1,32 +1,33 @@
 /* +------------------------------------------------------------------------+
    |                     Mobile Robot Programming Toolkit (MRPT)            |
-   |                          http://www.mrpt.org/                          |
+   |                          https://www.mrpt.org/                         |
    |                                                                        |
    | Copyright (c) 2005-2019, Individual contributors, see AUTHORS file     |
-   | See: http://www.mrpt.org/Authors - All rights reserved.                |
-   | Released under BSD License. See details in http://www.mrpt.org/License |
+   | See: https://www.mrpt.org/Authors - All rights reserved.               |
+   | Released under BSD License. See: https://www.mrpt.org/License          |
    +------------------------------------------------------------------------+ */
 
 #ifndef SLAMDEMOMAIN_H
 #define SLAMDEMOMAIN_H
 
 //(*Headers(slamdemoFrame)
-#include <wx/grid.h>
-#include <wx/toolbar.h>
-#include <wx/sizer.h>
-#include <wx/notebook.h>
-#include <wx/menu.h>
 #include <mrpt/otherlibs/mathplot/mathplot.h>
-#include <wx/panel.h>
-#include <wx/statusbr.h>
 #include <wx/frame.h>
+#include <wx/grid.h>
+#include <wx/menu.h>
+#include <wx/notebook.h>
+#include <wx/panel.h>
+#include <wx/sizer.h>
 #include <wx/stattext.h>
+#include <wx/statusbr.h>
 #include <wx/timer.h>
+#include <wx/toolbar.h>
 //*)
 
-#include <mrpt/slam/CRangeBearingKFSLAM2D.h>
-#include <mrpt/io/CFileGZOutputStream.h>
 #include <mrpt/gui/WxUtils.h>
+#include <mrpt/io/CFileGZOutputStream.h>
+#include <mrpt/maps/CLandmarksMap.h>
+#include <mrpt/slam/CRangeBearingKFSLAM2D.h>
 
 class slamdemoApp;
 

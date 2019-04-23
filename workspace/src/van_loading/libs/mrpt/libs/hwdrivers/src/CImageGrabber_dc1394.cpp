@@ -1,10 +1,10 @@
 /* +------------------------------------------------------------------------+
    |                     Mobile Robot Programming Toolkit (MRPT)            |
-   |                          http://www.mrpt.org/                          |
+   |                          https://www.mrpt.org/                         |
    |                                                                        |
    | Copyright (c) 2005-2019, Individual contributors, see AUTHORS file     |
-   | See: http://www.mrpt.org/Authors - All rights reserved.                |
-   | Released under BSD License. See details in http://www.mrpt.org/License |
+   | See: https://www.mrpt.org/Authors - All rights reserved.               |
+   | Released under BSD License. See: https://www.mrpt.org/License          |
    +------------------------------------------------------------------------+ */
 
 #include "hwdrivers-precomp.h"  // Precompiled headers
@@ -16,8 +16,8 @@
 #if MRPT_HAS_LIBDC1394_2
 #include <dc1394/control.h>
 #include <dc1394/conversions.h>
-#include <dc1394/utils.h>
 #include <dc1394/register.h>
+#include <dc1394/utils.h>
 #endif
 
 using namespace std;

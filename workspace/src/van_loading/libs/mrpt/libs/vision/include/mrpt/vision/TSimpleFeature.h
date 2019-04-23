@@ -1,20 +1,19 @@
 /* +------------------------------------------------------------------------+
    |                     Mobile Robot Programming Toolkit (MRPT)            |
-   |                          http://www.mrpt.org/                          |
+   |                          https://www.mrpt.org/                         |
    |                                                                        |
    | Copyright (c) 2005-2019, Individual contributors, see AUTHORS file     |
-   | See: http://www.mrpt.org/Authors - All rights reserved.                |
-   | Released under BSD License. See details in http://www.mrpt.org/License |
+   | See: https://www.mrpt.org/Authors - All rights reserved.               |
+   | Released under BSD License. See: https://www.mrpt.org/License          |
    +------------------------------------------------------------------------+ */
 #pragma once
 
-#include <mrpt/img/TPixelCoord.h>
 #include <mrpt/core/round.h>
-#include <mrpt/math/KDTreeCapable.h>
+#include <mrpt/img/TPixelCoord.h>
 #include <mrpt/math/CMatrixTemplate.h>  // mrpt::math::CMatrixBool
 #include <mrpt/math/CMatrixTemplateNumeric.h>
+#include <mrpt/math/KDTreeCapable.h>
 #include <mrpt/vision/types.h>
-#include <mrpt/core/round.h>
 #include <functional>
 
 namespace mrpt::vision

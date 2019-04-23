@@ -1,25 +1,25 @@
 /* +------------------------------------------------------------------------+
    |                     Mobile Robot Programming Toolkit (MRPT)            |
-   |                          http://www.mrpt.org/                          |
+   |                          https://www.mrpt.org/                         |
    |                                                                        |
    | Copyright (c) 2005-2019, Individual contributors, see AUTHORS file     |
-   | See: http://www.mrpt.org/Authors - All rights reserved.                |
-   | Released under BSD License. See details in http://www.mrpt.org/License |
+   | See: https://www.mrpt.org/Authors - All rights reserved.               |
+   | Released under BSD License. See: https://www.mrpt.org/License          |
    +------------------------------------------------------------------------+ */
 #pragma once
 
-#include <mrpt/vision/CFeatureExtraction.h>
-#include <mrpt/maps/CMetricMap.h>
-#include <mrpt/maps/CLandmark.h>
-#include <mrpt/obs/CObservationImage.h>
-#include <mrpt/obs/CObservation2DRangeScan.h>
-#include <mrpt/obs/CObservationGPS.h>
-#include <mrpt/obs/CObservationBearingRange.h>
-#include <mrpt/serialization/CSerializable.h>
-#include <mrpt/math/CMatrix.h>
-#include <mrpt/containers/CDynamicGrid.h>
 #include <mrpt/config/CLoadableOptions.h>
+#include <mrpt/containers/CDynamicGrid.h>
+#include <mrpt/maps/CLandmark.h>
+#include <mrpt/maps/CMetricMap.h>
+#include <mrpt/math/CMatrix.h>
+#include <mrpt/obs/CObservation2DRangeScan.h>
+#include <mrpt/obs/CObservationBearingRange.h>
+#include <mrpt/obs/CObservationGPS.h>
+#include <mrpt/obs/CObservationImage.h>
 #include <mrpt/obs/obs_frwds.h>
+#include <mrpt/serialization/CSerializable.h>
+#include <mrpt/vision/CFeatureExtraction.h>
 
 namespace mrpt
 {

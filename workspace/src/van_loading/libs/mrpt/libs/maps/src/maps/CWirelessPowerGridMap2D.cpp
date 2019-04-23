@@ -1,22 +1,22 @@
 /* +------------------------------------------------------------------------+
    |                     Mobile Robot Programming Toolkit (MRPT)            |
-   |                          http://www.mrpt.org/                          |
+   |                          https://www.mrpt.org/                         |
    |                                                                        |
    | Copyright (c) 2005-2019, Individual contributors, see AUTHORS file     |
-   | See: http://www.mrpt.org/Authors - All rights reserved.                |
-   | Released under BSD License. See details in http://www.mrpt.org/License |
+   | See: https://www.mrpt.org/Authors - All rights reserved.               |
+   | Released under BSD License. See: https://www.mrpt.org/License          |
    +------------------------------------------------------------------------+ */
 
 #include "maps-precomp.h"  // Precomp header
 
+#include <mrpt/core/round.h>
+#include <mrpt/img/color_maps.h>
 #include <mrpt/maps/CWirelessPowerGridMap2D.h>
 #include <mrpt/obs/CObservationWirelessPower.h>
-#include <mrpt/system/os.h>
-#include <mrpt/core/round.h>
-#include <mrpt/system/CTicTac.h>
-#include <mrpt/img/color_maps.h>
 #include <mrpt/opengl/CSetOfObjects.h>
 #include <mrpt/serialization/CArchive.h>
+#include <mrpt/system/CTicTac.h>
+#include <mrpt/system/os.h>
 
 using namespace mrpt;
 using namespace mrpt::maps;

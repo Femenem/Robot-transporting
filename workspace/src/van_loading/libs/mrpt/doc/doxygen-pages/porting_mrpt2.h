@@ -1,10 +1,10 @@
 /* +---------------------------------------------------------------------------+
    |                     Mobile Robot Programming Toolkit (MRPT)               |
-   |                          http://www.mrpt.org/                             |
+   |                          https://www.mrpt.org/                            |
    |                                                                           |
    | Copyright (c) 2005-2019, Individual contributors, see AUTHORS file        |
-   | See: http://www.mrpt.org/Authors - All rights reserved.                   |
-   | Released under BSD License. See details in http://www.mrpt.org/License    |
+   | See: https://www.mrpt.org/Authors - All rights reserved.                  |
+   | Released under BSD License. See details in https://www.mrpt.org/License   |
    +---------------------------------------------------------------------------+
  */
 
@@ -85,7 +85,7 @@
  *  - Static variables have been dropped in favor of global getter/setter
  * functions. This allowed removing all DLL import/export macros for Windows
  * compilers. Important changes are:
- *    - `mrpt::math::randomGenerator` --> `mrpt::math::getRandomGenerator()`
+ *    - `mrpt::math::randomGenerator` --> `mrpt::random::getRandomGenerator()`
  *    - `mrpt::global_settings` old static variables have been replaced by
  * getter/setter functions.
  *  - `ASSERT_*` macros must now be ended with a semicolon, e.g. `ASSERT_(a>0);`
@@ -111,8 +111,8 @@
  * headers, one for each container type, and based on templatized `using`.
  * Example: \code
  *       // Old: MRPT 1.* code
- *       #include <mrpt/core/aligned_std_vector.h>
- *       mrpt::aligned_std_vector<Foo>  v;
+ *       #include <mrpt/utils/stl_containers_utils.h>
+ *       mrpt::aligned_containers<Foo>::vector_t m_all_poses v;
  *
  *       // New: MRPT 2.* code
  *       #include <mrpt/core/aligned_std_vector.h>

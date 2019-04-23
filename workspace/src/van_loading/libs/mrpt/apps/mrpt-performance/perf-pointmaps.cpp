@@ -1,14 +1,15 @@
 /* +------------------------------------------------------------------------+
    |                     Mobile Robot Programming Toolkit (MRPT)            |
-   |                          http://www.mrpt.org/                          |
+   |                          https://www.mrpt.org/                         |
    |                                                                        |
    | Copyright (c) 2005-2019, Individual contributors, see AUTHORS file     |
-   | See: http://www.mrpt.org/Authors - All rights reserved.                |
-   | Released under BSD License. See details in http://www.mrpt.org/License |
+   | See: https://www.mrpt.org/Authors - All rights reserved.               |
+   | Released under BSD License. See: https://www.mrpt.org/License          |
    +------------------------------------------------------------------------+ */
 
-#include <mrpt/obs/CObservation2DRangeScan.h>
 #include <mrpt/maps/CSimplePointsMap.h>
+#include <mrpt/obs/CObservation2DRangeScan.h>
+#include <mrpt/obs/stock_observations.h>
 #include <mrpt/poses/CPose2D.h>
 #include <mrpt/random.h>
 
@@ -31,11 +32,7 @@ double pointmap_test_0(int a1, int a2)
 
 	// prepare the laser scan:
 	CObservation2DRangeScan scan1;
-	scan1.aperture = M_PIf;
-	scan1.rightToLeft = true;
-	scan1.loadFromVectors(
-		sizeof(SCAN_RANGES_1) / sizeof(SCAN_RANGES_1[0]), SCAN_RANGES_1,
-		SCAN_VALID_1);
+	stock_observations::example2DRangeScan(scan1);
 
 	CSimplePointsMap pt_map;
 
@@ -63,11 +60,7 @@ double pointmap_test_1(int a1, int a2)
 
 	// prepare the laser scan:
 	CObservation2DRangeScan scan1;
-	scan1.aperture = M_PIf;
-	scan1.rightToLeft = true;
-	scan1.loadFromVectors(
-		sizeof(SCAN_RANGES_1) / sizeof(SCAN_RANGES_1[0]), SCAN_RANGES_1,
-		SCAN_VALID_1);
+	stock_observations::example2DRangeScan(scan1);
 
 	CSimplePointsMap pt_map;
 
@@ -119,11 +112,7 @@ double pointmap_test_2(int a1, int a2)
 
 	// prepare the laser scan:
 	CObservation2DRangeScan scan1;
-	scan1.aperture = M_PIf;
-	scan1.rightToLeft = true;
-	scan1.loadFromVectors(
-		sizeof(SCAN_RANGES_1) / sizeof(SCAN_RANGES_1[0]), SCAN_RANGES_1,
-		SCAN_VALID_1);
+	stock_observations::example2DRangeScan(scan1);
 
 	CTicTac tictac;
 	const unsigned N_TIMES = 20;
@@ -164,11 +153,7 @@ double pointmap_test_3(int a1, int a2)
 
 	// prepare the laser scan:
 	CObservation2DRangeScan scan1;
-	scan1.aperture = M_PIf;
-	scan1.rightToLeft = true;
-	scan1.loadFromVectors(
-		sizeof(SCAN_RANGES_1) / sizeof(SCAN_RANGES_1[0]), SCAN_RANGES_1,
-		SCAN_VALID_1);
+	stock_observations::example2DRangeScan(scan1);
 
 	CSimplePointsMap pt_map;
 
@@ -207,11 +192,7 @@ double pointmap_test_4(int a1, int a2)
 
 	// prepare the laser scan:
 	CObservation2DRangeScan scan1;
-	scan1.aperture = M_PIf;
-	scan1.rightToLeft = true;
-	scan1.loadFromVectors(
-		sizeof(SCAN_RANGES_1) / sizeof(SCAN_RANGES_1[0]), SCAN_RANGES_1,
-		SCAN_VALID_1);
+	stock_observations::example2DRangeScan(scan1);
 
 	CSimplePointsMap pt_map;
 	CSimplePointsMap pt_map2;
@@ -249,11 +230,7 @@ double pointmap_test_5(int a1, int a2)
 
 	// prepare the laser scan:
 	CObservation2DRangeScan scan1;
-	scan1.aperture = M_PIf;
-	scan1.rightToLeft = true;
-	scan1.loadFromVectors(
-		sizeof(SCAN_RANGES_1) / sizeof(SCAN_RANGES_1[0]), SCAN_RANGES_1,
-		SCAN_VALID_1);
+	stock_observations::example2DRangeScan(scan1);
 
 	CSimplePointsMap pt_map;
 

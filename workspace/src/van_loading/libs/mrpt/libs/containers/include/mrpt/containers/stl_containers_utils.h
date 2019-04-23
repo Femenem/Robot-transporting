@@ -1,17 +1,18 @@
 /* +------------------------------------------------------------------------+
    |                     Mobile Robot Programming Toolkit (MRPT)            |
-   |                          http://www.mrpt.org/                          |
+   |                          https://www.mrpt.org/                         |
    |                                                                        |
    | Copyright (c) 2005-2019, Individual contributors, see AUTHORS file     |
-   | See: http://www.mrpt.org/Authors - All rights reserved.                |
-   | Released under BSD License. See details in http://www.mrpt.org/License |
+   | See: https://www.mrpt.org/Authors - All rights reserved.               |
+   | Released under BSD License. See: https://www.mrpt.org/License          |
    +------------------------------------------------------------------------+ */
 #pragma once
 
+#include <iostream>
 #include <list>
 #include <map>
 #include <set>
-#include <iostream>
+#include <sstream>
 
 namespace mrpt::containers
 {
@@ -77,12 +78,8 @@ inline typename std::set<T>::iterator erase_return_next(
 template <class T>
 std::string getSTLContainerAsString(const T& t)
 {
-	using namespace std;
-	stringstream ss;
-	for (auto it = t.begin(); it != t.end(); ++it)
-	{
-		ss << *it << ", ";
-	}
+	std::stringstream ss;
+	for (auto& e : t) ss << e << ", ";
 	return ss.str();
 }
 /**\brief Print the given vector t.
@@ -92,8 +89,7 @@ std::string getSTLContainerAsString(const T& t)
 template <class T>
 void printSTLContainer(const T& t)
 {
-	using namespace std;
-	cout << getSTLContainerAsString(t) << endl;
+	std::cout << getSTLContainerAsString(t) << "\n";
 }
 /**\brief Print the given STL container of containers t.
  *
@@ -122,15 +118,9 @@ template <class T1, class T2>
 std::string getMapAsString(
 	const std::map<T1, T2>& m, const std::string& sep = " => ")
 {
-	using namespace std;
-	stringstream ss("");
-
-	for (typename map<T1, T2>::const_iterator it = m.begin(); it != m.end();
-		 ++it)
-	{
-		ss << it->first << " => " << it->second << endl;
-	}
-
+	std::stringstream ss;
+	for (auto& key_val : m)
+		ss << key_val.first << " => " << key_val.second << "\n";
 	return ss.str();
 }
 /**\brief Print the given map m
@@ -140,7 +130,7 @@ std::string getMapAsString(
 template <class T1, class T2>
 void printMap(const std::map<T1, T2>& m)
 {
-	std::cout << getMapAsString(m) << std::endl;
+	std::cout << getMapAsString(m) << "\n";
 }
 
 /**\brief Deep clear for a std vector container

@@ -1,20 +1,20 @@
 /* +------------------------------------------------------------------------+
    |                     Mobile Robot Programming Toolkit (MRPT)            |
-   |                          http://www.mrpt.org/                          |
+   |                          https://www.mrpt.org/                         |
    |                                                                        |
    | Copyright (c) 2005-2019, Individual contributors, see AUTHORS file     |
-   | See: http://www.mrpt.org/Authors - All rights reserved.                |
-   | Released under BSD License. See details in http://www.mrpt.org/License |
+   | See: https://www.mrpt.org/Authors - All rights reserved.               |
+   | Released under BSD License. See: https://www.mrpt.org/License          |
    +------------------------------------------------------------------------+ */
 #pragma once
 
 #include <mrpt/serialization/CSerializable.h>
 #include <cstdint>
-#include <vector>
-#include <string>
-#include <stdexcept>
-#include <string_view>
 #include <memory>
+#include <stdexcept>
+#include <string>
+#include <string_view>
+#include <vector>
 
 namespace mrpt::serialization
 {

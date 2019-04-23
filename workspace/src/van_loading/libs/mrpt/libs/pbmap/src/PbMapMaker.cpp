@@ -1,10 +1,10 @@
 /* +------------------------------------------------------------------------+
    |                     Mobile Robot Programming Toolkit (MRPT)            |
-   |                          http://www.mrpt.org/                          |
+   |                          https://www.mrpt.org/                         |
    |                                                                        |
    | Copyright (c) 2005-2019, Individual contributors, see AUTHORS file     |
-   | See: http://www.mrpt.org/Authors - All rights reserved.                |
-   | Released under BSD License. See details in http://www.mrpt.org/License |
+   | See: https://www.mrpt.org/Authors - All rights reserved.               |
+   | Released under BSD License. See: https://www.mrpt.org/License          |
    +------------------------------------------------------------------------+ */
 
 /*  Plane-based Map (PbMap) library
@@ -21,20 +21,20 @@
 
 //#include <pcl/io/io.h>
 //#include <pcl/io/pcd_io.h>
-#include <pcl/features/integral_image_normal.h>
-#include <pcl/features/normal_3d.h>
-#include <pcl/ModelCoefficients.h>
-#include <pcl/segmentation/organized_multi_plane_segmentation.h>
-#include <pcl/segmentation/organized_connected_component_segmentation.h>
-#include <pcl/filters/extract_indices.h>
-#include <pcl/filters/voxel_grid.h>
-#include <pcl/common/transforms.h>
-#include <pcl/common/time.h>
 #include <mrpt/config/CConfigFile.h>
 #include <mrpt/pbmap/PbMapMaker.h>
+#include <pcl/ModelCoefficients.h>
+#include <pcl/common/time.h>
+#include <pcl/common/transforms.h>
+#include <pcl/features/integral_image_normal.h>
+#include <pcl/features/normal_3d.h>
+#include <pcl/filters/extract_indices.h>
+#include <pcl/filters/voxel_grid.h>
+#include <pcl/segmentation/organized_connected_component_segmentation.h>
+#include <pcl/segmentation/organized_multi_plane_segmentation.h>
 
-#include <mutex>
 #include <iostream>
+#include <mutex>
 
 //#define _VERBOSE 0
 

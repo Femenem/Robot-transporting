@@ -1,20 +1,20 @@
 /* +------------------------------------------------------------------------+
    |                     Mobile Robot Programming Toolkit (MRPT)            |
-   |                          http://www.mrpt.org/                          |
+   |                          https://www.mrpt.org/                         |
    |                                                                        |
    | Copyright (c) 2005-2019, Individual contributors, see AUTHORS file     |
-   | See: http://www.mrpt.org/Authors - All rights reserved.                |
-   | Released under BSD License. See details in http://www.mrpt.org/License |
+   | See: https://www.mrpt.org/Authors - All rights reserved.               |
+   | Released under BSD License. See: https://www.mrpt.org/License          |
    +------------------------------------------------------------------------+ */
 #include "bindings.h"
 
 /* MRPT */
 #include <mrpt/config/CLoadableOptions.h>
 
-#include <mrpt/bayes/CProbabilityParticle.h>
+#include <mrpt/bayes/CKalmanFilterCapable.h>
 #include <mrpt/bayes/CParticleFilter.h>
 #include <mrpt/bayes/CParticleFilterCapable.h>
-#include <mrpt/bayes/CKalmanFilterCapable.h>
+#include <mrpt/bayes/CProbabilityParticle.h>
 
 #include <mrpt/obs/CActionCollection.h>
 #include <mrpt/obs/CSensoryFrame.h>

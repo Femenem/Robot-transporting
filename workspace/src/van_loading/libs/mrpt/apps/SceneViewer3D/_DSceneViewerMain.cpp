@@ -1,41 +1,41 @@
 /* +------------------------------------------------------------------------+
    |                     Mobile Robot Programming Toolkit (MRPT)            |
-   |                          http://www.mrpt.org/                          |
+   |                          https://www.mrpt.org/                         |
    |                                                                        |
    | Copyright (c) 2005-2019, Individual contributors, see AUTHORS file     |
-   | See: http://www.mrpt.org/Authors - All rights reserved.                |
-   | Released under BSD License. See details in http://www.mrpt.org/License |
+   | See: https://www.mrpt.org/Authors - All rights reserved.               |
+   | Released under BSD License. See: https://www.mrpt.org/License          |
    +------------------------------------------------------------------------+ */
 
 #include "_DSceneViewerMain.h"
+#include <wx/app.h>
 #include "CDlgCamTracking.h"
 #include "CDlgPLYOptions.h"
-#include <wx/app.h>
 
 //(*InternalHeaders(_DSceneViewerFrame)
 #include <wx/artprov.h>
 #include <wx/bitmap.h>
-#include <wx/tglbtn.h>
 #include <wx/icon.h>
-#include <wx/intl.h>
 #include <wx/image.h>
+#include <wx/intl.h>
 #include <wx/string.h>
+#include <wx/tglbtn.h>
 //*)
 
 #include "CDialogOptions.h"
 
-#include <wx/msgdlg.h>
-#include <wx/numdlg.h>
-#include <wx/choicdlg.h>
-#include <wx/filedlg.h>
-#include <wx/progdlg.h>
-#include <wx/imaglist.h>
 #include <wx/busyinfo.h>
-#include <wx/log.h>
-#include <wx/textdlg.h>
-#include <wx/dirdlg.h>
+#include <wx/choicdlg.h>
 #include <wx/colordlg.h>
 #include <wx/dcmemory.h>
+#include <wx/dirdlg.h>
+#include <wx/filedlg.h>
+#include <wx/imaglist.h>
+#include <wx/log.h>
+#include <wx/msgdlg.h>
+#include <wx/numdlg.h>
+#include <wx/progdlg.h>
+#include <wx/textdlg.h>
 
 #if defined(__WXMSW__)
 const std::string iniFileSect("CONF_WIN");
@@ -43,33 +43,32 @@ const std::string iniFileSect("CONF_WIN");
 const std::string iniFileSect("CONF_LIN");
 #endif
 
-#include "imgs/icono_main.xpm"
 #include "../wx-common/mrpt_logo.xpm"
+#include "imgs/icono_main.xpm"
 
 #if !wxUSE_GLCANVAS
 #error "OpenGL required: set wxUSE_GLCANVAS to 1 and rebuild wxWidgets"
 #endif
 
+#include <mrpt/config/CConfigFile.h>
 #include <mrpt/gui/CWxGLCanvasBase.h>
 #include <mrpt/gui/about_box.h>
-#include <mrpt/opengl/CFBORender.h>
-#include <mrpt/system/CTicTac.h>
-#include <mrpt/system/filesystem.h>
-#include <mrpt/system/CDirectoryExplorer.h>
-#include <mrpt/system/string_utils.h>
 #include <mrpt/io/CFileGZInputStream.h>
 #include <mrpt/io/CFileGZOutputStream.h>
-#include <mrpt/config/CConfigFile.h>
-#include <mrpt/serialization/CArchive.h>
-#include <mrpt/opengl/COpenGLScene.h>
-#include <mrpt/opengl/CGridPlaneXY.h>
+#include <mrpt/opengl/CAngularObservationMesh.h>  // It's in lib mrpt-maps
 #include <mrpt/opengl/CAssimpModel.h>
+#include <mrpt/opengl/CFBORender.h>
+#include <mrpt/opengl/CGridPlaneXY.h>
+#include <mrpt/opengl/COpenGLScene.h>
+#include <mrpt/opengl/CPlanarLaserScan.h>  // It's in lib mrpt-maps
 #include <mrpt/opengl/CPointCloud.h>
 #include <mrpt/opengl/CPointCloudColoured.h>
 #include <mrpt/opengl/stock_objects.h>
-#include <mrpt/opengl/CPlanarLaserScan.h>  // It's in lib mrpt-maps
-#include <mrpt/opengl/CAngularObservationMesh.h>  // It's in lib mrpt-maps
 #include <mrpt/serialization/CArchive.h>
+#include <mrpt/system/CDirectoryExplorer.h>
+#include <mrpt/system/CTicTac.h>
+#include <mrpt/system/filesystem.h>
+#include <mrpt/system/string_utils.h>
 
 #include <mrpt/maps/CColouredPointsMap.h>
 #include <mrpt/maps/CPointsMap.h>
@@ -390,12 +389,8 @@ _DSceneViewerFrame::_DSceneViewerFrame(wxWindow* parent, wxWindowID id)
 {
 	theWindow = this;
 
-// Load my custom icons:
-#if wxCHECK_VERSION(2, 8, 0)
+	// Load my custom icons:
 	wxArtProvider::Push(new MyArtProvider);
-#else
-	wxArtProvider::PushProvider(new MyArtProvider);
-#endif
 
 	//(*Initialize(_DSceneViewerFrame)
 	wxMenuItem* MenuItem2;
@@ -1832,7 +1827,6 @@ void _DSceneViewerFrame::OnMenuItemImportPLYPointCloud(wxCommandEvent& event)
 }
 
 struct visitor_export_PLY
-	: public unary_function<mrpt::opengl::CRenderizable::Ptr, void>
 {
 	const string& filename;
 	unsigned int& count;

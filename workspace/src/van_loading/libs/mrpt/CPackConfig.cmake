@@ -29,7 +29,7 @@ SET(CPACK_BINARY_TXZ "OFF")
 SET(CPACK_BINARY_TZ "ON")
 SET(CPACK_BINARY_WIX "")
 SET(CPACK_BINARY_ZIP "")
-SET(CPACK_BUILD_SOURCE_DIRS "/home/matt/Documents/Robot-transporting/workspace/src/van_loading/libs/mrpt;/home/matt/Documents/Robot-transporting/workspace/src/van_loading/libs/mrpt")
+SET(CPACK_BUILD_SOURCE_DIRS "/home/matt/Documents/Robot-transporting/workspace/src/van_loading/libs/mrpt;/home/matt/Documents/Robot-transporting/workspace/src/van_loading/libs/mrpt/build")
 SET(CPACK_CMAKE_GENERATOR "Unix Makefiles")
 SET(CPACK_COMPONENTS_ALL "Apps;Libraries;Unspecified")
 SET(CPACK_COMPONENT_UNSPECIFIED_HIDDEN "TRUE")
@@ -125,7 +125,7 @@ for Windows instructions or to learn all the details.
   * Install minimum recommended dependencies:
 
 ```bash
-sudo apt install build-essential pkg-config cmake libwxgtk3.0-dev \
+sudo apt install build-essential pkg-config cmake libwxgtk3.0-dev libwxgtk3.0-gtk3-dev \
 libopencv-dev libeigen3-dev libgtest-dev
 ```
   MRPT builds against OpenCV 2.4.x, 3.x, 4.x, but it is recommended to use 3.0 or later.
@@ -151,7 +151,7 @@ make
 MRPT is released under the [new BSD license](http://www.mrpt.org/License/).
 ")
 SET(CPACK_GENERATOR "STGZ;TGZ;TZ")
-SET(CPACK_INSTALL_CMAKE_PROJECTS "/home/matt/Documents/Robot-transporting/workspace/src/van_loading/libs/mrpt;MRPT;ALL;/")
+SET(CPACK_INSTALL_CMAKE_PROJECTS "/home/matt/Documents/Robot-transporting/workspace/src/van_loading/libs/mrpt/build;MRPT;ALL;/")
 SET(CPACK_INSTALL_PREFIX "/usr/local")
 SET(CPACK_MODULE_PATH "/home/matt/Documents/Robot-transporting/workspace/src/van_loading/libs/mrpt/cmakemodules;/usr/lib/cmake/vtk-6.3")
 SET(CPACK_NSIS_DISPLAY_NAME "mrpt-1.9.9")
@@ -159,7 +159,7 @@ SET(CPACK_NSIS_INSTALLER_ICON_CODE "")
 SET(CPACK_NSIS_INSTALLER_MUI_ICON_CODE "")
 SET(CPACK_NSIS_INSTALL_ROOT "$PROGRAMFILES")
 SET(CPACK_NSIS_PACKAGE_NAME "mrpt-1.9.9")
-SET(CPACK_OUTPUT_CONFIG_FILE "/home/matt/Documents/Robot-transporting/workspace/src/van_loading/libs/mrpt/CPackConfig.cmake")
+SET(CPACK_OUTPUT_CONFIG_FILE "/home/matt/Documents/Robot-transporting/workspace/src/van_loading/libs/mrpt/build/CPackConfig.cmake")
 SET(CPACK_PACKAGE_CONTACT "Jose Luis Blanco Claraco <joseluisblancoc@gmail.com>")
 SET(CPACK_PACKAGE_DEFAULT_LOCATION "/")
 SET(CPACK_PACKAGE_DESCRIPTION_FILE "/home/matt/Documents/Robot-transporting/workspace/src/van_loading/libs/mrpt/README.md")
@@ -181,7 +181,7 @@ SET(CPACK_SET_DESTDIR "OFF")
 SET(CPACK_SOURCE_7Z "")
 SET(CPACK_SOURCE_CYGWIN "")
 SET(CPACK_SOURCE_GENERATOR "TGZ")
-SET(CPACK_SOURCE_OUTPUT_CONFIG_FILE "/home/matt/Documents/Robot-transporting/workspace/src/van_loading/libs/mrpt/CPackSourceConfig.cmake")
+SET(CPACK_SOURCE_OUTPUT_CONFIG_FILE "/home/matt/Documents/Robot-transporting/workspace/src/van_loading/libs/mrpt/build/CPackSourceConfig.cmake")
 SET(CPACK_SOURCE_RPM "")
 SET(CPACK_SOURCE_TBZ2 "")
 SET(CPACK_SOURCE_TGZ "")
@@ -193,7 +193,7 @@ SET(CPACK_TOPLEVEL_TAG "Linux")
 SET(CPACK_WIX_SIZEOF_VOID_P "8")
 
 if(NOT CPACK_PROPERTIES_FILE)
-  set(CPACK_PROPERTIES_FILE "/home/matt/Documents/Robot-transporting/workspace/src/van_loading/libs/mrpt/CPackProperties.cmake")
+  set(CPACK_PROPERTIES_FILE "/home/matt/Documents/Robot-transporting/workspace/src/van_loading/libs/mrpt/build/CPackProperties.cmake")
 endif()
 
 if(EXISTS ${CPACK_PROPERTIES_FILE})

@@ -1,20 +1,20 @@
 /* +------------------------------------------------------------------------+
    |                     Mobile Robot Programming Toolkit (MRPT)            |
-   |                          http://www.mrpt.org/                          |
+   |                          https://www.mrpt.org/                         |
    |                                                                        |
    | Copyright (c) 2005-2019, Individual contributors, see AUTHORS file     |
-   | See: http://www.mrpt.org/Authors - All rights reserved.                |
-   | Released under BSD License. See details in http://www.mrpt.org/License |
+   | See: https://www.mrpt.org/Authors - All rights reserved.               |
+   | Released under BSD License. See: https://www.mrpt.org/License          |
    +------------------------------------------------------------------------+ */
 #pragma once
 
 // nanoflann library:
-#include <nanoflann.hpp>
 #include <mrpt/math/lightweight_geom_data.h>
-#include <memory>  // unique_ptr
 #include <array>
-#include <mutex>
 #include <atomic>
+#include <memory>  // unique_ptr
+#include <mutex>
+#include <nanoflann.hpp>
 
 namespace mrpt::math
 {
@@ -717,7 +717,7 @@ class KDTreeCapable
 	/** To be called by child classes when KD tree data changes. */
 	inline void kdtree_mark_as_outdated() const
 	{
-		std::scoped_lock lck(m_kdtree_mtx);
+		std::lock_guard<std::mutex> lck(m_kdtree_mtx);
 		m_kdtree_is_uptodate = false;
 	}
 
@@ -766,7 +766,7 @@ class KDTreeCapable
 	{
 		if (m_kdtree_is_uptodate) return;
 
-		std::scoped_lock lck(m_kdtree_mtx);
+		std::lock_guard<std::mutex> lck(m_kdtree_mtx);
 		using tree2d_t = typename TKDTreeDataHolder<2>::kdtree_index_t;
 
 		if (!m_kdtree_is_uptodate)
@@ -800,7 +800,7 @@ class KDTreeCapable
 	void rebuild_kdTree_3D() const
 	{
 		if (m_kdtree_is_uptodate) return;
-		std::scoped_lock lck(m_kdtree_mtx);
+		std::lock_guard<std::mutex> lck(m_kdtree_mtx);
 		using tree3d_t = typename TKDTreeDataHolder<3>::kdtree_index_t;
 
 		if (!m_kdtree_is_uptodate)

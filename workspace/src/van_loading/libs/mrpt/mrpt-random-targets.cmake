@@ -52,7 +52,7 @@ set_target_properties(mrpt::random PROPERTIES
 # Import target "mrpt::random" for configuration "Release"
 set_property(TARGET mrpt::random APPEND PROPERTY IMPORTED_CONFIGURATIONS RELEASE)
 set_target_properties(mrpt::random PROPERTIES
-  IMPORTED_LOCATION_RELEASE "/home/matt/Documents/Robot-transporting/workspace/src/van_loading/libs/mrpt/lib/libmrpt-random.so.1.9.9"
+  IMPORTED_LOCATION_RELEASE "/home/matt/Documents/Robot-transporting/workspace/src/van_loading/libs/mrpt/build/lib/libmrpt-random.so.1.9.9"
   IMPORTED_SONAME_RELEASE "libmrpt-random.so.1.9"
   )
 

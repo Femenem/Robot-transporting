@@ -1,21 +1,21 @@
 /* +------------------------------------------------------------------------+
    |                     Mobile Robot Programming Toolkit (MRPT)            |
-   |                          http://www.mrpt.org/                          |
+   |                          https://www.mrpt.org/                         |
    |                                                                        |
    | Copyright (c) 2005-2019, Individual contributors, see AUTHORS file     |
-   | See: http://www.mrpt.org/Authors - All rights reserved.                |
-   | Released under BSD License. See details in http://www.mrpt.org/License |
+   | See: https://www.mrpt.org/Authors - All rights reserved.               |
+   | Released under BSD License. See: https://www.mrpt.org/License          |
    +------------------------------------------------------------------------+ */
 
-#include <mrpt/math/ransac.h>
 #include <mrpt/gui/CDisplayWindow3D.h>
-#include <mrpt/random.h>
-#include <mrpt/system/CTicTac.h>
-#include <mrpt/poses/CPose3D.h>
+#include <mrpt/math/ransac.h>
 #include <mrpt/opengl/CGridPlaneXY.h>
 #include <mrpt/opengl/CPointCloud.h>
-#include <mrpt/opengl/stock_objects.h>
 #include <mrpt/opengl/CTexturedPlane.h>
+#include <mrpt/opengl/stock_objects.h>
+#include <mrpt/poses/CPose3D.h>
+#include <mrpt/random.h>
+#include <mrpt/system/CTicTac.h>
 #include <iostream>
 
 using namespace mrpt;

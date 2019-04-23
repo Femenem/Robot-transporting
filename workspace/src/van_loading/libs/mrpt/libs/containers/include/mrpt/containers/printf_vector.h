@@ -1,17 +1,18 @@
 /* +------------------------------------------------------------------------+
    |                     Mobile Robot Programming Toolkit (MRPT)            |
-   |                          http://www.mrpt.org/                          |
+   |                          https://www.mrpt.org/                         |
    |                                                                        |
    | Copyright (c) 2005-2019, Individual contributors, see AUTHORS file     |
-   | See: http://www.mrpt.org/Authors - All rights reserved.                |
-   | Released under BSD License. See details in http://www.mrpt.org/License |
+   | See: https://www.mrpt.org/Authors - All rights reserved.               |
+   | Released under BSD License. See: https://www.mrpt.org/License          |
    +------------------------------------------------------------------------+ */
 #pragma once
 
+#include <mrpt/core/format.h>
 #include <mrpt/math/eigen_frwds.h>
+#include <cstdio>
 #include <string>
 #include <vector>
-#include <cstdio>
 
 namespace mrpt::containers
 {
@@ -41,7 +42,7 @@ std::string sprintf_vector(const char* fmt, const Eigen::MatrixBase<Derived>& V)
 	const size_t N = V.size();
 	for (size_t i = 0; i < N; i++)
 	{
-		ret += format(fmt, V[i]);
+		ret += mrpt::format(fmt, V[i]);
 		if (i != (N - 1)) ret += ",";
 	}
 	ret += "]";

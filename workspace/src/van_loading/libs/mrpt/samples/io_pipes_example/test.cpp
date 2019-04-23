@@ -1,10 +1,10 @@
 /* +------------------------------------------------------------------------+
    |                     Mobile Robot Programming Toolkit (MRPT)            |
-   |                          http://www.mrpt.org/                          |
+   |                          https://www.mrpt.org/                         |
    |                                                                        |
    | Copyright (c) 2005-2019, Individual contributors, see AUTHORS file     |
-   | See: http://www.mrpt.org/Authors - All rights reserved.                |
-   | Released under BSD License. See details in http://www.mrpt.org/License |
+   | See: https://www.mrpt.org/Authors - All rights reserved.               |
+   | Released under BSD License. See: https://www.mrpt.org/License          |
    +------------------------------------------------------------------------+ */
 
 #include <mrpt/io/CPipe.h>
@@ -67,8 +67,6 @@ void thread_writer(CPipeWriteEndPoint& write_pipe)
 		write_pipe.Write(str, len);
 
 		// Send MRPT objects:
-		// *NOTE*: For efficiency, one should first write to an intermediary
-		// mrpt::utils::CMemoryChunk to write only once to the pipe.
 		mrpt::poses::CPose3D pose(1, 2, 3, 0.1, 0.2, 0.3);
 		auto arch = mrpt::serialization::archiveFrom(write_pipe);
 		arch.WriteObject(&pose);

@@ -1,21 +1,21 @@
 /* +------------------------------------------------------------------------+
    |                     Mobile Robot Programming Toolkit (MRPT)            |
-   |                          http://www.mrpt.org/                          |
+   |                          https://www.mrpt.org/                         |
    |                                                                        |
    | Copyright (c) 2005-2019, Individual contributors, see AUTHORS file     |
-   | See: http://www.mrpt.org/Authors - All rights reserved.                |
-   | Released under BSD License. See details in http://www.mrpt.org/License |
+   | See: https://www.mrpt.org/Authors - All rights reserved.               |
+   | Released under BSD License. See: https://www.mrpt.org/License          |
    +------------------------------------------------------------------------+ */
 
 #include "nav-precomp.h"  // Precomp header
-#include <mrpt/nav/tpspace/CPTG_Holo_Blend.h>
-#include <mrpt/math/types_math.h>
-#include <mrpt/serialization/CArchive.h>
+
 #include <mrpt/core/round.h>
-#include <mrpt/system/CTimeLogger.h>
-#include <mrpt/math/poly_roots.h>
 #include <mrpt/kinematics/CVehicleVelCmd_Holo.h>
+#include <mrpt/math/poly_roots.h>
+#include <mrpt/math/types_math.h>
+#include <mrpt/nav/tpspace/CPTG_Holo_Blend.h>
 #include <mrpt/serialization/CArchive.h>
+#include <mrpt/system/CTimeLogger.h>
 
 using namespace mrpt::nav;
 using namespace mrpt::system;

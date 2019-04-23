@@ -1,38 +1,38 @@
 /* +------------------------------------------------------------------------+
    |                     Mobile Robot Programming Toolkit (MRPT)            |
-   |                          http://www.mrpt.org/                          |
+   |                          https://www.mrpt.org/                         |
    |                                                                        |
    | Copyright (c) 2005-2019, Individual contributors, see AUTHORS file     |
-   | See: http://www.mrpt.org/Authors - All rights reserved.                |
-   | Released under BSD License. See details in http://www.mrpt.org/License |
+   | See: https://www.mrpt.org/Authors - All rights reserved.               |
+   | Released under BSD License. See: https://www.mrpt.org/License          |
    +------------------------------------------------------------------------+ */
 #ifndef XSDATAPACKET_H
 #define XSDATAPACKET_H
 
-#include "xstypedefs.h"
 #include "pstdint.h"
-#include "xsmessage.h"
-#include "xstimestamp.h"
-#include "xsdataidentifier.h"
-#include "xsushortvector.h"
-#include "xsscrdata.h"
-#include "xscalibrateddata.h"
-#include "xsgpspvtdata.h"
-#include "xspressure.h"
-#include "xssdidata.h"
-#include "xsvector.h"
-#include "xsquaternion.h"
-#include "xsmatrix.h"
-#include "xseuler.h"
 #include "xsanalogindata.h"
-#include "xsutctime.h"
+#include "xscalibrateddata.h"
+#include "xsdataidentifier.h"
+#include "xsdeviceid.h"
+#include "xseuler.h"
+#include "xsgpspvtdata.h"
+#include "xsmatrix.h"
+#include "xsmessage.h"
+#include "xspressure.h"
+#include "xsquaternion.h"
+#include "xsrange.h"
 #include "xsrawgpsdop.h"
 #include "xsrawgpssol.h"
 #include "xsrawgpssvinfo.h"
 #include "xsrawgpstimeutc.h"
-#include "xsdeviceid.h"
-#include "xsrange.h"
+#include "xsscrdata.h"
+#include "xssdidata.h"
+#include "xstimestamp.h"
 #include "xstriggerindicationdata.h"
+#include "xstypedefs.h"
+#include "xsushortvector.h"
+#include "xsutctime.h"
+#include "xsvector.h"
 
 struct XsDataPacket;
 #ifdef __cplusplus

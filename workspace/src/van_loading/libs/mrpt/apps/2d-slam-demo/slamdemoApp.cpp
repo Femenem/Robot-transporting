@@ -1,25 +1,25 @@
 /* +------------------------------------------------------------------------+
    |                     Mobile Robot Programming Toolkit (MRPT)            |
-   |                          http://www.mrpt.org/                          |
+   |                          https://www.mrpt.org/                         |
    |                                                                        |
    | Copyright (c) 2005-2019, Individual contributors, see AUTHORS file     |
-   | See: http://www.mrpt.org/Authors - All rights reserved.                |
-   | Released under BSD License. See details in http://www.mrpt.org/License |
+   | See: https://www.mrpt.org/Authors - All rights reserved.               |
+   | Released under BSD License. See: https://www.mrpt.org/License          |
    +------------------------------------------------------------------------+ */
 
 #include "slamdemoApp.h"
 
 //(*AppHeaders
-#include "slamdemoMain.h"
 #include <wx/image.h>
+#include "slamdemoMain.h"
 //*)
 #include <wx/msgdlg.h>
 
 IMPLEMENT_APP(slamdemoApp)
 
 #include <mrpt/otherlibs/tclap/CmdLine.h>
-#include <mrpt/system/os.h>
 #include <mrpt/system/filesystem.h>
+#include <mrpt/system/os.h>
 
 using namespace std;
 

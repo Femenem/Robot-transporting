@@ -1,33 +1,33 @@
 /* +------------------------------------------------------------------------+
    |                     Mobile Robot Programming Toolkit (MRPT)            |
-   |                          http://www.mrpt.org/                          |
+   |                          https://www.mrpt.org/                         |
    |                                                                        |
    | Copyright (c) 2005-2019, Individual contributors, see AUTHORS file     |
-   | See: http://www.mrpt.org/Authors - All rights reserved.                |
-   | Released under BSD License. See details in http://www.mrpt.org/License |
+   | See: https://www.mrpt.org/Authors - All rights reserved.               |
+   | Released under BSD License. See: https://www.mrpt.org/License          |
    +------------------------------------------------------------------------+ */
 
 /*
   Example  : kinect-to-2d-laser-demo
-  Web page : http://www.mrpt.org/Example_Kinect_To_2D_laser_scan (includes video
-  demo)
+  Web page : https://www.mrpt.org/Example_Kinect_To_2D_laser_scan (includes
+  video demo)
 
   Purpose  : Demonstrate grabbing from CKinect, multi-threading
 			 and converting the 3D range data into an equivalent
 			 2D planar scan.
 */
 
-#include <mrpt/hwdrivers/CKinect.h>
-#include <mrpt/gui/CDisplayWindow3D.h>
-#include <mrpt/system/filesystem.h>
-#include <mrpt/system/CTicTac.h>
 #include <mrpt/config/CConfigFile.h>
-#include <mrpt/opengl/CPointCloudColoured.h>
-#include <mrpt/opengl/CPlanarLaserScan.h>
+#include <mrpt/gui/CDisplayWindow3D.h>
+#include <mrpt/hwdrivers/CKinect.h>
+#include <mrpt/img/TColor.h>
 #include <mrpt/opengl/CFrustum.h>
 #include <mrpt/opengl/CGridPlaneXY.h>
+#include <mrpt/opengl/CPlanarLaserScan.h>
+#include <mrpt/opengl/CPointCloudColoured.h>
 #include <mrpt/opengl/stock_objects.h>
-#include <mrpt/img/TColor.h>
+#include <mrpt/system/CTicTac.h>
+#include <mrpt/system/filesystem.h>
 #include <iostream>
 
 using namespace mrpt;

@@ -1,24 +1,25 @@
 /* +------------------------------------------------------------------------+
    |                     Mobile Robot Programming Toolkit (MRPT)            |
-   |                          http://www.mrpt.org/                          |
+   |                          https://www.mrpt.org/                         |
    |                                                                        |
    | Copyright (c) 2005-2019, Individual contributors, see AUTHORS file     |
-   | See: http://www.mrpt.org/Authors - All rights reserved.                |
-   | Released under BSD License. See details in http://www.mrpt.org/License |
+   | See: https://www.mrpt.org/Authors - All rights reserved.               |
+   | Released under BSD License. See: https://www.mrpt.org/License          |
    +------------------------------------------------------------------------+ */
-#include "xcommunicationconfig.h"
 #include "enumerateusbdevices.h"
+#include "xcommunicationconfig.h"
 
 #ifdef _WIN32
 #include <windows.h>
-#include <string.h>
-#include <setupapi.h>
+
 #include <devguid.h>
 #include <regstr.h>
+#include <setupapi.h>
+#include <string.h>
 #else
+#include <dirent.h>
 #include <cstdlib>
 #include <cstring>
-#include <dirent.h>
 #include "xslibusb.h"
 #endif
 

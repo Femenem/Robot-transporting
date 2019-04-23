@@ -1,18 +1,18 @@
 /* +------------------------------------------------------------------------+
    |                     Mobile Robot Programming Toolkit (MRPT)            |
-   |                          http://www.mrpt.org/                          |
+   |                          https://www.mrpt.org/                         |
    |                                                                        |
    | Copyright (c) 2005-2019, Individual contributors, see AUTHORS file     |
-   | See: http://www.mrpt.org/Authors - All rights reserved.                |
-   | Released under BSD License. See details in http://www.mrpt.org/License |
+   | See: https://www.mrpt.org/Authors - All rights reserved.               |
+   | Released under BSD License. See: https://www.mrpt.org/License          |
    +------------------------------------------------------------------------+ */
 #pragma once
 
-#include <mrpt/nav/reactive/TCandidateMovementPTG.h>
-#include <mrpt/config/CLoadableOptions.h>
 #include <mrpt/config/CConfigFileBase.h>
-#include <mrpt/rtti/CObject.h>
+#include <mrpt/config/CLoadableOptions.h>
 #include <mrpt/expr/CRuntimeCompiledExpression.h>
+#include <mrpt/nav/reactive/TCandidateMovementPTG.h>
+#include <mrpt/rtti/CObject.h>
 
 namespace mrpt::nav
 {

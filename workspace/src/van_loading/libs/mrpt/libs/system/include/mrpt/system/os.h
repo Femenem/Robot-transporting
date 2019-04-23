@@ -1,21 +1,21 @@
 /* +------------------------------------------------------------------------+
    |                     Mobile Robot Programming Toolkit (MRPT)            |
-   |                          http://www.mrpt.org/                          |
+   |                          https://www.mrpt.org/                         |
    |                                                                        |
    | Copyright (c) 2005-2019, Individual contributors, see AUTHORS file     |
-   | See: http://www.mrpt.org/Authors - All rights reserved.                |
-   | Released under BSD License. See details in http://www.mrpt.org/License |
+   | See: https://www.mrpt.org/Authors - All rights reserved.               |
+   | Released under BSD License. See: https://www.mrpt.org/License          |
    +------------------------------------------------------------------------+ */
 #pragma once
 
 #include <mrpt/config.h>
 
-#include <cstdlib>
+#include <mrpt/core/common.h>
 #include <cstdarg>
 #include <cstdint>
 #include <cstdio>  // FILE
+#include <cstdlib>
 #include <string>
-#include <mrpt/core/common.h>
 
 namespace mrpt::system
 {

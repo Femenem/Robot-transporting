@@ -1,16 +1,18 @@
 /* +------------------------------------------------------------------------+
    |                     Mobile Robot Programming Toolkit (MRPT)            |
-   |                          http://www.mrpt.org/                          |
+   |                          https://www.mrpt.org/                         |
    |                                                                        |
    | Copyright (c) 2005-2019, Individual contributors, see AUTHORS file     |
-   | See: http://www.mrpt.org/Authors - All rights reserved.                |
-   | Released under BSD License. See details in http://www.mrpt.org/License |
+   | See: https://www.mrpt.org/Authors - All rights reserved.               |
+   | Released under BSD License. See: https://www.mrpt.org/License          |
    +------------------------------------------------------------------------+ */
 
 #include "io-precomp.h"  // Precompiled headers
 
-#include <mrpt/io/CFileGZOutputStream.h>
 #include <mrpt/core/exceptions.h>
+#include <mrpt/io/CFileGZOutputStream.h>
+#include <cerrno>
+#include <cstring>  // strerror
 
 #include <zlib.h>
 
@@ -31,13 +33,17 @@ CFileGZOutputStream::CFileGZOutputStream(const string& fileName)
 	: CFileGZOutputStream()
 {
 	MRPT_START
-	if (!open(fileName))
-		THROW_EXCEPTION_FMT(
-			"Error trying to open file: '%s'", fileName.c_str());
+	std::string err_msg;
+	if (!open(fileName, 1, err_msg))
+		THROW_EXCEPTION(mrpt::format(
+			"Error trying to open file: '%s', error: '%s'", fileName.c_str(),
+			err_msg.c_str()));
 	MRPT_END
 }
 
-bool CFileGZOutputStream::open(const string& fileName, int compress_level)
+bool CFileGZOutputStream::open(
+	const string& fileName, int compress_level,
+	mrpt::optional_ref<std::string> error_msg)
 {
 	MRPT_START
 
@@ -45,6 +51,8 @@ bool CFileGZOutputStream::open(const string& fileName, int compress_level)
 
 	// Open gz stream:
 	m_f->f = gzopen(fileName.c_str(), format("wb%i", compress_level).c_str());
+	if (m_f->f == nullptr && error_msg)
+		error_msg.value().get() = std::string(strerror(errno));
 	return m_f->f != nullptr;
 
 	MRPT_END

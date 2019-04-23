@@ -1,20 +1,20 @@
 /* +------------------------------------------------------------------------+
    |                     Mobile Robot Programming Toolkit (MRPT)            |
-   |                          http://www.mrpt.org/                          |
+   |                          https://www.mrpt.org/                         |
    |                                                                        |
    | Copyright (c) 2005-2019, Individual contributors, see AUTHORS file     |
-   | See: http://www.mrpt.org/Authors - All rights reserved.                |
-   | Released under BSD License. See details in http://www.mrpt.org/License |
+   | See: https://www.mrpt.org/Authors - All rights reserved.               |
+   | Released under BSD License. See: https://www.mrpt.org/License          |
    +------------------------------------------------------------------------+ */
 
 #include "maps-precomp.h"  // Precomp header
 
 #include <mrpt/config/CConfigFile.h>
+#include <mrpt/math/geometry.h>
+#include <mrpt/serialization/CArchive.h>
 #include <mrpt/system/CTicTac.h>
 #include <mrpt/system/CTimeLogger.h>
 #include <mrpt/system/os.h>
-#include <mrpt/math/geometry.h>
-#include <mrpt/serialization/CArchive.h>
 
 #include <mrpt/maps/CPointsMap.h>
 #include <mrpt/maps/CSimplePointsMap.h>
@@ -23,11 +23,11 @@
 #include <mrpt/opengl/CPointCloudColoured.h>
 
 // Observations:
-#include <mrpt/obs/CObservationRange.h>
 #include <mrpt/obs/CObservation2DRangeScan.h>
 #include <mrpt/obs/CObservation3DRangeScan.h>
-#include <mrpt/obs/CObservationVelodyneScan.h>
 #include <mrpt/obs/CObservationPointCloud.h>
+#include <mrpt/obs/CObservationRange.h>
+#include <mrpt/obs/CObservationVelodyneScan.h>
 
 #if MRPT_HAS_PCL
 #include <pcl/io/pcd_io.h>
@@ -36,8 +36,8 @@
 #endif
 
 #if MRPT_HAS_SSE2
-#include <mrpt/core/SSE_types.h>
 #include <mrpt/core/SSE_macros.h>
+#include <mrpt/core/SSE_types.h>
 #endif
 
 #if MRPT_HAS_MATLAB

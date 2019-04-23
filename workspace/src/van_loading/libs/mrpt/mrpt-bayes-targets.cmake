@@ -52,7 +52,7 @@ set_target_properties(mrpt::bayes PROPERTIES
 # Import target "mrpt::bayes" for configuration "Release"
 set_property(TARGET mrpt::bayes APPEND PROPERTY IMPORTED_CONFIGURATIONS RELEASE)
 set_target_properties(mrpt::bayes PROPERTIES
-  IMPORTED_LOCATION_RELEASE "/home/matt/Documents/Robot-transporting/workspace/src/van_loading/libs/mrpt/lib/libmrpt-bayes.so.1.9.9"
+  IMPORTED_LOCATION_RELEASE "/home/matt/Documents/Robot-transporting/workspace/src/van_loading/libs/mrpt/build/lib/libmrpt-bayes.so.1.9.9"
   IMPORTED_SONAME_RELEASE "libmrpt-bayes.so.1.9"
   )
 

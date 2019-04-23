@@ -1,19 +1,22 @@
 /* +------------------------------------------------------------------------+
    |                     Mobile Robot Programming Toolkit (MRPT)            |
-   |                          http://www.mrpt.org/                          |
+   |                          https://www.mrpt.org/                         |
    |                                                                        |
    | Copyright (c) 2005-2019, Individual contributors, see AUTHORS file     |
-   | See: http://www.mrpt.org/Authors - All rights reserved.                |
-   | Released under BSD License. See details in http://www.mrpt.org/License |
+   | See: https://www.mrpt.org/Authors - All rights reserved.               |
+   | Released under BSD License. See: https://www.mrpt.org/License          |
    +------------------------------------------------------------------------+ */
 #pragma once
 
 #include <mrpt/core/aligned_allocator.h>
+#include <mrpt/core/exceptions.h>  // ASSERT_()
+#include <mrpt/core/format.h>
 #include <mrpt/math/math_frwds.h>  // forward declarations
 #include <algorithm>  // swap()
 #include <array>
-#include <type_traits>
 #include <cstring>  // memset()
+#include <type_traits>
+#include <vector>
 
 namespace mrpt::math
 {

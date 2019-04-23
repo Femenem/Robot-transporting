@@ -1,10 +1,10 @@
 /* +------------------------------------------------------------------------+
    |                     Mobile Robot Programming Toolkit (MRPT)            |
-   |                          http://www.mrpt.org/                          |
+   |                          https://www.mrpt.org/                         |
    |                                                                        |
    | Copyright (c) 2005-2019, Individual contributors, see AUTHORS file     |
-   | See: http://www.mrpt.org/Authors - All rights reserved.                |
-   | Released under BSD License. See details in http://www.mrpt.org/License |
+   | See: https://www.mrpt.org/Authors - All rights reserved.               |
+   | Released under BSD License. See: https://www.mrpt.org/License          |
    +------------------------------------------------------------------------+ */
 #pragma once
 
@@ -31,7 +31,7 @@ struct map_traits_stdmap
 	using map = std::map<KEY, VALUE, _LessPred, _Alloc>;
 };
 
-/**  Traits for using a mrpt::utils::map_as_vector<> (dense, fastest
+/**  Traits for using a mrpt::containers::map_as_vector<> (dense, fastest
  * representation) \sa map_traits_stdmap  */
 struct map_traits_map_as_vector
 {

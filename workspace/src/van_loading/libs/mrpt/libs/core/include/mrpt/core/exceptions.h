@@ -1,18 +1,18 @@
 /* +------------------------------------------------------------------------+
    |                     Mobile Robot Programming Toolkit (MRPT)            |
-   |                          http://www.mrpt.org/                          |
+   |                          https://www.mrpt.org/                         |
    |                                                                        |
    | Copyright (c) 2005-2019, Individual contributors, see AUTHORS file     |
-   | See: http://www.mrpt.org/Authors - All rights reserved.                |
-   | Released under BSD License. See details in http://www.mrpt.org/License |
+   | See: https://www.mrpt.org/Authors - All rights reserved.               |
+   | Released under BSD License. See: https://www.mrpt.org/License          |
    +------------------------------------------------------------------------+ */
 
 #pragma once
 
-#include <string>  // std::string, to_string()
-#include <stdexcept>  // logic_error
 #include <mrpt/core/common.h>
 #include <mrpt/core/format.h>
+#include <stdexcept>  // logic_error
+#include <string>  // std::string, to_string()
 
 namespace mrpt::internal
 {
@@ -268,8 +268,8 @@ inline std::string exception_to_str(const std::exception& e)
 	catch (...) { {stuff} THROW_STACKED_EXCEPTION; }
 
 #if MRPT_ENABLE_EMBEDDED_GLOBAL_PROFILER
-#define MRPT_PROFILE_FUNC_START               \
-	::mrpt::utils::CProfilerProxy BOOST_JOIN( \
+#define MRPT_PROFILE_FUNC_START                \
+	::mrpt::system::CProfilerProxy BOOST_JOIN( \
 		__dum_var, __LINE__)(__CURRENT_FUNCTION_NAME__);
 #else
 #define MRPT_PROFILE_FUNC_START

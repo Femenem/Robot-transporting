@@ -1,19 +1,19 @@
 /* +------------------------------------------------------------------------+
    |                     Mobile Robot Programming Toolkit (MRPT)            |
-   |                          http://www.mrpt.org/                          |
+   |                          https://www.mrpt.org/                         |
    |                                                                        |
    | Copyright (c) 2005-2019, Individual contributors, see AUTHORS file     |
-   | See: http://www.mrpt.org/Authors - All rights reserved.                |
-   | Released under BSD License. See details in http://www.mrpt.org/License |
+   | See: https://www.mrpt.org/Authors - All rights reserved.               |
+   | Released under BSD License. See: https://www.mrpt.org/License          |
    +------------------------------------------------------------------------+ */
 
 #include "maps-precomp.h"  // Precomp header
 
+#include <mrpt/core/round.h>  // round()
 #include <mrpt/maps/COccupancyGridMap2D.h>
 #include <mrpt/obs/CObservation2DRangeScan.h>
 #include <mrpt/obs/CObservationRange.h>
 #include <mrpt/serialization/CArchive.h>
-#include <mrpt/core/round.h>  // round()
 #include <mrpt/system/memory.h>  // alloca()
 
 #if HAVE_ALLOCA_H
@@ -53,7 +53,7 @@ bool COccupancyGridMap2D::internal_insertObservation(
 	// This is required to indicate the grid map has changed!
 	// resetFeaturesCache();
 	// For the precomputed likelihood trick:
-	precomputedLikelihoodToBeRecomputed = true;
+	m_likelihoodCacheOutDated = true;
 
 	if (robotPose)
 	{
@@ -331,7 +331,7 @@ bool COccupancyGridMap2D::internal_insertObservation(
 			{
 				// ---------------------------------
 				//  		Widen rays
-				// Algorithm in: http://www.mrpt.org/Occupancy_Grids
+				// Algorithm in: https://www.mrpt.org/Occupancy_Grids
 				// ---------------------------------
 				if (o->rightToLeft ^ sensorIsBottomwards)
 				{
@@ -855,7 +855,7 @@ bool COccupancyGridMap2D::internal_insertObservation(
 #endif
 			// ---------------------------------
 			//  		Widen rays
-			// Algorithm in: http://www.mrpt.org/Occupancy_Grids
+			// Algorithm in: https://www.mrpt.org/Occupancy_Grids
 			// FIXME: doesn't support many different poses in one measurement
 			// ---------------------------------
 			A = laserPose.phi();
@@ -1307,15 +1307,6 @@ bool COccupancyGridMap2D::internal_insertObservation(
 	}
 
 	//	MRPT_END
-}
-
-/*---------------------------------------------------------------
-	Initilization of values, don't needed to be called directly.
-  ---------------------------------------------------------------*/
-COccupancyGridMap2D::TInsertionOptions::TInsertionOptions()
-	: horizontalTolerance(DEG2RAD(0.05))
-
-{
 }
 
 /*---------------------------------------------------------------

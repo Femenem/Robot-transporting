@@ -1,17 +1,17 @@
 /* +------------------------------------------------------------------------+
    |                     Mobile Robot Programming Toolkit (MRPT)            |
-   |                          http://www.mrpt.org/                          |
+   |                          https://www.mrpt.org/                         |
    |                                                                        |
    | Copyright (c) 2005-2019, Individual contributors, see AUTHORS file     |
-   | See: http://www.mrpt.org/Authors - All rights reserved.                |
-   | Released under BSD License. See details in http://www.mrpt.org/License |
+   | See: https://www.mrpt.org/Authors - All rights reserved.               |
+   | Released under BSD License. See: https://www.mrpt.org/License          |
    +------------------------------------------------------------------------+ */
 #ifndef XSOUTPUTCONFIGURATION_H
 #define XSOUTPUTCONFIGURATION_H
 
-#include "xstypesconfig.h"
 #include "pstdint.h"
 #include "xsdataidentifier.h"
+#include "xstypesconfig.h"
 
 #define XS_MAX_OUTPUTCONFIGURATIONS (32)
 

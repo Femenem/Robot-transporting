@@ -1,10 +1,10 @@
 /* +------------------------------------------------------------------------+
    |                     Mobile Robot Programming Toolkit (MRPT)            |
-   |                          http://www.mrpt.org/                          |
+   |                          https://www.mrpt.org/                         |
    |                                                                        |
    | Copyright (c) 2005-2019, Individual contributors, see AUTHORS file     |
-   | See: http://www.mrpt.org/Authors - All rights reserved.                |
-   | Released under BSD License. See details in http://www.mrpt.org/License |
+   | See: https://www.mrpt.org/Authors - All rights reserved.               |
+   | Released under BSD License. See: https://www.mrpt.org/License          |
    +------------------------------------------------------------------------+ */
 
 #include "hwdrivers-precomp.h"  // Precompiled headers
@@ -15,8 +15,8 @@
 #include <mrpt/otherlibs/do_opencv_includes.h>
 
 #if MRPT_HAS_SVS
-#include <svsclass.h>
 #include <dcs.h>
+#include <svsclass.h>
 #endif
 
 using namespace std;

@@ -1,10 +1,10 @@
 /* +------------------------------------------------------------------------+
    |                     Mobile Robot Programming Toolkit (MRPT)            |
-   |                          http://www.mrpt.org/                          |
+   |                          https://www.mrpt.org/                         |
    |                                                                        |
    | Copyright (c) 2005-2019, Individual contributors, see AUTHORS file     |
-   | See: http://www.mrpt.org/Authors - All rights reserved.                |
-   | Released under BSD License. See details in http://www.mrpt.org/License |
+   | See: https://www.mrpt.org/Authors - All rights reserved.               |
+   | Released under BSD License. See: https://www.mrpt.org/License          |
    +------------------------------------------------------------------------+ */
 
 /** \page changelog Change Log
@@ -25,7 +25,8 @@ port existing code to MRPT 2.0: \ref porting_mrpt2
 over.
 	- Backwards compatible headers for "maps" and "observations" in mrpt::slam
 are removed. They moved to their own namespaces in MRPT v1.3.0 (Jan 2015).
-	- All pointer typedefs are now in their respective classes: FooPtr -> Foo::Ptr
+	- All pointer typedefs are now in their respective classes: FooPtr ->
+Foo::Ptr
 	- Add support for serialization with std::variant
 - <b>Detailed list of changes:</b>
 	- Changes in applications:
@@ -79,6 +80,8 @@ forwarded to the low-level reactive navigator.
 			- This new module has been created to hold all serial devices &
 networking classes, with minimal dependencies.
 		- \ref mrpt_maps_grp
+			- mrpt::maps::CMultiMetricMap has been greatly simplified and now it
+is actually defined in the mrpt-maps library.
 			- New map type: mrpt::maps::CPointsMapXYZI for pointclouds with an
 intensity channel.
 			- New observation class: mrpt::obs::CObservationPointCloud
@@ -97,6 +100,11 @@ ExternalProject)
 			- mrpt::obs::T3DPointsProjectionParams and
 mrpt::obs::CObservation3DRangeScan::project3DPointsFromDepthImageInto now
 together support organized PCL point clouds.
+		- \ref mrpt_poses_grp  [NEW IN MRPT 2.0.0]
+			- Reorganized all Lie Algebra methods into \ref mrpt_poses_lie_grp
+			- Removed CPose3DRotVec, since its conceptual design is identical to
+Lie tangent space vectors.
+
 	- BUG FIXES:
 		- Fix reactive navigator inconsistent state if navigation API is called
 from within rnav callbacks.

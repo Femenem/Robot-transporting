@@ -1,14 +1,15 @@
 /* +------------------------------------------------------------------------+
    |                     Mobile Robot Programming Toolkit (MRPT)            |
-   |                          http://www.mrpt.org/                          |
+   |                          https://www.mrpt.org/                         |
    |                                                                        |
    | Copyright (c) 2005-2019, Individual contributors, see AUTHORS file     |
-   | See: http://www.mrpt.org/Authors - All rights reserved.                |
-   | Released under BSD License. See details in http://www.mrpt.org/License |
+   | See: https://www.mrpt.org/Authors - All rights reserved.               |
+   | Released under BSD License. See: https://www.mrpt.org/License          |
    +------------------------------------------------------------------------+ */
 #pragma once
 
 #include <mrpt/opengl/CRenderizableDisplayList.h>
+#include <array>
 
 namespace mrpt::opengl
 {
@@ -34,9 +35,10 @@ class CAxis : public CRenderizableDisplayList
 	float m_frequency;
 	float m_lineWidth;
 	/** draw marks for X,Y,Z */
-	bool m_marks[3];
+	std::array<bool, 3> m_marks;
 	float m_textScale{0.25f};
 	float m_textRot[3][3];  // {x,y,z},{yaw,pitch,roll}
+	float m_markLen{0.07f};
 
    public:
 	void setAxisLimits(
@@ -58,6 +60,9 @@ class CAxis : public CRenderizableDisplayList
 
 	void enableTickMarks(bool v = true);
 	void enableTickMarks(bool show_x, bool show_y, bool show_z);
+	/** As a ratio of "marks frequency" (default: 0.05) */
+	void setTickMarksLength(float len);
+	float getTickMarksLength(float len) { return m_markLen; }
 
 	/** Render */
 	void render_dl() const override;

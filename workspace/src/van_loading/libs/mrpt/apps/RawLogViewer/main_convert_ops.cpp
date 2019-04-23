@@ -1,29 +1,29 @@
 /* +------------------------------------------------------------------------+
    |                     Mobile Robot Programming Toolkit (MRPT)            |
-   |                          http://www.mrpt.org/                          |
+   |                          https://www.mrpt.org/                         |
    |                                                                        |
    | Copyright (c) 2005-2019, Individual contributors, see AUTHORS file     |
-   | See: http://www.mrpt.org/Authors - All rights reserved.                |
-   | Released under BSD License. See details in http://www.mrpt.org/License |
+   | See: https://www.mrpt.org/Authors - All rights reserved.               |
+   | Released under BSD License. See: https://www.mrpt.org/License          |
    +------------------------------------------------------------------------+ */
 
 #include "xRawLogViewerMain.h"
 
-#include <wx/choicdlg.h>
-#include <wx/progdlg.h>
 #include <wx/app.h>
+#include <wx/choicdlg.h>
 #include <wx/msgdlg.h>
+#include <wx/progdlg.h>
 #include <wx/textdlg.h>
 
 // General global variables:
-#include <mrpt/obs/CObservationImage.h>
-#include <mrpt/obs/CObservationStereoImages.h>
-#include <mrpt/obs/CObservationOdometry.h>
-#include <mrpt/obs/CSensoryFrame.h>
-#include <mrpt/system/filesystem.h>
 #include <mrpt/io/CFileGZInputStream.h>
 #include <mrpt/io/CFileGZOutputStream.h>
+#include <mrpt/obs/CObservationImage.h>
+#include <mrpt/obs/CObservationOdometry.h>
+#include <mrpt/obs/CObservationStereoImages.h>
+#include <mrpt/obs/CSensoryFrame.h>
 #include <mrpt/serialization/CArchive.h>
+#include <mrpt/system/filesystem.h>
 
 using namespace mrpt;
 using namespace mrpt::obs;

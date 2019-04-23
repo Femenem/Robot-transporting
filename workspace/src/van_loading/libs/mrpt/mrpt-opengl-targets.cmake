@@ -46,13 +46,13 @@ add_library(mrpt::opengl SHARED IMPORTED)
 
 set_target_properties(mrpt::opengl PROPERTIES
   INTERFACE_INCLUDE_DIRECTORIES "/home/matt/Documents/Robot-transporting/workspace/src/van_loading/libs/mrpt/libs/opengl/include"
-  INTERFACE_LINK_LIBRARIES "mrpt::poses;mrpt::img;/usr/lib/x86_64-linux-gnu/libGL.so;/usr/lib/x86_64-linux-gnu/libGLU.so;/usr/lib/x86_64-linux-gnu/libglut.so"
+  INTERFACE_LINK_LIBRARIES "mrpt::poses;mrpt::img"
 )
 
 # Import target "mrpt::opengl" for configuration "Release"
 set_property(TARGET mrpt::opengl APPEND PROPERTY IMPORTED_CONFIGURATIONS RELEASE)
 set_target_properties(mrpt::opengl PROPERTIES
-  IMPORTED_LOCATION_RELEASE "/home/matt/Documents/Robot-transporting/workspace/src/van_loading/libs/mrpt/lib/libmrpt-opengl.so.1.9.9"
+  IMPORTED_LOCATION_RELEASE "/home/matt/Documents/Robot-transporting/workspace/src/van_loading/libs/mrpt/build/lib/libmrpt-opengl.so.1.9.9"
   IMPORTED_SONAME_RELEASE "libmrpt-opengl.so.1.9"
   )
 

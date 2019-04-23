@@ -1,18 +1,18 @@
 /* +------------------------------------------------------------------------+
    |                     Mobile Robot Programming Toolkit (MRPT)            |
-   |                          http://www.mrpt.org/                          |
+   |                          https://www.mrpt.org/                         |
    |                                                                        |
    | Copyright (c) 2005-2019, Individual contributors, see AUTHORS file     |
-   | See: http://www.mrpt.org/Authors - All rights reserved.                |
-   | Released under BSD License. See details in http://www.mrpt.org/License |
+   | See: https://www.mrpt.org/Authors - All rights reserved.               |
+   | Released under BSD License. See: https://www.mrpt.org/License          |
    +------------------------------------------------------------------------+ */
 
 #include "hmtslam-precomp.h"  // Precomp header
 
 #include <mrpt/io/CFileGZOutputStream.h>
 #include <mrpt/io/CFileOutputStream.h>
-#include <mrpt/system/filesystem.h>
 #include <mrpt/serialization/CArchive.h>
+#include <mrpt/system/filesystem.h>
 
 using namespace mrpt::slam;
 using namespace mrpt::hmtslam;
@@ -62,16 +62,8 @@ CPose3DPDF::Ptr CTopLCDetector_GridMatching::computeTopologicalObservationModel(
 		refArea->m_annotations.getAs<CMultiMetricMap>(
 			NODE_ANNOTATION_METRIC_MAPS, hypID, false);
 
-	ASSERT_(hMapRef->m_gridMaps.size() >= 1);
-	ASSERT_(hMapCur->m_gridMaps.size() >= 1);
-
-#if 0
-	{
-		static int i = 0;
-		CFileOutputStream f(format("debug_%05i.hmtslam",++i));
-		f << *m_hmtslam;
-	}
-#endif
+	ASSERT_(hMapRef->countMapsByClass<COccupancyGridMap2D>() >= 1);
+	ASSERT_(hMapCur->countMapsByClass<COccupancyGridMap2D>() >= 1);
 
 	gridAligner.options.dumpToConsole();
 

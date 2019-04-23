@@ -1,16 +1,16 @@
 /* +------------------------------------------------------------------------+
    |                     Mobile Robot Programming Toolkit (MRPT)            |
-   |                          http://www.mrpt.org/                          |
+   |                          https://www.mrpt.org/                         |
    |                                                                        |
    | Copyright (c) 2005-2019, Individual contributors, see AUTHORS file     |
-   | See: http://www.mrpt.org/Authors - All rights reserved.                |
-   | Released under BSD License. See details in http://www.mrpt.org/License |
+   | See: https://www.mrpt.org/Authors - All rights reserved.               |
+   | Released under BSD License. See: https://www.mrpt.org/License          |
    +------------------------------------------------------------------------+ */
 #ifndef XSSTRING_H
 #define XSSTRING_H
 
-#include "xstypesconfig.h"
 #include "xsarray.h"
+#include "xstypesconfig.h"
 #ifndef XSENS_NO_WCHAR
 #include <wchar.h>
 #if !defined(XSENS_NO_STL) && defined(__cplusplus) && defined(WIN32)
@@ -20,9 +20,9 @@
 #include <string.h>
 
 #ifdef __cplusplus
-#include <string>
-#include <stdlib.h>
 #include <stdio.h>
+#include <stdlib.h>
+#include <string>
 extern "C"
 {
 #endif

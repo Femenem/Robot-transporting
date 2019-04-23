@@ -1,10 +1,10 @@
 /* +------------------------------------------------------------------------+
    |                     Mobile Robot Programming Toolkit (MRPT)            |
-   |                          http://www.mrpt.org/                          |
+   |                          https://www.mrpt.org/                         |
    |                                                                        |
    | Copyright (c) 2005-2019, Individual contributors, see AUTHORS file     |
-   | See: http://www.mrpt.org/Authors - All rights reserved.                |
-   | Released under BSD License. See details in http://www.mrpt.org/License |
+   | See: https://www.mrpt.org/Authors - All rights reserved.               |
+   | Released under BSD License. See: https://www.mrpt.org/License          |
    +------------------------------------------------------------------------+ */
 
 /* MD5
@@ -41,18 +41,18 @@ documentation and/or software.
 
 #include "system-precomp.h"  // Precompiled headers
 
-#include <mrpt/system/md5.h>
 #include <mrpt/core/common.h>  // MSVC warnings
 #include <mrpt/core/exceptions.h>  // ASSERT_
+#include <mrpt/system/md5.h>
 
 using namespace mrpt::system;
 using namespace std;
 
-#include <string>
-#include <cstring>
-#include <iostream>
 #include <cstdint>
 #include <cstdio>
+#include <cstring>
+#include <iostream>
+#include <string>
 
 // a small class for calculating MD5 hashes of strings or byte arrays
 // it is not meant to be fast or secure

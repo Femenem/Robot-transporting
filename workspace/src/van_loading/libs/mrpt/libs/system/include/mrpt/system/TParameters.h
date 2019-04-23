@@ -1,23 +1,23 @@
 /* +------------------------------------------------------------------------+
    |                     Mobile Robot Programming Toolkit (MRPT)            |
-   |                          http://www.mrpt.org/                          |
+   |                          https://www.mrpt.org/                         |
    |                                                                        |
    | Copyright (c) 2005-2019, Individual contributors, see AUTHORS file     |
-   | See: http://www.mrpt.org/Authors - All rights reserved.                |
-   | Released under BSD License. See details in http://www.mrpt.org/License |
+   | See: https://www.mrpt.org/Authors - All rights reserved.               |
+   | Released under BSD License. See: https://www.mrpt.org/License          |
    +------------------------------------------------------------------------+ */
 #pragma once
 
-#include <cstdarg>
-#include <cstdio>
-#include <map>
-#include <string>
-#include <sstream>
-#include <iostream>
-#include <stdexcept>
-#include <algorithm>  // std::max
 #include <mrpt/config.h>
 #include <mrpt/core/common.h>  // Disable MSVC warning 4251 in this class
+#include <algorithm>  // std::max
+#include <cstdarg>
+#include <cstdio>
+#include <iostream>
+#include <map>
+#include <sstream>
+#include <stdexcept>
+#include <string>
 
 namespace mrpt::system
 {

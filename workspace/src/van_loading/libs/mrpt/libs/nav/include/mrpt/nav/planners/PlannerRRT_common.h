@@ -1,22 +1,22 @@
 /* +------------------------------------------------------------------------+
    |                     Mobile Robot Programming Toolkit (MRPT)            |
-   |                          http://www.mrpt.org/                          |
+   |                          https://www.mrpt.org/                         |
    |                                                                        |
    | Copyright (c) 2005-2019, Individual contributors, see AUTHORS file     |
-   | See: http://www.mrpt.org/Authors - All rights reserved.                |
-   | Released under BSD License. See details in http://www.mrpt.org/License |
+   | See: https://www.mrpt.org/Authors - All rights reserved.               |
+   | Released under BSD License. See: https://www.mrpt.org/License          |
    +------------------------------------------------------------------------+ */
 
 #pragma once
 
+#include <mrpt/graphs/TNodeID.h>
+#include <mrpt/maps/CSimplePointsMap.h>
 #include <mrpt/math/lightweight_geom_data.h>
 #include <mrpt/nav/tpspace/CParameterizedTrajectoryGenerator.h>
 #include <mrpt/opengl/COpenGLScene.h>
 #include <mrpt/system/CTimeLogger.h>
-#include <mrpt/maps/CSimplePointsMap.h>
-#include <mrpt/graphs/TNodeID.h>
-#include <string>
 #include <cstdlib>  // size_t
+#include <string>
 
 namespace mrpt::nav
 {

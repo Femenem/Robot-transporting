@@ -1,33 +1,33 @@
 /* +------------------------------------------------------------------------+
    |                     Mobile Robot Programming Toolkit (MRPT)            |
-   |                          http://www.mrpt.org/                          |
+   |                          https://www.mrpt.org/                         |
    |                                                                        |
    | Copyright (c) 2005-2019, Individual contributors, see AUTHORS file     |
-   | See: http://www.mrpt.org/Authors - All rights reserved.                |
-   | Released under BSD License. See details in http://www.mrpt.org/License |
+   | See: https://www.mrpt.org/Authors - All rights reserved.               |
+   | Released under BSD License. See: https://www.mrpt.org/License          |
    +------------------------------------------------------------------------+ */
 
 /*
   Example  : kinect_3d_view
-  Web page : http://www.mrpt.org/Kinect_and_MRPT
+  Web page : https://www.mrpt.org/Kinect_and_MRPT
 
   Purpose  : Demonstrate grabbing from CKinect, multi-threading
 			 and live 3D rendering.
 */
 
-#include <mrpt/hwdrivers/CKinect.h>
-#include <mrpt/gui/CDisplayWindow3D.h>
 #include <mrpt/config/CConfigFile.h>
-#include <mrpt/system/CTicTac.h>
-#include <mrpt/maps/CColouredPointsMap.h>
+#include <mrpt/gui/CDisplayWindow3D.h>
+#include <mrpt/hwdrivers/CKinect.h>
 #include <mrpt/maps/CColouredOctoMap.h>
-#include <mrpt/opengl/CGridPlaneXY.h>
-#include <mrpt/opengl/stock_objects.h>
-#include <mrpt/opengl/CPointCloudColoured.h>
-#include <mrpt/opengl/COctoMapVoxels.h>
-#include <mrpt/system/filesystem.h>
+#include <mrpt/maps/CColouredPointsMap.h>
 #include <mrpt/obs/CObservation3DRangeScan.h>
 #include <mrpt/obs/CObservationIMU.h>
+#include <mrpt/opengl/CGridPlaneXY.h>
+#include <mrpt/opengl/COctoMapVoxels.h>
+#include <mrpt/opengl/CPointCloudColoured.h>
+#include <mrpt/opengl/stock_objects.h>
+#include <mrpt/system/CTicTac.h>
+#include <mrpt/system/filesystem.h>
 
 using namespace mrpt;
 using namespace mrpt::hwdrivers;
@@ -38,8 +38,6 @@ using namespace mrpt::obs;
 using namespace mrpt::maps;
 using namespace mrpt::opengl;
 using namespace std;
-
-//#define VIEW_AS_OCTOMAP
 
 // Thread for grabbing: Do this is another thread so we divide rendering and
 // grabbing
@@ -185,14 +183,11 @@ void Test_Kinect()
 	win3D.setFOV(90);
 	win3D.setCameraPointingToPoint(2.5, 0, 0);
 
-#if !defined(VIEW_AS_OCTOMAP)
-	mrpt::opengl::CPointCloudColoured::Ptr gl_points =
-		mrpt::make_aligned_shared<mrpt::opengl::CPointCloudColoured>();
+	bool VIEW_AS_OCTOMAP = false;
+
+	auto gl_points = mrpt::opengl::CPointCloudColoured::Create();
 	gl_points->setPointSize(2.5);
-#else
-	mrpt::opengl::COctoMapVoxels::Ptr gl_voxels =
-		mrpt::make_aligned_shared<mrpt::opengl::COctoMapVoxels>();
-#endif
+	auto gl_voxels = mrpt::opengl::COctoMapVoxels::Create();
 
 	const double aspect_ratio =
 		480.0 / 640.0;  // kinect.rows() / double( kinect.cols() );
@@ -202,13 +197,11 @@ void Test_Kinect()
 	{
 		mrpt::opengl::COpenGLScene::Ptr& scene = win3D.get3DSceneAndLock();
 
-// Create the Opengl object for the point cloud:
-#if !defined(VIEW_AS_OCTOMAP)
-		scene->insert(gl_points);
-#else
+		// Create the Opengl object for the point cloud:
 		scene->insert(gl_voxels);
-#endif
-		scene->insert(mrpt::make_aligned_shared<mrpt::opengl::CGridPlaneXY>());
+		scene->insert(gl_points);
+
+		scene->insert(mrpt::opengl::CGridPlaneXY::Create());
 		scene->insert(mrpt::opengl::stock_objects::CornerXYZ());
 
 		const int VW_WIDTH =
@@ -216,8 +209,8 @@ void Test_Kinect()
 		const int VW_HEIGHT = aspect_ratio * VW_WIDTH;
 		const int VW_GAP = 30;
 
-		// Create the Opengl objects for the planar images, as textured planes,
-		// each in a separate viewport:
+		// Create the Opengl objects for the planar images, as textured
+		// planes, each in a separate viewport:
 		win3D.addTextMessage(
 			30, -25 - 1 * (VW_GAP + VW_HEIGHT), "Range data", TColorf(1, 1, 1),
 			1, MRPT_GLUT_BITMAP_HELVETICA_12);
@@ -287,25 +280,30 @@ void Test_Kinect()
 			// Show 3D points:
 			if (last_obs->hasPoints3D)
 			{
-#if !defined(VIEW_AS_OCTOMAP)
-				// For alternative ways to generate the 3D point cloud, read:
-				// http://www.mrpt.org/tutorials/programming/miscellaneous/generating_3d_point_clouds_from_rgb_d_observations/
-				win3D.get3DSceneAndLock();
-				mrpt::obs::T3DPointsProjectionParams pp;
-				pp.takeIntoAccountSensorPoseOnRobot = false;
-				last_obs->project3DPointsFromDepthImageInto(*gl_points, pp);
-				win3D.unlockAccess3DScene();
-#else
-				mrpt::maps::CColouredOctoMap octoMap(0.10);
-				octoMap.setVoxelColourMethod(
-					mrpt::maps::CColouredOctoMap::INTEGRATE);
-				octoMap.insertObservationPtr(last_obs);
+				if (!VIEW_AS_OCTOMAP)
+				{
+					// For alternative ways to generate the 3D point cloud,
+					// read:
+					// https://www.mrpt.org/tutorials/programming/miscellaneous/generating_3d_point_clouds_from_rgb_d_observations/
+					win3D.get3DSceneAndLock();
+					mrpt::obs::T3DPointsProjectionParams pp;
+					pp.takeIntoAccountSensorPoseOnRobot = false;
 
-				win3D.get3DSceneAndLock();
-				octoMap.getAsOctoMapVoxels(*gl_voxels);
-				gl_voxels->showVoxels(VOXEL_SET_FREESPACE, false);
-				win3D.unlockAccess3DScene();
-#endif
+					last_obs->project3DPointsFromDepthImageInto(*gl_points, pp);
+					win3D.unlockAccess3DScene();
+				}
+				else
+				{
+					mrpt::maps::CColouredOctoMap octoMap(0.10);
+					octoMap.setVoxelColourMethod(
+						mrpt::maps::CColouredOctoMap::INTEGRATE);
+					octoMap.insertObservationPtr(last_obs);
+
+					win3D.get3DSceneAndLock();
+					octoMap.getAsOctoMapVoxels(*gl_voxels);
+					gl_voxels->showVoxels(VOXEL_SET_FREESPACE, false);
+					win3D.unlockAccess3DScene();
+				}
 				do_refresh = true;
 			}
 
@@ -369,6 +367,14 @@ void Test_Kinect()
 					}
 				}
 				break;
+				case 'p':
+				{
+					VIEW_AS_OCTOMAP = !VIEW_AS_OCTOMAP;
+					gl_points->setVisibility(!VIEW_AS_OCTOMAP);
+					gl_voxels->setVisibility(VIEW_AS_OCTOMAP);
+				}
+				break;
+
 				// ...and the rest in the kinect thread:
 				default:
 					thrPar.pushed_key = key;
@@ -380,7 +386,8 @@ void Test_Kinect()
 		win3D.addTextMessage(
 			10, 10,
 			format("'o'/'i'-zoom out/in, 'w'-tilt up,'s'-tilt down, mouse: "
-				   "orbit 3D,'c':Switch RGB/IR,'9':Save image,ESC: quit"),
+				   "orbit 3D,'c':Switch RGB/IR,'9':Save image, 'p': "
+				   "points/octomap, ESC: quit"),
 			TColorf(0, 0, 1), "mono", 10, mrpt::opengl::FILL, 110);
 		win3D.addTextMessage(
 			10, 35, format("Tilt angle: %.01f deg", thrPar.tilt_ang_deg),
@@ -408,11 +415,6 @@ int main()
 	catch (const std::exception& e)
 	{
 		std::cout << "EXCEPCION: " << mrpt::exception_to_str(e) << std::endl;
-		return -1;
-	}
-	catch (...)
-	{
-		printf("Another exception!!");
 		return -1;
 	}
 }

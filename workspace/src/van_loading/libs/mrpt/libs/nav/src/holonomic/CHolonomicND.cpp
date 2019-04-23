@@ -1,19 +1,19 @@
 /* +------------------------------------------------------------------------+
    |                     Mobile Robot Programming Toolkit (MRPT)            |
-   |                          http://www.mrpt.org/                          |
+   |                          https://www.mrpt.org/                         |
    |                                                                        |
    | Copyright (c) 2005-2019, Individual contributors, see AUTHORS file     |
-   | See: http://www.mrpt.org/Authors - All rights reserved.                |
-   | Released under BSD License. See details in http://www.mrpt.org/License |
+   | See: https://www.mrpt.org/Authors - All rights reserved.               |
+   | Released under BSD License. See: https://www.mrpt.org/License          |
    +------------------------------------------------------------------------+ */
 
 #include "nav-precomp.h"  // Precomp header
 
-#include <mrpt/nav/holonomic/CHolonomicND.h>
-#include <mrpt/serialization/CArchive.h>
 #include <mrpt/core/round.h>
 #include <mrpt/math/geometry.h>
 #include <mrpt/math/ops_containers.h>
+#include <mrpt/nav/holonomic/CHolonomicND.h>
+#include <mrpt/serialization/CArchive.h>
 
 using namespace mrpt;
 using namespace mrpt::math;
@@ -143,8 +143,8 @@ void CHolonomicND::gapsEstimator(
 
 	// Find the maximum distances to obstacles:
 	// ----------------------------------------------------------
-	float overall_max_dist = std::numeric_limits<float>::min(),
-		  overall_min_dist = std::numeric_limits<float>::max();
+	double overall_max_dist = std::numeric_limits<float>::min(),
+		   overall_min_dist = std::numeric_limits<float>::max();
 	for (size_t i = 1; i < (n - 1); i++)
 	{
 		mrpt::keep_max(overall_max_dist, obstacles[i]);

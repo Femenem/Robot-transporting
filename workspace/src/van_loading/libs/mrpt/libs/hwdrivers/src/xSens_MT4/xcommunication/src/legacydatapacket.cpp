@@ -1,23 +1,23 @@
 /* +------------------------------------------------------------------------+
    |                     Mobile Robot Programming Toolkit (MRPT)            |
-   |                          http://www.mrpt.org/                          |
+   |                          https://www.mrpt.org/                         |
    |                                                                        |
    | Copyright (c) 2005-2019, Individual contributors, see AUTHORS file     |
-   | See: http://www.mrpt.org/Authors - All rights reserved.                |
-   | Released under BSD License. See details in http://www.mrpt.org/License |
+   | See: https://www.mrpt.org/Authors - All rights reserved.               |
+   | Released under BSD License. See: https://www.mrpt.org/License          |
    +------------------------------------------------------------------------+ */
-#include <xsens/xstypesconfig.h>
 #include "legacydatapacket.h"
-#include "packetfixeddata.h"
-#include "mtwsdidata.h"
-#include <xsens/xsgpspvtdata.h>
-#include <xsens/xspressure.h>
+#include <xsens/xsanalogindata.h>
 #include <xsens/xscalibrateddata.h>
 #include <xsens/xseuler.h>
+#include <xsens/xsgpspvtdata.h>
 #include <xsens/xsmatrix3x3.h>
-#include <xsens/xsvector3.h>
-#include <xsens/xsanalogindata.h>
+#include <xsens/xspressure.h>
+#include <xsens/xstypesconfig.h>
 #include <xsens/xsutctime.h>
+#include <xsens/xsvector3.h>
+#include "mtwsdidata.h"
+#include "packetfixeddata.h"
 
 #ifdef LOG_PACKET
 #include "xslog.h"

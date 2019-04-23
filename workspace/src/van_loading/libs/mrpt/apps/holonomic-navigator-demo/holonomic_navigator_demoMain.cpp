@@ -1,34 +1,34 @@
 /* +------------------------------------------------------------------------+
    |                     Mobile Robot Programming Toolkit (MRPT)            |
-   |                          http://www.mrpt.org/                          |
+   |                          https://www.mrpt.org/                         |
    |                                                                        |
    | Copyright (c) 2005-2019, Individual contributors, see AUTHORS file     |
-   | See: http://www.mrpt.org/Authors - All rights reserved.                |
-   | Released under BSD License. See details in http://www.mrpt.org/License |
+   | See: https://www.mrpt.org/Authors - All rights reserved.               |
+   | Released under BSD License. See: https://www.mrpt.org/License          |
    +------------------------------------------------------------------------+ */
 
 #include "holonomic_navigator_demoMain.h"
-#include <wx/msgdlg.h>
 #include <mrpt/gui/about_box.h>
+#include <wx/msgdlg.h>
 
 //(*InternalHeaders(holonomic_navigator_demoFrame)
 #include <wx/artprov.h>
 #include <wx/bitmap.h>
-#include <wx/tglbtn.h>
-#include <wx/settings.h>
 #include <wx/font.h>
-#include <wx/intl.h>
 #include <wx/image.h>
+#include <wx/intl.h>
+#include <wx/settings.h>
 #include <wx/string.h>
+#include <wx/tglbtn.h>
 //*)
 
 #include <mrpt/gui/WxUtils.h>
+#include <mrpt/io/CFileGZInputStream.h>
 #include <mrpt/poses/CPoint2D.h>
 #include <mrpt/poses/CPose2D.h>
-#include <mrpt/io/CFileGZInputStream.h>
 #include <mrpt/serialization/CArchive.h>
-#include "imgs/main_icon.xpm"
 #include "../wx-common/mrpt_logo.xpm"
+#include "imgs/main_icon.xpm"
 
 #include "../ReactiveNavigationDemo/DEFAULT_GRIDMAP_DATA.h"
 
@@ -53,8 +53,8 @@ wxBitmap MyArtProvider::CreateBitmap(
 	return wxNullBitmap;
 }
 
-#include <mrpt/nav.h>
 #include <mrpt/gui.h>
+#include <mrpt/nav.h>
 #include <mrpt/opengl.h>
 #include <mrpt/system/filesystem.h>
 
@@ -115,12 +115,8 @@ holonomic_navigator_demoFrame::holonomic_navigator_demoFrame(
 	  m_curCursorPos(0, 0),
 	  m_cursorPickState(cpsNone)
 {
-// Load my custom icons:
-#if wxCHECK_VERSION(2, 8, 0)
+	// Load my custom icons:
 	wxArtProvider::Push(new MyArtProvider);
-#else
-	wxArtProvider::PushProvider(new MyArtProvider);
-#endif
 
 	//(*Initialize(holonomic_navigator_demoFrame)
 	wxFlexGridSizer* FlexGridSizer4;

@@ -1,18 +1,20 @@
 /* +------------------------------------------------------------------------+
    |                     Mobile Robot Programming Toolkit (MRPT)            |
-   |                          http://www.mrpt.org/                          |
+   |                          https://www.mrpt.org/                         |
    |                                                                        |
    | Copyright (c) 2005-2019, Individual contributors, see AUTHORS file     |
-   | See: http://www.mrpt.org/Authors - All rights reserved.                |
-   | Released under BSD License. See details in http://www.mrpt.org/License |
+   | See: https://www.mrpt.org/Authors - All rights reserved.               |
+   | Released under BSD License. See: https://www.mrpt.org/License          |
    +------------------------------------------------------------------------+ */
 
 #include "poses-precomp.h"  // Precompiled headers
 
-#include <mrpt/poses/FrameTransformer.h>  // for FrameTransformer, FrameTran...
-#include <string>  // for string
-#include <mrpt/system/datetime.h>  // for TTimeStamp, INVALID_TIMESTAMP
 #include <mrpt/core/exceptions.h>  // for ASSERTMSG_
+#include <mrpt/poses/CPose2D.h>
+#include <mrpt/poses/CPose3D.h>
+#include <mrpt/poses/FrameTransformer.h>  // for FrameTransformer, FrameTran...
+#include <mrpt/system/datetime.h>  // for TTimeStamp, INVALID_TIMESTAMP
+#include <string>  // for string
 
 using namespace mrpt::poses;
 
@@ -55,7 +57,7 @@ void FrameTransformer<DIM>::sendTransform(
 template <int DIM>
 FrameLookUpStatus FrameTransformer<DIM>::lookupTransform(
 	const std::string& target_frame, const std::string& source_frame,
-	typename base_t::lightweight_pose_t& child_wrt_parent,
+	typename base_t::light_type& child_wrt_parent,
 	const mrpt::system::TTimeStamp query_time, const double timeout_secs)
 {
 	ASSERTMSG_(

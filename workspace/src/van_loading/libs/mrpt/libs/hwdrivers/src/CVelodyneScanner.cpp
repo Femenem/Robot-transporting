@@ -1,21 +1,21 @@
 /* +------------------------------------------------------------------------+
    |                     Mobile Robot Programming Toolkit (MRPT)            |
-   |                          http://www.mrpt.org/                          |
+   |                          https://www.mrpt.org/                         |
    |                                                                        |
    | Copyright (c) 2005-2019, Individual contributors, see AUTHORS file     |
-   | See: http://www.mrpt.org/Authors - All rights reserved.                |
-   | Released under BSD License. See details in http://www.mrpt.org/License |
+   | See: https://www.mrpt.org/Authors - All rights reserved.               |
+   | Released under BSD License. See: https://www.mrpt.org/License          |
    +------------------------------------------------------------------------+ */
 
 #include "hwdrivers-precomp.h"  // Precompiled headers
 
+#include <mrpt/comms/net_utils.h>
+#include <mrpt/core/reverse_bytes.h>
+#include <mrpt/hwdrivers/CGPSInterface.h>
 #include <mrpt/hwdrivers/CVelodyneScanner.h>
 #include <mrpt/serialization/CArchive.h>
-#include <mrpt/comms/net_utils.h>
-#include <mrpt/hwdrivers/CGPSInterface.h>
-#include <mrpt/system/filesystem.h>
 #include <mrpt/system/datetime.h>  // timeDifference
-#include <mrpt/core/reverse_bytes.h>
+#include <mrpt/system/filesystem.h>
 #include <thread>
 
 // socket's hdrs:
@@ -35,18 +35,18 @@ using socklen_t = int;
 
 #else
 #define INVALID_SOCKET (-1)
-#include <sys/time.h>  // gettimeofday()
-#include <sys/socket.h>
-#include <unistd.h>
-#include <fcntl.h>
-#include <cerrno>
-#include <sys/types.h>
-#include <sys/ioctl.h>
-#include <netdb.h>
 #include <arpa/inet.h>
+#include <fcntl.h>
+#include <netdb.h>
 #include <netinet/in.h>
 #include <netinet/tcp.h>
 #include <poll.h>
+#include <sys/ioctl.h>
+#include <sys/socket.h>
+#include <sys/time.h>  // gettimeofday()
+#include <sys/types.h>
+#include <unistd.h>
+#include <cerrno>
 #endif
 
 #if MRPT_HAS_LIBPCAP
@@ -740,22 +740,22 @@ bool CVelodyneScanner::receivePackets(
 #if MRPT_IS_BIG_ENDIAN
 	if (data_pkt_timestamp != INVALID_TIMESTAMP)
 	{
-		mrpt::utils::reverseBytesInPlace(out_data_pkt.gps_timestamp);
+		mrpt::reverseBytesInPlace(out_data_pkt.gps_timestamp);
 		for (int i = 0; i < CObservationVelodyneScan::BLOCKS_PER_PACKET; i++)
 		{
-			mrpt::utils::reverseBytesInPlace(out_data_pkt.blocks[i].header);
-			mrpt::utils::reverseBytesInPlace(out_data_pkt.blocks[i].rotation);
+			mrpt::reverseBytesInPlace(out_data_pkt.blocks[i].header);
+			mrpt::reverseBytesInPlace(out_data_pkt.blocks[i].rotation);
 			for (int k = 0; k < CObservationVelodyneScan::SCANS_PER_BLOCK; k++)
 			{
-				mrpt::utils::reverseBytesInPlace(
+				mrpt::reverseBytesInPlace(
 					out_data_pkt.blocks[i].laser_returns[k].distance);
 			}
 		}
 	}
 	if (pos_pkt_timestamp != INVALID_TIMESTAMP)
 	{
-		mrpt::utils::reverseBytesInPlace(out_pos_pkt.gps_timestamp);
-		mrpt::utils::reverseBytesInPlace(out_pos_pkt.unused2);
+		mrpt::reverseBytesInPlace(out_pos_pkt.gps_timestamp);
+		mrpt::reverseBytesInPlace(out_pos_pkt.unused2);
 	}
 #endif
 

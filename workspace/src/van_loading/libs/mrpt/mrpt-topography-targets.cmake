@@ -52,7 +52,7 @@ set_target_properties(mrpt::topography PROPERTIES
 # Import target "mrpt::topography" for configuration "Release"
 set_property(TARGET mrpt::topography APPEND PROPERTY IMPORTED_CONFIGURATIONS RELEASE)
 set_target_properties(mrpt::topography PROPERTIES
-  IMPORTED_LOCATION_RELEASE "/home/matt/Documents/Robot-transporting/workspace/src/van_loading/libs/mrpt/lib/libmrpt-topography.so.1.9.9"
+  IMPORTED_LOCATION_RELEASE "/home/matt/Documents/Robot-transporting/workspace/src/van_loading/libs/mrpt/build/lib/libmrpt-topography.so.1.9.9"
   IMPORTED_SONAME_RELEASE "libmrpt-topography.so.1.9"
   )
 

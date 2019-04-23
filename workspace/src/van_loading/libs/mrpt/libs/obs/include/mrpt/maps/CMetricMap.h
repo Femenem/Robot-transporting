@@ -1,24 +1,24 @@
 /* +------------------------------------------------------------------------+
    |                     Mobile Robot Programming Toolkit (MRPT)            |
-   |                          http://www.mrpt.org/                          |
+   |                          https://www.mrpt.org/                         |
    |                                                                        |
    | Copyright (c) 2005-2019, Individual contributors, see AUTHORS file     |
-   | See: http://www.mrpt.org/Authors - All rights reserved.                |
-   | Released under BSD License. See details in http://www.mrpt.org/License |
+   | See: https://www.mrpt.org/Authors - All rights reserved.               |
+   | Released under BSD License. See: https://www.mrpt.org/License          |
    +------------------------------------------------------------------------+ */
 #pragma once
 
-#include <mrpt/serialization/CSerializable.h>
-#include <mrpt/tfest/TMatchingPair.h>
-#include <mrpt/system/CObservable.h>
-#include <mrpt/math/math_frwds.h>
-#include <mrpt/math/lightweight_geom_data.h>
-#include <mrpt/obs/CObservation.h>
-#include <mrpt/opengl/CSetOfObjects.h>
 #include <mrpt/maps/CMetricMapEvents.h>
 #include <mrpt/maps/TMetricMapInitializer.h>
 #include <mrpt/maps/metric_map_types.h>
+#include <mrpt/math/lightweight_geom_data.h>
+#include <mrpt/math/math_frwds.h>
+#include <mrpt/obs/CObservation.h>
 #include <mrpt/obs/obs_frwds.h>
+#include <mrpt/opengl/CSetOfObjects.h>
+#include <mrpt/serialization/CSerializable.h>
+#include <mrpt/system/CObservable.h>
+#include <mrpt/tfest/TMatchingPair.h>
 #include <deque>
 
 namespace mrpt::maps
@@ -302,9 +302,9 @@ class CMetricMap : public mrpt::serialization::CSerializable,
 	{
 		return nullptr;
 	}
-	virtual mrpt::maps::CSimplePointsMap* getAsSimplePointsMap()
+	mrpt::maps::CSimplePointsMap* getAsSimplePointsMap()
 	{
-		return nullptr;
+		return const_cast<CSimplePointsMap*>(getAsSimplePointsMap());
 	}
 
 };  // End of class def.

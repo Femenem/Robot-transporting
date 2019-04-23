@@ -1,16 +1,17 @@
 /* +------------------------------------------------------------------------+
    |                     Mobile Robot Programming Toolkit (MRPT)            |
-   |                          http://www.mrpt.org/                          |
+   |                          https://www.mrpt.org/                         |
    |                                                                        |
    | Copyright (c) 2005-2019, Individual contributors, see AUTHORS file     |
-   | See: http://www.mrpt.org/Authors - All rights reserved.                |
-   | Released under BSD License. See details in http://www.mrpt.org/License |
+   | See: https://www.mrpt.org/Authors - All rights reserved.               |
+   | Released under BSD License. See: https://www.mrpt.org/License          |
    +------------------------------------------------------------------------+ */
 #pragma once
 
-#include <mrpt/slam/CMetricMapBuilder.h>
-#include <mrpt/slam/CICP.h>
 #include <mrpt/poses/CRobot2DPoseEstimator.h>
+#include <mrpt/slam/CICP.h>
+#include <mrpt/slam/CMetricMapBuilder.h>
+#include <map>
 
 namespace mrpt::slam
 {
@@ -179,14 +180,14 @@ class CMetricMapBuilderICP : public mrpt::slam::CMetricMapBuilder
 		TDist() = default;
 		double lin{0};  // meters
 		double ang{0};  // degrees
-		mrpt::poses::CPose2D last_update;
+		mrpt::math::TPose2D last_update;
 
 		void updateDistances(const mrpt::poses::CPose2D& p);
 		void updatePose(const mrpt::poses::CPose2D& p);
 	};
 	TDist m_distSinceLastICP;
 	/** Indexed by sensor label. */
-	mrpt::aligned_std_map<std::string, TDist> m_distSinceLastInsertion;
+	std::map<std::string, TDist> m_distSinceLastInsertion;
 	bool m_there_has_been_an_odometry;
 
 	void accumulateRobotDisplacementCounters(

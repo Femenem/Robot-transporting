@@ -1,10 +1,10 @@
 /* +------------------------------------------------------------------------+
    |                     Mobile Robot Programming Toolkit (MRPT)            |
-   |                          http://www.mrpt.org/                          |
+   |                          https://www.mrpt.org/                         |
    |                                                                        |
    | Copyright (c) 2005-2019, Individual contributors, see AUTHORS file     |
-   | See: http://www.mrpt.org/Authors - All rights reserved.                |
-   | Released under BSD License. See details in http://www.mrpt.org/License |
+   | See: https://www.mrpt.org/Authors - All rights reserved.               |
+   | Released under BSD License. See: https://www.mrpt.org/License          |
    +------------------------------------------------------------------------+ */
 
 #include "navlog_viewer_GUI_designMain.h"
@@ -14,37 +14,36 @@
 //(*InternalHeaders(navlog_viewer_GUI_designDialog)
 #include <wx/artprov.h>
 #include <wx/bitmap.h>
-#include <wx/tglbtn.h>
-#include <wx/intl.h>
 #include <wx/image.h>
+#include <wx/intl.h>
 #include <wx/string.h>
+#include <wx/tglbtn.h>
 //*)
 
-#include <wx/msgdlg.h>
-#include <wx/filedlg.h>
 #include <wx/busyinfo.h>
-#include <wx/log.h>
-#include <wx/textdlg.h>
 #include <wx/dirdlg.h>
-#include <wx/tipdlg.h>
+#include <wx/filedlg.h>
+#include <wx/log.h>
+#include <wx/msgdlg.h>
 #include <wx/statbox.h>
+#include <wx/textdlg.h>
+#include <wx/tipdlg.h>
 
-#include <mrpt/io/CFileGZInputStream.h>
 #include <mrpt/config/CConfigFileMemory.h>
 #include <mrpt/config/CConfigFilePrefixer.h>
-#include <mrpt/system/string_utils.h>
-#include <mrpt/math/utils.h>
-#include <mrpt/math/geometry.h>  // intersect()
 #include <mrpt/containers/printf_vector.h>
-#include <mrpt/system/string_utils.h>
-#include <mrpt/system/filesystem.h>
-#include <mrpt/serialization/CArchive.h>
-#include <mrpt/opengl/CSetOfLines.h>
-#include <mrpt/opengl/CMesh.h>
+#include <mrpt/io/CFileGZInputStream.h>
+#include <mrpt/math/geometry.h>  // intersect()
+#include <mrpt/math/utils.h>
 #include <mrpt/opengl/CDisk.h>
 #include <mrpt/opengl/CGridPlaneXY.h>
+#include <mrpt/opengl/CMesh.h>
 #include <mrpt/opengl/CPointCloud.h>
+#include <mrpt/opengl/CSetOfLines.h>
 #include <mrpt/opengl/stock_objects.h>
+#include <mrpt/serialization/CArchive.h>
+#include <mrpt/system/filesystem.h>
+#include <mrpt/system/string_utils.h>
 #include <algorithm>  // replace()
 
 extern std::string global_fileToOpen;
@@ -135,12 +134,8 @@ class MyArtProvider : public wxArtProvider
 navlog_viewer_GUI_designDialog::navlog_viewer_GUI_designDialog(
 	wxWindow* parent, wxWindowID id)
 {
-// Load my custom icons:
-#if wxCHECK_VERSION(2, 8, 0)
+	// Load my custom icons:
 	wxArtProvider::Push(new MyArtProvider);
-#else
-	wxArtProvider::PushProvider(new MyArtProvider);
-#endif
 
 	//(*Initialize(navlog_viewer_GUI_designDialog)
 	wxStaticBoxSizer* StaticBoxSizer2;

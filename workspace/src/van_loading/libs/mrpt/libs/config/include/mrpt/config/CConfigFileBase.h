@@ -1,19 +1,19 @@
 /* +------------------------------------------------------------------------+
    |                     Mobile Robot Programming Toolkit (MRPT)            |
-   |                          http://www.mrpt.org/                          |
+   |                          https://www.mrpt.org/                         |
    |                                                                        |
    | Copyright (c) 2005-2019, Individual contributors, see AUTHORS file     |
-   | See: http://www.mrpt.org/Authors - All rights reserved.                |
-   | Released under BSD License. See details in http://www.mrpt.org/License |
+   | See: https://www.mrpt.org/Authors - All rights reserved.               |
+   | Released under BSD License. See: https://www.mrpt.org/License          |
    +------------------------------------------------------------------------+ */
 #pragma once
 
-#include <string>
-#include <vector>
-#include <type_traits>
-#include <mrpt/system/string_utils.h>  // tokenize
-#include <mrpt/core/exceptions.h>
 #include <mrpt/core/bits_math.h>  // DEG2RAD()
+#include <mrpt/core/exceptions.h>
+#include <mrpt/system/string_utils.h>  // tokenize
+#include <string>
+#include <type_traits>
+#include <vector>
 
 namespace mrpt
 {

@@ -1,10 +1,10 @@
 /* +------------------------------------------------------------------------+
    |                     Mobile Robot Programming Toolkit (MRPT)            |
-   |                          http://www.mrpt.org/                          |
+   |                          https://www.mrpt.org/                         |
    |                                                                        |
    | Copyright (c) 2005-2019, Individual contributors, see AUTHORS file     |
-   | See: http://www.mrpt.org/Authors - All rights reserved.                |
-   | Released under BSD License. See details in http://www.mrpt.org/License |
+   | See: https://www.mrpt.org/Authors - All rights reserved.               |
+   | Released under BSD License. See: https://www.mrpt.org/License          |
    +------------------------------------------------------------------------+ */
 #pragma once
 
@@ -54,14 +54,6 @@ struct T3DTypeHelper<CPose3D>
 };
 template <>
 struct T3DTypeHelper<CPose3DQuat>
-{
-	enum
-	{
-		is_3D_val = 1
-	};
-};
-template <>
-struct T3DTypeHelper<CPose3DRotVec>
 {
 	enum
 	{

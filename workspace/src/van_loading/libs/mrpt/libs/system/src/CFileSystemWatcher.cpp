@@ -1,10 +1,10 @@
 /* +------------------------------------------------------------------------+
    |                     Mobile Robot Programming Toolkit (MRPT)            |
-   |                          http://www.mrpt.org/                          |
+   |                          https://www.mrpt.org/                         |
    |                                                                        |
    | Copyright (c) 2005-2019, Individual contributors, see AUTHORS file     |
-   | See: http://www.mrpt.org/Authors - All rights reserved.                |
-   | Released under BSD License. See details in http://www.mrpt.org/License |
+   | See: https://www.mrpt.org/Authors - All rights reserved.               |
+   | Released under BSD License. See: https://www.mrpt.org/License          |
    +------------------------------------------------------------------------+ */
 
 #include "system-precomp.h"  // Precompiled headers
@@ -27,10 +27,10 @@
 #include <cstdio>
 #endif
 
-#include <cstring>  // for NULL, memcpy
+#include <mrpt/core/exceptions.h>  // for THROW_EXCEPTION, ASSERT_
 #include <mrpt/system/CFileSystemWatcher.h>
 #include <mrpt/system/filesystem.h>  // for directoryExists()
-#include <mrpt/core/exceptions.h>  // for THROW_EXCEPTION, ASSERT_
+#include <cstring>  // for NULL, memcpy
 
 using namespace mrpt::system;
 using namespace std;

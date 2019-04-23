@@ -1,10 +1,10 @@
 /* +------------------------------------------------------------------------+
    |                     Mobile Robot Programming Toolkit (MRPT)            |
-   |                          http://www.mrpt.org/                          |
+   |                          https://www.mrpt.org/                         |
    |                                                                        |
    | Copyright (c) 2005-2019, Individual contributors, see AUTHORS file     |
-   | See: http://www.mrpt.org/Authors - All rights reserved.                |
-   | Released under BSD License. See details in http://www.mrpt.org/License |
+   | See: https://www.mrpt.org/Authors - All rights reserved.               |
+   | Released under BSD License. See: https://www.mrpt.org/License          |
    +------------------------------------------------------------------------+ */
 
 #include <mrpt/gui/CDisplayWindow3D.h>
@@ -389,10 +389,6 @@ void TestOpenGLObjects()
 		obj->setLocation(off_x, 0, 0);
 
 		mrpt::math::CMatrixFloat Zs(40, 40);  // Height
-		//		mrpt::math::CMatrixFloat  Us,Vs; // Texture
-		//		Us.resize(Zs.size());
-		//		Vs.resize(Zs.size());
-
 		for (size_t i = 0; i < Zs.rows(); i++)
 			for (size_t j = 0; j < Zs.cols(); j++)
 			{

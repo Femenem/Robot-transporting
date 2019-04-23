@@ -1,10 +1,10 @@
 /* +------------------------------------------------------------------------+
    |                     Mobile Robot Programming Toolkit (MRPT)            |
-   |                          http://www.mrpt.org/                          |
+   |                          https://www.mrpt.org/                         |
    |                                                                        |
    | Copyright (c) 2005-2019, Individual contributors, see AUTHORS file     |
-   | See: http://www.mrpt.org/Authors - All rights reserved.                |
-   | Released under BSD License. See details in http://www.mrpt.org/License |
+   | See: https://www.mrpt.org/Authors - All rights reserved.               |
+   | Released under BSD License. See: https://www.mrpt.org/License          |
    +------------------------------------------------------------------------+ */
 #pragma once
 
@@ -12,9 +12,9 @@
 
 #include <mrpt/math/lightweight_geom_data.h>  // forward declarations
 
-#include <functional>
 #include <algorithm>
 #include <cmath>
+#include <functional>
 
 /** \addtogroup container_ops_grp Vector and matrices mathematical operations
  * and other utilities
@@ -42,8 +42,8 @@
  */
 
 #include <algorithm>
-#include <numeric>
 #include <functional>
+#include <numeric>
 
 #include <mrpt/math/CHistogram.h>  // Used in ::histogram()
 

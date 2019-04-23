@@ -1,22 +1,22 @@
 /* +------------------------------------------------------------------------+
    |                     Mobile Robot Programming Toolkit (MRPT)            |
-   |                          http://www.mrpt.org/                          |
+   |                          https://www.mrpt.org/                         |
    |                                                                        |
    | Copyright (c) 2005-2019, Individual contributors, see AUTHORS file     |
-   | See: http://www.mrpt.org/Authors - All rights reserved.                |
-   | Released under BSD License. See details in http://www.mrpt.org/License |
+   | See: https://www.mrpt.org/Authors - All rights reserved.               |
+   | Released under BSD License. See: https://www.mrpt.org/License          |
    +------------------------------------------------------------------------+ */
 
 #include "obs-precomp.h"  // Precompiled headers
 
-#include <mrpt/obs/VelodyneCalibration.h>
 #include <mrpt/core/bits_math.h>
 #include <mrpt/core/exceptions.h>
-#include <iostream>
-#include <fstream>
-#include <sstream>
-#include <map>
+#include <mrpt/obs/VelodyneCalibration.h>
 #include <cmath>
+#include <fstream>
+#include <iostream>
+#include <map>
+#include <sstream>
 
 #undef _UNICODE  // JLBC, for xmlParser
 #include "xmlparser/xmlParser.h"
@@ -27,8 +27,8 @@
 #endif
 
 // ======= Default calibration files ========================
-#include "velodyne_default_calib_VLP-16.h"
 #include "velodyne_default_calib_HDL-32.h"
+#include "velodyne_default_calib_VLP-16.h"
 #include "velodyne_default_calib_hdl64e-s3.h"
 // ======= End of default calibration files =================
 

@@ -1,21 +1,20 @@
 /* +------------------------------------------------------------------------+
    |                     Mobile Robot Programming Toolkit (MRPT)            |
-   |                          http://www.mrpt.org/                          |
+   |                          https://www.mrpt.org/                         |
    |                                                                        |
    | Copyright (c) 2005-2019, Individual contributors, see AUTHORS file     |
-   | See: http://www.mrpt.org/Authors - All rights reserved.                |
-   | Released under BSD License. See details in http://www.mrpt.org/License |
+   | See: https://www.mrpt.org/Authors - All rights reserved.               |
+   | Released under BSD License. See: https://www.mrpt.org/License          |
    +------------------------------------------------------------------------+ */
 
 #include "hmtslam-precomp.h"  // Precomp header
 
-#include <mrpt/system/os.h>
-#include <mrpt/io/CFileOutputStream.h>
 #include <mrpt/io/CFileGZOutputStream.h>
-#include <mrpt/system/os.h>
-#include <mrpt/system/memory.h>
-#include <mrpt/system/CTicTac.h>
+#include <mrpt/io/CFileOutputStream.h>
 #include <mrpt/serialization/CArchive.h>
+#include <mrpt/system/CTicTac.h>
+#include <mrpt/system/memory.h>
+#include <mrpt/system/os.h>
 
 using namespace mrpt::slam;
 using namespace mrpt::hmtslam;

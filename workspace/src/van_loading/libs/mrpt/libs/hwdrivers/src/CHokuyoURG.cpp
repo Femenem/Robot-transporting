@@ -1,20 +1,20 @@
 /* +------------------------------------------------------------------------+
    |                     Mobile Robot Programming Toolkit (MRPT)            |
-   |                          http://www.mrpt.org/                          |
+   |                          https://www.mrpt.org/                         |
    |                                                                        |
    | Copyright (c) 2005-2019, Individual contributors, see AUTHORS file     |
-   | See: http://www.mrpt.org/Authors - All rights reserved.                |
-   | Released under BSD License. See details in http://www.mrpt.org/License |
+   | See: https://www.mrpt.org/Authors - All rights reserved.               |
+   | Released under BSD License. See: https://www.mrpt.org/License          |
    +------------------------------------------------------------------------+ */
 
 #include "hwdrivers-precomp.h"  // Precompiled headers
 
-#include <mrpt/hwdrivers/CHokuyoURG.h>
-#include <mrpt/comms/CSerialPort.h>
 #include <mrpt/comms/CClientTCPSocket.h>
-#include <mrpt/system/os.h>
-#include <mrpt/opengl/CPlanarLaserScan.h>  // in library mrpt-maps
+#include <mrpt/comms/CSerialPort.h>
+#include <mrpt/hwdrivers/CHokuyoURG.h>
 #include <mrpt/opengl/CAxis.h>
+#include <mrpt/opengl/CPlanarLaserScan.h>  // in library mrpt-maps
+#include <mrpt/system/os.h>
 
 IMPLEMENTS_GENERIC_SENSOR(CHokuyoURG, mrpt::hwdrivers)
 

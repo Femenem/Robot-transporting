@@ -52,7 +52,7 @@ set_target_properties(mrpt::config PROPERTIES
 # Import target "mrpt::config" for configuration "Release"
 set_property(TARGET mrpt::config APPEND PROPERTY IMPORTED_CONFIGURATIONS RELEASE)
 set_target_properties(mrpt::config PROPERTIES
-  IMPORTED_LOCATION_RELEASE "/home/matt/Documents/Robot-transporting/workspace/src/van_loading/libs/mrpt/lib/libmrpt-config.so.1.9.9"
+  IMPORTED_LOCATION_RELEASE "/home/matt/Documents/Robot-transporting/workspace/src/van_loading/libs/mrpt/build/lib/libmrpt-config.so.1.9.9"
   IMPORTED_SONAME_RELEASE "libmrpt-config.so.1.9"
   )
 

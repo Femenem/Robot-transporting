@@ -1,10 +1,10 @@
 /* +------------------------------------------------------------------------+
    |                     Mobile Robot Programming Toolkit (MRPT)            |
-   |                          http://www.mrpt.org/                          |
+   |                          https://www.mrpt.org/                         |
    |                                                                        |
    | Copyright (c) 2005-2019, Individual contributors, see AUTHORS file     |
-   | See: http://www.mrpt.org/Authors - All rights reserved.                |
-   | Released under BSD License. See details in http://www.mrpt.org/License |
+   | See: https://www.mrpt.org/Authors - All rights reserved.               |
+   | Released under BSD License. See: https://www.mrpt.org/License          |
    +------------------------------------------------------------------------+ */
 
 /*---------------------------------------------------------------
@@ -15,14 +15,16 @@
 	See README.txt for instructions.
   ---------------------------------------------------------------*/
 
-#include <mrpt/system/CTicTac.h>
+#include <mrpt/config/CConfigFile.h>
+#include <mrpt/gui.h>
 #include <mrpt/io/CFileGZInputStream.h>
 #include <mrpt/io/CFileOutputStream.h>
-#include <mrpt/config/CConfigFile.h>
-#include <mrpt/system/filesystem.h>
-#include <mrpt/slam/CIncrementalMapPartitioner.h>
+#include <mrpt/maps/COccupancyGridMap2D.h>
 #include <mrpt/maps/CSimpleMap.h>
-#include <mrpt/gui.h>
+#include <mrpt/serialization/CArchive.h>
+#include <mrpt/slam/CIncrementalMapPartitioner.h>
+#include <mrpt/system/CTicTac.h>
+#include <mrpt/system/filesystem.h>
 
 using namespace mrpt;
 using namespace mrpt::slam;

@@ -1,41 +1,41 @@
 /* +------------------------------------------------------------------------+
    |                     Mobile Robot Programming Toolkit (MRPT)            |
-   |                          http://www.mrpt.org/                          |
+   |                          https://www.mrpt.org/                         |
    |                                                                        |
    | Copyright (c) 2005-2019, Individual contributors, see AUTHORS file     |
-   | See: http://www.mrpt.org/Authors - All rights reserved.                |
-   | Released under BSD License. See details in http://www.mrpt.org/License |
+   | See: https://www.mrpt.org/Authors - All rights reserved.               |
+   | Released under BSD License. See: https://www.mrpt.org/License          |
    +------------------------------------------------------------------------+ */
 
 #pragma once
 
-#include <mrpt/maps/CSimpleMap.h>
-#include <mrpt/maps/COccupancyGridMap2D.h>
-#include <mrpt/maps/COctoMap.h>
 #include <mrpt/graphs/CNetworkOfPoses.h>
 #include <mrpt/gui/CDisplayWindow3D.h>
 #include <mrpt/gui/CDisplayWindowPlots.h>
-#include <mrpt/opengl/CSetOfObjects.h>
+#include <mrpt/img/TColor.h>
+#include <mrpt/io/CFileOutputStream.h>
+#include <mrpt/maps/COccupancyGridMap2D.h>
+#include <mrpt/maps/COctoMap.h>
+#include <mrpt/maps/CSimpleMap.h>
 #include <mrpt/obs/CAction.h>
 #include <mrpt/obs/CObservation2DRangeScan.h>
 #include <mrpt/obs/CObservation3DRangeScan.h>
 #include <mrpt/obs/CSensoryFrame.h>
 #include <mrpt/obs/obs_utils.h>
+#include <mrpt/opengl/CSetOfObjects.h>
 #include <mrpt/poses/CPose2D.h>
 #include <mrpt/poses/CPose3D.h>
-#include <mrpt/io/CFileOutputStream.h>
-#include <mrpt/img/TColor.h>
 #include <mrpt/system/COutputLogger.h>
 
-#include <mrpt/graphslam/misc/CEdgeCounter.h>
-#include <mrpt/graphslam/interfaces/CNodeRegistrationDecider.h>
 #include <mrpt/graphslam/interfaces/CEdgeRegistrationDecider.h>
 #include <mrpt/graphslam/interfaces/CGraphSlamOptimizer.h>
+#include <mrpt/graphslam/interfaces/CNodeRegistrationDecider.h>
+#include <mrpt/graphslam/misc/CEdgeCounter.h>
 
-#include <memory>
-#include <string>
 #include <map>
+#include <memory>
 #include <set>
+#include <string>
 
 namespace mrpt::graphslam
 {
@@ -210,7 +210,7 @@ class CGraphSlamEngine : public mrpt::system::COutputLogger
 	 * "output_graph" if not
 	 * set by the user
 	 *
-	 * \sa save3DScene, http://www.mrpt.org/Robotics_file_formats
+	 * \sa save3DScene, https://www.mrpt.org/Robotics_file_formats
 	 */
 	void saveGraph(const std::string* fname_in = nullptr) const;
 	/**\brief Wrapper method around the COpenGLScene::saveToFile method.
@@ -347,7 +347,7 @@ class CGraphSlamEngine : public mrpt::system::COutputLogger
 	 * timestamps are not needed.
 	 *
 	 * \sa readGTFile,
-	 * http://www.mrpt.org/Collection_of_Kinect_RGBD_datasets_with_ground_truth_CVPR_TUM_2011
+	 * https://www.mrpt.org/Collection_of_Kinect_RGBD_datasets_with_ground_truth_CVPR_TUM_2011
 	 */
 	static void readGTFileRGBD_TUM(
 		const std::string& fname_GT,

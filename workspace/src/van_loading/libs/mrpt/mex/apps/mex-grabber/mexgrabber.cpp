@@ -1,10 +1,10 @@
 /* +---------------------------------------------------------------------------+
    |                     Mobile Robot Programming Toolkit (MRPT)               |
-   |                          http://www.mrpt.org/                             |
+   |                          https://www.mrpt.org/                            |
    |                                                                           |
    | Copyright (c) 2005-2014, Individual contributors, see AUTHORS file        |
-   | See: http://www.mrpt.org/Authors - All rights reserved.                   |
-   | Released under BSD License. See details in http://www.mrpt.org/License    |
+   | See: https://www.mrpt.org/Authors - All rights reserved.                  |
+   | Released under BSD License. See details in https://www.mrpt.org/License   |
    +---------------------------------------------------------------------------+
    */
 
@@ -15,16 +15,16 @@
 			 Jose Luis Blanco Claraco <joseluisblancoc@gmail.com>
 
 	For instructions and details, see:
-	 http://www.mrpt.org/list-of-mrpt-apps/application-MEX-grabber
+	 https://www.mrpt.org/list-of-mrpt-apps/application-MEX-grabber
   -----------------------------------------------------------------------------*/
 
-#include <mrpt/hwdrivers/CGenericSensor.h>
 #include <mrpt/config/CConfigFile.h>
-#include <mrpt/io/CFileGZOutputStream.h>
-#include <mrpt/img/CImage.h>
 #include <mrpt/core/round.h>
-#include <mrpt/system/os.h>
+#include <mrpt/hwdrivers/CGenericSensor.h>
+#include <mrpt/img/CImage.h>
+#include <mrpt/io/CFileGZOutputStream.h>
 #include <mrpt/system/filesystem.h>
+#include <mrpt/system/os.h>
 
 // Matlab MEX interface headers
 #include <mexplus.h>
@@ -33,8 +33,8 @@
 MRPT_TODO(
 	"This won't be necessary when CObservation2DRangeScan::writeToMatlab is "
 	"fully functional")
-#include <mrpt/obs/CObservation2DRangeScan.h>
 #include <mrpt/maps/CSimplePointsMap.h>
+#include <mrpt/obs/CObservation2DRangeScan.h>
 
 #include <mutex>
 #include <thread>

@@ -1,10 +1,10 @@
 /* +------------------------------------------------------------------------+
    |                     Mobile Robot Programming Toolkit (MRPT)            |
-   |                          http://www.mrpt.org/                          |
+   |                          https://www.mrpt.org/                         |
    |                                                                        |
    | Copyright (c) 2005-2019, Individual contributors, see AUTHORS file     |
-   | See: http://www.mrpt.org/Authors - All rights reserved.                |
-   | Released under BSD License. See details in http://www.mrpt.org/License |
+   | See: https://www.mrpt.org/Authors - All rights reserved.               |
+   | Released under BSD License. See: https://www.mrpt.org/License          |
    +------------------------------------------------------------------------+ */
 
 /*  Plane-based Map (PbMap) library
@@ -18,10 +18,11 @@
 #include <mrpt/math/CArrayNumeric.h>
 #include <mrpt/math/CMatrixFixedNumeric.h>
 #include <mrpt/math/ransac.h>
-#include <mrpt/poses/CPose3D.h>
 #include <mrpt/pbmap/ConsistencyTest.h>
-#include <mrpt/pbmap/SubgraphMatcher.h>
 #include <mrpt/pbmap/PbMapLocaliser.h>
+#include <mrpt/pbmap/SubgraphMatcher.h>
+#include <mrpt/poses/CPose3D.h>
+#include <mrpt/poses/Lie/SE.h>
 
 using namespace std;
 using namespace Eigen;
@@ -530,7 +531,8 @@ Eigen::Matrix4f ConsistencyTest::getRTwithModel(
 		_updatedSE3(4) = updatedSE3(4);
 		_updatedSE3(5) = updatedSE3(5);
 		mrpt::math::CMatrixDouble44 CMatUpdate;
-		mrpt::poses::CPose3D::exp(_updatedSE3).getHomogeneousMatrix(CMatUpdate);
+		mrpt::poses::Lie::SE<3>::exp(_updatedSE3)
+			.getHomogeneousMatrix(CMatUpdate);
 		Eigen::Matrix4f updatePose;
 		updatePose << CMatUpdate(0, 0), CMatUpdate(0, 1), CMatUpdate(0, 2),
 			CMatUpdate(0, 3), CMatUpdate(1, 0), CMatUpdate(1, 1),

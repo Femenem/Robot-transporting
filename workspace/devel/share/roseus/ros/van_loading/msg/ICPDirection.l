@@ -51,8 +51,8 @@
     4
     ;; float32 _angle
     4
-    ;; float32 _goodness
-    4
+    ;; float64 _goodness
+    8
     ))
   (:serialize
    (&optional strm)
@@ -64,8 +64,8 @@
        (sys::poke _y (send s :buffer) (send s :count) :float) (incf (stream-count s) 4)
      ;; float32 _angle
        (sys::poke _angle (send s :buffer) (send s :count) :float) (incf (stream-count s) 4)
-     ;; float32 _goodness
-       (sys::poke _goodness (send s :buffer) (send s :count) :float) (incf (stream-count s) 4)
+     ;; float64 _goodness
+       (sys::poke _goodness (send s :buffer) (send s :count) :double) (incf (stream-count s) 8)
      ;;
      (if (null strm) (get-output-stream-string s))))
   (:deserialize
@@ -76,13 +76,13 @@
      (setq _y (sys::peek buf ptr- :float)) (incf ptr- 4)
    ;; float32 _angle
      (setq _angle (sys::peek buf ptr- :float)) (incf ptr- 4)
-   ;; float32 _goodness
-     (setq _goodness (sys::peek buf ptr- :float)) (incf ptr- 4)
+   ;; float64 _goodness
+     (setq _goodness (sys::peek buf ptr- :double)) (incf ptr- 8)
    ;;
    self)
   )
 
-(setf (get van_loading::ICPDirection :md5sum-) "ec2458f4ae291f686f0f7664eab3bac0")
+(setf (get van_loading::ICPDirection :md5sum-) "b749b73aa627a1a22c81c8fa999a58b3")
 (setf (get van_loading::ICPDirection :datatype-) "van_loading/ICPDirection")
 (setf (get van_loading::ICPDirection :definition-)
       "# x distance (forward/back)
@@ -95,11 +95,11 @@ float32 y
 float32 angle
 
 # how well the models fit together
-float32 goodness
+float64 goodness
 ")
 
 
 
-(provide :van_loading/ICPDirection "ec2458f4ae291f686f0f7664eab3bac0")
+(provide :van_loading/ICPDirection "b749b73aa627a1a22c81c8fa999a58b3")
 
 

@@ -1,20 +1,20 @@
 /* +------------------------------------------------------------------------+
    |                     Mobile Robot Programming Toolkit (MRPT)            |
-   |                          http://www.mrpt.org/                          |
+   |                          https://www.mrpt.org/                         |
    |                                                                        |
    | Copyright (c) 2005-2019, Individual contributors, see AUTHORS file     |
-   | See: http://www.mrpt.org/Authors - All rights reserved.                |
-   | Released under BSD License. See details in http://www.mrpt.org/License |
+   | See: https://www.mrpt.org/Authors - All rights reserved.               |
+   | Released under BSD License. See: https://www.mrpt.org/License          |
    +------------------------------------------------------------------------+ */
 
 #include "gui-precomp.h"  // Precompiled headers
 
 #include <mrpt/config.h>
 #include <mrpt/gui/CDisplayWindowPlots.h>
-#include <mrpt/system/os.h>
-#include <mrpt/img/CImage.h>
 #include <mrpt/gui/WxSubsystem.h>
 #include <mrpt/gui/WxUtils.h>
+#include <mrpt/img/CImage.h>
+#include <mrpt/system/os.h>
 
 #include <mrpt/math/utils.h>
 
@@ -355,7 +355,7 @@ void CWindowDialogPlots::plot(
 	bool isContinuous = true;
 	int lineColor[] = {0, 0, 255};
 	int lineWidth = 1;
-	int lineStyle = wxSOLID;
+	wxPenStyle lineStyle = wxPENSTYLE_SOLID;
 
 	// parse string:
 	if (string::npos != lineFormat.find("."))
@@ -365,12 +365,12 @@ void CWindowDialogPlots::plot(
 	if (string::npos != lineFormat.find("-"))
 	{
 		isContinuous = true;
-		lineStyle = wxSOLID;
+		lineStyle = wxPENSTYLE_SOLID;
 	}
 	if (string::npos != lineFormat.find(":"))
 	{
 		isContinuous = true;
-		lineStyle = wxLONG_DASH;
+		lineStyle = wxPENSTYLE_LONG_DASH;
 	}
 
 	if (string::npos != lineFormat.find("r"))
@@ -517,7 +517,7 @@ void CWindowDialogPlots::plotEllipse(
 	bool isContinuous = true;
 	int lineColor[] = {0, 0, 255};
 	int lineWidth = 1;
-	int lineStyle = wxSOLID;
+	wxPenStyle lineStyle = wxPENSTYLE_SOLID;
 
 	// parse string:
 	if (string::npos != lineFormat.find("."))
@@ -527,12 +527,12 @@ void CWindowDialogPlots::plotEllipse(
 	if (string::npos != lineFormat.find("-"))
 	{
 		isContinuous = true;
-		lineStyle = wxSOLID;
+		lineStyle = wxPENSTYLE_SOLID;
 	}
 	if (string::npos != lineFormat.find(":"))
 	{
 		isContinuous = true;
-		lineStyle = wxLONG_DASH;
+		lineStyle = wxPENSTYLE_LONG_DASH;
 	}
 
 	if (string::npos != lineFormat.find("r"))

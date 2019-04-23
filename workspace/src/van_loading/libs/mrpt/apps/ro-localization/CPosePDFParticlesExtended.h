@@ -1,23 +1,23 @@
 /* +------------------------------------------------------------------------+
    |                     Mobile Robot Programming Toolkit (MRPT)            |
-   |                          http://www.mrpt.org/                          |
+   |                          https://www.mrpt.org/                         |
    |                                                                        |
    | Copyright (c) 2005-2019, Individual contributors, see AUTHORS file     |
-   | See: http://www.mrpt.org/Authors - All rights reserved.                |
-   | Released under BSD License. See details in http://www.mrpt.org/License |
+   | See: https://www.mrpt.org/Authors - All rights reserved.               |
+   | Released under BSD License. See: https://www.mrpt.org/License          |
    +------------------------------------------------------------------------+ */
 
 #ifndef CPosePDFParticlesExtended_H
 #define CPosePDFParticlesExtended_H
 
-#include <mrpt/poses/CPosePDF.h>
-#include <mrpt/maps/CMultiMetricMap.h>
-#include <mrpt/bayes/CProbabilityParticle.h>
 #include <mrpt/bayes/CParticleFilterCapable.h>
-#include <mrpt/math/CMatrixFixedNumeric.h>
-
+#include <mrpt/bayes/CParticleFilterData.h>
+#include <mrpt/bayes/CProbabilityParticle.h>
+#include <mrpt/maps/CMultiMetricMap.h>
 #include <mrpt/maps/COccupancyGridMap2D.h>
+#include <mrpt/math/CMatrixFixedNumeric.h>
 #include <mrpt/obs/CSensoryFrame.h>
+#include <mrpt/poses/CPosePDF.h>
 
 namespace mrpt
 {

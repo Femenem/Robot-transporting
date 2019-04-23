@@ -1,20 +1,20 @@
 /* +------------------------------------------------------------------------+
    |                     Mobile Robot Programming Toolkit (MRPT)            |
-   |                          http://www.mrpt.org/                          |
+   |                          https://www.mrpt.org/                         |
    |                                                                        |
    | Copyright (c) 2005-2019, Individual contributors, see AUTHORS file     |
-   | See: http://www.mrpt.org/Authors - All rights reserved.                |
-   | Released under BSD License. See details in http://www.mrpt.org/License |
+   | See: https://www.mrpt.org/Authors - All rights reserved.               |
+   | Released under BSD License. See: https://www.mrpt.org/License          |
    +------------------------------------------------------------------------+ */
 
 #define MRPT_NO_WARN_BIG_HDR  // Yes, we really want to include all classes.
 #include <mrpt/maps.h>
 #include <mrpt/obs/CObservationPointCloud.h>
 
+#include <CTraitsTest.h>
+#include <gtest/gtest.h>
 #include <mrpt/io/CMemoryStream.h>
 #include <mrpt/serialization/CArchive.h>
-#include <gtest/gtest.h>
-#include <CTraitsTest.h>
 
 using namespace mrpt;
 using namespace mrpt::maps;
@@ -34,6 +34,7 @@ TEST_CLASS_MOVE_COPY_CTORS(CWirelessPowerGridMap2D);
 TEST_CLASS_MOVE_COPY_CTORS(CHeightGridMap2D);
 TEST_CLASS_MOVE_COPY_CTORS(CReflectivityGridMap2D);
 TEST_CLASS_MOVE_COPY_CTORS(COccupancyGridMap2D);
+TEST_CLASS_MOVE_COPY_CTORS(COccupancyGridMap3D);
 TEST_CLASS_MOVE_COPY_CTORS(CSimplePointsMap);
 TEST_CLASS_MOVE_COPY_CTORS(CRandomFieldGridMap3D);
 TEST_CLASS_MOVE_COPY_CTORS(CWeightedPointsMap);
@@ -55,6 +56,7 @@ TEST(SerializeTestMaps, WriteReadToMem)
 		CLASS_ID(CHeightGridMap2D),
 		CLASS_ID(CReflectivityGridMap2D),
 		CLASS_ID(COccupancyGridMap2D),
+		CLASS_ID(COccupancyGridMap3D),
 		CLASS_ID(CSimplePointsMap),
 		CLASS_ID(CRandomFieldGridMap3D),
 		CLASS_ID(CWeightedPointsMap),

@@ -1,15 +1,16 @@
 /* +------------------------------------------------------------------------+
    |                     Mobile Robot Programming Toolkit (MRPT)            |
-   |                          http://www.mrpt.org/                          |
+   |                          https://www.mrpt.org/                         |
    |                                                                        |
    | Copyright (c) 2005-2019, Individual contributors, see AUTHORS file     |
-   | See: http://www.mrpt.org/Authors - All rights reserved.                |
-   | Released under BSD License. See details in http://www.mrpt.org/License |
+   | See: https://www.mrpt.org/Authors - All rights reserved.               |
+   | Released under BSD License. See: https://www.mrpt.org/License          |
    +------------------------------------------------------------------------+ */
 #pragma once
 
-#include <mrpt/io/CStream.h>
+#include <mrpt/core/optional_ref.h>
 #include <mrpt/core/pimpl.h>
+#include <mrpt/io/CStream.h>
 
 namespace mrpt::io
 {
@@ -50,7 +51,9 @@ class CFileGZInputStream : public CStream
 	 * \param fileName The file to be open in this stream
 	 * \return false if there's an error opening the file, true otherwise
 	 */
-	bool open(const std::string& fileName);
+	bool open(
+		const std::string& fileName,
+		mrpt::optional_ref<std::string> error_msg = std::nullopt);
 	/** Closes the file */
 	void close();
 	/** Returns true if the file was open without errors. */

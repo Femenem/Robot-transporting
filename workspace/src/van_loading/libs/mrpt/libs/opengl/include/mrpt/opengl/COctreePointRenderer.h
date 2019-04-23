@@ -1,19 +1,19 @@
 /* +------------------------------------------------------------------------+
    |                     Mobile Robot Programming Toolkit (MRPT)            |
-   |                          http://www.mrpt.org/                          |
+   |                          https://www.mrpt.org/                         |
    |                                                                        |
    | Copyright (c) 2005-2019, Individual contributors, see AUTHORS file     |
-   | See: http://www.mrpt.org/Authors - All rights reserved.                |
-   | Released under BSD License. See details in http://www.mrpt.org/License |
+   | See: https://www.mrpt.org/Authors - All rights reserved.               |
+   | Released under BSD License. See: https://www.mrpt.org/License          |
    +------------------------------------------------------------------------+ */
 #ifndef opengl_COctreePointRenderer_H
 #define opengl_COctreePointRenderer_H
 
+#include <mrpt/core/aligned_std_deque.h>
+#include <mrpt/opengl/CBox.h>
 #include <mrpt/opengl/CRenderizable.h>
 #include <mrpt/opengl/CSetOfObjects.h>
-#include <mrpt/opengl/CBox.h>
 #include <mrpt/opengl/gl_utils.h>
-#include <mrpt/core/aligned_std_deque.h>
 
 namespace mrpt
 {
@@ -44,7 +44,7 @@ namespace opengl
 /** Template class that implements the data structure and algorithms for
  * Octree-based efficient rendering.
  *  \sa mrpt::opengl::CPointCloud, mrpt::opengl::CPointCloudColoured,
- * http://www.mrpt.org/Efficiently_rendering_point_clouds_of_millions_of_points
+ * https://www.mrpt.org/Efficiently_rendering_point_clouds_of_millions_of_points
  * \ingroup mrpt_opengl_grp
  */
 template <class Derived>

@@ -1,18 +1,19 @@
 /* +------------------------------------------------------------------------+
    |                     Mobile Robot Programming Toolkit (MRPT)            |
-   |                          http://www.mrpt.org/                          |
+   |                          https://www.mrpt.org/                         |
    |                                                                        |
    | Copyright (c) 2005-2019, Individual contributors, see AUTHORS file     |
-   | See: http://www.mrpt.org/Authors - All rights reserved.                |
-   | Released under BSD License. See details in http://www.mrpt.org/License |
+   | See: https://www.mrpt.org/Authors - All rights reserved.               |
+   | Released under BSD License. See: https://www.mrpt.org/License          |
    +------------------------------------------------------------------------+ */
 #pragma once
 
 #include <mrpt/core/Clock.h>
-#include <mrpt/typemeta/TEnumType.h>
-#include <mrpt/poses/SE_traits.h>
 #include <mrpt/math/lightweight_geom_data.h>
+#include <mrpt/poses/Lie/Euclidean.h>
+#include <mrpt/poses/Lie/SE.h>
 #include <mrpt/poses/poses_frwds.h>
+#include <mrpt/typemeta/TEnumType.h>
 
 namespace mrpt::poses
 {
@@ -57,11 +58,11 @@ class CPoseInterpolatorBase
 	 * @{ */
 
 	/** TPose2D or TPose3D */
-	using pose_t = typename mrpt::poses::SE_traits<DIM>::lightweight_pose_t;
+	using pose_t = typename Lie::SE<DIM>::light_type;
 	/** CPose2D or CPose3D */
-	using cpose_t = typename mrpt::poses::SE_traits<DIM>::pose_t;
+	using cpose_t = typename Lie::SE<DIM>::type;
 	/** TPoint2D or TPoint3D */
-	using point_t = typename mrpt::poses::SE_traits<DIM>::point_t;
+	using point_t = typename Lie::Euclidean<DIM>::light_type;
 
 	using TTimePosePair = std::pair<mrpt::Clock::time_point, pose_t>;
 	using TPath = std::map<mrpt::Clock::time_point, pose_t>;

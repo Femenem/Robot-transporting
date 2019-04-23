@@ -104,7 +104,7 @@ public:
                 }
             }
             MODEL_RANGES[i] = models[state][i];
-        cout << to_string(MODEL_VALID[i]) << "::" << SOURCE_RANGES[i] << ":" << MODEL_RANGES[i] << ", "; // DEBUG
+//        cout << to_string(MODEL_VALID[i]) << "::" << SOURCE_RANGES[i] << ":" << MODEL_RANGES[i] << ", "; // DEBUG
         }
         CSimplePointsMap m1, m2;
         float runningTime;
@@ -146,12 +146,12 @@ public:
 
         // configuration options for the icp algorithm
         ICP.options.maxIterations = 200;
-        ICP.options.thresholdAng = DEG2RAD(2.0f);
-        ICP.options.thresholdDist = 2.5f;
+        ICP.options.thresholdAng = DEG2RAD(0.5f);
+        ICP.options.thresholdDist = 1.5f;
         ICP.options.ALFA = 0.0f;
         ICP.options.smallestThresholdDist = 0.01f;
         ICP.options.doRANSAC = false;
-        ICP.options.corresponding_points_decimation = 5;
+        ICP.options.corresponding_points_decimation = 3;
 
 //    ICP.options.dumpToConsole();
         // -----------------------------------------------------
@@ -163,7 +163,7 @@ public:
          * Additional arguments are provided to investigate the performance of the
          * algorithm
          */
-        CPose2D initialPose(-0.20f, 0.0f, (float)DEG2RAD(0.0f));
+        CPose2D initialPose(-0.30f, 0.0f, (float)DEG2RAD(0.0f)); // Behind by 0.3m
 
         CPosePDF::Ptr pdf =
                 ICP.Align(&m1, &m2, initialPose, &runningTime, (void*)&info);

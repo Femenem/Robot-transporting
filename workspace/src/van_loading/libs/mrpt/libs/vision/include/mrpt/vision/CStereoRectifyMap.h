@@ -1,15 +1,15 @@
 /* +------------------------------------------------------------------------+
    |                     Mobile Robot Programming Toolkit (MRPT)            |
-   |                          http://www.mrpt.org/                          |
+   |                          https://www.mrpt.org/                         |
    |                                                                        |
    | Copyright (c) 2005-2019, Individual contributors, see AUTHORS file     |
-   | See: http://www.mrpt.org/Authors - All rights reserved.                |
-   | Released under BSD License. See details in http://www.mrpt.org/License |
+   | See: https://www.mrpt.org/Authors - All rights reserved.               |
+   | Released under BSD License. See: https://www.mrpt.org/License          |
    +------------------------------------------------------------------------+ */
 #pragma once
 
-#include <mrpt/img/TStereoCamera.h>
 #include <mrpt/img/CImage.h>
+#include <mrpt/img/TStereoCamera.h>
 #include <mrpt/obs/CObservationStereoImages.h>
 #include <mrpt/poses/CPose3DQuat.h>
 
@@ -59,7 +59,7 @@ namespace mrpt::vision
  * \endcode
  *
  *  Read also the tutorial page online:
- * http://www.mrpt.org/Rectifying_stereo_images
+ * https://www.mrpt.org/Rectifying_stereo_images
  *
  * \sa CUndistortMap, mrpt::obs::CObservationStereoImages,
  * mrpt::img::TCamera, the application <a

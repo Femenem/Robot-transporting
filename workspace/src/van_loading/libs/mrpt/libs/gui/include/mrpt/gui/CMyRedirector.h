@@ -1,21 +1,21 @@
 /* +------------------------------------------------------------------------+
    |                     Mobile Robot Programming Toolkit (MRPT)            |
-   |                          http://www.mrpt.org/                          |
+   |                          https://www.mrpt.org/                         |
    |                                                                        |
    | Copyright (c) 2005-2019, Individual contributors, see AUTHORS file     |
-   | See: http://www.mrpt.org/Authors - All rights reserved.                |
-   | Released under BSD License. See details in http://www.mrpt.org/License |
+   | See: https://www.mrpt.org/Authors - All rights reserved.               |
+   | Released under BSD License. See: https://www.mrpt.org/License          |
    +------------------------------------------------------------------------+ */
 #pragma once
 
+#include <wx/app.h>
 #include <wx/string.h>
 #include <wx/textctrl.h>
-#include <wx/app.h>
 #include <wx/thread.h>
-#include <streambuf>
-#include <iostream>
 #include <cstdio>
 #include <functional>
+#include <iostream>
+#include <streambuf>
 
 #include "wx28-fixes.h"
 

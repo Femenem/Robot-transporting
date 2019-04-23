@@ -1,10 +1,10 @@
 /* +------------------------------------------------------------------------+
    |                     Mobile Robot Programming Toolkit (MRPT)            |
-   |                          http://www.mrpt.org/                          |
+   |                          https://www.mrpt.org/                         |
    |                                                                        |
    | Copyright (c) 2005-2019, Individual contributors, see AUTHORS file     |
-   | See: http://www.mrpt.org/Authors - All rights reserved.                |
-   | Released under BSD License. See details in http://www.mrpt.org/License |
+   | See: https://www.mrpt.org/Authors - All rights reserved.               |
+   | Released under BSD License. See: https://www.mrpt.org/License          |
    +------------------------------------------------------------------------+ */
 
 #ifndef _CRT_SECURE_NO_DEPRECATE
@@ -21,8 +21,8 @@
 #include <memory.h>
 #include <cassert>
 #include <cstdio>
-#include <cstring>
 #include <cstdlib>
+#include <cstring>
 
 XMLCSTR XMLNode::getVersion() { return _CXML("v2.39"); }
 void freeXMLString(XMLSTR t)

@@ -1,21 +1,21 @@
 /* +------------------------------------------------------------------------+
    |                     Mobile Robot Programming Toolkit (MRPT)            |
-   |                          http://www.mrpt.org/                          |
+   |                          https://www.mrpt.org/                         |
    |                                                                        |
    | Copyright (c) 2005-2019, Individual contributors, see AUTHORS file     |
-   | See: http://www.mrpt.org/Authors - All rights reserved.                |
-   | Released under BSD License. See details in http://www.mrpt.org/License |
+   | See: https://www.mrpt.org/Authors - All rights reserved.               |
+   | Released under BSD License. See: https://www.mrpt.org/License          |
    +------------------------------------------------------------------------+ */
 #pragma once
 
-#include <cstdarg>
-#include <cstdio>
-#include <cmath>
-#include <iosfwd>
-#include <vector>
-#include <limits>  // numeric_limits
 #include <mrpt/core/exceptions.h>
 #include <mrpt/math/eigen_frwds.h>
+#include <cmath>
+#include <cstdarg>
+#include <cstdio>
+#include <iosfwd>
+#include <limits>  // numeric_limits
+#include <vector>
 
 namespace mrpt
 {

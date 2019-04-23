@@ -1,21 +1,21 @@
 /* +------------------------------------------------------------------------+
    |                     Mobile Robot Programming Toolkit (MRPT)            |
-   |                          http://www.mrpt.org/                          |
+   |                          https://www.mrpt.org/                         |
    |                                                                        |
    | Copyright (c) 2005-2019, Individual contributors, see AUTHORS file     |
-   | See: http://www.mrpt.org/Authors - All rights reserved.                |
-   | Released under BSD License. See details in http://www.mrpt.org/License |
+   | See: https://www.mrpt.org/Authors - All rights reserved.               |
+   | Released under BSD License. See: https://www.mrpt.org/License          |
    +------------------------------------------------------------------------+ */
 #pragma once
 
-#include <mrpt/typemeta/TTypeName.h>
 #include <mrpt/core/aligned_allocator.h>
 #include <mrpt/core/aligned_std_map.h>
 #include <mrpt/core/exceptions.h>
 #include <mrpt/graphs/TNodeID.h>
-#include <set>
-#include <map>
+#include <mrpt/typemeta/TTypeName.h>
 #include <fstream>
+#include <map>
+#include <set>
 
 namespace mrpt
 {
@@ -273,7 +273,7 @@ class CDirectedGraph
 	 * each node in the graph.
 	 *  Possible values for the template argument MAP_NODEID_SET_NODEIDS are:
 	 *    - std::map<TNodeID, std::set<TNodeID> >
-	 *    - mrpt::utils::map_as_vector<TNodeID, std::set<TNodeID> >
+	 *    - mrpt::containers::map_as_vector<TNodeID, std::set<TNodeID> >
 	 * \sa getNeighborsOf
 	 */
 	template <class MAP_NODEID_SET_NODEIDS>

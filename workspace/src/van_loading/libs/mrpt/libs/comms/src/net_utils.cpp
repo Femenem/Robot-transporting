@@ -1,38 +1,38 @@
 /* +------------------------------------------------------------------------+
    |                     Mobile Robot Programming Toolkit (MRPT)            |
-   |                          http://www.mrpt.org/                          |
+   |                          https://www.mrpt.org/                         |
    |                                                                        |
    | Copyright (c) 2005-2019, Individual contributors, see AUTHORS file     |
-   | See: http://www.mrpt.org/Authors - All rights reserved.                |
-   | Released under BSD License. See details in http://www.mrpt.org/License |
+   | See: https://www.mrpt.org/Authors - All rights reserved.               |
+   | Released under BSD License. See: https://www.mrpt.org/License          |
    +------------------------------------------------------------------------+ */
 
 #include "comms-precomp.h"  // Precompiled headers
 
-#include <mrpt/comms/net_utils.h>
 #include <mrpt/comms/CClientTCPSocket.h>
 #include <mrpt/comms/CServerTCPSocket.h>
+#include <mrpt/comms/net_utils.h>
+#include <mrpt/core/exceptions.h>
+#include <mrpt/core/format.h>
 #include <mrpt/system/CTicTac.h>
 #include <mrpt/system/string_utils.h>
-#include <mrpt/core/format.h>
-#include <mrpt/core/exceptions.h>
 
-#include <thread>
-#include <future>
-#include <cstring>
 #include <cstdio>
+#include <cstring>
+#include <future>
+#include <thread>
 
 #if defined(MRPT_OS_LINUX) || defined(__APPLE__)
 #define INVALID_SOCKET (-1)
-#include <sys/socket.h>
-#include <unistd.h>
-#include <fcntl.h>
-#include <cerrno>
-#include <sys/types.h>
-#include <sys/ioctl.h>
-#include <netdb.h>
 #include <arpa/inet.h>
+#include <fcntl.h>
+#include <netdb.h>
 #include <netinet/in.h>
+#include <sys/ioctl.h>
+#include <sys/socket.h>
+#include <sys/types.h>
+#include <unistd.h>
+#include <cerrno>
 #endif
 
 #ifdef _WIN32

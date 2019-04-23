@@ -1,25 +1,25 @@
 /* +------------------------------------------------------------------------+
    |                     Mobile Robot Programming Toolkit (MRPT)            |
-   |                          http://www.mrpt.org/                          |
+   |                          https://www.mrpt.org/                         |
    |                                                                        |
    | Copyright (c) 2005-2019, Individual contributors, see AUTHORS file     |
-   | See: http://www.mrpt.org/Authors - All rights reserved.                |
-   | Released under BSD License. See details in http://www.mrpt.org/License |
+   | See: https://www.mrpt.org/Authors - All rights reserved.               |
+   | Released under BSD License. See: https://www.mrpt.org/License          |
    +------------------------------------------------------------------------+ */
 
 #include "poses-precomp.h"  // Precompiled headers
 
-#include <mrpt/poses/CPosePDFGaussian.h>
-#include <mrpt/poses/CPoint2DPDFGaussian.h>
-#include <mrpt/poses/CPose3DPDF.h>
-#include <mrpt/poses/CPose3D.h>
 #include <mrpt/math/CMatrix.h>
 #include <mrpt/math/distributions.h>
+#include <mrpt/math/matrix_serialization.h>
 #include <mrpt/math/wrap2pi.h>
-#include <mrpt/system/os.h>
+#include <mrpt/poses/CPoint2DPDFGaussian.h>
+#include <mrpt/poses/CPose3D.h>
+#include <mrpt/poses/CPose3DPDF.h>
+#include <mrpt/poses/CPosePDFGaussian.h>
 #include <mrpt/serialization/CArchive.h>
 #include <mrpt/serialization/CSchemeArchiveBase.h>
-#include <mrpt/math/matrix_serialization.h>
+#include <mrpt/system/os.h>
 
 #include <mrpt/random.h>
 

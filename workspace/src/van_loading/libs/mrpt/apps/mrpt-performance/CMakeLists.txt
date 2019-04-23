@@ -28,6 +28,7 @@ add_executable(${PROJECT_NAME}
 	perf-graph.cpp
 	perf-graphslam.cpp
 	perf-gridmaps.cpp
+	perf-gridmap3D.cpp
 	perf-icp.cpp
 	perf-images.cpp
 	perf-math.cpp
@@ -35,6 +36,7 @@ add_executable(${PROJECT_NAME}
 	perf-pointmaps.cpp
 	perf-poses.cpp
 	perf-pose-interp.cpp
+	perf-octomap.cpp
 	perf-random.cpp
 	perf-scan_matching.cpp
 	perf-CObservation3DRangeScan.cpp

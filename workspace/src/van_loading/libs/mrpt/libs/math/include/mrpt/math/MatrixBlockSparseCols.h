@@ -1,16 +1,16 @@
 /* +------------------------------------------------------------------------+
    |                     Mobile Robot Programming Toolkit (MRPT)            |
-   |                          http://www.mrpt.org/                          |
+   |                          https://www.mrpt.org/                         |
    |                                                                        |
    | Copyright (c) 2005-2019, Individual contributors, see AUTHORS file     |
-   | See: http://www.mrpt.org/Authors - All rights reserved.                |
-   | Released under BSD License. See details in http://www.mrpt.org/License |
+   | See: https://www.mrpt.org/Authors - All rights reserved.               |
+   | Released under BSD License. See: https://www.mrpt.org/License          |
    +------------------------------------------------------------------------+ */
 
 #pragma once
 
-#include <mrpt/core/aligned_std_map.h>
 #include <mrpt/containers/map_as_vector.h>
+#include <mrpt/core/aligned_std_map.h>
 #include <mrpt/math/CMatrixTemplateNumeric.h>  // For mrpt::math::CMatrixDouble
 
 namespace mrpt::math
@@ -28,9 +28,9 @@ namespace mrpt::math
  * \tparam HAS_REMAP Is true, an inverse mapping between column indices and
  * "user IDs" is kept.
  * \tparam INDEX_REMAP_MAP_IMPL Ignore if HAS_REMAP=false. Defaults to
- * "mrpt::utils::map_as_vector<size_t,size_t>" for amortized O(1). Can be set to
- * "std::map<size_t,size_t>" in very sparse systems to save memory at the cost
- * of a O(log N) access time when using the remap indices.
+ * "mrpt::containers::map_as_vector<size_t,size_t>" for amortized O(1). Can be
+ * set to "std::map<size_t,size_t>" in very sparse systems to save memory at the
+ * cost of a O(log N) access time when using the remap indices.
  *
  * \ingroup mrpt_math_grp
  */

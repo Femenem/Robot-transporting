@@ -1,18 +1,18 @@
 /* +------------------------------------------------------------------------+
    |                     Mobile Robot Programming Toolkit (MRPT)            |
-   |                          http://www.mrpt.org/                          |
+   |                          https://www.mrpt.org/                         |
    |                                                                        |
    | Copyright (c) 2005-2019, Individual contributors, see AUTHORS file     |
-   | See: http://www.mrpt.org/Authors - All rights reserved.                |
-   | Released under BSD License. See details in http://www.mrpt.org/License |
+   | See: https://www.mrpt.org/Authors - All rights reserved.               |
+   | Released under BSD License. See: https://www.mrpt.org/License          |
    +------------------------------------------------------------------------+ */
 
 #include "maps-precomp.h"  // Precomp header
 
 #include <mrpt/maps/COccupancyGridMap2D.h>
+#include <mrpt/maps/CSimplePointsMap.h>
 #include <mrpt/obs/CObservation2DRangeScan.h>
 #include <mrpt/obs/CObservationRange.h>
-#include <mrpt/maps/CSimplePointsMap.h>
 #include <mrpt/serialization/CArchive.h>
 
 using namespace mrpt;
@@ -558,14 +558,14 @@ double COccupancyGridMap2D::computeLikelihoodField_Thrun(
 	if (likelihoodOptions.enableLikelihoodCache)
 	{
 		// Reset the precomputed likelihood values map
-		if (precomputedLikelihoodToBeRecomputed)
+		if (m_likelihoodCacheOutDated)
 		{
 			if (!map.empty())
 				precomputedLikelihood.assign(map.size(), LIK_LF_CACHE_INVALID);
 			else
 				precomputedLikelihood.clear();
 
-			precomputedLikelihoodToBeRecomputed = false;
+			m_likelihoodCacheOutDated = false;
 		}
 	}
 

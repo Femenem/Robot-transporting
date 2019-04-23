@@ -1,17 +1,17 @@
 /* +------------------------------------------------------------------------+
    |                     Mobile Robot Programming Toolkit (MRPT)            |
-   |                          http://www.mrpt.org/                          |
+   |                          https://www.mrpt.org/                         |
    |                                                                        |
    | Copyright (c) 2005-2019, Individual contributors, see AUTHORS file     |
-   | See: http://www.mrpt.org/Authors - All rights reserved.                |
-   | Released under BSD License. See details in http://www.mrpt.org/License |
+   | See: https://www.mrpt.org/Authors - All rights reserved.               |
+   | Released under BSD License. See: https://www.mrpt.org/License          |
    +------------------------------------------------------------------------+ */
 
+#include <mrpt/containers/traits_map.h>
 #include <mrpt/graphs/CNetworkOfPoses.h>
 #include <mrpt/graphs/dijkstra.h>
 #include <mrpt/random.h>
 #include <mrpt/system/CTimeLogger.h>
-#include <mrpt/containers/traits_map.h>
 
 #include "common.h"
 

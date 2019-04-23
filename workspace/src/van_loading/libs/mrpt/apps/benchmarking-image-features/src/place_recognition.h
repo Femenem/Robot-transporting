@@ -1,10 +1,10 @@
 /* +------------------------------------------------------------------------+
    |                     Mobile Robot Programming Toolkit (MRPT)            |
-   |                          http://www.mrpt.org/                          |
+   |                          https://www.mrpt.org/                         |
    |                                                                        |
    | Copyright (c) 2005-2019, Individual contributors, see AUTHORS file     |
-   | See: http://www.mrpt.org/Authors - All rights reserved.                |
-   | Released under BSD License. See details in http://www.mrpt.org/License |
+   | See: https://www.mrpt.org/Authors - All rights reserved.               |
+   | Released under BSD License. See: https://www.mrpt.org/License          |
    +------------------------------------------------------------------------+ */
 
 /*---------------------------------------------------------------
@@ -21,24 +21,24 @@
 #include <mrpt/otherlibs/do_opencv_includes.h>
 
 /// standard C++ includes
-#include <iostream>
 #include <ctype.h>
 #include <algorithm>  // for copy
-#include <iterator>  // for ostream_iterator
-#include <vector>
 #include <ctime>
-#include <sstream>
 #include <fstream>
+#include <iostream>
+#include <iterator>  // for ostream_iterator
+#include <sstream>
 #include <string>
+#include <vector>
 
 /// MRPT includes
-#include <mrpt/vision/CFeatureExtraction.h>
+#include <mrpt/img/CImage.h>
 #include <mrpt/math/data_utils.h>
-#include <mrpt/vision/tracking.h>
-#include <mrpt/vision/CVideoFileWriter.h>
 #include <mrpt/system/filesystem.h>
 #include <mrpt/system/os.h>
-#include <mrpt/img/CImage.h>
+#include <mrpt/vision/CFeatureExtraction.h>
+#include <mrpt/vision/CVideoFileWriter.h>
+#include <mrpt/vision/tracking.h>
 
 #define NUM_CLASSES 5
 

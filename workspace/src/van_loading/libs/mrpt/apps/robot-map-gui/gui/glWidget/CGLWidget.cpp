@@ -1,30 +1,30 @@
 /* +---------------------------------------------------------------------------+
    |                     Mobile Robot Programming Toolkit (MRPT)               |
-   |                          http://www.mrpt.org/                             |
+   |                          https://www.mrpt.org/                            |
    |                                                                           |
    | Copyright (c) 2005-2019, Individual contributors, see AUTHORS file        |
-   | See: http://www.mrpt.org/Authors - All rights reserved.                   |
-   | Released under BSD License. See details in http://www.mrpt.org/License    |
+   | See: https://www.mrpt.org/Authors - All rights reserved.                  |
+   | Released under BSD License. See details in https://www.mrpt.org/License   |
    +---------------------------------------------------------------------------+
    */
 #include "CGLWidget.h"
 
-#include "mrpt/maps/TMetricMapInitializer.h"
 #include "mrpt/config/CConfigFile.h"
-#include "mrpt/io/CFileGZOutputStream.h"
+#include "mrpt/gui/CGlCanvasBase.h"
 #include "mrpt/io/CFileGZInputStream.h"
+#include "mrpt/io/CFileGZOutputStream.h"
+#include "mrpt/maps/TMetricMapInitializer.h"
+#include "mrpt/math/geometry.h"
 #include "mrpt/opengl/CPointCloud.h"
 #include "mrpt/opengl/CTexturedPlane.h"
-#include "mrpt/gui/CGlCanvasBase.h"
 #include "mrpt/opengl/stock_objects.h"
-#include "mrpt/math/geometry.h"
 
 #include "CDocument.h"
 
 #include "cmath"
 
-#include <QMouseEvent>
 #include <QApplication>
+#include <QMouseEvent>
 
 // Include libraries in linking (needed for Windows)
 #include <mrpt/config.h>

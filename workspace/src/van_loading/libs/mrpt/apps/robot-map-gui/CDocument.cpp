@@ -1,18 +1,24 @@
 /* +---------------------------------------------------------------------------+
    |                     Mobile Robot Programming Toolkit (MRPT)               |
-   |                          http://www.mrpt.org/                             |
+   |                          https://www.mrpt.org/                            |
    |                                                                           |
    | Copyright (c) 2005-2019, Individual contributors, see AUTHORS file        |
-   | See: http://www.mrpt.org/Authors - All rights reserved.                   |
-   | Released under BSD License. See details in http://www.mrpt.org/License    |
+   | See: https://www.mrpt.org/Authors - All rights reserved.                  |
+   | Released under BSD License. See details in https://www.mrpt.org/License   |
    +---------------------------------------------------------------------------+
    */
 #include "CDocument.h"
 
+#include <mrpt/maps/CBeaconMap.h>
+#include <mrpt/maps/CGasConcentrationGridMap2D.h>
+#include <mrpt/maps/CLandmarksMap.h>
+#include <mrpt/maps/COccupancyGridMap2D.h>
+#include <mrpt/maps/CSimplePointsMap.h>
+#include <mrpt/serialization/CArchive.h>
+#include "mrpt/config/CConfigFile.h"
 #include "mrpt/io/CFileGZInputStream.h"
 #include "mrpt/io/CFileGZOutputStream.h"
 #include "mrpt/io/CFileOutputStream.h"
-#include "mrpt/config/CConfigFile.h"
 
 const std::string METRIC_MAP_CONFIG_SECTION = "MappingApplication";
 
@@ -92,7 +98,7 @@ void CDocument::saveAsText(const std::string& fileName) const
 const std::string& CDocument::getFileName() const { return m_fileName; }
 void CDocument::setListOfMaps(TSetOfMetricMapInitializers& mapCfg)
 {
-	m_metricmap.setListOfMaps(&mapCfg);
+	m_metricmap.setListOfMaps(mapCfg);
 	updateMetricMap();
 }
 

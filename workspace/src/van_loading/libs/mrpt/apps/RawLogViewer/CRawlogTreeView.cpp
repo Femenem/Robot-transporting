@@ -1,25 +1,25 @@
 /* +------------------------------------------------------------------------+
    |                     Mobile Robot Programming Toolkit (MRPT)            |
-   |                          http://www.mrpt.org/                          |
+   |                          https://www.mrpt.org/                         |
    |                                                                        |
    | Copyright (c) 2005-2019, Individual contributors, see AUTHORS file     |
-   | See: http://www.mrpt.org/Authors - All rights reserved.                |
-   | Released under BSD License. See details in http://www.mrpt.org/License |
+   | See: https://www.mrpt.org/Authors - All rights reserved.               |
+   | Released under BSD License. See: https://www.mrpt.org/License          |
    +------------------------------------------------------------------------+ */
 
 #include "CRawlogTreeView.h"
 
+#include <mrpt/gui/wx28-fixes.h>
 #include <wx/artprov.h>
 #include <wx/bitmap.h>
+#include <wx/dcbuffer.h>
+#include <wx/dcclient.h>
 #include <wx/font.h>
-#include <wx/intl.h>
 #include <wx/image.h>
+#include <wx/imaglist.h>
+#include <wx/intl.h>
 #include <wx/string.h>
 #include <wx/window.h>
-#include <wx/dcclient.h>
-#include <wx/imaglist.h>
-#include <wx/dcbuffer.h>
-#include <mrpt/gui/wx28-fixes.h>
 
 IMPLEMENT_DYNAMIC_CLASS(CRawlogTreeView, wxScrolledWindow)
 
@@ -59,14 +59,6 @@ CRawlogTreeView::CRawlogTreeView(
 	  m_rawlog_last(INVALID_TIMESTAMP),
 	  m_tree_nodes()
 {
-}
-
-/* ------------------------------------------------------------
-						Destructor
-   ------------------------------------------------------------ */
-CRawlogTreeView::~CRawlogTreeView()
-{
-	if (m_imageList) delete m_imageList;
 }
 
 /* ------------------------------------------------------------

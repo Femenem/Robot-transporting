@@ -1,18 +1,18 @@
 /* +------------------------------------------------------------------------+
    |                     Mobile Robot Programming Toolkit (MRPT)            |
-   |                          http://www.mrpt.org/                          |
+   |                          https://www.mrpt.org/                         |
    |                                                                        |
    | Copyright (c) 2005-2019, Individual contributors, see AUTHORS file     |
-   | See: http://www.mrpt.org/Authors - All rights reserved.                |
-   | Released under BSD License. See details in http://www.mrpt.org/License |
+   | See: https://www.mrpt.org/Authors - All rights reserved.               |
+   | Released under BSD License. See: https://www.mrpt.org/License          |
    +------------------------------------------------------------------------+ */
 #pragma once
 
-#include <mrpt/serialization/CSerializable.h>
 #include <mrpt/obs/CObservation.h>
 #include <mrpt/obs/CSinCosLookUpTableFor2DScans.h>
-#include <mrpt/poses/CPose3D.h>
 #include <mrpt/obs/VelodyneCalibration.h>
+#include <mrpt/poses/CPose3D.h>
+#include <mrpt/serialization/CSerializable.h>
 #include <vector>
 
 namespace mrpt
@@ -200,7 +200,7 @@ class CObservationVelodyneScan : public CObservation
 		/** The list of point indices (in x,y,z,...) generated for each laserID
 		 * (ring number). Generated only if `generatePointsForLaserID`=true in
 		 * `TGeneratePointCloudParameters`*/
-		std::vector<std::vector<std::size_t>> pointsForLaserID;
+		std::vector<std::vector<uint64_t>> pointsForLaserID;
 
 		inline std::size_t size() const { return x.size(); }
 		void reserve(std::size_t n);

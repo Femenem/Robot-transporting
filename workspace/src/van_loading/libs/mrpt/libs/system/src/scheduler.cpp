@@ -1,41 +1,41 @@
 /* +------------------------------------------------------------------------+
    |                     Mobile Robot Programming Toolkit (MRPT)            |
-   |                          http://www.mrpt.org/                          |
+   |                          https://www.mrpt.org/                         |
    |                                                                        |
    | Copyright (c) 2005-2019, Individual contributors, see AUTHORS file     |
-   | See: http://www.mrpt.org/Authors - All rights reserved.                |
-   | Released under BSD License. See details in http://www.mrpt.org/License |
+   | See: https://www.mrpt.org/Authors - All rights reserved.               |
+   | Released under BSD License. See: https://www.mrpt.org/License          |
    +------------------------------------------------------------------------+ */
 
 #include "system-precomp.h"  // Precompiled headers
 
-#include <mrpt/system/scheduler.h>
-#include <mrpt/core/exceptions.h>
 #include <mrpt/config.h>
+#include <mrpt/core/exceptions.h>
+#include <mrpt/system/scheduler.h>
 
 #ifdef MRPT_OS_WINDOWS
 #include <windows.h>
+
 #include <process.h>
 #include <tlhelp32.h>
 #else
 #include <pthread.h>
-#include <unistd.h>
 #include <sys/select.h>
 #include <sys/time.h>
-#include <ctime>
 #include <unistd.h>
 #include <utime.h>
 #include <cerrno>
 #include <csignal>
 #include <cstring>  // strerror()
+#include <ctime>
 #endif
 
-#include <sys/types.h>
 #include <sys/stat.h>
+#include <sys/types.h>
 #ifdef MRPT_OS_APPLE
-#include <sys/sysctl.h>
 #include <mach/mach_init.h>
 #include <mach/thread_act.h>
+#include <sys/sysctl.h>
 #endif
 
 #include <iostream>
@@ -46,12 +46,7 @@ void mrpt::system::changeCurrentThreadPriority(TThreadPriority priority)
 	// TThreadPriority is defined to agree with numbers expected by Win32 API:
 	SetThreadPriority(GetCurrentThread(), priority);
 #else
-	const pthread_t tid =
-#ifdef MRPT_OS_APPLE
-		reinterpret_cast<long unsigned int>(pthread_self());
-#else
-		pthread_self();
-#endif
+	const pthread_t tid = pthread_self();
 
 	int ret, policy;
 	struct sched_param param

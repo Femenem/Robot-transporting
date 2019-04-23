@@ -8,5 +8,8 @@
     <mapping directory="$PROJECT_DIR$/libs/libpointmatcher" vcs="Git" />
     <mapping directory="$PROJECT_DIR$/libs/mrpt" vcs="Git" />
     <mapping directory="$PROJECT_DIR$/libs/mrpt_test/mrpt" vcs="Git" />
+    <mapping directory="$PROJECT_DIR$/reports/mmp-student" vcs="Git" />
+    <mapping directory="$PROJECT_DIR$/workspace/src/van_loading/libs/mrpt" vcs="Git" />
+    <mapping directory="$PROJECT_DIR$/workspace/src/van_loading/libs/mrpt-new" vcs="Git" />
   </component>
 </project>

@@ -1,18 +1,18 @@
 /* +------------------------------------------------------------------------+
    |                     Mobile Robot Programming Toolkit (MRPT)            |
-   |                          http://www.mrpt.org/                          |
+   |                          https://www.mrpt.org/                         |
    |                                                                        |
    | Copyright (c) 2005-2019, Individual contributors, see AUTHORS file     |
-   | See: http://www.mrpt.org/Authors - All rights reserved.                |
-   | Released under BSD License. See details in http://www.mrpt.org/License |
+   | See: https://www.mrpt.org/Authors - All rights reserved.               |
+   | Released under BSD License. See: https://www.mrpt.org/License          |
    +------------------------------------------------------------------------+ */
 #pragma once
 
 #include <mrpt/core/pimpl.h>
 
 #include <map>
-#include <string>
 #include <memory>
+#include <string>
 #include "mrpt-expr_export.h"
 
 namespace exprtk
@@ -56,6 +56,8 @@ namespace expr
  * \note (`MRPT_EXPR_VERBOSE` new in MRPT 1.5.7)
  * \ingroup mrpt_base_grp
  */
+// Note: Leave the MRPT_EXPR_EXPORT macro in mrpt-expr, to avoid exporting ALL
+// symbols which would increase the lib size too much.
 class MRPT_EXPR_EXPORT CRuntimeCompiledExpression
 {
    public:

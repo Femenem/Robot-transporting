@@ -1,26 +1,26 @@
 /* +------------------------------------------------------------------------+
    |                     Mobile Robot Programming Toolkit (MRPT)            |
-   |                          http://www.mrpt.org/                          |
+   |                          https://www.mrpt.org/                         |
    |                                                                        |
    | Copyright (c) 2005-2019, Individual contributors, see AUTHORS file     |
-   | See: http://www.mrpt.org/Authors - All rights reserved.                |
-   | Released under BSD License. See details in http://www.mrpt.org/License |
+   | See: https://www.mrpt.org/Authors - All rights reserved.               |
+   | Released under BSD License. See: https://www.mrpt.org/License          |
    +------------------------------------------------------------------------+ */
 #pragma once
 
+#include <mrpt/config/CLoadableOptions.h>
 #include <mrpt/nav/reactive/CRobot2NavInterface.h>
+#include <mrpt/obs/obs_frwds.h>
+#include <mrpt/poses/CPose2DInterpolator.h>
+#include <mrpt/poses/FrameTransformer.h>
 #include <mrpt/system/COutputLogger.h>
 #include <mrpt/system/CTimeLogger.h>
 #include <mrpt/typemeta/TEnumType.h>
-#include <mrpt/config/CLoadableOptions.h>
-#include <mrpt/poses/CPose2DInterpolator.h>
-#include <mrpt/poses/FrameTransformer.h>
-#include <mrpt/obs/obs_frwds.h>
 
-#include <list>
-#include <mutex>
-#include <memory>  // unique_ptr
 #include <functional>
+#include <list>
+#include <memory>  // unique_ptr
+#include <mutex>
 
 namespace mrpt::nav
 {

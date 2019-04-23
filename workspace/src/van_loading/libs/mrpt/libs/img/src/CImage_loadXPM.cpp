@@ -1,10 +1,10 @@
 /* +------------------------------------------------------------------------+
    |                     Mobile Robot Programming Toolkit (MRPT)            |
-   |                          http://www.mrpt.org/                          |
+   |                          https://www.mrpt.org/                         |
    |                                                                        |
    | Copyright (c) 2005-2019, Individual contributors, see AUTHORS file     |
-   | See: http://www.mrpt.org/Authors - All rights reserved.                |
-   | Released under BSD License. See details in http://www.mrpt.org/License |
+   | See: https://www.mrpt.org/Authors - All rights reserved.               |
+   | Released under BSD License. See: https://www.mrpt.org/License          |
    +------------------------------------------------------------------------+ */
 /*
 
@@ -63,11 +63,11 @@ license is as follows:
 
 #include "img-precomp.h"  // Precompiled headers
 
-#include <mrpt/img/CImage.h>
 #include <mrpt/core/exceptions.h>
-#include <unordered_map>
-#include <string>
+#include <mrpt/img/CImage.h>
 #include <cstring>
+#include <string>
+#include <unordered_map>
 
 #if MRPT_HAS_OPENCV
 struct XPMColorMapData

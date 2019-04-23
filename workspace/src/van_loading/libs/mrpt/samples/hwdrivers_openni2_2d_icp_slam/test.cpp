@@ -1,18 +1,18 @@
 /* +------------------------------------------------------------------------+
    |                     Mobile Robot Programming Toolkit (MRPT)            |
-   |                          http://www.mrpt.org/                          |
+   |                          https://www.mrpt.org/                         |
    |                                                                        |
    | Copyright (c) 2005-2019, Individual contributors, see AUTHORS file     |
-   | See: http://www.mrpt.org/Authors - All rights reserved.                |
-   | Released under BSD License. See details in http://www.mrpt.org/License |
+   | See: https://www.mrpt.org/Authors - All rights reserved.               |
+   | Released under BSD License. See: https://www.mrpt.org/License          |
    +------------------------------------------------------------------------+ */
 
-#include <mrpt/hwdrivers/COpenNI2Sensor.h>
 #include <mrpt/gui.h>
-#include <mrpt/system/CTicTac.h>
+#include <mrpt/hwdrivers/COpenNI2Sensor.h>
+#include <mrpt/img/TColor.h>
 #include <mrpt/opengl.h>
 #include <mrpt/opengl/CPlanarLaserScan.h>  // This class is in mrpt-maps
-#include <mrpt/img/TColor.h>
+#include <mrpt/system/CTicTac.h>
 #include <iostream>
 
 using namespace mrpt;
@@ -184,7 +184,7 @@ int main(int argc, char** argv)
 				// There are several methods to do this.
 				//  Switch the #if's to select among the options:
 				// See also:
-				// http://www.mrpt.org/Generating_3D_point_clouds_from_RGB_D_observations
+				// https://www.mrpt.org/Generating_3D_point_clouds_from_RGB_D_observations
 				// -------------------------------------------------------
 				if (newObs->hasRangeImage)
 				{

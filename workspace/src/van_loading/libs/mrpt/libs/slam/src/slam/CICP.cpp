@@ -1,27 +1,27 @@
 /* +------------------------------------------------------------------------+
    |                     Mobile Robot Programming Toolkit (MRPT)            |
-   |                          http://www.mrpt.org/                          |
+   |                          https://www.mrpt.org/                         |
    |                                                                        |
    | Copyright (c) 2005-2019, Individual contributors, see AUTHORS file     |
-   | See: http://www.mrpt.org/Authors - All rights reserved.                |
-   | Released under BSD License. See details in http://www.mrpt.org/License |
+   | See: https://www.mrpt.org/Authors - All rights reserved.               |
+   | Released under BSD License. See: https://www.mrpt.org/License          |
    +------------------------------------------------------------------------+ */
 
 #include "slam-precomp.h"  // Precompiled headers
 
-#include <mrpt/slam/CICP.h>
-#include <mrpt/tfest.h>
-#include <mrpt/poses/CPosePDFSOG.h>
-#include <mrpt/system/CTicTac.h>
-#include <mrpt/serialization/CArchive.h>
 #include <mrpt/config/CConfigFileBase.h>  // MRPT_LOAD_*()
-#include <mrpt/math/wrap2pi.h>
 #include <mrpt/math/ops_containers.h>
+#include <mrpt/math/wrap2pi.h>
 #include <mrpt/poses/CPose2D.h>
-#include <mrpt/poses/CPosePDF.h>
 #include <mrpt/poses/CPose3DPDF.h>
-#include <mrpt/poses/CPosePDFGaussian.h>
 #include <mrpt/poses/CPose3DPDFGaussian.h>
+#include <mrpt/poses/CPosePDF.h>
+#include <mrpt/poses/CPosePDFGaussian.h>
+#include <mrpt/poses/CPosePDFSOG.h>
+#include <mrpt/serialization/CArchive.h>
+#include <mrpt/slam/CICP.h>
+#include <mrpt/system/CTicTac.h>
+#include <mrpt/tfest.h>
 
 using namespace mrpt::slam;
 using namespace mrpt::maps;

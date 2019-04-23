@@ -1,10 +1,10 @@
 /* +------------------------------------------------------------------------+
    |                     Mobile Robot Programming Toolkit (MRPT)            |
-   |                          http://www.mrpt.org/                          |
+   |                          https://www.mrpt.org/                         |
    |                                                                        |
    | Copyright (c) 2005-2019, Individual contributors, see AUTHORS file     |
-   | See: http://www.mrpt.org/Authors - All rights reserved.                |
-   | Released under BSD License. See details in http://www.mrpt.org/License |
+   | See: https://www.mrpt.org/Authors - All rights reserved.               |
+   | Released under BSD License. See: https://www.mrpt.org/License          |
    +------------------------------------------------------------------------+ */
 
 #include "slam-precomp.h"  // Precompiled headers
@@ -17,25 +17,25 @@
    picked by the metric given by the user (maha vs. match. lik.)
 
    Related papers:
-	- Matching likelihood. See:  http://www.mrpt.org/Paper:Matching_Likelihood
+	- Matching likelihood. See:  https://www.mrpt.org/Paper:Matching_Likelihood
 
 	- JCBB: Joint Compatibility Branch & Bound [Neira, Tardos 2001]
 
 */
 
-#include <mrpt/slam/data_association.h>
-#include <mrpt/math/distributions.h>  // for chi2inv
 #include <mrpt/math/data_utils.h>
-#include <mrpt/poses/CPointPDFGaussian.h>
+#include <mrpt/math/distributions.h>  // for chi2inv
 #include <mrpt/poses/CPoint2DPDFGaussian.h>
+#include <mrpt/poses/CPointPDFGaussian.h>
+#include <mrpt/slam/data_association.h>
 
 #include <memory>
-#include <set>
-#include <numeric>  // accumulate
 #include <memory>  // unique_ptr
+#include <numeric>  // accumulate
+#include <set>
 
-#include <nanoflann.hpp>  // For kd-tree's
 #include <mrpt/math/KDTreeCapable.h>  // For kd-tree's
+#include <nanoflann.hpp>  // For kd-tree's
 
 using namespace std;
 using namespace mrpt;

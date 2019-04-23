@@ -1,17 +1,17 @@
 /* +------------------------------------------------------------------------+
    |                     Mobile Robot Programming Toolkit (MRPT)            |
-   |                          http://www.mrpt.org/                          |
+   |                          https://www.mrpt.org/                         |
    |                                                                        |
    | Copyright (c) 2005-2019, Individual contributors, see AUTHORS file     |
-   | See: http://www.mrpt.org/Authors - All rights reserved.                |
-   | Released under BSD License. See details in http://www.mrpt.org/License |
+   | See: https://www.mrpt.org/Authors - All rights reserved.               |
+   | Released under BSD License. See: https://www.mrpt.org/License          |
    +------------------------------------------------------------------------+ */
 
 #include "tfest-precomp.h"  // Precompiled headers
 
-#include <mrpt/tfest/se2.h>
 #include <mrpt/poses/CPosePDFGaussian.h>
 #include <mrpt/random.h>
+#include <mrpt/tfest/se2.h>
 
 #if MRPT_HAS_SSE2
 #include <mrpt/core/SSE_types.h>
@@ -65,7 +65,7 @@ bool tfest::se2_l2(
 
 // ----------------------------------------------------------------------
 //  For the formulas of the covariance, see:
-//   http://www.mrpt.org/Paper:Occupancy_Grid_Matching
+//   https://www.mrpt.org/Paper:Occupancy_Grid_Matching
 //   and Jose Luis Blanco's PhD thesis.
 // ----------------------------------------------------------------------
 #if MRPT_HAS_SSE2

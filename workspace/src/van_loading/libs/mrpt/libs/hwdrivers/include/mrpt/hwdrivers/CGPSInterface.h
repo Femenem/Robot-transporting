@@ -1,23 +1,23 @@
 /* +------------------------------------------------------------------------+
    |                     Mobile Robot Programming Toolkit (MRPT)            |
-   |                          http://www.mrpt.org/                          |
+   |                          https://www.mrpt.org/                         |
    |                                                                        |
    | Copyright (c) 2005-2019, Individual contributors, see AUTHORS file     |
-   | See: http://www.mrpt.org/Authors - All rights reserved.                |
-   | Released under BSD License. See details in http://www.mrpt.org/License |
+   | See: https://www.mrpt.org/Authors - All rights reserved.               |
+   | Released under BSD License. See: https://www.mrpt.org/License          |
    +------------------------------------------------------------------------+ */
 
 #pragma once
 
-#include <mrpt/obs/CObservationGPS.h>
-#include <mrpt/poses/CPoint3D.h>
 #include <mrpt/comms/CSerialPort.h>
-#include <mrpt/system/COutputLogger.h>
-#include <mrpt/io/CFileOutputStream.h>
-#include <mrpt/typemeta/TEnumType.h>
-#include <mrpt/hwdrivers/CGenericSensor.h>
 #include <mrpt/containers/circular_buffer.h>
+#include <mrpt/hwdrivers/CGenericSensor.h>
+#include <mrpt/io/CFileOutputStream.h>
+#include <mrpt/obs/CObservationGPS.h>
 #include <mrpt/obs/obs_frwds.h>
+#include <mrpt/poses/CPoint3D.h>
+#include <mrpt/system/COutputLogger.h>
+#include <mrpt/typemeta/TEnumType.h>
 
 namespace mrpt::hwdrivers
 {
@@ -70,7 +70,7 @@ namespace mrpt::hwdrivers
  *
  *  # Select a parser for GNSS data:
  *  # Up-to-date list of supported parsers available in
- * http://reference.mrpt.org/devel/classmrpt_1_1hwdrivers_1_1_c_g_p_s_interface.html
+ * https://reference.mrpt.org/devel/classmrpt_1_1hwdrivers_1_1_c_g_p_s_interface.html
  *  parser =  AUTO
  *
  *  # If uncommented and non-empty, raw binary/ascii data received from the

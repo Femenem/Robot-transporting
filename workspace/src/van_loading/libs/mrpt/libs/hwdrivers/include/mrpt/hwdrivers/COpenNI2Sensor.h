@@ -1,17 +1,17 @@
 /* +------------------------------------------------------------------------+
    |                     Mobile Robot Programming Toolkit (MRPT)            |
-   |                          http://www.mrpt.org/                          |
+   |                          https://www.mrpt.org/                         |
    |                                                                        |
    | Copyright (c) 2005-2019, Individual contributors, see AUTHORS file     |
-   | See: http://www.mrpt.org/Authors - All rights reserved.                |
-   | Released under BSD License. See details in http://www.mrpt.org/License |
+   | See: https://www.mrpt.org/Authors - All rights reserved.               |
+   | Released under BSD License. See: https://www.mrpt.org/License          |
    +------------------------------------------------------------------------+ */
 #pragma once
 
-#include <mrpt/hwdrivers/COpenNI2Generic.h>
-#include <mrpt/hwdrivers/CGenericSensor.h>
-#include <mrpt/typemeta/TEnumType.h>
 #include <mrpt/gui/CDisplayWindow.h>
+#include <mrpt/hwdrivers/CGenericSensor.h>
+#include <mrpt/hwdrivers/COpenNI2Generic.h>
+#include <mrpt/typemeta/TEnumType.h>
 
 namespace mrpt::hwdrivers
 {
@@ -46,7 +46,7 @@ namespace mrpt::hwdrivers
  *    - The 3D relative pose of the two cameras. See
  *COpenNI2Sensor::setRelativePoseIntensityWrtDepth()
  *
- *   See http://www.mrpt.org/Kinect_calibration for a procedure to calibrate
+ *   See https://www.mrpt.org/Kinect_calibration for a procedure to calibrate
  *RGBD sensors with an interactive GUI program.
  *
  * <h2>Coordinates convention</h2><hr>
@@ -167,7 +167,7 @@ namespace mrpt::hwdrivers
  *
  *
  *    // Kinect sensor calibration:
- *    // See http://www.mrpt.org/Kinect_and_MRPT
+ *    // See https://www.mrpt.org/Kinect_and_MRPT
  *
  *    // Left/Depth camera
  *    [supplied_section_name_LEFT]

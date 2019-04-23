@@ -1,18 +1,18 @@
 /* +------------------------------------------------------------------------+
    |                     Mobile Robot Programming Toolkit (MRPT)            |
-   |                          http://www.mrpt.org/                          |
+   |                          https://www.mrpt.org/                         |
    |                                                                        |
    | Copyright (c) 2005-2019, Individual contributors, see AUTHORS file     |
-   | See: http://www.mrpt.org/Authors - All rights reserved.                |
-   | Released under BSD License. See details in http://www.mrpt.org/License |
+   | See: https://www.mrpt.org/Authors - All rights reserved.               |
+   | Released under BSD License. See: https://www.mrpt.org/License          |
    +------------------------------------------------------------------------+ */
 
 #include "containers-precomp.h"  // Precompiled headers
 
 #include <mrpt/containers/ts_hash_map.h>
 #include <mrpt/core/byte_manip.h>  // MAKEWORD16B(), etc.
-#include <cstring>
 #include <cstdlib>
+#include <cstring>
 
 void mrpt::containers::reduced_hash(
 	const std::string_view& value, uint64_t& out_hash)

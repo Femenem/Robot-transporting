@@ -1,10 +1,10 @@
 /* +------------------------------------------------------------------------+
    |                     Mobile Robot Programming Toolkit (MRPT)            |
-   |                          http://www.mrpt.org/                          |
+   |                          https://www.mrpt.org/                         |
    |                                                                        |
    | Copyright (c) 2005-2019, Individual contributors, see AUTHORS file     |
-   | See: http://www.mrpt.org/Authors - All rights reserved.                |
-   | Released under BSD License. See details in http://www.mrpt.org/License |
+   | See: https://www.mrpt.org/Authors - All rights reserved.               |
+   | Released under BSD License. See: https://www.mrpt.org/License          |
    +------------------------------------------------------------------------+ */
 
 /**
@@ -12,12 +12,12 @@
  * Execute a Spherical Linear Interpolation given 2 poses.
  */
 
-#include <mrpt/math/slerp.h>
-#include <mrpt/system/CTicTac.h>
-#include <mrpt/img/TColor.h>
 #include <mrpt/gui/CDisplayWindow3D.h>
+#include <mrpt/img/TColor.h>
+#include <mrpt/math/slerp.h>
 #include <mrpt/opengl/CGridPlaneXY.h>
 #include <mrpt/opengl/stock_objects.h>
+#include <mrpt/system/CTicTac.h>
 #include <iostream>
 
 using namespace std;

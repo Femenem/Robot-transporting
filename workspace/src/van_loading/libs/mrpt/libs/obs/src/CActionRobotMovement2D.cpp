@@ -1,21 +1,21 @@
 /* +------------------------------------------------------------------------+
    |                     Mobile Robot Programming Toolkit (MRPT)            |
-   |                          http://www.mrpt.org/                          |
+   |                          https://www.mrpt.org/                         |
    |                                                                        |
    | Copyright (c) 2005-2019, Individual contributors, see AUTHORS file     |
-   | See: http://www.mrpt.org/Authors - All rights reserved.                |
-   | Released under BSD License. See details in http://www.mrpt.org/License |
+   | See: https://www.mrpt.org/Authors - All rights reserved.               |
+   | Released under BSD License. See: https://www.mrpt.org/License          |
    +------------------------------------------------------------------------+ */
 
 #include "obs-precomp.h"  // Precompiled headers
 
+#include <mrpt/math/point_poses2vectors.h>
+#include <mrpt/math/wrap2pi.h>
 #include <mrpt/obs/CActionRobotMovement2D.h>
-#include <mrpt/serialization/CArchive.h>
 #include <mrpt/poses/CPosePDFGaussian.h>
 #include <mrpt/poses/CPosePDFParticles.h>
 #include <mrpt/random.h>
-#include <mrpt/math/point_poses2vectors.h>
-#include <mrpt/math/wrap2pi.h>
+#include <mrpt/serialization/CArchive.h>
 
 using namespace mrpt::obs;
 using namespace mrpt::poses;
@@ -426,7 +426,7 @@ void CActionRobotMovement2D::computeFromOdometry_modelGaussian(
 	poseChange = mrpt::make_aligned_shared<CPosePDFGaussian>();
 	auto* aux = dynamic_cast<CPosePDFGaussian*>(poseChange.get());
 
-	// See http://www.mrpt.org/Probabilistic_Motion_Models
+	// See https://www.mrpt.org/Probabilistic_Motion_Models
 	// -----------------------------------
 
 	// Build the odometry noise matrix:

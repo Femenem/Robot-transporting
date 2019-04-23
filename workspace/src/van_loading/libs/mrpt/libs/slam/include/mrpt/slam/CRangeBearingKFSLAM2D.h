@@ -1,28 +1,28 @@
 /* +------------------------------------------------------------------------+
    |                     Mobile Robot Programming Toolkit (MRPT)            |
-   |                          http://www.mrpt.org/                          |
+   |                          https://www.mrpt.org/                         |
    |                                                                        |
    | Copyright (c) 2005-2019, Individual contributors, see AUTHORS file     |
-   | See: http://www.mrpt.org/Authors - All rights reserved.                |
-   | Released under BSD License. See details in http://www.mrpt.org/License |
+   | See: https://www.mrpt.org/Authors - All rights reserved.               |
+   | Released under BSD License. See: https://www.mrpt.org/License          |
    +------------------------------------------------------------------------+ */
 #pragma once
 
-#include <mrpt/math/CMatrixTemplateNumeric.h>
+#include <mrpt/bayes/CKalmanFilterCapable.h>
 #include <mrpt/config/CConfigFileBase.h>
 #include <mrpt/config/CLoadableOptions.h>
+#include <mrpt/math/CMatrixTemplateNumeric.h>
 #include <mrpt/opengl/opengl_frwds.h>
-#include <mrpt/bayes/CKalmanFilterCapable.h>
 
-#include <mrpt/core/safe_pointers.h>
 #include <mrpt/containers/bimap.h>
+#include <mrpt/core/safe_pointers.h>
 
-#include <mrpt/obs/CSensoryFrame.h>
-#include <mrpt/obs/CActionCollection.h>
-#include <mrpt/obs/CObservationBearingRange.h>
-#include <mrpt/poses/CPosePDFGaussian.h>
 #include <mrpt/maps/CLandmark.h>
 #include <mrpt/maps/CSimpleMap.h>
+#include <mrpt/obs/CActionCollection.h>
+#include <mrpt/obs/CObservationBearingRange.h>
+#include <mrpt/obs/CSensoryFrame.h>
+#include <mrpt/poses/CPosePDFGaussian.h>
 #include <mrpt/slam/CIncrementalMapPartitioner.h>
 #include <mrpt/slam/data_association.h>
 
@@ -34,8 +34,8 @@ namespace mrpt::slam
  *action/observation.
  *
  *   The following pages describe front-end applications based on this class:
- *		- http://www.mrpt.org/Application:2d-slam-demo
- *		- http://www.mrpt.org/Application:kf-slam
+ *		- https://www.mrpt.org/Application:2d-slam-demo
+ *		- https://www.mrpt.org/Application:kf-slam
  *
  * \sa CRangeBearingKFSLAM  \ingroup metric_slam_grp
  */

@@ -1,18 +1,18 @@
 /* +------------------------------------------------------------------------+
    |                     Mobile Robot Programming Toolkit (MRPT)            |
-   |                          http://www.mrpt.org/                          |
+   |                          https://www.mrpt.org/                         |
    |                                                                        |
    | Copyright (c) 2005-2019, Individual contributors, see AUTHORS file     |
-   | See: http://www.mrpt.org/Authors - All rights reserved.                |
-   | Released under BSD License. See details in http://www.mrpt.org/License |
+   | See: https://www.mrpt.org/Authors - All rights reserved.               |
+   | Released under BSD License. See: https://www.mrpt.org/License          |
    +------------------------------------------------------------------------+ */
 #pragma once
 
-#include <mrpt/opengl/CRenderizable.h>
+#include <mrpt/img/color_maps.h>
 #include <mrpt/opengl/COctreePointRenderer.h>
+#include <mrpt/opengl/CRenderizable.h>
 #include <mrpt/opengl/PLY_import_export.h>
 #include <mrpt/opengl/pointcloud_adapters.h>
-#include <mrpt/img/color_maps.h>
 
 namespace mrpt
 {
@@ -27,7 +27,7 @@ namespace opengl
  *   This class uses smart optimizations while rendering to efficiently draw
  * clouds of millions of points,
  *   as described in this page:
- * http://www.mrpt.org/Efficiently_rendering_point_clouds_of_millions_of_points
+ * https://www.mrpt.org/Efficiently_rendering_point_clouds_of_millions_of_points
  *
  *  \sa opengl::COpenGLScene, opengl::CPointCloud
  *

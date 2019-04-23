@@ -1,10 +1,10 @@
 /* +------------------------------------------------------------------------+
    |                     Mobile Robot Programming Toolkit (MRPT)            |
-   |                          http://www.mrpt.org/                          |
+   |                          https://www.mrpt.org/                         |
    |                                                                        |
    | Copyright (c) 2005-2019, Individual contributors, see AUTHORS file     |
-   | See: http://www.mrpt.org/Authors - All rights reserved.                |
-   | Released under BSD License. See details in http://www.mrpt.org/License |
+   | See: https://www.mrpt.org/Authors - All rights reserved.               |
+   | Released under BSD License. See: https://www.mrpt.org/License          |
    +------------------------------------------------------------------------+ */
 
 /* ===========================================================================
@@ -23,19 +23,19 @@
    ===========================================================================
    */
 
-#include <mrpt/vision/bundle_adjustment.h>
-#include <mrpt/vision/pinhole.h>
+#include <mrpt/config/CConfigFile.h>
 #include <mrpt/gui/CDisplayWindow3D.h>
 #include <mrpt/gui/CDisplayWindowPlots.h>
-#include <mrpt/poses/CPose3DQuat.h>
-#include <mrpt/random.h>
-#include <mrpt/math/geometry.h>
-#include <mrpt/system/filesystem.h>
-#include <mrpt/config/CConfigFile.h>
 #include <mrpt/io/CTextFileLinesParser.h>
+#include <mrpt/math/geometry.h>
 #include <mrpt/opengl/CGridPlaneXY.h>
 #include <mrpt/opengl/CPointCloud.h>
 #include <mrpt/opengl/stock_objects.h>
+#include <mrpt/poses/CPose3DQuat.h>
+#include <mrpt/random.h>
+#include <mrpt/system/filesystem.h>
+#include <mrpt/vision/bundle_adjustment.h>
+#include <mrpt/vision/pinhole.h>
 #include <iostream>
 
 using namespace mrpt;

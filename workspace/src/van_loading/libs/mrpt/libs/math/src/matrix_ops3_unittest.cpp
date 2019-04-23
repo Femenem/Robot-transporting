@@ -1,21 +1,21 @@
 /* +------------------------------------------------------------------------+
    |                     Mobile Robot Programming Toolkit (MRPT)            |
-   |                          http://www.mrpt.org/                          |
+   |                          https://www.mrpt.org/                         |
    |                                                                        |
    | Copyright (c) 2005-2019, Individual contributors, see AUTHORS file     |
-   | See: http://www.mrpt.org/Authors - All rights reserved.                |
-   | Released under BSD License. See details in http://www.mrpt.org/License |
+   | See: https://www.mrpt.org/Authors - All rights reserved.               |
+   | Released under BSD License. See: https://www.mrpt.org/License          |
    +------------------------------------------------------------------------+ */
 
 // Note: Matrices unit tests have been split in different files since
 // building them with eigen3 eats a lot of RAM and may be a problem while
 // compiling in small systems.
 
+#include <gtest/gtest.h>
 #include <mrpt/math/CMatrixFixedNumeric.h>
 #include <mrpt/math/CMatrixTemplateNumeric.h>
 #include <mrpt/math/utils.h>
 #include <mrpt/random.h>
-#include <gtest/gtest.h>
 
 using namespace mrpt;
 using namespace mrpt::math;

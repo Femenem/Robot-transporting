@@ -1,10 +1,10 @@
 /* +------------------------------------------------------------------------+
    |                     Mobile Robot Programming Toolkit (MRPT)            |
-   |                          http://www.mrpt.org/                          |
+   |                          https://www.mrpt.org/                         |
    |                                                                        |
    | Copyright (c) 2005-2019, Individual contributors, see AUTHORS file     |
-   | See: http://www.mrpt.org/Authors - All rights reserved.                |
-   | Released under BSD License. See details in http://www.mrpt.org/License |
+   | See: https://www.mrpt.org/Authors - All rights reserved.               |
+   | Released under BSD License. See: https://www.mrpt.org/License          |
    +------------------------------------------------------------------------+ */
 
 #include "io-precomp.h"  // Precompiled headers
@@ -17,12 +17,12 @@
 #include <windows.h>
 #endif
 
-#include <mrpt/io/zip.h>
 #include <mrpt/core/exceptions.h>
 #include <mrpt/io/vector_loadsave.h>
+#include <mrpt/io/zip.h>
 
-#include <mrpt/io/CFileGZOutputStream.h>
 #include <mrpt/io/CFileGZInputStream.h>
+#include <mrpt/io/CFileGZOutputStream.h>
 #include <mrpt/io/CFileInputStream.h>
 #include <mrpt/system/filesystem.h>
 #include <chrono>

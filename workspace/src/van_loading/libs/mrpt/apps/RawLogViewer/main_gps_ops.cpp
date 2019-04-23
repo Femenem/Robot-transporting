@@ -1,33 +1,33 @@
 /* +------------------------------------------------------------------------+
    |                     Mobile Robot Programming Toolkit (MRPT)            |
-   |                          http://www.mrpt.org/                          |
+   |                          https://www.mrpt.org/                         |
    |                                                                        |
    | Copyright (c) 2005-2019, Individual contributors, see AUTHORS file     |
-   | See: http://www.mrpt.org/Authors - All rights reserved.                |
-   | Released under BSD License. See details in http://www.mrpt.org/License |
+   | See: https://www.mrpt.org/Authors - All rights reserved.               |
+   | Released under BSD License. See: https://www.mrpt.org/License          |
    +------------------------------------------------------------------------+ */
 
-#include "xRawLogViewerMain.h"
 #include "CFormEdit.h"
+#include "xRawLogViewerMain.h"
 
 #include <wx/choicdlg.h>
-#include <wx/msgdlg.h>
-#include <wx/textdlg.h>
 #include <wx/dirdlg.h>
 #include <wx/filedlg.h>
+#include <wx/msgdlg.h>
+#include <wx/textdlg.h>
 
 // General global variables:
+#include <mrpt/containers/stl_containers_utils.h>
+#include <mrpt/math/geometry.h>
+#include <mrpt/math/ops_containers.h>
+#include <mrpt/math/utils.h>
 #include <mrpt/obs/CObservationGPS.h>
-#include <mrpt/opengl/CPointCloud.h>
-#include <mrpt/opengl/CGridPlaneXY.h>
 #include <mrpt/opengl/CAxis.h>
+#include <mrpt/opengl/CGridPlaneXY.h>
+#include <mrpt/opengl/CPointCloud.h>
+#include <mrpt/system/filesystem.h>
 #include <mrpt/system/os.h>
 #include <mrpt/topography.h>
-#include <mrpt/containers/stl_containers_utils.h>
-#include <mrpt/math/utils.h>
-#include <mrpt/math/ops_containers.h>
-#include <mrpt/system/filesystem.h>
-#include <mrpt/math/geometry.h>
 
 using namespace mrpt;
 using namespace mrpt::obs;

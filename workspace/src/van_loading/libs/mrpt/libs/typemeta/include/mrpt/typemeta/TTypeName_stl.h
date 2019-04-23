@@ -1,23 +1,23 @@
 /* +------------------------------------------------------------------------+
    |                     Mobile Robot Programming Toolkit (MRPT)            |
-   |                          http://www.mrpt.org/                          |
+   |                          https://www.mrpt.org/                         |
    |                                                                        |
    | Copyright (c) 2005-2019, Individual contributors, see AUTHORS file     |
-   | See: http://www.mrpt.org/Authors - All rights reserved.                |
-   | Released under BSD License. See details in http://www.mrpt.org/License |
+   | See: https://www.mrpt.org/Authors - All rights reserved.               |
+   | Released under BSD License. See: https://www.mrpt.org/License          |
    +------------------------------------------------------------------------+ */
 #pragma once
 
 #include <mrpt/typemeta/TTypeName.h>
 #include <mrpt/typemeta/num_to_string.h>
 #include <mrpt/typemeta/static_string.h>
-#include <chrono>
-#include <list>
-#include <vector>
-#include <deque>
-#include <set>
-#include <map>
 #include <array>
+#include <chrono>
+#include <deque>
+#include <list>
+#include <map>
+#include <set>
+#include <vector>
 
 /** \file This file extends TTypeName.h for STL C++ types. */
 

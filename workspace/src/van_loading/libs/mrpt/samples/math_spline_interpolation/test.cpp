@@ -1,22 +1,22 @@
 /* +------------------------------------------------------------------------+
    |                     Mobile Robot Programming Toolkit (MRPT)            |
-   |                          http://www.mrpt.org/                          |
+   |                          https://www.mrpt.org/                         |
    |                                                                        |
    | Copyright (c) 2005-2019, Individual contributors, see AUTHORS file     |
-   | See: http://www.mrpt.org/Authors - All rights reserved.                |
-   | Released under BSD License. See details in http://www.mrpt.org/License |
+   | See: https://www.mrpt.org/Authors - All rights reserved.               |
+   | Released under BSD License. See: https://www.mrpt.org/License          |
    +------------------------------------------------------------------------+ */
 
-#include <mrpt/system/os.h>
-#include <mrpt/system/datetime.h>
+#include <mrpt/gui/CDisplayWindowPlots.h>
+#include <mrpt/math/CSplineInterpolator1D.h>
+#include <mrpt/math/utils.h>
 #include <mrpt/poses/CPose3D.h>
 #include <mrpt/poses/CPose3DInterpolator.h>
-#include <mrpt/math/CSplineInterpolator1D.h>
-#include <mrpt/math/interp_fit.hpp>
-#include <mrpt/math/utils.h>
 #include <mrpt/random.h>
-#include <mrpt/gui/CDisplayWindowPlots.h>
+#include <mrpt/system/datetime.h>
+#include <mrpt/system/os.h>
 #include <iostream>
+#include <mrpt/math/interp_fit.hpp>
 
 using namespace mrpt::gui;
 using namespace mrpt::random;

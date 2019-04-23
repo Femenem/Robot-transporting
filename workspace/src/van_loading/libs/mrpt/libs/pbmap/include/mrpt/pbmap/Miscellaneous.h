@@ -1,10 +1,10 @@
 /* +------------------------------------------------------------------------+
    |                     Mobile Robot Programming Toolkit (MRPT)            |
-   |                          http://www.mrpt.org/                          |
+   |                          https://www.mrpt.org/                         |
    |                                                                        |
    | Copyright (c) 2005-2019, Individual contributors, see AUTHORS file     |
-   | See: http://www.mrpt.org/Authors - All rights reserved.                |
-   | Released under BSD License. See details in http://www.mrpt.org/License |
+   | See: https://www.mrpt.org/Authors - All rights reserved.               |
+   | Released under BSD License. See: https://www.mrpt.org/License          |
    +------------------------------------------------------------------------+ */
 
 /*  Plane-based Map (PbMap) library
@@ -18,15 +18,15 @@
 #include <mrpt/config.h>
 #if MRPT_HAS_PCL
 
+#include <mrpt/math/ops_containers.h>
 #include <mrpt/math/types_math.h>  // Eigen
-#include <map>
-#include <string>
+#include <pcl/point_cloud.h>
+#include <pcl/point_types.h>
 #include <iostream>
 #include <iterator>
+#include <map>
+#include <string>
 #include <vector>
-#include <pcl/point_types.h>
-#include <pcl/point_cloud.h>
-#include <mrpt/math/ops_containers.h>
 
 namespace mrpt::pbmap
 {

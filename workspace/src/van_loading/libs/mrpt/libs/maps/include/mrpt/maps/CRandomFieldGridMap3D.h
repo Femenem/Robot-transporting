@@ -1,21 +1,21 @@
 /* +------------------------------------------------------------------------+
    |                     Mobile Robot Programming Toolkit (MRPT)            |
-   |                          http://www.mrpt.org/                          |
+   |                          https://www.mrpt.org/                         |
    |                                                                        |
    | Copyright (c) 2005-2019, Individual contributors, see AUTHORS file     |
-   | See: http://www.mrpt.org/Authors - All rights reserved.                |
-   | Released under BSD License. See details in http://www.mrpt.org/License |
+   | See: https://www.mrpt.org/Authors - All rights reserved.               |
+   | Released under BSD License. See: https://www.mrpt.org/License          |
    +------------------------------------------------------------------------+ */
 
 #pragma once
 
-#include <mrpt/containers/CDynamicGrid3D.h>
-#include <mrpt/math/types_math.h>
-#include <mrpt/serialization/CSerializable.h>
 #include <mrpt/config/CLoadableOptions.h>
-#include <mrpt/system/COutputLogger.h>
+#include <mrpt/containers/CDynamicGrid3D.h>
 #include <mrpt/graphs/ScalarFactorGraph.h>
 #include <mrpt/math/lightweight_geom_data.h>
+#include <mrpt/math/types_math.h>
+#include <mrpt/serialization/CSerializable.h>
+#include <mrpt/system/COutputLogger.h>
 
 // Fwdr decl:
 class vtkStructuredGrid;

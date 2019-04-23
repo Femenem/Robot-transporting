@@ -1,18 +1,18 @@
 /* +------------------------------------------------------------------------+
    |                     Mobile Robot Programming Toolkit (MRPT)            |
-   |                          http://www.mrpt.org/                          |
+   |                          https://www.mrpt.org/                         |
    |                                                                        |
    | Copyright (c) 2005-2019, Individual contributors, see AUTHORS file     |
-   | See: http://www.mrpt.org/Authors - All rights reserved.                |
-   | Released under BSD License. See details in http://www.mrpt.org/License |
+   | See: https://www.mrpt.org/Authors - All rights reserved.               |
+   | Released under BSD License. See: https://www.mrpt.org/License          |
    +------------------------------------------------------------------------+ */
 
-#include <mrpt/serialization/CArchive.h>
-#include <mrpt/serialization/CSchemeArchiveBase.h>
-#include <mrpt/serialization/CSchemeArchive.h>
-#include <mrpt/poses/CPose2D.h>
-#include <sstream>
 #include <gtest/gtest.h>
+#include <mrpt/poses/CPose2D.h>
+#include <mrpt/serialization/CArchive.h>
+#include <mrpt/serialization/CSchemeArchive.h>
+#include <mrpt/serialization/CSchemeArchiveBase.h>
+#include <sstream>
 
 // Check if we have jsoncpp to enable those tests:
 #include <mrpt/config.h>

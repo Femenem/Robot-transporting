@@ -7,7 +7,7 @@ import struct
 
 
 class ICPDirection(genpy.Message):
-  _md5sum = "ec2458f4ae291f686f0f7664eab3bac0"
+  _md5sum = "b749b73aa627a1a22c81c8fa999a58b3"
   _type = "van_loading/ICPDirection"
   _has_header = False #flag to mark the presence of a Header object
   _full_text = """# x distance (forward/back)
@@ -20,9 +20,9 @@ float32 y
 float32 angle
 
 # how well the models fit together
-float32 goodness"""
+float64 goodness"""
   __slots__ = ['x','y','angle','goodness']
-  _slot_types = ['float32','float32','float32','float32']
+  _slot_types = ['float32','float32','float32','float64']
 
   def __init__(self, *args, **kwds):
     """
@@ -68,7 +68,7 @@ float32 goodness"""
     """
     try:
       _x = self
-      buff.write(_get_struct_4f().pack(_x.x, _x.y, _x.angle, _x.goodness))
+      buff.write(_get_struct_3fd().pack(_x.x, _x.y, _x.angle, _x.goodness))
     except struct.error as se: self._check_types(struct.error("%s: '%s' when writing '%s'" % (type(se), str(se), str(locals().get('_x', self)))))
     except TypeError as te: self._check_types(ValueError("%s: '%s' when writing '%s'" % (type(te), str(te), str(locals().get('_x', self)))))
 
@@ -81,8 +81,8 @@ float32 goodness"""
       end = 0
       _x = self
       start = end
-      end += 16
-      (_x.x, _x.y, _x.angle, _x.goodness,) = _get_struct_4f().unpack(str[start:end])
+      end += 20
+      (_x.x, _x.y, _x.angle, _x.goodness,) = _get_struct_3fd().unpack(str[start:end])
       return self
     except struct.error as e:
       raise genpy.DeserializationError(e) #most likely buffer underfill
@@ -96,7 +96,7 @@ float32 goodness"""
     """
     try:
       _x = self
-      buff.write(_get_struct_4f().pack(_x.x, _x.y, _x.angle, _x.goodness))
+      buff.write(_get_struct_3fd().pack(_x.x, _x.y, _x.angle, _x.goodness))
     except struct.error as se: self._check_types(struct.error("%s: '%s' when writing '%s'" % (type(se), str(se), str(locals().get('_x', self)))))
     except TypeError as te: self._check_types(ValueError("%s: '%s' when writing '%s'" % (type(te), str(te), str(locals().get('_x', self)))))
 
@@ -110,8 +110,8 @@ float32 goodness"""
       end = 0
       _x = self
       start = end
-      end += 16
-      (_x.x, _x.y, _x.angle, _x.goodness,) = _get_struct_4f().unpack(str[start:end])
+      end += 20
+      (_x.x, _x.y, _x.angle, _x.goodness,) = _get_struct_3fd().unpack(str[start:end])
       return self
     except struct.error as e:
       raise genpy.DeserializationError(e) #most likely buffer underfill
@@ -120,9 +120,9 @@ _struct_I = genpy.struct_I
 def _get_struct_I():
     global _struct_I
     return _struct_I
-_struct_4f = None
-def _get_struct_4f():
-    global _struct_4f
-    if _struct_4f is None:
-        _struct_4f = struct.Struct("<4f")
-    return _struct_4f
+_struct_3fd = None
+def _get_struct_3fd():
+    global _struct_3fd
+    if _struct_3fd is None:
+        _struct_3fd = struct.Struct("<3fd")
+    return _struct_3fd

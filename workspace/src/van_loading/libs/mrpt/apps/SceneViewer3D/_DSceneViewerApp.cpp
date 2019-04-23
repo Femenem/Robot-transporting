@@ -1,17 +1,17 @@
 /* +------------------------------------------------------------------------+
    |                     Mobile Robot Programming Toolkit (MRPT)            |
-   |                          http://www.mrpt.org/                          |
+   |                          https://www.mrpt.org/                         |
    |                                                                        |
    | Copyright (c) 2005-2019, Individual contributors, see AUTHORS file     |
-   | See: http://www.mrpt.org/Authors - All rights reserved.                |
-   | Released under BSD License. See details in http://www.mrpt.org/License |
+   | See: https://www.mrpt.org/Authors - All rights reserved.               |
+   | Released under BSD License. See: https://www.mrpt.org/License          |
    +------------------------------------------------------------------------+ */
 
 #include "_DSceneViewerApp.h"
 
 //(*AppHeaders
-#include "_DSceneViewerMain.h"
 #include <wx/image.h>
+#include "_DSceneViewerMain.h"
 //*)
 #include <wx/stdpaths.h>
 
@@ -20,8 +20,8 @@ IMPLEMENT_APP(_DSceneViewerApp)
 // The file to open (from cmd line), or an empty string
 std::string global_fileToOpen;
 
-#include <mrpt/gui/WxUtils.h>
 #include <mrpt/config/CConfigFile.h>
+#include <mrpt/gui/WxUtils.h>
 #include <mrpt/system/filesystem.h>
 using namespace mrpt;
 using namespace mrpt::config;

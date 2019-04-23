@@ -1,16 +1,16 @@
 /* +------------------------------------------------------------------------+
    |                     Mobile Robot Programming Toolkit (MRPT)            |
-   |                          http://www.mrpt.org/                          |
+   |                          https://www.mrpt.org/                         |
    |                                                                        |
    | Copyright (c) 2005-2019, Individual contributors, see AUTHORS file     |
-   | See: http://www.mrpt.org/Authors - All rights reserved.                |
-   | Released under BSD License. See details in http://www.mrpt.org/License |
+   | See: https://www.mrpt.org/Authors - All rights reserved.               |
+   | Released under BSD License. See: https://www.mrpt.org/License          |
    +------------------------------------------------------------------------+ */
 
-#include <mrpt/poses/FrameTransformer.h>
+#include <gtest/gtest.h>
 #include <mrpt/poses/CPose2D.h>
 #include <mrpt/poses/CPose3D.h>
-#include <gtest/gtest.h>
+#include <mrpt/poses/FrameTransformer.h>
 
 template <int DIM>
 void run_tf_test1(const mrpt::poses::CPose2D& A2B_)
@@ -20,8 +20,7 @@ void run_tf_test1(const mrpt::poses::CPose2D& A2B_)
 	FrameTransformer<DIM> tf;
 
 	// Pub:
-	const typename FrameTransformer<DIM>::pose_t real_A2B =
-		typename FrameTransformer<DIM>::pose_t(A2B_);
+	const auto real_A2B = (typename FrameTransformer<DIM>::pose_t)(A2B_);
 	tf.sendTransform("A", "B", real_A2B);
 
 	// Read:

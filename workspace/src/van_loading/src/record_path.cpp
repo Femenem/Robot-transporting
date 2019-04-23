@@ -14,7 +14,8 @@
 #include <string>
 
 #define MAX_COUNT 80 // getting middle 80 values
-#define SNAPSHOT_DISTANCE 0.20  // ~0.5m
+#define SNAPSHOT_DISTANCE 0.30  // ~0.2m
+#define AVERAGE_NUMBER 3
 
 // TODO: Change into class. When class is destroyed, make new file with number of lines at top?
 // TODO: Capture snapshots of the laserscan depending on how fast the robot is traveling
@@ -22,63 +23,77 @@
 class record_path{
 public:
     record_path(ros::NodeHandle nh){
-        this->currentSpeed = 0;
-        this->numberOfSnapshots = 0;
-        this->distanceTraveled = SNAPSHOT_DISTANCE; // Take a snapshot at the start
-        this->laserSub = nh.subscribe("/van_loading/front_laser/scan_filtered", 1, &record_path::handle_laser_data, this);
-        this->speedSub = nh.subscribe("/van_loading/cmd_vel", 1, &record_path::new_movement_command, this);
-        this->startTime = std::chrono::system_clock::now();
-        this->now = std::time(0); // Get now time
-        this->timestamp = std::localtime(&now); // Convert to local time
-        this->fileString = "/home/matt/Documents/Robot-transporting/workspace/src/van_loading/data/"
-                + std::to_string(this->timestamp->tm_mday) + "-" + std::to_string(this->timestamp->tm_mon)
-                + ":" + std::to_string(this->timestamp->tm_hour) + std::to_string(this->timestamp->tm_min)
-                + std::to_string(this->timestamp->tm_sec) + ".csv";
-        this->file.open(fileString, std::ios::app);
-        ROS_INFO("File has been opened in this location: ");
-        std::cout << this->fileString << std::endl;
+        currentSpeed = 0;
+        numberOfSnapshots = 0;
+        averageCount = 0;
+        distanceTraveled = SNAPSHOT_DISTANCE; // Take a snapshot at the start
+        laserSub = nh.subscribe("/van_loading/front_laser/scan_filtered", 1, &record_path::handle_laser_data, this);
+        speedSub = nh.subscribe("/van_loading/cmd_vel", 1, &record_path::new_movement_command, this);
+        startTime = std::chrono::system_clock::now();
+        now = std::time(0); // Get now time
+        timestamp = std::localtime(&now); // Convert to local time
+        fileString = "/home/matt/Documents/Robot-transporting/workspace/src/van_loading/data/"
+                + std::to_string(timestamp->tm_mday) + "-" + std::to_string(timestamp->tm_mon)
+                + ":" + std::to_string(timestamp->tm_hour) + std::to_string(timestamp->tm_min)
+                + std::to_string(timestamp->tm_sec) + ".csv"; // TODO MAKE LOCAL FILE
+        file.open(fileString, std::ios::app);
+        ROS_INFO("File has been opened in this location: %s", fileString);
         ROS_INFO("Recording.");
     }
 
     ~record_path(){
-        this->distanceTraveled = SNAPSHOT_DISTANCE;
+        distanceTraveled = SNAPSHOT_DISTANCE;
         ros::spinOnce(); // Take last snapshot
-        this->file.close();
+        file.close();
     }
 
     void new_movement_command(const geometry_msgs::Twist& cmd){
         double distanceToAdd;
-        this->endTime = std::chrono::system_clock::now(); // End timer
-        std::chrono::duration<double> timeElapsed = this->endTime - this->startTime;
+        endTime = std::chrono::system_clock::now(); // End timer
+        std::chrono::duration<double> timeElapsed = endTime - startTime;
         if(currentSpeed < 0){
             currentSpeed = currentSpeed * -1; // Make positive value instead
         }
         // If timeElspsed > 300ms then robot stopped after 300ms.
         if (timeElapsed.count() > 0.3){
-            distanceToAdd = 0.3 * this->currentSpeed;
+            distanceToAdd = 0.3 * currentSpeed;
         } else {
-            distanceToAdd = timeElapsed.count() * this->currentSpeed;
+            distanceToAdd = timeElapsed.count() * currentSpeed;
         }
-        this->distanceTraveled = this->distanceTraveled + distanceToAdd;
+        distanceTraveled = distanceTraveled + distanceToAdd;
         // On next laser scan if distanceTraveled is over the threshold, snapshot is taken.
 
-        this->currentSpeed = cmd.linear.x;
-        this->startTime = std::chrono::system_clock::now();
+        currentSpeed = cmd.linear.x;
+        startTime = std::chrono::system_clock::now();
     }
 
     void handle_laser_data(const sensor_msgs::LaserScan ls){
         // TODO Grab 5 laserscans and make average of them
         if(take_snapshot()){ // Computes distance traveled from last snapshot
-            for (int i = 0; i < MAX_COUNT; ++i) {
-                this->file << ls.ranges[i]; // Copy value to file
-                if(i != MAX_COUNT-1) { // Not the final value then do CSV.
-                    this->file << ",";
+            scans[averageCount] = ls;
+            averageCount++;
+            if(averageCount >= AVERAGE_NUMBER){ // Taken an average
+                float ranges[MAX_COUNT];
+                for (int k = 0; k < MAX_COUNT; ++k) { // Init all as 0
+                    ranges[k] = 0;
                 }
+                for (int j = 0; j < AVERAGE_NUMBER; ++j) {
+                    for (int i = 0; i < MAX_COUNT; ++i) {
+                        ranges[i] = ranges[i] + scans[j].ranges[i];
+                    }
+                }
+                for (int i = 0; i < MAX_COUNT; ++i) {
+                    file << (ranges[i]/AVERAGE_NUMBER); // Copy value to file
+                    if(i != MAX_COUNT-1) { // Not the final value then do CSV.
+                        file << ",";
+                    }
+                }
+                file << "\n"; // End of CSV for this
+                numberOfSnapshots++;
+                ROS_INFO("Snapshot taken. Current number of snapshots: %i", numberOfSnapshots);
+                distanceTraveled = 0.0; // Reset distance for next snapshot
+                averageCount = 0; // Reset scan count for next snapshot
             }
-            this->file << "\n"; // End of CSV for this
-            this->numberOfSnapshots++;
-            ROS_INFO("Snapshot taken.");
-            std::cout << std::to_string(this->numberOfSnapshots) << std::endl;
         }
     }
 
@@ -94,10 +109,11 @@ private:
     std::chrono::time_point<std::chrono::system_clock> startTime;
     std::chrono::time_point<std::chrono::system_clock> endTime;
     int numberOfSnapshots;
+    int averageCount;
+    sensor_msgs::LaserScan scans[AVERAGE_NUMBER];
 
     bool take_snapshot(){
-        if (this->distanceTraveled >= SNAPSHOT_DISTANCE){
-            this->distanceTraveled = 0.0; // Reset distance travelled TODO: DOESNT WORK?!?!?!?
+        if (distanceTraveled >= SNAPSHOT_DISTANCE){
             return true;
         } else{
             return false;

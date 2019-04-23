@@ -1,32 +1,32 @@
 /* +------------------------------------------------------------------------+
    |                     Mobile Robot Programming Toolkit (MRPT)            |
-   |                          http://www.mrpt.org/                          |
+   |                          https://www.mrpt.org/                         |
    |                                                                        |
    | Copyright (c) 2005-2019, Individual contributors, see AUTHORS file     |
-   | See: http://www.mrpt.org/Authors - All rights reserved.                |
-   | Released under BSD License. See details in http://www.mrpt.org/License |
+   | See: https://www.mrpt.org/Authors - All rights reserved.               |
+   | Released under BSD License. See: https://www.mrpt.org/License          |
    +------------------------------------------------------------------------+ */
 
 #include "vision-precomp.h"  // Precompiled headers
 
-#include <mrpt/math/geometry.h>
 #include <mrpt/io/CFileOutputStream.h>
+#include <mrpt/math/geometry.h>
 
-#include <mrpt/maps/CLandmarksMap.h>
 #include <mrpt/maps/CLandmark.h>
-#include <mrpt/obs/CObservationImage.h>
-#include <mrpt/obs/CObservationStereoImages.h>
+#include <mrpt/maps/CLandmarksMap.h>
 #include <mrpt/obs/CObservation2DRangeScan.h>
-#include <mrpt/obs/CObservationGPS.h>
-#include <mrpt/poses/CPointPDFGaussian.h>
-#include <mrpt/obs/CObservationRobotPose.h>
 #include <mrpt/obs/CObservationBeaconRanges.h>
+#include <mrpt/obs/CObservationGPS.h>
+#include <mrpt/obs/CObservationImage.h>
+#include <mrpt/obs/CObservationRobotPose.h>
+#include <mrpt/obs/CObservationStereoImages.h>
 #include <mrpt/obs/CObservationVisualLandmarks.h>
-#include <mrpt/system/os.h>
+#include <mrpt/poses/CPointPDFGaussian.h>
 #include <mrpt/random.h>
+#include <mrpt/system/os.h>
 
-#include <mrpt/opengl/CGridPlaneXY.h>
 #include <mrpt/opengl/CEllipsoid.h>
+#include <mrpt/opengl/CGridPlaneXY.h>
 #include <mrpt/opengl/COpenGLScene.h>
 
 using namespace mrpt;

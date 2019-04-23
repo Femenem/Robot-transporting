@@ -1,10 +1,10 @@
 /* +------------------------------------------------------------------------+
    |                     Mobile Robot Programming Toolkit (MRPT)            |
-   |                          http://www.mrpt.org/                          |
+   |                          https://www.mrpt.org/                         |
    |                                                                        |
    | Copyright (c) 2005-2019, Individual contributors, see AUTHORS file     |
-   | See: http://www.mrpt.org/Authors - All rights reserved.                |
-   | Released under BSD License. See details in http://www.mrpt.org/License |
+   | See: https://www.mrpt.org/Authors - All rights reserved.               |
+   | Released under BSD License. See: https://www.mrpt.org/License          |
    +------------------------------------------------------------------------+ */
 
 #include "hwdrivers-precomp.h"  // Precompiled headers
@@ -15,6 +15,7 @@
 
 #ifdef _WIN32
 #include <windows.h>
+
 #include <mmsystem.h>
 
 #if !defined(__GNUC__)
@@ -24,17 +25,16 @@
 
 #if defined(MRPT_OS_LINUX) || defined(__APPLE__)
 // Linux
+#include <fcntl.h>
 #include <sys/ioctl.h>
 #include <sys/time.h>
 #include <sys/types.h>
-#include <cstdlib>
-#include <fcntl.h>
 #include <unistd.h>
-#include <cstdio>
 #include <cerrno>
-#include <cstring>
-#include <cstdlib>
 #include <cstdint>
+#include <cstdio>
+#include <cstdlib>
+#include <cstring>
 
 #if defined(MRPT_OS_LINUX) && defined(HAVE_LINUX_INPUT_H)
 #include <linux/input.h>

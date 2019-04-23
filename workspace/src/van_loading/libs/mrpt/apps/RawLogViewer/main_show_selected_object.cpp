@@ -1,28 +1,28 @@
 /* +------------------------------------------------------------------------+
    |                     Mobile Robot Programming Toolkit (MRPT)            |
-   |                          http://www.mrpt.org/                          |
+   |                          https://www.mrpt.org/                         |
    |                                                                        |
    | Copyright (c) 2005-2019, Individual contributors, see AUTHORS file     |
-   | See: http://www.mrpt.org/Authors - All rights reserved.                |
-   | Released under BSD License. See details in http://www.mrpt.org/License |
+   | See: https://www.mrpt.org/Authors - All rights reserved.               |
+   | Released under BSD License. See: https://www.mrpt.org/License          |
    +------------------------------------------------------------------------+ */
 
 #include "xRawLogViewerMain.h"
 
-#include <mrpt/system/datetime.h>
 #include <mrpt/math/ops_matrices.h>  // << ops
 #include <mrpt/math/ops_vectors.h>  // << ops
 #include <mrpt/math/wrap2pi.h>
 #include <mrpt/opengl/CAxis.h>
 #include <mrpt/opengl/CPointCloudColoured.h>
+#include <mrpt/system/datetime.h>
 
 #include <mrpt/gui/CMyRedirector.h>
 
 #define MRPT_NO_WARN_BIG_HDR  // It's ok to include ALL hdrs here.
 #include <mrpt/obs.h>
 
-#include <mrpt/maps/CSimplePointsMap.h>
 #include <mrpt/maps/CColouredPointsMap.h>
+#include <mrpt/maps/CSimplePointsMap.h>
 #include <mrpt/poses/CPosePDFParticles.h>
 
 #include <iomanip>

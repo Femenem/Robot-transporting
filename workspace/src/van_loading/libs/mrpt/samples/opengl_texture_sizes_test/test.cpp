@@ -1,16 +1,16 @@
 /* +------------------------------------------------------------------------+
    |                     Mobile Robot Programming Toolkit (MRPT)            |
-   |                          http://www.mrpt.org/                          |
+   |                          https://www.mrpt.org/                         |
    |                                                                        |
    | Copyright (c) 2005-2019, Individual contributors, see AUTHORS file     |
-   | See: http://www.mrpt.org/Authors - All rights reserved.                |
-   | Released under BSD License. See details in http://www.mrpt.org/License |
+   | See: https://www.mrpt.org/Authors - All rights reserved.               |
+   | Released under BSD License. See: https://www.mrpt.org/License          |
    +------------------------------------------------------------------------+ */
 
-#include <mrpt/img/CImage.h>
 #include <mrpt/gui/CDisplayWindow3D.h>
-#include <mrpt/opengl/CTexturedPlane.h>
+#include <mrpt/img/CImage.h>
 #include <mrpt/opengl/CText.h>
+#include <mrpt/opengl/CTexturedPlane.h>
 #include <iostream>
 
 #include <mrpt/examples_config.h>

@@ -1,17 +1,17 @@
 /* +------------------------------------------------------------------------+
    |                     Mobile Robot Programming Toolkit (MRPT)            |
-   |                          http://www.mrpt.org/                          |
+   |                          https://www.mrpt.org/                         |
    |                                                                        |
    | Copyright (c) 2005-2019, Individual contributors, see AUTHORS file     |
-   | See: http://www.mrpt.org/Authors - All rights reserved.                |
-   | Released under BSD License. See details in http://www.mrpt.org/License |
+   | See: https://www.mrpt.org/Authors - All rights reserved.               |
+   | Released under BSD License. See: https://www.mrpt.org/License          |
    +------------------------------------------------------------------------+ */
 
-#include <mrpt/serialization/CSerializable.h>
-#include <mrpt/serialization/CArchive.h>
-#include <mrpt/serialization/stl_serialization.h>
-#include <mrpt/io/CMemoryStream.h>
 #include <gtest/gtest.h>
+#include <mrpt/io/CMemoryStream.h>
+#include <mrpt/serialization/CArchive.h>
+#include <mrpt/serialization/CSerializable.h>
+#include <mrpt/serialization/stl_serialization.h>
 #include <memory>  // shared_ptr
 
 using namespace mrpt::serialization;

@@ -356,6 +356,9 @@ RT_LIBRARY:FILEPATH=/usr/lib/x86_64-linux-gnu/librt.so
 //Enable debian style python package layout
 SETUPTOOLS_DEB_LAYOUT:BOOL=ON
 
+//Name of the computer/site where compile is being run
+SITE:STRING=time
+
 //Enable OpenMP?
 USE_OPENMP:BOOL=ON
 
@@ -526,7 +529,7 @@ mrpt-math_DIR:PATH=/home/matt/Documents/Robot-transporting/workspace/src/van_loa
 mrpt-nanoflann_DIR:PATH=/home/matt/Documents/Robot-transporting/workspace/src/van_loading/libs/mrpt
 
 //The directory containing a CMake configuration file for mrpt-nav.
-mrpt-nav_DIR:PATH=/home/matt/Documents/Robot-transporting/workspace/src/van_loading/libs/mrpt
+mrpt-nav_DIR:PATH=/home/matt/Documents/Robot-transporting/workspace/src/van_loading/libs/mrpt/build
 
 //The directory containing a CMake configuration file for mrpt-obs.
 mrpt-obs_DIR:PATH=/home/matt/Documents/Robot-transporting/workspace/src/van_loading/libs/mrpt
@@ -547,7 +550,7 @@ mrpt-rtti_DIR:PATH=/home/matt/Documents/Robot-transporting/workspace/src/van_loa
 mrpt-serialization_DIR:PATH=/home/matt/Documents/Robot-transporting/workspace/src/van_loading/libs/mrpt
 
 //The directory containing a CMake configuration file for mrpt-slam.
-mrpt-slam_DIR:PATH=/home/matt/Documents/Robot-transporting/workspace/src/van_loading/libs/mrpt
+mrpt-slam_DIR:PATH=/home/matt/Documents/Robot-transporting/workspace/src/van_loading/libs/mrpt/build
 
 //The directory containing a CMake configuration file for mrpt-system.
 mrpt-system_DIR:PATH=/home/matt/Documents/Robot-transporting/workspace/src/van_loading/libs/mrpt

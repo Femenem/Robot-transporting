@@ -1,22 +1,22 @@
 /* +------------------------------------------------------------------------+
    |                     Mobile Robot Programming Toolkit (MRPT)            |
-   |                          http://www.mrpt.org/                          |
+   |                          https://www.mrpt.org/                         |
    |                                                                        |
    | Copyright (c) 2005-2019, Individual contributors, see AUTHORS file     |
-   | See: http://www.mrpt.org/Authors - All rights reserved.                |
-   | Released under BSD License. See details in http://www.mrpt.org/License |
+   | See: https://www.mrpt.org/Authors - All rights reserved.               |
+   | Released under BSD License. See: https://www.mrpt.org/License          |
    +------------------------------------------------------------------------+ */
 #pragma once
 
-#include <mrpt/slam/CMetricMapsAlignmentAlgorithm.h>
-#include <mrpt/maps/CLandmarksMap.h>
 #include <mrpt/config/CLoadableOptions.h>
-#include <mrpt/typemeta/TEnumType.h>
 #include <mrpt/containers/deepcopy_poly_ptr.h>
+#include <mrpt/maps/CLandmarksMap.h>
 #include <mrpt/poses/CPosePDFSOG.h>
 #include <mrpt/poses/poses_frwds.h>
-#include <mrpt/vision/CFeatureExtraction.h>
+#include <mrpt/slam/CMetricMapsAlignmentAlgorithm.h>
 #include <mrpt/slam/COccupancyGridMapFeatureExtractor.h>
+#include <mrpt/typemeta/TEnumType.h>
+#include <mrpt/vision/CFeatureExtraction.h>
 
 namespace mrpt::slam
 {
@@ -30,7 +30,7 @@ namespace mrpt::slam
  *   - amRobustMatch: Detection of features + RANSAC matching
  *   - amModifiedRANSAC: Detection of features + modified multi-hypothesis
  * RANSAC matching as described in was reported in the paper
- * http://www.mrpt.org/Paper%3AOccupancy_Grid_Matching
+ * https://www.mrpt.org/Paper%3AOccupancy_Grid_Matching
  *
  * See CGridMapAligner::Align for more instructions.
  *

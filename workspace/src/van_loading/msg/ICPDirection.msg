@@ -8,4 +8,4 @@ float32 y
 float32 angle
 
 # how well the models fit together
-float32 goodness
+float64 goodness

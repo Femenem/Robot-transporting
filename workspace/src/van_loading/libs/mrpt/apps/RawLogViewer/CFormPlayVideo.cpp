@@ -1,27 +1,27 @@
 /* +------------------------------------------------------------------------+
    |                     Mobile Robot Programming Toolkit (MRPT)            |
-   |                          http://www.mrpt.org/                          |
+   |                          https://www.mrpt.org/                         |
    |                                                                        |
    | Copyright (c) 2005-2019, Individual contributors, see AUTHORS file     |
-   | See: http://www.mrpt.org/Authors - All rights reserved.                |
-   | Released under BSD License. See details in http://www.mrpt.org/License |
+   | See: https://www.mrpt.org/Authors - All rights reserved.               |
+   | Released under BSD License. See: https://www.mrpt.org/License          |
    +------------------------------------------------------------------------+ */
 
 #include "CFormPlayVideo.h"
 #include "xRawLogViewerMain.h"
 
-#include <wx/filedlg.h>
-#include <wx/msgdlg.h>
 #include <wx/app.h>
+#include <wx/dcclient.h>
 #include <wx/dcmemory.h>
 #include <wx/dirdlg.h>
-#include <wx/dcclient.h>
+#include <wx/filedlg.h>
+#include <wx/msgdlg.h>
 
 //(*InternalHeaders(CFormPlayVideo)
 #include <wx/artprov.h>
 #include <wx/bitmap.h>
-#include <wx/intl.h>
 #include <wx/image.h>
+#include <wx/intl.h>
 #include <wx/string.h>
 //*)
 
@@ -68,13 +68,13 @@ BEGIN_EVENT_TABLE(CFormPlayVideo, wxDialog)
 END_EVENT_TABLE()
 
 // Global variables:
+#include <mrpt/gui/WxUtils.h>
 #include <mrpt/io/CFileGZInputStream.h>
-#include <mrpt/system/filesystem.h>
+#include <mrpt/obs/CObservation3DRangeScan.h>
 #include <mrpt/obs/CObservationImage.h>
 #include <mrpt/obs/CObservationStereoImages.h>
-#include <mrpt/obs/CObservation3DRangeScan.h>
-#include <mrpt/gui/WxUtils.h>
 #include <mrpt/serialization/CArchive.h>
+#include <mrpt/system/filesystem.h>
 
 using namespace mrpt;
 using namespace mrpt::obs;

@@ -1,10 +1,10 @@
 /* +------------------------------------------------------------------------+
    |                     Mobile Robot Programming Toolkit (MRPT)            |
-   |                          http://www.mrpt.org/                          |
+   |                          https://www.mrpt.org/                         |
    |                                                                        |
    | Copyright (c) 2005-2019, Individual contributors, see AUTHORS file     |
-   | See: http://www.mrpt.org/Authors - All rights reserved.                |
-   | Released under BSD License. See details in http://www.mrpt.org/License |
+   | See: https://www.mrpt.org/Authors - All rights reserved.               |
+   | Released under BSD License. See: https://www.mrpt.org/License          |
    +------------------------------------------------------------------------+ */
 #include "CFormChangeSensorPositions.h"
 
@@ -12,25 +12,24 @@
 #include <wx/intl.h>
 #include <wx/string.h>
 //*)
-#include <wx/filedlg.h>
-#include <wx/progdlg.h>
-#include <wx/imaglist.h>
-#include <wx/busyinfo.h>
 #include <wx/app.h>
+#include <wx/busyinfo.h>
+#include <wx/filedlg.h>
+#include <wx/imaglist.h>
 #include <wx/msgdlg.h>
+#include <wx/progdlg.h>
 
 #include "xRawLogViewerMain.h"
 // General global variables:
 
-#include <mrpt/io/CFileGZOutputStream.h>
 #include <mrpt/io/CFileGZInputStream.h>
-#include <mrpt/serialization/CArchive.h>
-#include <mrpt/obs/CObservationImage.h>
+#include <mrpt/io/CFileGZOutputStream.h>
 #include <mrpt/obs/CActionCollection.h>
+#include <mrpt/obs/CObservationImage.h>
 #include <mrpt/obs/CSensoryFrame.h>
+#include <mrpt/serialization/CArchive.h>
 #include <mrpt/system/filesystem.h>
 #include <mrpt/system/os.h>
-#include <mrpt/serialization/CArchive.h>
 
 using namespace mrpt;
 using namespace mrpt::obs;

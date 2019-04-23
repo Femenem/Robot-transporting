@@ -1,10 +1,10 @@
 /* +------------------------------------------------------------------------+
    |                     Mobile Robot Programming Toolkit (MRPT)            |
-   |                          http://www.mrpt.org/                          |
+   |                          https://www.mrpt.org/                         |
    |                                                                        |
    | Copyright (c) 2005-2019, Individual contributors, see AUTHORS file     |
-   | See: http://www.mrpt.org/Authors - All rights reserved.                |
-   | Released under BSD License. See details in http://www.mrpt.org/License |
+   | See: https://www.mrpt.org/Authors - All rights reserved.               |
+   | Released under BSD License. See: https://www.mrpt.org/License          |
    +------------------------------------------------------------------------+ */
 
 /*---------------------------------------------------------------
@@ -17,10 +17,10 @@
 #ifndef BENCHMARKINGIMAGEFEATURES_GUI_MY_QLABEL_H
 #define BENCHMARKINGIMAGEFEATURES_GUI_MY_QLABEL_H
 
-#include <QLabel>
-#include <QMouseEvent>
 #include <QDebug>
 #include <QEvent>
+#include <QLabel>
+#include <QMouseEvent>
 
 class my_qlabel : public QLabel
 {

@@ -1,18 +1,18 @@
 /* +------------------------------------------------------------------------+
    |                     Mobile Robot Programming Toolkit (MRPT)            |
-   |                          http://www.mrpt.org/                          |
+   |                          https://www.mrpt.org/                         |
    |                                                                        |
    | Copyright (c) 2005-2019, Individual contributors, see AUTHORS file     |
-   | See: http://www.mrpt.org/Authors - All rights reserved.                |
-   | Released under BSD License. See details in http://www.mrpt.org/License |
+   | See: https://www.mrpt.org/Authors - All rights reserved.               |
+   | Released under BSD License. See: https://www.mrpt.org/License          |
    +------------------------------------------------------------------------+ */
 
-#include <mrpt/config/CConfigFileMemory.h>
-#include <mrpt/config/CConfigFile.h>
-#include <mrpt/system/filesystem.h>
 #include <gtest/gtest.h>
-#include <fstream>
+#include <mrpt/config/CConfigFile.h>
+#include <mrpt/config/CConfigFileMemory.h>
+#include <mrpt/system/filesystem.h>
 #include <cstdlib>
+#include <fstream>
 
 TEST(CConfigFileMemory, readwrite)
 {

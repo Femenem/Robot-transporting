@@ -1,20 +1,19 @@
 /* +------------------------------------------------------------------------+
    |                     Mobile Robot Programming Toolkit (MRPT)            |
-   |                          http://www.mrpt.org/                          |
+   |                          https://www.mrpt.org/                         |
    |                                                                        |
    | Copyright (c) 2005-2019, Individual contributors, see AUTHORS file     |
-   | See: http://www.mrpt.org/Authors - All rights reserved.                |
-   | Released under BSD License. See details in http://www.mrpt.org/License |
+   | See: https://www.mrpt.org/Authors - All rights reserved.               |
+   | Released under BSD License. See: https://www.mrpt.org/License          |
    +------------------------------------------------------------------------+ */
 
 #include <mrpt/comms/CInterfaceFTDI.h>
-#include <mrpt/system/os.h>
 #include <mrpt/system/datetime.h>
+#include <mrpt/system/os.h>
 
 #include <cstdio>
 #include <iostream>
 #include <thread>
-#include <iostream>
 
 using namespace mrpt;
 using namespace mrpt::comms;

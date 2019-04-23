@@ -1,10 +1,10 @@
 /* +------------------------------------------------------------------------+
    |                     Mobile Robot Programming Toolkit (MRPT)            |
-   |                          http://www.mrpt.org/                          |
+   |                          https://www.mrpt.org/                         |
    |                                                                        |
    | Copyright (c) 2005-2019, Individual contributors, see AUTHORS file     |
-   | See: http://www.mrpt.org/Authors - All rights reserved.                |
-   | Released under BSD License. See details in http://www.mrpt.org/License |
+   | See: https://www.mrpt.org/Authors - All rights reserved.               |
+   | Released under BSD License. See: https://www.mrpt.org/License          |
    +------------------------------------------------------------------------+ */
 
 #pragma once
@@ -19,20 +19,23 @@ MRPT_WARNING(
 
 #include <mrpt/maps/CBeacon.h>
 #include <mrpt/maps/CBeaconMap.h>
+#include <mrpt/maps/CColouredOctoMap.h>
 #include <mrpt/maps/CColouredPointsMap.h>
 #include <mrpt/maps/CGasConcentrationGridMap2D.h>
-#include <mrpt/maps/CWirelessPowerGridMap2D.h>
-#include <mrpt/maps/CRandomFieldGridMap3D.h>
 #include <mrpt/maps/CHeightGridMap2D.h>
 #include <mrpt/maps/CHeightGridMap2D_MRF.h>
-#include <mrpt/maps/CReflectivityGridMap2D.h>
 #include <mrpt/maps/COccupancyGridMap2D.h>
+#include <mrpt/maps/COccupancyGridMap3D.h>
+#include <mrpt/maps/COctoMap.h>
 #include <mrpt/maps/CPointsMap.h>
+#include <mrpt/maps/CPointsMapXYZI.h>
+#include <mrpt/maps/CRandomFieldGridMap3D.h>
+#include <mrpt/maps/CReflectivityGridMap2D.h>
 #include <mrpt/maps/CSimplePointsMap.h>
 #include <mrpt/maps/CWeightedPointsMap.h>
-#include <mrpt/maps/CPointsMapXYZI.h>
-#include <mrpt/maps/COctoMap.h>
-#include <mrpt/maps/CColouredOctoMap.h>
+#include <mrpt/maps/CWirelessPowerGridMap2D.h>
+
+#include <mrpt/maps/CMultiMetricMap.h>
 
 //#include <mrpt/maps/PCL_adapters.h>  // NOTE: This file must be included from
 // the user code only if he has already #include'd PCL headers.

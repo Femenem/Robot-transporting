@@ -1,21 +1,22 @@
 /* +------------------------------------------------------------------------+
    |                     Mobile Robot Programming Toolkit (MRPT)            |
-   |                          http://www.mrpt.org/                          |
+   |                          https://www.mrpt.org/                         |
    |                                                                        |
    | Copyright (c) 2005-2019, Individual contributors, see AUTHORS file     |
-   | See: http://www.mrpt.org/Authors - All rights reserved.                |
-   | Released under BSD License. See details in http://www.mrpt.org/License |
+   | See: https://www.mrpt.org/Authors - All rights reserved.               |
+   | Released under BSD License. See: https://www.mrpt.org/License          |
    +------------------------------------------------------------------------+ */
 
 #ifndef MRPTPERFAPP_COMMON_H
 #define MRPTPERFAPP_COMMON_H
 
+#include <mrpt/core/bits_math.h>
 #include <mrpt/img/CImage.h>
+#include <mrpt/obs/obs_frwds.h>  // CObservation2DRangeScan
 #include <mrpt/system/CTicTac.h>
 #include <mrpt/system/CTimeLogger.h>
-#include <mrpt/core/bits_math.h>
-#include <list>
 #include <functional>
+#include <list>
 
 using namespace mrpt;
 using namespace mrpt::img;
@@ -30,6 +31,7 @@ void register_tests_poses();
 void register_tests_pose_interp();
 void register_tests_matrices();
 void register_tests_grids();
+void register_tests_grid3D();
 void register_tests_pointmaps();
 void register_tests_random();
 void register_tests_math();
@@ -42,6 +44,7 @@ void register_tests_graphslam();
 void register_tests_CObservation3DRangeScan();
 void register_tests_atan2lut();
 void register_tests_strings();
+void register_tests_octomaps();
 // -------------------------------------------------
 
 using TestFunctor =
@@ -61,9 +64,6 @@ struct TestData
 
 // Common data & functions available to all performance modules:
 extern std::list<TestData> lstTests;
-
-extern const float SCAN_RANGES_1[361];
-extern const char SCAN_VALID_1[361];
 
 void dummy_do_nothing_with_string(const std::string& s);
 void getTestImage(unsigned int img_index, mrpt::img::CImage& out_img);

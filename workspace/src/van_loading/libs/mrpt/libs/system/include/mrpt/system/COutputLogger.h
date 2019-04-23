@@ -1,25 +1,25 @@
 /* +------------------------------------------------------------------------+
    |                     Mobile Robot Programming Toolkit (MRPT)            |
-   |                          http://www.mrpt.org/                          |
+   |                          https://www.mrpt.org/                         |
    |                                                                        |
    | Copyright (c) 2005-2019, Individual contributors, see AUTHORS file     |
-   | See: http://www.mrpt.org/Authors - All rights reserved.                |
-   | Released under BSD License. See details in http://www.mrpt.org/License |
+   | See: https://www.mrpt.org/Authors - All rights reserved.               |
+   | Released under BSD License. See: https://www.mrpt.org/License          |
    +------------------------------------------------------------------------+ */
 
 #pragma once
 
-#include <mrpt/typemeta/TEnumType.h>
-#include <mrpt/system/os.h>  // for console color constants
-#include <mrpt/system/CTicTac.h>
 #include <mrpt/core/Clock.h>
+#include <mrpt/system/CTicTac.h>
+#include <mrpt/system/os.h>  // for console color constants
+#include <mrpt/typemeta/TEnumType.h>
 
-#include <string>
-#include <deque>
 #include <array>
-#include <sstream>
-#include <iosfwd>
+#include <deque>
 #include <functional>
+#include <iosfwd>
+#include <sstream>
+#include <string>
 
 namespace mrpt::system
 {

@@ -46,13 +46,13 @@ add_library(mrpt::core SHARED IMPORTED)
 
 set_target_properties(mrpt::core PROPERTIES
   INTERFACE_COMPILE_FEATURES "cxx_std_17"
-  INTERFACE_INCLUDE_DIRECTORIES "/home/matt/Documents/Robot-transporting/workspace/src/van_loading/libs/mrpt/libs/core/include;/home/matt/Documents/Robot-transporting/workspace/src/van_loading/libs/mrpt/include/mrpt-configuration/unix/"
+  INTERFACE_INCLUDE_DIRECTORIES "/home/matt/Documents/Robot-transporting/workspace/src/van_loading/libs/mrpt/libs/core/include;/home/matt/Documents/Robot-transporting/workspace/src/van_loading/libs/mrpt/build/include/mrpt-configuration/unix/"
 )
 
 # Import target "mrpt::core" for configuration "Release"
 set_property(TARGET mrpt::core APPEND PROPERTY IMPORTED_CONFIGURATIONS RELEASE)
 set_target_properties(mrpt::core PROPERTIES
-  IMPORTED_LOCATION_RELEASE "/home/matt/Documents/Robot-transporting/workspace/src/van_loading/libs/mrpt/lib/libmrpt-core.so.1.9.9"
+  IMPORTED_LOCATION_RELEASE "/home/matt/Documents/Robot-transporting/workspace/src/van_loading/libs/mrpt/build/lib/libmrpt-core.so.1.9.9"
   IMPORTED_SONAME_RELEASE "libmrpt-core.so.1.9"
   )
 

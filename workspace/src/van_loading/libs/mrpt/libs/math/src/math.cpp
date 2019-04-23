@@ -1,25 +1,25 @@
 /* +------------------------------------------------------------------------+
    |                     Mobile Robot Programming Toolkit (MRPT)            |
-   |                          http://www.mrpt.org/                          |
+   |                          https://www.mrpt.org/                         |
    |                                                                        |
    | Copyright (c) 2005-2019, Individual contributors, see AUTHORS file     |
-   | See: http://www.mrpt.org/Authors - All rights reserved.                |
-   | Released under BSD License. See details in http://www.mrpt.org/License |
+   | See: https://www.mrpt.org/Authors - All rights reserved.               |
+   | Released under BSD License. See: https://www.mrpt.org/License          |
    +------------------------------------------------------------------------+ */
 
 #include "math-precomp.h"  // Precompiled headers
 
+#include <mrpt/math/data_utils.h>
+#include <mrpt/math/distributions.h>
 #include <mrpt/math/utils.h>
 #include <mrpt/math/wrap2pi.h>
 #include <mrpt/math/interp_fit.hpp>
-#include <mrpt/math/data_utils.h>
-#include <mrpt/math/distributions.h>
 
-#include <mrpt/system/string_utils.h>
 #include <mrpt/math/CMatrixD.h>
 #include <mrpt/math/ops_matrices.h>
-#include <cmath>  // erf(), ...
+#include <mrpt/system/string_utils.h>
 #include <algorithm>
+#include <cmath>  // erf(), ...
 #include <iostream>
 
 using namespace mrpt;
@@ -264,7 +264,7 @@ double math::averageLogLikelihood(
 	MRPT_START
 
 	// Explained in:
-	// http://www.mrpt.org/Averaging_Log-Likelihood_Values:Numerical_Stability
+	// https://www.mrpt.org/Averaging_Log-Likelihood_Values:Numerical_Stability
 	ASSERT_(logWeights.size() == logLikelihoods.size());
 
 	if (!logWeights.size())
@@ -295,7 +295,7 @@ double math::averageLogLikelihood(const CVectorDouble& logLikelihoods)
 	MRPT_START
 
 	// Explained in:
-	// http://www.mrpt.org/Averaging_Log-Likelihood_Values:Numerical_Stability
+	// https://www.mrpt.org/Averaging_Log-Likelihood_Values:Numerical_Stability
 	size_t N = logLikelihoods.size();
 	if (!N) THROW_EXCEPTION("ERROR: logLikelihoods vector is empty!");
 

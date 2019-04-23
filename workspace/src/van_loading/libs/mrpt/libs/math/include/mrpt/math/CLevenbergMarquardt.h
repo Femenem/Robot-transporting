@@ -1,18 +1,18 @@
 /* +------------------------------------------------------------------------+
    |                     Mobile Robot Programming Toolkit (MRPT)            |
-   |                          http://www.mrpt.org/                          |
+   |                          https://www.mrpt.org/                         |
    |                                                                        |
    | Copyright (c) 2005-2019, Individual contributors, see AUTHORS file     |
-   | See: http://www.mrpt.org/Authors - All rights reserved.                |
-   | Released under BSD License. See details in http://www.mrpt.org/License |
+   | See: https://www.mrpt.org/Authors - All rights reserved.               |
+   | Released under BSD License. See: https://www.mrpt.org/License          |
    +------------------------------------------------------------------------+ */
 #pragma once
 
-#include <mrpt/system/COutputLogger.h>
-#include <mrpt/math/types_math.h>
-#include <mrpt/math/num_jacobian.h>
 #include <mrpt/containers/printf_vector.h>
+#include <mrpt/math/num_jacobian.h>
 #include <mrpt/math/ops_containers.h>
+#include <mrpt/math/types_math.h>
+#include <mrpt/system/COutputLogger.h>
 #include <functional>
 
 namespace mrpt::math

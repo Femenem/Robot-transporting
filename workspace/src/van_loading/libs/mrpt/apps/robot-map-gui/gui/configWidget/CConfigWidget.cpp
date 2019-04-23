@@ -1,30 +1,30 @@
 /* +---------------------------------------------------------------------------+
    |                     Mobile Robot Programming Toolkit (MRPT)               |
-   |                          http://www.mrpt.org/                             |
+   |                          https://www.mrpt.org/                            |
    |                                                                           |
    | Copyright (c) 2005-2019, Individual contributors, see AUTHORS file        |
-   | See: http://www.mrpt.org/Authors - All rights reserved.                   |
-   | Released under BSD License. See details in http://www.mrpt.org/License    |
+   | See: https://www.mrpt.org/Authors - All rights reserved.                  |
+   | Released under BSD License. See details in https://www.mrpt.org/License   |
    +---------------------------------------------------------------------------+
    */
 #include "CConfigWidget.h"
-#include "ui_CConfigWidget.h"
-#include "CSelectType.h"
-#include "COccupancyConfig.h"
-#include "CGeneralConfig.h"
-#include "CPointsConfig.h"
 #include "CBeaconConfig.h"
-#include "CLandmarksConfig.h"
 #include "CGasGridConfig.h"
+#include "CGeneralConfig.h"
+#include "CLandmarksConfig.h"
+#include "COccupancyConfig.h"
+#include "CPointsConfig.h"
+#include "CSelectType.h"
+#include "ui_CConfigWidget.h"
 
-#include "mrpt/io/CFileOutputStream.h"
 #include "mrpt/gui/error_box.h"
+#include "mrpt/io/CFileOutputStream.h"
 
+#include <QCheckBox>
 #include <QFileDialog>
-#include <QMessageBox>
 #include <QListWidget>
 #include <QListWidgetItem>
-#include <QCheckBox>
+#include <QMessageBox>
 
 using namespace mrpt;
 using namespace maps;

@@ -1,29 +1,29 @@
 /* +------------------------------------------------------------------------+
    |                     Mobile Robot Programming Toolkit (MRPT)            |
-   |                          http://www.mrpt.org/                          |
+   |                          https://www.mrpt.org/                         |
    |                                                                        |
    | Copyright (c) 2005-2019, Individual contributors, see AUTHORS file     |
-   | See: http://www.mrpt.org/Authors - All rights reserved.                |
-   | Released under BSD License. See details in http://www.mrpt.org/License |
+   | See: https://www.mrpt.org/Authors - All rights reserved.               |
+   | Released under BSD License. See: https://www.mrpt.org/License          |
    +------------------------------------------------------------------------+ */
 
 #include "maps-precomp.h"  // Precomp header
 
-#include <mrpt/maps/CRandomFieldGridMap3D.h>
+#include <mrpt/config.h>
 #include <mrpt/config/CConfigFileBase.h>
+#include <mrpt/maps/CRandomFieldGridMap3D.h>
 #include <mrpt/system/CTicTac.h>
 #include <fstream>
-#include <mrpt/config.h>
 
 #if MRPT_HAS_VTK
-#include <vtkStructuredGrid.h>
+#include <vtkCellArray.h>
 #include <vtkDoubleArray.h>
 #include <vtkPointData.h>
-#include <vtkVersion.h>
-#include <vtkCellArray.h>
 #include <vtkPoints.h>
-#include <vtkXMLStructuredGridWriter.h>
 #include <vtkSmartPointer.h>
+#include <vtkStructuredGrid.h>
+#include <vtkVersion.h>
+#include <vtkXMLStructuredGridWriter.h>
 #endif
 
 using namespace mrpt;

@@ -1,15 +1,15 @@
 /* +------------------------------------------------------------------------+
    |                     Mobile Robot Programming Toolkit (MRPT)            |
-   |                          http://www.mrpt.org/                          |
+   |                          https://www.mrpt.org/                         |
    |                                                                        |
    | Copyright (c) 2005-2019, Individual contributors, see AUTHORS file     |
-   | See: http://www.mrpt.org/Authors - All rights reserved.                |
-   | Released under BSD License. See details in http://www.mrpt.org/License |
+   | See: https://www.mrpt.org/Authors - All rights reserved.               |
+   | Released under BSD License. See: https://www.mrpt.org/License          |
    +------------------------------------------------------------------------+ */
 #pragma once
 
-#include <mrpt/opengl/CRenderizable.h>
 #include <mrpt/opengl/COpenGLViewport.h>
+#include <mrpt/opengl/CRenderizable.h>
 
 namespace mrpt
 {
@@ -227,19 +227,6 @@ class COpenGLScene : public mrpt::serialization::CSerializable
 				 ++itO)
 				internal_visitAllObjects(functor, *itO);
 		MRPT_END
-	}
-
-	/** Recursive depth-first visit all objects in all viewports of the scene,
-	 * calling the user-supplied function
-	 *  The passed function must accept a first argument of type "const
-	 * mrpt::opengl::CRenderizable::Ptr &"
-	 *  and a second one of type EXTRA_PARAM
-	 */
-	template <typename FUNCTOR, typename EXTRA_PARAM>
-	inline void visitAllObjects(
-		FUNCTOR functor, const EXTRA_PARAM& userParam) const
-	{
-		visitAllObjects(std::bind2nd(functor, userParam));
 	}
 
    protected:

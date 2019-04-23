@@ -1,10 +1,10 @@
 /* +------------------------------------------------------------------------+
    |                     Mobile Robot Programming Toolkit (MRPT)            |
-   |                          http://www.mrpt.org/                          |
+   |                          https://www.mrpt.org/                         |
    |                                                                        |
    | Copyright (c) 2005-2019, Individual contributors, see AUTHORS file     |
-   | See: http://www.mrpt.org/Authors - All rights reserved.                |
-   | Released under BSD License. See details in http://www.mrpt.org/License |
+   | See: https://www.mrpt.org/Authors - All rights reserved.               |
+   | Released under BSD License. See: https://www.mrpt.org/License          |
    +------------------------------------------------------------------------+ */
 
 /*---------------------------------------------------------------
@@ -15,12 +15,12 @@
 	See README.txt for instructions.
   ---------------------------------------------------------------*/
 
-#include <mrpt/hmtslam/CHMTSLAM.h>
-#include <mrpt/system/CConsoleRedirector.h>
 #include <mrpt/config/CConfigFile.h>
+#include <mrpt/hmtslam/CHMTSLAM.h>
 #include <mrpt/io/CFileGZInputStream.h>
 #include <mrpt/io/CFileGZOutputStream.h>
 #include <mrpt/serialization/CArchive.h>
+#include <mrpt/system/CConsoleRedirector.h>
 #include <mrpt/system/filesystem.h>
 #include <mrpt/system/os.h>
 

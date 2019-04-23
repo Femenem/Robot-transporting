@@ -22,20 +22,20 @@ ros/builtin_message_traits.h
 ros/message_operations.h
 -
 
-/home/matt/Documents/Robot-transporting/workspace/src/van_loading/libs/mrpt/include/mrpt-configuration/unix/mrpt/config.h
+/home/matt/Documents/Robot-transporting/workspace/src/van_loading/libs/mrpt/build/include/mrpt-configuration/unix/mrpt/config.h
 
 /home/matt/Documents/Robot-transporting/workspace/src/van_loading/libs/mrpt/libs/config/include/mrpt/config/CLoadableOptions.h
-string
+iosfwd
 -
 stdexcept
 -
-iosfwd
+string
 -
 
 /home/matt/Documents/Robot-transporting/workspace/src/van_loading/libs/mrpt/libs/containers/include/mrpt/containers/ContainerReadOnlyProxyAccessor.h
-cstdlib
--
 mrpt/core/exceptions.h
+-
+cstdlib
 -
 
 /home/matt/Documents/Robot-transporting/workspace/src/van_loading/libs/mrpt/libs/core/include/mrpt/core/Clock.h
@@ -45,9 +45,9 @@ string
 -
 
 /home/matt/Documents/Robot-transporting/workspace/src/van_loading/libs/mrpt/libs/core/include/mrpt/core/aligned_allocator.h
-type_traits
--
 memory
+-
+type_traits
 -
 
 /home/matt/Documents/Robot-transporting/workspace/src/van_loading/libs/mrpt/libs/core/include/mrpt/core/aligned_std_vector.h
@@ -57,6 +57,8 @@ vector
 -
 
 /home/matt/Documents/Robot-transporting/workspace/src/van_loading/libs/mrpt/libs/core/include/mrpt/core/bits_math.h
+algorithm
+-
 cmath
 -
 stdexcept
@@ -65,13 +67,13 @@ stdexcept
 /home/matt/Documents/Robot-transporting/workspace/src/van_loading/libs/mrpt/libs/core/include/mrpt/core/common.h
 
 /home/matt/Documents/Robot-transporting/workspace/src/van_loading/libs/mrpt/libs/core/include/mrpt/core/exceptions.h
-string
--
-stdexcept
--
 mrpt/core/common.h
 -
 mrpt/core/format.h
+-
+stdexcept
+-
+string
 -
 
 /home/matt/Documents/Robot-transporting/workspace/src/van_loading/libs/mrpt/libs/core/include/mrpt/core/format.h
@@ -85,13 +87,13 @@ mrpt/core/exceptions.h
 -
 
 /home/matt/Documents/Robot-transporting/workspace/src/van_loading/libs/mrpt/libs/img/include/mrpt/img/TColor.h
+mrpt/serialization/serialization_frwds.h
+-
 cstdint
 -
 iosfwd
 -
 iostream
--
-mrpt/serialization/serialization_frwds.h
 -
 
 /home/matt/Documents/Robot-transporting/workspace/src/van_loading/libs/mrpt/libs/img/include/mrpt/img/color_maps.h
@@ -99,65 +101,67 @@ mrpt/typemeta/TEnumType.h
 -
 
 /home/matt/Documents/Robot-transporting/workspace/src/van_loading/libs/mrpt/libs/maps/include/mrpt/maps/CPointsMap.h
-mrpt/maps/CMetricMap.h
--
-mrpt/serialization/CSerializable.h
--
 mrpt/config/CLoadableOptions.h
--
-mrpt/core/safe_pointers.h
 -
 mrpt/core/aligned_std_vector.h
 -
-mrpt/math/KDTreeCapable.h
+mrpt/core/safe_pointers.h
 -
-mrpt/obs/CSinCosLookUpTableFor2DScans.h
+mrpt/img/color_maps.h
 -
-mrpt/math/lightweight_geom_data.h
+mrpt/maps/CMetricMap.h
 -
 mrpt/math/CMatrixFixedNumeric.h
 -
-mrpt/opengl/PLY_import_export.h
+mrpt/math/KDTreeCapable.h
+-
+mrpt/math/lightweight_geom_data.h
+-
+mrpt/obs/CSinCosLookUpTableFor2DScans.h
 -
 mrpt/obs/obs_frwds.h
 -
+mrpt/opengl/PLY_import_export.h
+-
 mrpt/opengl/pointcloud_adapters.h
 -
-mrpt/img/color_maps.h
+mrpt/serialization/CSerializable.h
 -
 
 /home/matt/Documents/Robot-transporting/workspace/src/van_loading/libs/mrpt/libs/maps/include/mrpt/maps/CSimplePointsMap.h
 mrpt/maps/CPointsMap.h
 -
-mrpt/serialization/CSerializable.h
--
 mrpt/math/CMatrix.h
 -
 mrpt/obs/obs_frwds.h
 -
+mrpt/serialization/CSerializable.h
+-
 
 /home/matt/Documents/Robot-transporting/workspace/src/van_loading/libs/mrpt/libs/math/include/mrpt/math/CArrayNumeric.h
+mrpt/math/point_poses2vectors.h
+-
 mrpt/math/types_math.h
 -
 mrpt/typemeta/TTypeName.h
 -
 mrpt/typemeta/num_to_string.h
--
-mrpt/math/point_poses2vectors.h
 -
 
 /home/matt/Documents/Robot-transporting/workspace/src/van_loading/libs/mrpt/libs/math/include/mrpt/math/CMatrix.h
-mrpt/serialization/CSerializable.h
+mrpt/math/CMatrixFixedNumeric.h
 -
 mrpt/math/CMatrixTemplateNumeric.h
 -
-mrpt/math/CMatrixFixedNumeric.h
+mrpt/serialization/CSerializable.h
 -
 
 /home/matt/Documents/Robot-transporting/workspace/src/van_loading/libs/mrpt/libs/math/include/mrpt/math/CMatrixFixedNumeric.h
+mrpt/math/eigen_frwds.h
+-
 mrpt/math/math_frwds.h
 -
-mrpt/math/eigen_frwds.h
+mrpt/math/point_poses2vectors.h
 -
 mrpt/math/types_math.h
 -
@@ -167,61 +171,61 @@ mrpt/typemeta/TTypeName.h
 -
 mrpt/typemeta/num_to_string.h
 -
-mrpt/math/point_poses2vectors.h
--
 
 /home/matt/Documents/Robot-transporting/workspace/src/van_loading/libs/mrpt/libs/math/include/mrpt/math/CMatrixTemplateNumeric.h
-mrpt/math/types_math.h
+mrpt/core/exceptions.h
 -
-Eigen/Dense
+mrpt/math/point_poses2vectors.h
+-
+mrpt/math/types_math.h
 -
 mrpt/typemeta/TTypeName.h
 -
-mrpt/math/point_poses2vectors.h
--
-mrpt/core/exceptions.h
+Eigen/Dense
 -
 
 /home/matt/Documents/Robot-transporting/workspace/src/van_loading/libs/mrpt/libs/math/include/mrpt/math/CPolygon.h
-mrpt/serialization/CSerializable.h
--
 mrpt/math/lightweight_geom_data.h
+-
+mrpt/serialization/CSerializable.h
 -
 
 /home/matt/Documents/Robot-transporting/workspace/src/van_loading/libs/mrpt/libs/math/include/mrpt/math/CProbabilityDensityFunction.h
-mrpt/math/CMatrixTemplateNumeric.h
--
 mrpt/math/CMatrixFixedNumeric.h
+-
+mrpt/math/CMatrixTemplateNumeric.h
 -
 mrpt/math/math_frwds.h
 -
 
 /home/matt/Documents/Robot-transporting/workspace/src/van_loading/libs/mrpt/libs/math/include/mrpt/math/CQuaternion.h
-mrpt/math/CMatrixTemplateNumeric.h
--
-mrpt/math/CArrayNumeric.h
+mrpt/core/bits_math.h
 -
 mrpt/core/exceptions.h
 -
-mrpt/core/bits_math.h
+mrpt/math/CArrayNumeric.h
+-
+mrpt/math/CMatrixTemplateNumeric.h
 -
 
 /home/matt/Documents/Robot-transporting/workspace/src/van_loading/libs/mrpt/libs/math/include/mrpt/math/KDTreeCapable.h
-nanoflann.hpp
--
 mrpt/math/lightweight_geom_data.h
--
-memory
 -
 array
 -
+atomic
+-
+memory
+-
 mutex
 -
-atomic
+nanoflann.hpp
 -
 
 /home/matt/Documents/Robot-transporting/workspace/src/van_loading/libs/mrpt/libs/math/include/mrpt/math/eigen_frwds.h
 mrpt/config.h
+-
+cstddef
 -
 
 /home/matt/Documents/Robot-transporting/workspace/src/van_loading/libs/mrpt/libs/math/include/mrpt/math/homog_matrices.h
@@ -231,27 +235,27 @@ mrpt/core/exceptions.h
 /home/matt/Documents/Robot-transporting/workspace/src/van_loading/libs/mrpt/libs/math/include/mrpt/math/lightweight_geom_data.h
 mrpt/core/bits_math.h
 -
-mrpt/typemeta/TTypeName.h
--
-mrpt/math/math_frwds.h
--
-mrpt/math/lightweight_geom_data_frwds.h
--
-mrpt/math/eigen_frwds.h
--
-mrpt/math/wrap2pi.h
+mrpt/core/exceptions.h
 -
 mrpt/core/format.h
 -
-mrpt/core/exceptions.h
+mrpt/math/eigen_frwds.h
 -
-vector
+mrpt/math/lightweight_geom_data_frwds.h
+-
+mrpt/math/math_frwds.h
+-
+mrpt/math/wrap2pi.h
+-
+mrpt/serialization/serialization_frwds.h
+-
+mrpt/typemeta/TTypeName.h
 -
 stdexcept
 -
 type_traits
 -
-mrpt/serialization/serialization_frwds.h
+vector
 -
 
 /home/matt/Documents/Robot-transporting/workspace/src/van_loading/libs/mrpt/libs/math/include/mrpt/math/lightweight_geom_data_frwds.h
@@ -269,43 +273,43 @@ mrpt/math/math_frwds.h
 -
 
 /home/matt/Documents/Robot-transporting/workspace/src/van_loading/libs/mrpt/libs/math/include/mrpt/math/types_math.h
-vector
--
 deque
+-
+vector
 -
 mrpt/math/math_frwds.h
 -
 mrpt/serialization/serialization_frwds.h
 -
-fstream
--
 ctime
+-
+fstream
 -
 stdexcept
 -
 Eigen/Dense
 -
-Eigen/StdVector
--
 Eigen/StdDeque
+-
+Eigen/StdVector
 -
 
 /home/matt/Documents/Robot-transporting/workspace/src/van_loading/libs/mrpt/libs/math/include/mrpt/math/utils.h
+mrpt/core/exceptions.h
+-
+mrpt/math/eigen_frwds.h
+-
+cmath
+-
 cstdarg
 -
 cstdio
 -
-cmath
--
 iosfwd
--
-vector
 -
 limits
 -
-mrpt/core/exceptions.h
--
-mrpt/math/eigen_frwds.h
+vector
 -
 
 /home/matt/Documents/Robot-transporting/workspace/src/van_loading/libs/mrpt/libs/math/include/mrpt/math/wrap2pi.h
@@ -333,45 +337,45 @@ limits
 -
 
 /home/matt/Documents/Robot-transporting/workspace/src/van_loading/libs/mrpt/libs/obs/include/mrpt/maps/CMetricMap.h
-mrpt/serialization/CSerializable.h
--
-mrpt/tfest/TMatchingPair.h
--
-mrpt/system/CObservable.h
--
-mrpt/math/math_frwds.h
--
-mrpt/math/lightweight_geom_data.h
--
-mrpt/obs/CObservation.h
--
-mrpt/opengl/CSetOfObjects.h
--
 mrpt/maps/CMetricMapEvents.h
 -
 mrpt/maps/TMetricMapInitializer.h
 -
 mrpt/maps/metric_map_types.h
 -
+mrpt/math/lightweight_geom_data.h
+-
+mrpt/math/math_frwds.h
+-
+mrpt/obs/CObservation.h
+-
 mrpt/obs/obs_frwds.h
+-
+mrpt/opengl/CSetOfObjects.h
+-
+mrpt/serialization/CSerializable.h
+-
+mrpt/system/CObservable.h
+-
+mrpt/tfest/TMatchingPair.h
 -
 deque
 -
 
 /home/matt/Documents/Robot-transporting/workspace/src/van_loading/libs/mrpt/libs/obs/include/mrpt/maps/CMetricMapEvents.h
-mrpt/system/mrptEvent.h
--
 mrpt/poses/poses_frwds.h
+-
+mrpt/system/mrptEvent.h
 -
 
 /home/matt/Documents/Robot-transporting/workspace/src/van_loading/libs/mrpt/libs/obs/include/mrpt/maps/TMetricMapInitializer.h
 mrpt/config/CLoadableOptions.h
 -
-mrpt/rtti/CObject.h
--
 mrpt/maps/TMetricMapTypesRegistry.h
 -
 mrpt/maps/metric_map_types.h
+-
+mrpt/rtti/CObject.h
 -
 deque
 -
@@ -379,37 +383,43 @@ deque
 /home/matt/Documents/Robot-transporting/workspace/src/van_loading/libs/mrpt/libs/obs/include/mrpt/maps/TMetricMapTypesRegistry.h
 mrpt/obs/obs_frwds.h
 -
+functional
+-
 map
 -
 string
--
-functional
 -
 
 /home/matt/Documents/Robot-transporting/workspace/src/van_loading/libs/mrpt/libs/obs/include/mrpt/maps/metric_map_types.h
 mrpt/config/CLoadableOptions.h
 -
-mrpt/serialization/CSerializable.h
--
 mrpt/math/lightweight_geom_data.h
 -
 mrpt/obs/obs_frwds.h
 -
+mrpt/serialization/CSerializable.h
+-
 
 /home/matt/Documents/Robot-transporting/workspace/src/van_loading/libs/mrpt/libs/obs/include/mrpt/obs/CObservation.h
+mrpt/math/lightweight_geom_data_frwds.h
+-
+mrpt/math/math_frwds.h
+-
+mrpt/poses/poses_frwds.h
+-
 mrpt/serialization/CSerializable.h
 -
 mrpt/system/datetime.h
 -
-mrpt/math/math_frwds.h
--
-mrpt/math/lightweight_geom_data_frwds.h
--
-mrpt/poses/poses_frwds.h
--
 
 /home/matt/Documents/Robot-transporting/workspace/src/van_loading/libs/mrpt/libs/obs/include/mrpt/obs/CObservation2DRangeScan.h
-mrpt/serialization/CSerializable.h
+mrpt/containers/ContainerReadOnlyProxyAccessor.h
+-
+mrpt/core/aligned_std_vector.h
+-
+mrpt/maps/CMetricMap.h
+-
+mrpt/math/CPolygon.h
 -
 mrpt/obs/CObservation.h
 -
@@ -417,13 +427,7 @@ mrpt/obs/T2DScanProperties.h
 -
 mrpt/poses/CPose3D.h
 -
-mrpt/maps/CMetricMap.h
--
-mrpt/math/CPolygon.h
--
-mrpt/containers/ContainerReadOnlyProxyAccessor.h
--
-mrpt/core/aligned_std_vector.h
+mrpt/serialization/CSerializable.h
 -
 
 /home/matt/Documents/Robot-transporting/workspace/src/van_loading/libs/mrpt/libs/obs/include/mrpt/obs/CSinCosLookUpTableFor2DScans.h
@@ -441,17 +445,17 @@ mrpt/poses/poses_frwds.h
 -
 
 /home/matt/Documents/Robot-transporting/workspace/src/van_loading/libs/mrpt/libs/opengl/include/mrpt/opengl/CRenderizable.h
-mrpt/serialization/CSerializable.h
--
 mrpt/img/TColor.h
+-
+mrpt/math/lightweight_geom_data.h
 -
 mrpt/math/math_frwds.h
 -
-mrpt/poses/CPose3D.h
--
 mrpt/opengl/opengl_fonts.h
 -
-mrpt/math/lightweight_geom_data.h
+mrpt/poses/CPose3D.h
+-
+mrpt/serialization/CSerializable.h
 -
 deque
 -
@@ -467,15 +471,15 @@ mrpt/img/TColor.h
 -
 mrpt/math/lightweight_geom_data.h
 -
-vector
--
 string
+-
+vector
 -
 
 /home/matt/Documents/Robot-transporting/workspace/src/van_loading/libs/mrpt/libs/opengl/include/mrpt/opengl/opengl_fonts.h
-mrpt/img/TColor.h
--
 mrpt/core/common.h
+-
+mrpt/img/TColor.h
 -
 string
 -
@@ -495,33 +499,33 @@ mrpt/serialization/CSerializable.h
 -
 
 /home/matt/Documents/Robot-transporting/workspace/src/van_loading/libs/mrpt/libs/poses/include/mrpt/poses/CPose3D.h
-mrpt/poses/CPose.h
--
 mrpt/math/CMatrixFixedNumeric.h
 -
 mrpt/math/CQuaternion.h
+-
+mrpt/poses/CPose.h
 -
 mrpt/system/string_utils.h
 -
 
 /home/matt/Documents/Robot-transporting/workspace/src/van_loading/libs/mrpt/libs/poses/include/mrpt/poses/CPose3DPDF.h
-mrpt/serialization/CSerializable.h
+mrpt/math/CProbabilityDensityFunction.h
 -
 mrpt/math/math_frwds.h
 -
 mrpt/poses/CPose3D.h
 -
-mrpt/math/CProbabilityDensityFunction.h
+mrpt/serialization/CSerializable.h
 -
 
 /home/matt/Documents/Robot-transporting/workspace/src/van_loading/libs/mrpt/libs/poses/include/mrpt/poses/CPoseOrPoint.h
-mrpt/math/math_frwds.h
--
-mrpt/math/lightweight_geom_data.h
+mrpt/math/CArrayNumeric.h
 -
 mrpt/math/homog_matrices.h
 -
-mrpt/math/CArrayNumeric.h
+mrpt/math/lightweight_geom_data.h
+-
+mrpt/math/math_frwds.h
 -
 mrpt/serialization/CSerializable.h
 -
@@ -533,33 +537,33 @@ mrpt/poses/poses_frwds.h
 -
 
 /home/matt/Documents/Robot-transporting/workspace/src/van_loading/libs/mrpt/libs/poses/include/mrpt/poses/CPosePDF.h
-mrpt/serialization/CSerializable.h
--
-mrpt/poses/CPose2D.h
--
 mrpt/math/CMatrixTemplateNumeric.h
 -
 mrpt/math/CProbabilityDensityFunction.h
 -
+mrpt/poses/CPose2D.h
+-
+mrpt/serialization/CSerializable.h
+-
 
 /home/matt/Documents/Robot-transporting/workspace/src/van_loading/libs/mrpt/libs/poses/include/mrpt/poses/CPosePDFGaussian.h
-mrpt/poses/CPosePDF.h
--
 mrpt/math/CMatrixFixedNumeric.h
+-
+mrpt/poses/CPosePDF.h
 -
 
 /home/matt/Documents/Robot-transporting/workspace/src/van_loading/libs/mrpt/libs/poses/include/mrpt/poses/poses_frwds.h
 
 /home/matt/Documents/Robot-transporting/workspace/src/van_loading/libs/mrpt/libs/rtti/include/mrpt/rtti/CObject.h
-mrpt/core/safe_pointers.h
--
 mrpt/core/aligned_allocator.h
+-
+mrpt/core/safe_pointers.h
 -
 mrpt/typemeta/static_string.h
 -
-vector
--
 memory
+-
+vector
 -
 
 /home/matt/Documents/Robot-transporting/workspace/src/van_loading/libs/mrpt/libs/serialization/include/mrpt/serialization/CSerializable.h
@@ -573,9 +577,9 @@ cstdint
 /home/matt/Documents/Robot-transporting/workspace/src/van_loading/libs/mrpt/libs/serialization/include/mrpt/serialization/serialization_frwds.h
 
 /home/matt/Documents/Robot-transporting/workspace/src/van_loading/libs/mrpt/libs/slam/include/mrpt/slam/CICP.h
-mrpt/slam/CMetricMapsAlignmentAlgorithm.h
--
 mrpt/config/CLoadableOptions.h
+-
+mrpt/slam/CMetricMapsAlignmentAlgorithm.h
 -
 mrpt/typemeta/TEnumType.h
 -
@@ -583,11 +587,11 @@ mrpt/typemeta/TEnumType.h
 /home/matt/Documents/Robot-transporting/workspace/src/van_loading/libs/mrpt/libs/slam/include/mrpt/slam/CMetricMapsAlignmentAlgorithm.h
 mrpt/maps/CPointsMap.h
 -
-mrpt/poses/poses_frwds.h
+mrpt/poses/CPose3DPDF.h
 -
 mrpt/poses/CPosePDF.h
 -
-mrpt/poses/CPose3DPDF.h
+mrpt/poses/poses_frwds.h
 -
 mrpt/system/COutputLogger.h
 -
@@ -597,25 +601,25 @@ set
 -
 
 /home/matt/Documents/Robot-transporting/workspace/src/van_loading/libs/mrpt/libs/system/include/mrpt/system/COutputLogger.h
-mrpt/typemeta/TEnumType.h
--
-mrpt/system/os.h
+mrpt/core/Clock.h
 -
 mrpt/system/CTicTac.h
 -
-mrpt/core/Clock.h
+mrpt/system/os.h
 -
-string
--
-deque
+mrpt/typemeta/TEnumType.h
 -
 array
 -
-sstream
+deque
+-
+functional
 -
 iosfwd
 -
-functional
+sstream
+-
+string
 -
 
 /home/matt/Documents/Robot-transporting/workspace/src/van_loading/libs/mrpt/libs/system/include/mrpt/system/CTicTac.h
@@ -627,9 +631,9 @@ mrpt/core/exceptions.h
 -
 cstdint
 -
-string
--
 iosfwd
+-
+string
 -
 
 /home/matt/Documents/Robot-transporting/workspace/src/van_loading/libs/mrpt/libs/system/include/mrpt/system/mrptEvent.h
@@ -639,7 +643,7 @@ mrpt/core/Clock.h
 /home/matt/Documents/Robot-transporting/workspace/src/van_loading/libs/mrpt/libs/system/include/mrpt/system/os.h
 mrpt/config.h
 -
-cstdlib
+mrpt/core/common.h
 -
 cstdarg
 -
@@ -647,35 +651,35 @@ cstdint
 -
 cstdio
 -
-string
+cstdlib
 -
-mrpt/core/common.h
+string
 -
 
 /home/matt/Documents/Robot-transporting/workspace/src/van_loading/libs/mrpt/libs/system/include/mrpt/system/string_utils.h
-string
--
-vector
+cstdint
 -
 deque
 -
-cstdint
--
 sstream
 -
-
-/home/matt/Documents/Robot-transporting/workspace/src/van_loading/libs/mrpt/libs/tfest/include/mrpt/tfest/TMatchingPair.h
 string
 -
 vector
 -
-iosfwd
--
-cstdint
+
+/home/matt/Documents/Robot-transporting/workspace/src/van_loading/libs/mrpt/libs/tfest/include/mrpt/tfest/TMatchingPair.h
+mrpt/core/common.h
 -
 mrpt/poses/poses_frwds.h
 -
-mrpt/core/common.h
+cstdint
+-
+iosfwd
+-
+string
+-
+vector
 -
 
 /home/matt/Documents/Robot-transporting/workspace/src/van_loading/libs/mrpt/libs/typemeta/include/mrpt/typemeta/TEnumType.h
@@ -683,11 +687,15 @@ map
 -
 stdexcept
 -
+string
+-
 
 /home/matt/Documents/Robot-transporting/workspace/src/van_loading/libs/mrpt/libs/typemeta/include/mrpt/typemeta/TTypeName.h
+mrpt/typemeta/static_string.h
+-
 cstdint
 -
-mrpt/typemeta/static_string.h
+memory
 -
 
 /home/matt/Documents/Robot-transporting/workspace/src/van_loading/libs/mrpt/libs/typemeta/include/mrpt/typemeta/num_to_string.h
@@ -696,6 +704,8 @@ cstddef
 
 /home/matt/Documents/Robot-transporting/workspace/src/van_loading/libs/mrpt/libs/typemeta/include/mrpt/typemeta/static_string.h
 mrpt/typemeta/xassert.h
+-
+string
 -
 
 /home/matt/Documents/Robot-transporting/workspace/src/van_loading/libs/mrpt/libs/typemeta/include/mrpt/typemeta/xassert.h

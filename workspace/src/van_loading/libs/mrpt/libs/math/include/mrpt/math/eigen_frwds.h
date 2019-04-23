@@ -1,15 +1,16 @@
 /* +------------------------------------------------------------------------+
    |                     Mobile Robot Programming Toolkit (MRPT)            |
-   |                          http://www.mrpt.org/                          |
+   |                          https://www.mrpt.org/                         |
    |                                                                        |
    | Copyright (c) 2005-2019, Individual contributors, see AUTHORS file     |
-   | See: http://www.mrpt.org/Authors - All rights reserved.                |
-   | Released under BSD License. See details in http://www.mrpt.org/License |
+   | See: https://www.mrpt.org/Authors - All rights reserved.               |
+   | Released under BSD License. See: https://www.mrpt.org/License          |
    +------------------------------------------------------------------------+ */
 #pragma once
 
 // Eigen forward declarations:
 #include <mrpt/config.h>
+#include <cstddef>  // size_t
 
 // Minimum Eigen fwrd-decls:
 namespace Eigen
@@ -69,6 +70,10 @@ using CMatrixDouble17 = CMatrixFixedNumeric<double, 1, 7>;
 using CMatrixDouble51 = CMatrixFixedNumeric<double, 5, 1>;
 using CMatrixDouble15 = CMatrixFixedNumeric<double, 1, 5>;
 using CMatrixDouble41 = CMatrixFixedNumeric<double, 4, 1>;
+using CMatrixDouble6_12 = CMatrixFixedNumeric<double, 6, 12>;
+using CMatrixDouble12_6 = CMatrixFixedNumeric<double, 12, 6>;
+using CMatrixDouble39 = CMatrixFixedNumeric<double, 3, 9>;
+using CMatrixDouble93 = CMatrixFixedNumeric<double, 9, 3>;
 
 using CMatrixFloat22 = CMatrixFixedNumeric<float, 2, 2>;
 using CMatrixFloat23 = CMatrixFixedNumeric<float, 2, 3>;

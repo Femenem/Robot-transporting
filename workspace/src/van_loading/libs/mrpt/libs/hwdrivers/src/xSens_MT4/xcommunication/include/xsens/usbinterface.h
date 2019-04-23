@@ -1,18 +1,18 @@
 /* +------------------------------------------------------------------------+
    |                     Mobile Robot Programming Toolkit (MRPT)            |
-   |                          http://www.mrpt.org/                          |
+   |                          https://www.mrpt.org/                         |
    |                                                                        |
    | Copyright (c) 2005-2019, Individual contributors, see AUTHORS file     |
-   | See: http://www.mrpt.org/Authors - All rights reserved.                |
-   | Released under BSD License. See details in http://www.mrpt.org/License |
+   | See: https://www.mrpt.org/Authors - All rights reserved.               |
+   | Released under BSD License. See: https://www.mrpt.org/License          |
    +------------------------------------------------------------------------+ */
 #ifndef USBINTERFACE_H
 #define USBINTERFACE_H
 
 #include <xsens/xstime.h>
 
-#include <stdlib.h>
 #include <stdio.h>
+#include <stdlib.h>
 #ifdef _WIN32
 #include <windows.h>
 //#	include <sys/types.h>
@@ -20,13 +20,13 @@
 #include <termios.h>
 // these are not required by level 1, but to keep the higher levels
 // platform-independent they are put here
-#include <string.h>
 #include <stddef.h>
+#include <string.h>
 #define _strnicmp strncasecmp
 #endif
 
-#include "streaminterface.h"
 #include <stdio.h>
+#include "streaminterface.h"
 
 struct XsPortInfo;
 

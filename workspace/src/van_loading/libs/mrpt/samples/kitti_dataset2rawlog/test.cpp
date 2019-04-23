@@ -1,10 +1,10 @@
 /* +------------------------------------------------------------------------+
    |                     Mobile Robot Programming Toolkit (MRPT)            |
-   |                          http://www.mrpt.org/                          |
+   |                          https://www.mrpt.org/                         |
    |                                                                        |
    | Copyright (c) 2005-2019, Individual contributors, see AUTHORS file     |
-   | See: http://www.mrpt.org/Authors - All rights reserved.                |
-   | Released under BSD License. See details in http://www.mrpt.org/License |
+   | See: https://www.mrpt.org/Authors - All rights reserved.               |
+   | Released under BSD License. See: https://www.mrpt.org/License          |
    +------------------------------------------------------------------------+ */
 
 /* ------------------------------------------------------
@@ -30,13 +30,13 @@ Output files:
 
   ------------------------------------------------------ */
 
-#include <mrpt/system/filesystem.h>
-#include <mrpt/system/string_utils.h>
-#include <mrpt/io/CFileGZOutputStream.h>
 #include <mrpt/img/TCamera.h>
+#include <mrpt/io/CFileGZOutputStream.h>
 #include <mrpt/io/CTextFileLinesParser.h>
 #include <mrpt/obs/CObservationStereoImages.h>
 #include <mrpt/serialization/CArchive.h>
+#include <mrpt/system/filesystem.h>
+#include <mrpt/system/string_utils.h>
 #include <iostream>
 
 using namespace std;

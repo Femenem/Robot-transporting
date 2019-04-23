@@ -1,17 +1,19 @@
 /* +------------------------------------------------------------------------+
    |                     Mobile Robot Programming Toolkit (MRPT)            |
-   |                          http://www.mrpt.org/                          |
+   |                          https://www.mrpt.org/                         |
    |                                                                        |
    | Copyright (c) 2005-2019, Individual contributors, see AUTHORS file     |
-   | See: http://www.mrpt.org/Authors - All rights reserved.                |
-   | Released under BSD License. See details in http://www.mrpt.org/License |
+   | See: https://www.mrpt.org/Authors - All rights reserved.               |
+   | Released under BSD License. See: https://www.mrpt.org/License          |
    +------------------------------------------------------------------------+ */
 
 #include "io-precomp.h"  // Precompiled headers
 
+#include <mrpt/core/exceptions.h>
 #include <mrpt/io/CFileGZInputStream.h>
 #include <mrpt/system/filesystem.h>
-#include <mrpt/core/exceptions.h>
+#include <cerrno>
+#include <cstring>  // strerror
 
 #include <zlib.h>
 
@@ -41,7 +43,8 @@ CFileGZInputStream::CFileGZInputStream(const string& fileName)
 	MRPT_END
 }
 
-bool CFileGZInputStream::open(const std::string& fileName)
+bool CFileGZInputStream::open(
+	const std::string& fileName, mrpt::optional_ref<std::string> error_msg)
 {
 	MRPT_START
 
@@ -54,8 +57,10 @@ bool CFileGZInputStream::open(const std::string& fileName)
 
 	// Open gz stream:
 	m_f->f = gzopen(fileName.c_str(), "rb");
-	return m_f->f != nullptr;
+	if (m_f->f == nullptr && error_msg)
+		error_msg.value().get() = std::string(strerror(errno));
 
+	return m_f->f != nullptr;
 	MRPT_END
 }
 

@@ -1,20 +1,20 @@
 /* +------------------------------------------------------------------------+
    |                     Mobile Robot Programming Toolkit (MRPT)            |
-   |                          http://www.mrpt.org/                          |
+   |                          https://www.mrpt.org/                         |
    |                                                                        |
    | Copyright (c) 2005-2019, Individual contributors, see AUTHORS file     |
-   | See: http://www.mrpt.org/Authors - All rights reserved.                |
-   | Released under BSD License. See details in http://www.mrpt.org/License |
+   | See: https://www.mrpt.org/Authors - All rights reserved.               |
+   | Released under BSD License. See: https://www.mrpt.org/License          |
    +------------------------------------------------------------------------+ */
 
-#include <mrpt/io/CFileGZOutputStream.h>
-#include <mrpt/io/CFileGZInputStream.h>
-#include <mrpt/system/filesystem.h>
-#include <mrpt/core/format.h>
 #include <gtest/gtest.h>
-#include <random>
-#include <algorithm>  // std::equal
+#include <mrpt/core/format.h>
+#include <mrpt/io/CFileGZInputStream.h>
+#include <mrpt/io/CFileGZOutputStream.h>
+#include <mrpt/random/RandomGenerators.h>
+#include <mrpt/system/filesystem.h>
 #include <test_mrpt_common.h>
+#include <algorithm>  // std::equal
 
 const size_t tst_data_len = 1000U;
 
@@ -22,11 +22,15 @@ const size_t tst_data_len = 1000U;
 void generate_test_data(std::vector<uint8_t>& tst_data)
 {
 	const unsigned int random_seed = 123U;
-	std::mt19937 mersenne_engine{random_seed};
-	// MSVC C++11 library enforces use of `unsigned short` as smallest type
-	std::uniform_int_distribution<unsigned short> dist{0, 3};  // low entropy
-	auto gen = [&dist, &mersenne_engine]() { return dist(mersenne_engine); };
-	// auto gen = []() { return 1; };
+	mrpt::random::Generator_MT19937 mersenne_engine;
+	mersenne_engine.seed(random_seed);
+
+	// Was: std::uniform_int_distribution<unsigned short> dist{0, 3};
+	// But that class seems not to be reproducible across compilers.
+	auto gen = [&mersenne_engine]() {
+		// low entropy
+		return mersenne_engine() % 4;
+	};
 
 	tst_data.resize(tst_data_len);
 	std::generate(std::begin(tst_data), std::end(tst_data), gen);
@@ -79,6 +83,7 @@ TEST(CFileGZStreams, compareWithTestGZFiles)
 		const std::string fil = mrpt::format(
 			"%s/tests/gz-tests/%i.gz", mrpt::UNITTEST_BASEDIR.c_str(),
 			compress_level);
+
 		if (!mrpt::system::fileExists(fil))
 		{
 			GTEST_FAIL() << "ERROR: test due to missing file: " << fil << "\n";

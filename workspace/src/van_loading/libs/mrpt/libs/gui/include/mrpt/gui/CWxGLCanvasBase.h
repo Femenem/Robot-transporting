@@ -1,19 +1,19 @@
 /* +------------------------------------------------------------------------+
    |                     Mobile Robot Programming Toolkit (MRPT)            |
-   |                          http://www.mrpt.org/                          |
+   |                          https://www.mrpt.org/                         |
    |                                                                        |
    | Copyright (c) 2005-2019, Individual contributors, see AUTHORS file     |
-   | See: http://www.mrpt.org/Authors - All rights reserved.                |
-   | Released under BSD License. See details in http://www.mrpt.org/License |
+   | See: https://www.mrpt.org/Authors - All rights reserved.               |
+   | Released under BSD License. See: https://www.mrpt.org/License          |
    +------------------------------------------------------------------------+ */
 
 #pragma once
 
 #include <mrpt/gui/CGlCanvasBase.h>
 
-#include <mrpt/opengl/opengl_fonts.h>
-#include <mrpt/opengl/CTextMessageCapable.h>
 #include <mrpt/opengl/COpenGLScene.h>
+#include <mrpt/opengl/CTextMessageCapable.h>
+#include <mrpt/opengl/opengl_fonts.h>
 
 namespace mrpt
 {
@@ -25,28 +25,28 @@ namespace gui
 
 #if MRPT_HAS_WXWIDGETS
 
-#include <wx/string.h>
-#include <wx/intl.h>
+#include <wx/artprov.h>
 #include <wx/bitmap.h>
 #include <wx/icon.h>
 #include <wx/image.h>
-#include <wx/artprov.h>
+#include <wx/intl.h>
+#include <wx/string.h>
 
-#include <wx/msgdlg.h>
-#include <wx/filedlg.h>
-#include <wx/progdlg.h>
-#include <wx/imaglist.h>
 #include <wx/busyinfo.h>
-#include <wx/log.h>
-#include <wx/textdlg.h>
-#include <wx/dirdlg.h>
 #include <wx/colordlg.h>
 #include <wx/dcmemory.h>
+#include <wx/dirdlg.h>
+#include <wx/filedlg.h>
+#include <wx/imaglist.h>
+#include <wx/log.h>
+#include <wx/msgdlg.h>
+#include <wx/progdlg.h>
+#include <wx/textdlg.h>
 
 #if wxUSE_GLCANVAS && MRPT_HAS_OPENGL_GLUT
 
-#include <wx/glcanvas.h>
 #include <wx/dcclient.h>
+#include <wx/glcanvas.h>
 
 // To avoid conflicts between Eigen & X11 headers
 #ifdef Success

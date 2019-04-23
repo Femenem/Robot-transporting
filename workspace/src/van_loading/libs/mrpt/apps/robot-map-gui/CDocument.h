@@ -1,22 +1,22 @@
 /* +---------------------------------------------------------------------------+
    |                     Mobile Robot Programming Toolkit (MRPT)               |
-   |                          http://www.mrpt.org/                             |
+   |                          https://www.mrpt.org/                            |
    |                                                                           |
    | Copyright (c) 2005-2019, Individual contributors, see AUTHORS file        |
-   | See: http://www.mrpt.org/Authors - All rights reserved.                   |
-   | Released under BSD License. See details in http://www.mrpt.org/License    |
+   | See: https://www.mrpt.org/Authors - All rights reserved.                  |
+   | Released under BSD License. See details in https://www.mrpt.org/License   |
    +---------------------------------------------------------------------------+
    */
 #pragma once
 #include <string>
 
-#include "mrpt/maps/CSimpleMap.h"
-#include "mrpt/maps/CMultiMetricMap.h"
-#include "mrpt/opengl/CRenderizable.h"
 #include "mrpt/config/CConfigFile.h"
+#include "mrpt/maps/CMultiMetricMap.h"
+#include "mrpt/maps/CSimpleMap.h"
+#include "mrpt/opengl/CRenderizable.h"
 
-#include "gui/configWidget/CConfigWidget.h"
 #include "TypeOfConfig.h"
+#include "gui/configWidget/CConfigWidget.h"
 
 /** This class gets *.simplemap and *.ini, and convert it to name of the map -
 CSetOfObjects.

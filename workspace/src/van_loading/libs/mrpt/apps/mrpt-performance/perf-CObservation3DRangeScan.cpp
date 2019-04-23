@@ -1,18 +1,18 @@
 /* +------------------------------------------------------------------------+
    |                     Mobile Robot Programming Toolkit (MRPT)            |
-   |                          http://www.mrpt.org/                          |
+   |                          https://www.mrpt.org/                         |
    |                                                                        |
    | Copyright (c) 2005-2019, Individual contributors, see AUTHORS file     |
-   | See: http://www.mrpt.org/Authors - All rights reserved.                |
-   | Released under BSD License. See details in http://www.mrpt.org/License |
+   | See: https://www.mrpt.org/Authors - All rights reserved.               |
+   | Released under BSD License. See: https://www.mrpt.org/License          |
    +------------------------------------------------------------------------+ */
 
-#include <mrpt/obs/CObservation3DRangeScan.h>
 #include <mrpt/io/CFileGZInputStream.h>
+#include <mrpt/obs/CObservation3DRangeScan.h>
 #include <mrpt/random.h>
+#include <mrpt/serialization/CArchive.h>
 #include <mrpt/system/CTimeLogger.h>
 #include <mrpt/system/filesystem.h>
-#include <mrpt/serialization/CArchive.h>
 
 #include "common.h"
 
@@ -24,14 +24,10 @@ using namespace mrpt::io;
 using namespace mrpt::system;
 using namespace mrpt::serialization;
 using namespace std;
+using namespace std::string_literals;
 
 const string rgbd_test_rawlog_file =
-#ifdef MRPT_DATASET_DIR
-	MRPT_DATASET_DIR "/tests_rgbd.rawlog";
-#else
-	""
-#endif
-;
+	mrpt::system::getShareMRPTDir() + "datasets/tests_rgbd.rawlog"s;
 
 void generateRandomMaskImage(
 	mrpt::math::CMatrix& m, const unsigned int nrows, const unsigned int ncols)

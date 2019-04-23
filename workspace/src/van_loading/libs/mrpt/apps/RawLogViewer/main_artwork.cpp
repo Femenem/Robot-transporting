@@ -1,10 +1,10 @@
 /* +------------------------------------------------------------------------+
    |                     Mobile Robot Programming Toolkit (MRPT)            |
-   |                          http://www.mrpt.org/                          |
+   |                          https://www.mrpt.org/                         |
    |                                                                        |
    | Copyright (c) 2005-2019, Individual contributors, see AUTHORS file     |
-   | See: http://www.mrpt.org/Authors - All rights reserved.                |
-   | Released under BSD License. See details in http://www.mrpt.org/License |
+   | See: https://www.mrpt.org/Authors - All rights reserved.               |
+   | Released under BSD License. See: https://www.mrpt.org/License          |
    +------------------------------------------------------------------------+ */
 
 #include "xRawLogViewerMain.h"
@@ -15,13 +15,13 @@
 #include "imgs/ArrowLeft2.xpm"
 #include "imgs/Exec.xpm"
 #include "imgs/Folderdownloads.xpm"
-#include "imgs/file_save.xpm"
-#include "imgs/Sports-Car-2.xpm"
-#include "imgs/Qmark.xpm"
 #include "imgs/MAIN_ICON.xpm"
-#include "imgs/icon_play.xpm"
+#include "imgs/Qmark.xpm"
+#include "imgs/Sports-Car-2.xpm"
+#include "imgs/file_save.xpm"
 #include "imgs/icon_animate_scans.xpm"
 #include "imgs/icon_icp.xpm"
+#include "imgs/icon_play.xpm"
 
 #include "../wx-common/mrpt_logo.xpm"
 

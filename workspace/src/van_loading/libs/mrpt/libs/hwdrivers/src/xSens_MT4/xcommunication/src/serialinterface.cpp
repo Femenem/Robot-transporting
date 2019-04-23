@@ -1,27 +1,27 @@
 /* +------------------------------------------------------------------------+
    |                     Mobile Robot Programming Toolkit (MRPT)            |
-   |                          http://www.mrpt.org/                          |
+   |                          https://www.mrpt.org/                         |
    |                                                                        |
    | Copyright (c) 2005-2019, Individual contributors, see AUTHORS file     |
-   | See: http://www.mrpt.org/Authors - All rights reserved.                |
-   | Released under BSD License. See details in http://www.mrpt.org/License |
+   | See: https://www.mrpt.org/Authors - All rights reserved.               |
+   | Released under BSD License. See: https://www.mrpt.org/License          |
    +------------------------------------------------------------------------+ */
 #include "serialinterface.h"
-#include <xsens/xsportinfo.h>
 #include <xsens/xscontrolline.h>
+#include <xsens/xsportinfo.h>
 
 #include <cerrno>
 #ifndef _WIN32
-#include <unistd.h>  // close
-#include <sys/ioctl.h>  // ioctl
 #include <fcntl.h>  // open, O_RDWR
-#include <cstring>  // strcpy
-#include <sys/param.h>
 #include <sys/file.h>
+#include <sys/ioctl.h>  // ioctl
+#include <sys/param.h>
+#include <unistd.h>  // close
 #include <cstdarg>
+#include <cstring>  // strcpy
 #else
-#include <winbase.h>
 #include <io.h>
+#include <winbase.h>
 #endif
 
 #ifndef _CRT_SECURE_NO_DEPRECATE

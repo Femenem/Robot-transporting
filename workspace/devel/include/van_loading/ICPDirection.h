@@ -48,7 +48,7 @@ struct ICPDirection_
    typedef float _angle_type;
   _angle_type angle;
 
-   typedef float _goodness_type;
+   typedef double _goodness_type;
   _goodness_type goodness;
 
 
@@ -129,12 +129,12 @@ struct MD5Sum< ::van_loading::ICPDirection_<ContainerAllocator> >
 {
   static const char* value()
   {
-    return "ec2458f4ae291f686f0f7664eab3bac0";
+    return "b749b73aa627a1a22c81c8fa999a58b3";
   }
 
   static const char* value(const ::van_loading::ICPDirection_<ContainerAllocator>&) { return value(); }
-  static const uint64_t static_value1 = 0xec2458f4ae291f68ULL;
-  static const uint64_t static_value2 = 0x6f0f7664eab3bac0ULL;
+  static const uint64_t static_value1 = 0xb749b73aa627a1a2ULL;
+  static const uint64_t static_value2 = 0x2c81c8fa999a58b3ULL;
 };
 
 template<class ContainerAllocator>
@@ -153,18 +153,18 @@ struct Definition< ::van_loading::ICPDirection_<ContainerAllocator> >
 {
   static const char* value()
   {
-    return "# x distance (forward/back)\n\
-float32 x\n\
-\n\
-# y distance (left/right)\n\
-float32 y\n\
-\n\
-# angle to turn, positive to right, degrees\n\
-float32 angle\n\
-\n\
-# how well the models fit together\n\
-float32 goodness\n\
-";
+    return "# x distance (forward/back)\n"
+"float32 x\n"
+"\n"
+"# y distance (left/right)\n"
+"float32 y\n"
+"\n"
+"# angle to turn, positive to right, degrees\n"
+"float32 angle\n"
+"\n"
+"# how well the models fit together\n"
+"float64 goodness\n"
+;
   }
 
   static const char* value(const ::van_loading::ICPDirection_<ContainerAllocator>&) { return value(); }
@@ -211,7 +211,7 @@ struct Printer< ::van_loading::ICPDirection_<ContainerAllocator> >
     s << indent << "angle: ";
     Printer<float>::stream(s, indent + "  ", v.angle);
     s << indent << "goodness: ";
-    Printer<float>::stream(s, indent + "  ", v.goodness);
+    Printer<double>::stream(s, indent + "  ", v.goodness);
   }
 };
 

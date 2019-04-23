@@ -1,17 +1,17 @@
 /* +------------------------------------------------------------------------+
    |                     Mobile Robot Programming Toolkit (MRPT)            |
-   |                          http://www.mrpt.org/                          |
+   |                          https://www.mrpt.org/                         |
    |                                                                        |
    | Copyright (c) 2005-2019, Individual contributors, see AUTHORS file     |
-   | See: http://www.mrpt.org/Authors - All rights reserved.                |
-   | Released under BSD License. See details in http://www.mrpt.org/License |
+   | See: https://www.mrpt.org/Authors - All rights reserved.               |
+   | Released under BSD License. See: https://www.mrpt.org/License          |
    +------------------------------------------------------------------------+ */
 #pragma once
 
 #include <mrpt/maps/CPointsMap.h>
-#include <mrpt/serialization/CSerializable.h>
 #include <mrpt/math/CMatrix.h>
 #include <mrpt/obs/obs_frwds.h>
+#include <mrpt/serialization/CSerializable.h>
 
 namespace mrpt
 {
@@ -108,17 +108,9 @@ class CSimplePointsMap : public CPointsMap
 
    public:
 	/** @} */
-	// --------------------------------------------
 
-	/** If the map is a simple points map or it's a multi-metric map that
-	 * contains EXACTLY one simple points map, return it.
-	 * Otherwise, return NULL
-	 */
+	// See base docs
 	const mrpt::maps::CSimplePointsMap* getAsSimplePointsMap() const override
-	{
-		return this;
-	}
-	mrpt::maps::CSimplePointsMap* getAsSimplePointsMap() override
 	{
 		return this;
 	}

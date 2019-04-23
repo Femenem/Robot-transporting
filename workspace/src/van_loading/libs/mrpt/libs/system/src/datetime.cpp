@@ -1,41 +1,41 @@
 /* +------------------------------------------------------------------------+
    |                     Mobile Robot Programming Toolkit (MRPT)            |
-   |                          http://www.mrpt.org/                          |
+   |                          https://www.mrpt.org/                         |
    |                                                                        |
    | Copyright (c) 2005-2019, Individual contributors, see AUTHORS file     |
-   | See: http://www.mrpt.org/Authors - All rights reserved.                |
-   | Released under BSD License. See details in http://www.mrpt.org/License |
+   | See: https://www.mrpt.org/Authors - All rights reserved.               |
+   | Released under BSD License. See: https://www.mrpt.org/License          |
    +------------------------------------------------------------------------+ */
 
 #include "system-precomp.h"  // Precompiled headers
 
+#include <mrpt/core/exceptions.h>
 #include <mrpt/system/datetime.h>
 #include <mrpt/system/os.h>
-#include <mrpt/core/exceptions.h>
 
 #ifdef _WIN32
-#include <conio.h>
 #include <windows.h>
-#include <process.h>
-#include <tlhelp32.h>
-#include <sys/utime.h>
-#include <io.h>
+
+#include <conio.h>
 #include <direct.h>
+#include <io.h>
+#include <process.h>
+#include <sys/utime.h>
+#include <tlhelp32.h>
 #else
 #include <pthread.h>
-#include <termios.h>
-#include <unistd.h>
 #include <sys/select.h>
 #include <sys/time.h>
+#include <termios.h>
 #include <unistd.h>
 #include <utime.h>
 #include <cerrno>
 #endif
 
-#include <ctime>
-#include <sys/types.h>
 #include <sys/stat.h>
+#include <sys/types.h>
 #include <cmath>  // floor()
+#include <ctime>
 #include <iostream>  // for the << operator
 
 using namespace mrpt;

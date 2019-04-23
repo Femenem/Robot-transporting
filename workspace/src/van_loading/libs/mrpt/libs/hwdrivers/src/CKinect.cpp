@@ -1,18 +1,18 @@
 /* +------------------------------------------------------------------------+
    |                     Mobile Robot Programming Toolkit (MRPT)            |
-   |                          http://www.mrpt.org/                          |
+   |                          https://www.mrpt.org/                         |
    |                                                                        |
    | Copyright (c) 2005-2019, Individual contributors, see AUTHORS file     |
-   | See: http://www.mrpt.org/Authors - All rights reserved.                |
-   | Released under BSD License. See details in http://www.mrpt.org/License |
+   | See: https://www.mrpt.org/Authors - All rights reserved.               |
+   | Released under BSD License. See: https://www.mrpt.org/License          |
    +------------------------------------------------------------------------+ */
 
 #include "hwdrivers-precomp.h"  // Precompiled headers
 
 #include <mrpt/hwdrivers/CKinect.h>
-#include <mrpt/system/CTimeLogger.h>
 #include <mrpt/img/TStereoCamera.h>
 #include <mrpt/poses/CPose3DQuat.h>
+#include <mrpt/system/CTimeLogger.h>
 
 // Universal include for all versions of OpenCV
 #include <mrpt/otherlibs/do_opencv_includes.h>
@@ -332,7 +332,7 @@ void rgb_cb(freenect_device* dev, void* img_data, uint32_t timestamp)
 		cv::Mat& dst_img_RGB = obs.intensityImage.asCvMatRef();
 
 		// Decode Bayer image:
-		cv::cvtColor(src_img_bayer, dst_img_RGB, CV_BayerGB2BGR);
+		cv::cvtColor(src_img_bayer, dst_img_RGB, cv::COLOR_BayerGB2BGR);
 #else
 		THROW_EXCEPTION("Need building with OpenCV!");
 #endif

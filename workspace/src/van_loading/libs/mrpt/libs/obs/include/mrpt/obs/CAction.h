@@ -1,20 +1,17 @@
 /* +------------------------------------------------------------------------+
    |                     Mobile Robot Programming Toolkit (MRPT)            |
-   |                          http://www.mrpt.org/                          |
+   |                          https://www.mrpt.org/                         |
    |                                                                        |
    | Copyright (c) 2005-2019, Individual contributors, see AUTHORS file     |
-   | See: http://www.mrpt.org/Authors - All rights reserved.                |
-   | Released under BSD License. See details in http://www.mrpt.org/License |
+   | See: https://www.mrpt.org/Authors - All rights reserved.               |
+   | Released under BSD License. See: https://www.mrpt.org/License          |
    +------------------------------------------------------------------------+ */
 #pragma once
 
 #include <mrpt/serialization/CSerializable.h>
 #include <mrpt/system/datetime.h>
 
-namespace mrpt
-{
-/** \ingroup mrpt_obs_grp */
-namespace obs
+namespace mrpt::obs
 {
 /** Declares a class for storing a robot action. It is used in
  * mrpt::obs::CRawlog,
@@ -37,5 +34,4 @@ class CAction : public mrpt::serialization::CSerializable
 
 };  // End of class def.
 
-}  // namespace obs
-}  // namespace mrpt
+}  // namespace mrpt::obs

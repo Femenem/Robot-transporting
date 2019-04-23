@@ -1,19 +1,19 @@
 /* +------------------------------------------------------------------------+
    |                     Mobile Robot Programming Toolkit (MRPT)            |
-   |                          http://www.mrpt.org/                          |
+   |                          https://www.mrpt.org/                         |
    |                                                                        |
    | Copyright (c) 2005-2019, Individual contributors, see AUTHORS file     |
-   | See: http://www.mrpt.org/Authors - All rights reserved.                |
-   | Released under BSD License. See details in http://www.mrpt.org/License |
+   | See: https://www.mrpt.org/Authors - All rights reserved.               |
+   | Released under BSD License. See: https://www.mrpt.org/License          |
    +------------------------------------------------------------------------+ */
 
 #include "nav-precomp.h"  // Precomp header
 
+#include <mrpt/core/round.h>
 #include <mrpt/nav/holonomic/ClearanceDiagram.h>
 #include <mrpt/nav/tpspace/CParameterizedTrajectoryGenerator.h>
 #include <mrpt/opengl/CMesh.h>
 #include <mrpt/serialization/CArchive.h>
-#include <mrpt/core/round.h>
 #include <mrpt/serialization/stl_serialization.h>
 #include <limits>
 
@@ -146,16 +146,16 @@ double ClearanceDiagram::getClearance(
 	// than at path start.
 	for (const auto& e : rc_k)
 	{
-		if (!integrate_over_path)
+		if (integrate_over_path)
 		{
-			// dont integrate: forget past part:
-			res = 0;
-			avr_count = 0;
+			res = e.second;
+			avr_count = 1;
 		}
-		// Keep min clearance along straight path:
-		res += e.second;
-		avr_count++;
-
+		else
+		{
+			res += e.second;
+			avr_count++;
+		}
 		if (e.first > dist) break;  // target dist reached.
 	}
 

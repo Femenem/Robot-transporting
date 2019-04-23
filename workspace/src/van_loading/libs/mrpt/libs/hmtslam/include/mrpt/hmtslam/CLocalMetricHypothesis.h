@@ -1,22 +1,23 @@
 /* +------------------------------------------------------------------------+
    |                     Mobile Robot Programming Toolkit (MRPT)            |
-   |                          http://www.mrpt.org/                          |
+   |                          https://www.mrpt.org/                         |
    |                                                                        |
    | Copyright (c) 2005-2019, Individual contributors, see AUTHORS file     |
-   | See: http://www.mrpt.org/Authors - All rights reserved.                |
-   | Released under BSD License. See details in http://www.mrpt.org/License |
+   | See: https://www.mrpt.org/Authors - All rights reserved.               |
+   | Released under BSD License. See: https://www.mrpt.org/License          |
    +------------------------------------------------------------------------+ */
 #pragma once
 
 #include <mrpt/bayes/CParticleFilterCapable.h>
 
-#include <mrpt/hmtslam/HMT_SLAM_common.h>
+#include <mrpt/bayes/CParticleFilterData.h>
+#include <mrpt/core/aligned_std_map.h>
 #include <mrpt/hmtslam/CHMHMapNode.h>
-
+#include <mrpt/hmtslam/HMT_SLAM_common.h>
 #include <mrpt/maps/CMultiMetricMap.h>
 #include <mrpt/obs/CActionRobotMovement2D.h>
-#include <mrpt/slam/CIncrementalMapPartitioner.h>
 #include <mrpt/opengl/opengl_frwds.h>
+#include <mrpt/slam/CIncrementalMapPartitioner.h>
 
 #include <list>
 #include <mutex>
@@ -48,7 +49,7 @@ class CLSLAMParticleData : public mrpt::serialization::CSerializable
 	CLSLAMParticleData(
 		const mrpt::maps::TSetOfMetricMapInitializers* mapsInitializers =
 			nullptr)
-		: metricMaps(mapsInitializers), robotPoses()
+		: metricMaps(*mapsInitializers), robotPoses()
 	{
 	}
 

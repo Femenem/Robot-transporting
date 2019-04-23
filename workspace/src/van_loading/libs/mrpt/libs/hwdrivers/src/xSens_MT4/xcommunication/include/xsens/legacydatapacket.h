@@ -1,20 +1,20 @@
 /* +------------------------------------------------------------------------+
    |                     Mobile Robot Programming Toolkit (MRPT)            |
-   |                          http://www.mrpt.org/                          |
+   |                          https://www.mrpt.org/                         |
    |                                                                        |
    | Copyright (c) 2005-2019, Individual contributors, see AUTHORS file     |
-   | See: http://www.mrpt.org/Authors - All rights reserved.                |
-   | Released under BSD License. See details in http://www.mrpt.org/License |
+   | See: https://www.mrpt.org/Authors - All rights reserved.               |
+   | Released under BSD License. See: https://www.mrpt.org/License          |
    +------------------------------------------------------------------------+ */
 #ifndef LEGACYDATAPACKET_H
 #define LEGACYDATAPACKET_H
 
 #include <xsens/pstdint.h>
-#include <xsens/xstypedefs.h>
 #include <xsens/xsdataformat.h>
 #include <xsens/xsdeviceid.h>
-#include <xsens/xstimestamp.h>
 #include <xsens/xsmessage.h>
+#include <xsens/xstimestamp.h>
+#include <xsens/xstypedefs.h>
 
 //! Indicates that a data item is not available in the packet
 #define XS_DATA_ITEM_NOT_AVAILABLE 65535

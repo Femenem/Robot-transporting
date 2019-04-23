@@ -1,20 +1,20 @@
 /* +------------------------------------------------------------------------+
    |                     Mobile Robot Programming Toolkit (MRPT)            |
-   |                          http://www.mrpt.org/                          |
+   |                          https://www.mrpt.org/                         |
    |                                                                        |
    | Copyright (c) 2005-2019, Individual contributors, see AUTHORS file     |
-   | See: http://www.mrpt.org/Authors - All rights reserved.                |
-   | Released under BSD License. See details in http://www.mrpt.org/License |
+   | See: https://www.mrpt.org/Authors - All rights reserved.               |
+   | Released under BSD License. See: https://www.mrpt.org/License          |
    +------------------------------------------------------------------------+ */
 
 #include "hmtMapViewerApp.h"
 
 //(*AppHeaders
-#include "hmtMapViewerMain.h"
 #include <wx/image.h>
+#include "hmtMapViewerMain.h"
 //*)
-#include <wx/stdpaths.h>
 #include <wx/log.h>
+#include <wx/stdpaths.h>
 
 IMPLEMENT_APP(hmtMapViewerApp)
 
@@ -22,9 +22,9 @@ IMPLEMENT_APP(hmtMapViewerApp)
 std::string global_fileToOpen;
 
 #include <mrpt/config/CConfigFile.h>
-#include <mrpt/system/filesystem.h>
 #include <mrpt/hmtslam/CHMTSLAM.h>
 #include <mrpt/hmtslam/CRobotPosesGraph.h>
+#include <mrpt/system/filesystem.h>
 
 using namespace mrpt;
 using namespace mrpt::slam;

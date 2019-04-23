@@ -1,21 +1,21 @@
 /* +------------------------------------------------------------------------+
    |                     Mobile Robot Programming Toolkit (MRPT)            |
-   |                          http://www.mrpt.org/                          |
+   |                          https://www.mrpt.org/                         |
    |                                                                        |
    | Copyright (c) 2005-2019, Individual contributors, see AUTHORS file     |
-   | See: http://www.mrpt.org/Authors - All rights reserved.                |
-   | Released under BSD License. See details in http://www.mrpt.org/License |
+   | See: https://www.mrpt.org/Authors - All rights reserved.               |
+   | Released under BSD License. See: https://www.mrpt.org/License          |
    +------------------------------------------------------------------------+ */
 #pragma once
 
-#include <mrpt/serialization/CSerializable.h>
+#include <mrpt/containers/ContainerReadOnlyProxyAccessor.h>
+#include <mrpt/core/aligned_std_vector.h>
+#include <mrpt/maps/CMetricMap.h>
+#include <mrpt/math/CPolygon.h>
 #include <mrpt/obs/CObservation.h>
 #include <mrpt/obs/T2DScanProperties.h>
 #include <mrpt/poses/CPose3D.h>
-#include <mrpt/maps/CMetricMap.h>
-#include <mrpt/math/CPolygon.h>
-#include <mrpt/containers/ContainerReadOnlyProxyAccessor.h>
-#include <mrpt/core/aligned_std_vector.h>
+#include <mrpt/serialization/CSerializable.h>
 
 // Add for declaration of mexplus::from template specialization
 DECLARE_MEXPLUS_FROM(mrpt::obs::CObservation2DRangeScan)

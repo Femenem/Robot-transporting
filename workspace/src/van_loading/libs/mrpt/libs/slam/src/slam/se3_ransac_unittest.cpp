@@ -1,10 +1,10 @@
 /* +------------------------------------------------------------------------+
    |                     Mobile Robot Programming Toolkit (MRPT)            |
-   |                          http://www.mrpt.org/                          |
+   |                          https://www.mrpt.org/                         |
    |                                                                        |
    | Copyright (c) 2005-2019, Individual contributors, see AUTHORS file     |
-   | See: http://www.mrpt.org/Authors - All rights reserved.                |
-   | Released under BSD License. See details in http://www.mrpt.org/License |
+   | See: https://www.mrpt.org/Authors - All rights reserved.               |
+   | Released under BSD License. See: https://www.mrpt.org/License          |
    +------------------------------------------------------------------------+ */
 
 // ------------------------------------------------------
@@ -12,13 +12,13 @@
 //   [MRPT]/samples/ransac-data-association/
 // ------------------------------------------------------
 
-#include <mrpt/random.h>
+#include <mrpt/maps/CSimplePointsMap.h>
+#include <mrpt/math/geometry.h>
 #include <mrpt/poses/CPose2D.h>
 #include <mrpt/poses/CPosePDFGaussian.h>
 #include <mrpt/poses/CPosePDFSOG.h>
-#include <mrpt/math/geometry.h>
+#include <mrpt/random.h>
 #include <mrpt/tfest/se2.h>
-#include <mrpt/maps/CSimplePointsMap.h>
 
 #include <gtest/gtest.h>
 

@@ -1,44 +1,44 @@
 /* +------------------------------------------------------------------------+
    |                     Mobile Robot Programming Toolkit (MRPT)            |
-   |                          http://www.mrpt.org/                          |
+   |                          https://www.mrpt.org/                         |
    |                                                                        |
    | Copyright (c) 2005-2019, Individual contributors, see AUTHORS file     |
-   | See: http://www.mrpt.org/Authors - All rights reserved.                |
-   | Released under BSD License. See details in http://www.mrpt.org/License |
+   | See: https://www.mrpt.org/Authors - All rights reserved.               |
+   | Released under BSD License. See: https://www.mrpt.org/License          |
    +------------------------------------------------------------------------+ */
 
 #ifndef CDLGPOSEEST_H
 #define CDLGPOSEEST_H
 
 //(*Headers(CDlgCalibWizardOnline)
-#include <wx/spinctrl.h>
+#include <mrpt/gui/WxUtils.h>
+#include <wx/button.h>
 #include <wx/checkbox.h>
 #include <wx/dialog.h>
+#include <wx/radiobox.h>
 #include <wx/sizer.h>
-#include <wx/button.h>
-#include <mrpt/gui/WxUtils.h>
+#include <wx/spinctrl.h>
 #include <wx/stattext.h>
 #include <wx/textctrl.h>
-#include <wx/radiobox.h>
 #include <wx/timer.h>
 
 #include <wx/choice.h>
 //*)
 
-#include <mrpt/vision/chessboard_camera_calib.h>
-#include <mrpt/hwdrivers/CCameraSensor.h>
 #include <mrpt/gui/CMyRedirector.h>
+#include <mrpt/hwdrivers/CCameraSensor.h>
+#include <mrpt/vision/chessboard_camera_calib.h>
 
 #include <mrpt/gui/CDisplayWindow3D.h>
 
 #include "MyGLCanvas.h"
 
+#include <mrpt/math/CQuaternion.h>
 #include <mrpt/opengl/CGridPlaneXY.h>
 #include <mrpt/opengl/stock_objects.h>
-#include <mrpt/vision/pnp_algos.h>
 #include <mrpt/poses/CPose3D.h>
 #include <mrpt/poses/CPose3DQuat.h>
-#include <mrpt/math/CQuaternion.h>
+#include <mrpt/vision/pnp_algos.h>
 #include <fstream>
 
 #define CAMERA_CALIB_GUI_VERSION "2.0"

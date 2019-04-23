@@ -1,33 +1,34 @@
 /* +------------------------------------------------------------------------+
    |                     Mobile Robot Programming Toolkit (MRPT)            |
-   |                          http://www.mrpt.org/                          |
+   |                          https://www.mrpt.org/                         |
    |                                                                        |
    | Copyright (c) 2005-2019, Individual contributors, see AUTHORS file     |
-   | See: http://www.mrpt.org/Authors - All rights reserved.                |
-   | Released under BSD License. See details in http://www.mrpt.org/License |
+   | See: https://www.mrpt.org/Authors - All rights reserved.               |
+   | Released under BSD License. See: https://www.mrpt.org/License          |
    +------------------------------------------------------------------------+ */
 
 #ifndef _DSCENEVIEWERMAIN_H
 #define _DSCENEVIEWERMAIN_H
 
-#include <wx/menu.h>
-#include <wx/toolbar.h>
-#include <wx/frame.h>
-#include <wx/timer.h>
-#include <wx/statusbr.h>
-#include <wx/msgdlg.h>
 #include <wx/artprov.h>
 #include <wx/bitmap.h>
-#include <wx/intl.h>
+#include <wx/frame.h>
 #include <wx/image.h>
-#include <wx/string.h>
+#include <wx/intl.h>
+#include <wx/menu.h>
+#include <wx/msgdlg.h>
 #include <wx/statline.h>
+#include <wx/statusbr.h>
+#include <wx/string.h>
+#include <wx/timer.h>
+#include <wx/toolbar.h>
 
 #include <wx/things/toggle.h>
 
-#include <mrpt/system/datetime.h>
 #include <mrpt/gui/CWxGLCanvasBase.h>
 #include <mrpt/gui/WxUtils.h>
+#include <mrpt/system/datetime.h>
+#include <optional>
 
 class CDlgCamTracking;
 class CMyGLCanvas : public mrpt::gui::CWxGLCanvasBase

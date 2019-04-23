@@ -24,9 +24,9 @@ def key_to_movement():
             termios.tcsetattr(fd, termios.TCSADRAIN, old_settings)
 
         if key == 'w':
-            movement.linear.x += 0.2
+            movement.linear.x += 0.05
         if key == 's':
-            movement.linear.x += -0.2
+            movement.linear.x += -0.05
         if key == 'a':
             movement.angular.z += 0.2
         if key == 'd':
@@ -37,10 +37,10 @@ def key_to_movement():
         if key == 'q':
             return  # Exit
 
-        if movement.linear.x > 1.0:
-            movement.linear.x = 1.0
-        if movement.linear.x < -1.0:
-            movement.linear.x = -1.0
+        if movement.linear.x > 1.1:
+            movement.linear.x = 1.1
+        if movement.linear.x < -1.1:
+            movement.linear.x = -1.1
 
         if movement.angular.z > 2.0:
             movement.angular.z = 2.0

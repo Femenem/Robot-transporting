@@ -1,19 +1,19 @@
 /* +------------------------------------------------------------------------+
    |                     Mobile Robot Programming Toolkit (MRPT)            |
-   |                          http://www.mrpt.org/                          |
+   |                          https://www.mrpt.org/                         |
    |                                                                        |
    | Copyright (c) 2005-2019, Individual contributors, see AUTHORS file     |
-   | See: http://www.mrpt.org/Authors - All rights reserved.                |
-   | Released under BSD License. See details in http://www.mrpt.org/License |
+   | See: https://www.mrpt.org/Authors - All rights reserved.               |
+   | Released under BSD License. See: https://www.mrpt.org/License          |
    +------------------------------------------------------------------------+ */
 #pragma once
 
-#include <mrpt/poses/CPose2D.h>
-#include <mrpt/poses/CPoint3D.h>
-#include <mrpt/poses/CPoint2D.h>
 #include <mrpt/bayes/CRejectionSamplingCapable.h>
 #include <mrpt/math/lightweight_geom_data.h>
 #include <mrpt/obs/obs_frwds.h>
+#include <mrpt/poses/CPoint2D.h>
+#include <mrpt/poses/CPoint3D.h>
+#include <mrpt/poses/CPose2D.h>
 
 namespace mrpt
 {

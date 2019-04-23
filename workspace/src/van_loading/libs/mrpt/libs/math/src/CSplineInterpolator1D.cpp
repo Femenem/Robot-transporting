@@ -1,20 +1,20 @@
 /* +------------------------------------------------------------------------+
    |                     Mobile Robot Programming Toolkit (MRPT)            |
-   |                          http://www.mrpt.org/                          |
+   |                          https://www.mrpt.org/                         |
    |                                                                        |
    | Copyright (c) 2005-2019, Individual contributors, see AUTHORS file     |
-   | See: http://www.mrpt.org/Authors - All rights reserved.                |
-   | Released under BSD License. See details in http://www.mrpt.org/License |
+   | See: https://www.mrpt.org/Authors - All rights reserved.               |
+   | Released under BSD License. See: https://www.mrpt.org/License          |
    +------------------------------------------------------------------------+ */
 
 #include "math-precomp.h"  // Precompiled headers
 
-#include <mrpt/math/types_math.h>  // for dynamic_vector, CVector...
 #include <mrpt/math/CSplineInterpolator1D.h>  // for CSplineInterpolator1D
+#include <mrpt/math/types_math.h>  // for dynamic_vector, CVector...
+#include <mrpt/serialization/CSerializable.h>  // for CSerializable, CSeriali...
 #include <mrpt/serialization/stl_serialization.h>  // for operator<<, operator>>
 #include <map>  // for _Rb_tree_const_iterator
 #include <mrpt/math/interp_fit.hpp>  // for spline
-#include <mrpt/serialization/CSerializable.h>  // for CSerializable, CSeriali...
 
 using namespace mrpt;
 using namespace mrpt::math;

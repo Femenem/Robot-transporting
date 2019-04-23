@@ -1,14 +1,15 @@
 /* +------------------------------------------------------------------------+
    |                     Mobile Robot Programming Toolkit (MRPT)            |
-   |                          http://www.mrpt.org/                          |
+   |                          https://www.mrpt.org/                         |
    |                                                                        |
    | Copyright (c) 2005-2019, Individual contributors, see AUTHORS file     |
-   | See: http://www.mrpt.org/Authors - All rights reserved.                |
-   | Released under BSD License. See details in http://www.mrpt.org/License |
+   | See: https://www.mrpt.org/Authors - All rights reserved.               |
+   | Released under BSD License. See: https://www.mrpt.org/License          |
    +------------------------------------------------------------------------+ */
 
 #include "img-precomp.h"  // Precompiled headers
 
+#include <mrpt/core/round.h>  // for round()
 #include <mrpt/img/CImage.h>
 #include <mrpt/io/CFileInputStream.h>
 #include <mrpt/io/CFileOutputStream.h>
@@ -17,12 +18,11 @@
 #include <mrpt/math/CMatrix.h>
 #include <mrpt/math/fourier.h>
 #include <mrpt/math/utils.h>  // for roundup()
-#include <mrpt/core/round.h>  // for round()
+#include <mrpt/serialization/CArchive.h>
 #include <mrpt/system/CTicTac.h>
 #include <mrpt/system/CTimeLogger.h>
-#include <mrpt/system/memory.h>
 #include <mrpt/system/filesystem.h>
-#include <mrpt/serialization/CArchive.h>
+#include <mrpt/system/memory.h>
 #include <iostream>
 
 // Universal include for all versions of OpenCV
@@ -455,7 +455,8 @@ unsigned char* CImage::operator()(
 			m_impl->img.channels()));
 	}
 #endif
-	auto p = (&m_impl->img.at<uint8_t>(row, col)) + channel;
+	auto p =
+		(&m_impl->img.at<uint8_t>(row, m_impl->img.channels() * col)) + channel;
 	return const_cast<unsigned char*>(p);
 #if defined(_DEBUG) || (MRPT_ALWAYS_CHECKS_DEBUG)
 	MRPT_END
@@ -470,7 +471,8 @@ uint8_t* CImage::internal_get(int col, int row, uint8_t channel) const
 {
 #if MRPT_HAS_OPENCV
 	makeSureImageIsLoaded();  // For delayed loaded images stored externally
-	auto p = (&m_impl->img.at<uint8_t>(row, col)) + channel;
+	auto p =
+		(&m_impl->img.at<uint8_t>(row, m_impl->img.channels() * col)) + channel;
 	return const_cast<uint8_t*>(p);
 #else
 	return nullptr;

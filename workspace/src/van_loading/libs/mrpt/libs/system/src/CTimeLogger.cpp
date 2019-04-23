@@ -1,22 +1,22 @@
 /* +------------------------------------------------------------------------+
    |                     Mobile Robot Programming Toolkit (MRPT)            |
-   |                          http://www.mrpt.org/                          |
+   |                          https://www.mrpt.org/                         |
    |                                                                        |
    | Copyright (c) 2005-2019, Individual contributors, see AUTHORS file     |
-   | See: http://www.mrpt.org/Authors - All rights reserved.                |
-   | Released under BSD License. See details in http://www.mrpt.org/License |
+   | See: https://www.mrpt.org/Authors - All rights reserved.               |
+   | Released under BSD License. See: https://www.mrpt.org/License          |
    +------------------------------------------------------------------------+ */
 
 #include "system-precomp.h"  // Precompiled headers
 
+#include <mrpt/core/bits_math.h>
 #include <mrpt/system/CTimeLogger.h>
-#include <mrpt/system/string_utils.h>
 #include <mrpt/system/datetime.h>
 #include <mrpt/system/filesystem.h>
-#include <mrpt/core/bits_math.h>
-#include <iostream>
+#include <mrpt/system/string_utils.h>
 #include <algorithm>
 #include <fstream>
+#include <iostream>
 
 using namespace mrpt;
 using namespace mrpt::system;

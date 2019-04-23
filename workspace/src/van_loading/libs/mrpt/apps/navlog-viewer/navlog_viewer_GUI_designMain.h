@@ -1,27 +1,27 @@
 /* +------------------------------------------------------------------------+
    |                     Mobile Robot Programming Toolkit (MRPT)            |
-   |                          http://www.mrpt.org/                          |
+   |                          https://www.mrpt.org/                         |
    |                                                                        |
    | Copyright (c) 2005-2019, Individual contributors, see AUTHORS file     |
-   | See: http://www.mrpt.org/Authors - All rights reserved.                |
-   | Released under BSD License. See details in http://www.mrpt.org/License |
+   | See: https://www.mrpt.org/Authors - All rights reserved.               |
+   | Released under BSD License. See: https://www.mrpt.org/License          |
    +------------------------------------------------------------------------+ */
 
 #ifndef NAVLOG_VIEWER_GUI_DESIGNMAIN_H
 #define NAVLOG_VIEWER_GUI_DESIGNMAIN_H
 
 //(*Headers(navlog_viewer_GUI_designDialog)
-#include <wx/sizer.h>
-#include <wx/stattext.h>
-#include <wx/radiobox.h>
-#include <wx/menu.h>
-#include <wx/textctrl.h>
-#include <wx/checklst.h>
-#include <wx/things/toggle.h>
-#include <wx/slider.h>
-#include <wx/panel.h>
 #include <wx/button.h>
+#include <wx/checklst.h>
 #include <wx/dialog.h>
+#include <wx/menu.h>
+#include <wx/panel.h>
+#include <wx/radiobox.h>
+#include <wx/sizer.h>
+#include <wx/slider.h>
+#include <wx/stattext.h>
+#include <wx/textctrl.h>
+#include <wx/things/toggle.h>
 #include <wx/timer.h>
 //*)
 #include <wx/frame.h>

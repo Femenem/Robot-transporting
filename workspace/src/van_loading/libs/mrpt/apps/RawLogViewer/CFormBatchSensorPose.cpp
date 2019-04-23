@@ -1,28 +1,28 @@
 /* +------------------------------------------------------------------------+
    |                     Mobile Robot Programming Toolkit (MRPT)            |
-   |                          http://www.mrpt.org/                          |
+   |                          https://www.mrpt.org/                         |
    |                                                                        |
    | Copyright (c) 2005-2019, Individual contributors, see AUTHORS file     |
-   | See: http://www.mrpt.org/Authors - All rights reserved.                |
-   | Released under BSD License. See details in http://www.mrpt.org/License |
+   | See: https://www.mrpt.org/Authors - All rights reserved.               |
+   | Released under BSD License. See: https://www.mrpt.org/License          |
    +------------------------------------------------------------------------+ */
 #include "CFormBatchSensorPose.h"
 
 //(*InternalHeaders(CFormBatchSensorPose)
-#include <wx/string.h>
-#include <wx/intl.h>
-#include <wx/font.h>
-#include <wx/bitmap.h>
-#include <wx/image.h>
 #include <wx/artprov.h>
+#include <wx/bitmap.h>
+#include <wx/font.h>
+#include <wx/image.h>
+#include <wx/intl.h>
+#include <wx/string.h>
 //*)
 
-#include <wx/filedlg.h>
-#include <wx/progdlg.h>
-#include <wx/imaglist.h>
-#include <wx/busyinfo.h>
 #include <wx/app.h>
+#include <wx/busyinfo.h>
+#include <wx/filedlg.h>
+#include <wx/imaglist.h>
 #include <wx/msgdlg.h>
+#include <wx/progdlg.h>
 
 #include "xRawLogViewerMain.h"
 // General global variables:

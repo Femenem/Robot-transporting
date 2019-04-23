@@ -40,7 +40,7 @@ endif()
 if("x${CMAKE_INSTALL_COMPONENT}x" STREQUAL "xUnspecifiedx" OR NOT CMAKE_INSTALL_COMPONENT)
   file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/share/mrpt" TYPE FILE FILES
     "/home/matt/Documents/Robot-transporting/workspace/src/van_loading/libs/mrpt/parse-files/mrpt-config.cmake"
-    "/home/matt/Documents/Robot-transporting/workspace/src/van_loading/libs/mrpt/mrpt-config-version.cmake"
+    "/home/matt/Documents/Robot-transporting/workspace/src/van_loading/libs/mrpt/build/mrpt-config-version.cmake"
     )
 endif()
 
@@ -67,21 +67,21 @@ endif()
 
 if("x${CMAKE_INSTALL_COMPONENT}x" STREQUAL "xUnspecifiedx" OR NOT CMAKE_INSTALL_COMPONENT)
   file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/include/mrpt" TYPE FILE FILES
-    "/home/matt/Documents/Robot-transporting/workspace/src/van_loading/libs/mrpt/include/mrpt-configuration/unix//mrpt/config.h"
-    "/home/matt/Documents/Robot-transporting/workspace/src/van_loading/libs/mrpt/include/mrpt-configuration/unix//mrpt/version.h"
+    "/home/matt/Documents/Robot-transporting/workspace/src/van_loading/libs/mrpt/build/include/mrpt-configuration/unix//mrpt/config.h"
+    "/home/matt/Documents/Robot-transporting/workspace/src/van_loading/libs/mrpt/build/include/mrpt-configuration/unix//mrpt/version.h"
     )
 endif()
 
 if(NOT CMAKE_INSTALL_LOCAL_ONLY)
   # Include the install script for each subdirectory.
-  include("/home/matt/Documents/Robot-transporting/workspace/src/van_loading/libs/mrpt/otherlibs/cmake_install.cmake")
-  include("/home/matt/Documents/Robot-transporting/workspace/src/van_loading/libs/mrpt/libs/cmake_install.cmake")
-  include("/home/matt/Documents/Robot-transporting/workspace/src/van_loading/libs/mrpt/apps/cmake_install.cmake")
-  include("/home/matt/Documents/Robot-transporting/workspace/src/van_loading/libs/mrpt/doc/cmake_install.cmake")
-  include("/home/matt/Documents/Robot-transporting/workspace/src/van_loading/libs/mrpt/otherlibs/gtest-1.8.1/cmake_install.cmake")
-  include("/home/matt/Documents/Robot-transporting/workspace/src/van_loading/libs/mrpt/tests/cmake_install.cmake")
-  include("/home/matt/Documents/Robot-transporting/workspace/src/van_loading/libs/mrpt/python/cmake_install.cmake")
-  include("/home/matt/Documents/Robot-transporting/workspace/src/van_loading/libs/mrpt/samples/cmake_install.cmake")
+  include("/home/matt/Documents/Robot-transporting/workspace/src/van_loading/libs/mrpt/build/otherlibs/cmake_install.cmake")
+  include("/home/matt/Documents/Robot-transporting/workspace/src/van_loading/libs/mrpt/build/libs/cmake_install.cmake")
+  include("/home/matt/Documents/Robot-transporting/workspace/src/van_loading/libs/mrpt/build/apps/cmake_install.cmake")
+  include("/home/matt/Documents/Robot-transporting/workspace/src/van_loading/libs/mrpt/build/doc/cmake_install.cmake")
+  include("/home/matt/Documents/Robot-transporting/workspace/src/van_loading/libs/mrpt/build/otherlibs/gtest-1.8.1/cmake_install.cmake")
+  include("/home/matt/Documents/Robot-transporting/workspace/src/van_loading/libs/mrpt/build/tests/cmake_install.cmake")
+  include("/home/matt/Documents/Robot-transporting/workspace/src/van_loading/libs/mrpt/build/python/cmake_install.cmake")
+  include("/home/matt/Documents/Robot-transporting/workspace/src/van_loading/libs/mrpt/build/samples/cmake_install.cmake")
 
 endif()
 
@@ -93,5 +93,5 @@ endif()
 
 string(REPLACE ";" "\n" CMAKE_INSTALL_MANIFEST_CONTENT
        "${CMAKE_INSTALL_MANIFEST_FILES}")
-file(WRITE "/home/matt/Documents/Robot-transporting/workspace/src/van_loading/libs/mrpt/${CMAKE_INSTALL_MANIFEST}"
+file(WRITE "/home/matt/Documents/Robot-transporting/workspace/src/van_loading/libs/mrpt/build/${CMAKE_INSTALL_MANIFEST}"
      "${CMAKE_INSTALL_MANIFEST_CONTENT}")

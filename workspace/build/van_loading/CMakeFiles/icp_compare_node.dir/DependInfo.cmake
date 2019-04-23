@@ -32,7 +32,7 @@ set(CMAKE_CXX_TARGET_INCLUDE_PATH
   "/home/matt/Documents/Robot-transporting/workspace/src/van_loading/libs/mrpt/libs/math/include"
   "/usr/include/suitesparse"
   "/home/matt/Documents/Robot-transporting/workspace/src/van_loading/libs/mrpt/libs/core/include"
-  "/home/matt/Documents/Robot-transporting/workspace/src/van_loading/libs/mrpt/include/mrpt-configuration/unix"
+  "/home/matt/Documents/Robot-transporting/workspace/src/van_loading/libs/mrpt/build/include/mrpt-configuration/unix"
   "/home/matt/Documents/Robot-transporting/workspace/src/van_loading/libs/mrpt/libs/containers/include"
   "/home/matt/Documents/Robot-transporting/workspace/src/van_loading/libs/mrpt/libs/typemeta/include"
   "/home/matt/Documents/Robot-transporting/workspace/src/van_loading/libs/mrpt/libs/serialization/include"

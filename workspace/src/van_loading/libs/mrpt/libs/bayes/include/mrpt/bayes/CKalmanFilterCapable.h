@@ -1,30 +1,29 @@
 /* +------------------------------------------------------------------------+
    |                     Mobile Robot Programming Toolkit (MRPT)            |
-   |                          http://www.mrpt.org/                          |
+   |                          https://www.mrpt.org/                         |
    |                                                                        |
    | Copyright (c) 2005-2019, Individual contributors, see AUTHORS file     |
-   | See: http://www.mrpt.org/Authors - All rights reserved.                |
-   | Released under BSD License. See details in http://www.mrpt.org/License |
+   | See: https://www.mrpt.org/Authors - All rights reserved.               |
+   | Released under BSD License. See: https://www.mrpt.org/License          |
    +------------------------------------------------------------------------+ */
 #pragma once
 
-#include <mrpt/math/CMatrixFixedNumeric.h>
-#include <mrpt/math/CMatrixTemplateNumeric.h>
-#include <mrpt/math/CArrayNumeric.h>
-#include <mrpt/math/num_jacobian.h>
-#include <mrpt/math/utils.h>
-#include <mrpt/math/num_jacobian.h>
 #include <mrpt/config/CConfigFileBase.h>
-#include <mrpt/system/CTimeLogger.h>
-#include <mrpt/core/aligned_std_vector.h>
 #include <mrpt/config/CLoadableOptions.h>
 #include <mrpt/containers/stl_containers_utils.h>
-#include <mrpt/system/COutputLogger.h>
 #include <mrpt/containers/stl_containers_utils.h>  // find_in_vector
-#include <mrpt/system/CTicTac.h>
+#include <mrpt/core/aligned_std_vector.h>
 #include <mrpt/io/CFileOutputStream.h>
-#include <mrpt/typemeta/TEnumType.h>
+#include <mrpt/math/CArrayNumeric.h>
+#include <mrpt/math/CMatrixFixedNumeric.h>
+#include <mrpt/math/CMatrixTemplateNumeric.h>
+#include <mrpt/math/num_jacobian.h>
+#include <mrpt/math/utils.h>
+#include <mrpt/system/COutputLogger.h>
+#include <mrpt/system/CTicTac.h>
+#include <mrpt/system/CTimeLogger.h>
 #include <mrpt/system/vector_loadsave.h>
+#include <mrpt/typemeta/TEnumType.h>
 
 namespace mrpt
 {
@@ -32,7 +31,7 @@ namespace bayes
 {
 /** The Kalman Filter algorithm to employ in bayes::CKalmanFilterCapable
  *  For further details on each algorithm see the tutorial:
- * http://www.mrpt.org/Kalman_Filters
+ * https://www.mrpt.org/Kalman_Filters
  * \sa bayes::CKalmanFilterCapable::KF_options
  * \ingroup mrpt_bayes_grp
  */
@@ -638,7 +637,7 @@ class CKalmanFilterCapable : public mrpt::system::COutputLogger
 	 *  It is protected since derived classes must provide a problem-specific
 	 * entry point for users.
 	 *  The exact order in which this method calls the virtual method is
-	 * explained in http://www.mrpt.org/Kalman_Filters
+	 * explained in https://www.mrpt.org/Kalman_Filters
 	 */
 	void runOneKalmanIteration();
 

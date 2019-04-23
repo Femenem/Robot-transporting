@@ -1,10 +1,10 @@
 /* +------------------------------------------------------------------------+
    |                     Mobile Robot Programming Toolkit (MRPT)            |
-   |                          http://www.mrpt.org/                          |
+   |                          https://www.mrpt.org/                         |
    |                                                                        |
    | Copyright (c) 2005-2019, Individual contributors, see AUTHORS file     |
-   | See: http://www.mrpt.org/Authors - All rights reserved.                |
-   | Released under BSD License. See details in http://www.mrpt.org/License |
+   | See: https://www.mrpt.org/Authors - All rights reserved.               |
+   | Released under BSD License. See: https://www.mrpt.org/License          |
    +------------------------------------------------------------------------+ */
 
 /** \example comms_nodelets_example/NodeletsTest_impl.cpp */
@@ -14,10 +14,10 @@ bool nodelets_test_passed_ok = false;
 //! [example-nodelets]
 #include <mrpt/comms/nodelets.h>
 #include <mrpt/poses/CPose3D.h>
-#include <cstdio>  // printf()
-#include <thread>
 #include <chrono>
+#include <cstdio>  // printf()
 #include <iostream>
+#include <thread>
 
 // Test payload:
 const mrpt::poses::CPose3D p_tx(1.0, 2.0, 3.0, 0.2, 0.4, 0.6);

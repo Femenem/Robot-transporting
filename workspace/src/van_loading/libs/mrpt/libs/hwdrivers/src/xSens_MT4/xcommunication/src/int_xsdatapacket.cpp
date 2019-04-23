@@ -1,20 +1,20 @@
 /* +------------------------------------------------------------------------+
    |                     Mobile Robot Programming Toolkit (MRPT)            |
-   |                          http://www.mrpt.org/                          |
+   |                          https://www.mrpt.org/                         |
    |                                                                        |
    | Copyright (c) 2005-2019, Individual contributors, see AUTHORS file     |
-   | See: http://www.mrpt.org/Authors - All rights reserved.                |
-   | Released under BSD License. See details in http://www.mrpt.org/License |
+   | See: https://www.mrpt.org/Authors - All rights reserved.               |
+   | Released under BSD License. See: https://www.mrpt.org/License          |
    +------------------------------------------------------------------------+ */
-#include <xsens/xstypesconfig.h>
 #include "int_xsdatapacket.h"
-#include "legacydatapacket.h"
-#include "packetfixeddata.h"
-#include "mtwsdidata.h"
 #include <xsens/xsbusid.h>
 #include <xsens/xsdatapacket.h>
-#include <xsens/xsmessage.h>
 #include <xsens/xsgpspvtdata.h>
+#include <xsens/xsmessage.h>
+#include <xsens/xstypesconfig.h>
+#include "legacydatapacket.h"
+#include "mtwsdidata.h"
+#include "packetfixeddata.h"
 
 // lint -esym(1512, XsDataPacket)
 /*! \internal

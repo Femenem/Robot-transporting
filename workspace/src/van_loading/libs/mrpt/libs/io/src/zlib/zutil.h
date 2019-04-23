@@ -1,10 +1,10 @@
 /* +------------------------------------------------------------------------+
    |                     Mobile Robot Programming Toolkit (MRPT)            |
-   |                          http://www.mrpt.org/                          |
+   |                          https://www.mrpt.org/                         |
    |                                                                        |
    | Copyright (c) 2005-2019, Individual contributors, see AUTHORS file     |
-   | See: http://www.mrpt.org/Authors - All rights reserved.                |
-   | Released under BSD License. See details in http://www.mrpt.org/License |
+   | See: https://www.mrpt.org/Authors - All rights reserved.               |
+   | Released under BSD License. See: https://www.mrpt.org/License          |
    +------------------------------------------------------------------------+ */
 
 /* WARNING: this file should *not* be used by applications. It is
@@ -24,8 +24,8 @@
 #ifndef _WIN32_WCE
 #include <stddef.h>
 #endif
-#include <string.h>
 #include <stdlib.h>
+#include <string.h>
 #endif
 #ifdef NO_ERRNO_H
 #ifdef _WIN32_WCE

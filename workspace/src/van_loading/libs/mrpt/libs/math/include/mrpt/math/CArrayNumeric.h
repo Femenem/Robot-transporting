@@ -1,17 +1,17 @@
 /* +------------------------------------------------------------------------+
    |                     Mobile Robot Programming Toolkit (MRPT)            |
-   |                          http://www.mrpt.org/                          |
+   |                          https://www.mrpt.org/                         |
    |                                                                        |
    | Copyright (c) 2005-2019, Individual contributors, see AUTHORS file     |
-   | See: http://www.mrpt.org/Authors - All rights reserved.                |
-   | Released under BSD License. See details in http://www.mrpt.org/License |
+   | See: https://www.mrpt.org/Authors - All rights reserved.               |
+   | Released under BSD License. See: https://www.mrpt.org/License          |
    +------------------------------------------------------------------------+ */
 #pragma once
 
+#include <mrpt/math/point_poses2vectors.h>  // MRPT_MATRIX_CONSTRUCTORS_FROM_POSES()
 #include <mrpt/math/types_math.h>  // Eigen
 #include <mrpt/typemeta/TTypeName.h>
 #include <mrpt/typemeta/num_to_string.h>
-#include <mrpt/math/point_poses2vectors.h>  // MRPT_MATRIX_CONSTRUCTORS_FROM_POSES()
 
 namespace mrpt
 {
@@ -35,7 +35,7 @@ class CArrayNumeric : public Eigen::Matrix<T, N, 1>
 	/** Initialization from a vector-like source, that is, anything implementing
 	 * operator[]. */
 	template <class Derived>
-	explicit CArrayNumeric(const Eigen::MatrixBase<Derived>& obj)
+	CArrayNumeric(const Eigen::MatrixBase<Derived>& obj)
 		: Eigen::Matrix<T, N, 1>(obj)
 	{
 	}

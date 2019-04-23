@@ -1,30 +1,30 @@
 /* +------------------------------------------------------------------------+
    |                     Mobile Robot Programming Toolkit (MRPT)            |
-   |                          http://www.mrpt.org/                          |
+   |                          https://www.mrpt.org/                         |
    |                                                                        |
    | Copyright (c) 2005-2019, Individual contributors, see AUTHORS file     |
-   | See: http://www.mrpt.org/Authors - All rights reserved.                |
-   | Released under BSD License. See details in http://www.mrpt.org/License |
+   | See: https://www.mrpt.org/Authors - All rights reserved.               |
+   | Released under BSD License. See: https://www.mrpt.org/License          |
    +------------------------------------------------------------------------+ */
 
 #pragma once
 
-#include <mrpt/system/filesystem.h>
 #include <mrpt/core/exceptions.h>
 #include <mrpt/graphs/CNetworkOfPoses.h>
-#include <mrpt/poses/CPosePDFGaussianInf.h>
 #include <mrpt/poses/CPose3DPDFGaussianInf.h>
+#include <mrpt/poses/CPosePDFGaussianInf.h>
+#include <mrpt/system/filesystem.h>
 
-#include <mrpt/graphslam/NRD/CFixedIntervalsNRD.h>
-#include <mrpt/graphslam/NRD/CEmptyNRD.h>
-#include <mrpt/graphslam/NRD/CICPCriteriaNRD.h>
-#include <mrpt/graphslam/ERD/CICPCriteriaERD.h>
 #include <mrpt/graphslam/ERD/CEmptyERD.h>
+#include <mrpt/graphslam/ERD/CICPCriteriaERD.h>
 #include <mrpt/graphslam/ERD/CLoopCloserERD.h>
 #include <mrpt/graphslam/GSO/CLevMarqGSO.h>
+#include <mrpt/graphslam/NRD/CEmptyNRD.h>
+#include <mrpt/graphslam/NRD/CFixedIntervalsNRD.h>
+#include <mrpt/graphslam/NRD/CICPCriteriaNRD.h>
 
-#include <string>
 #include <iostream>
+#include <string>
 #include <vector>
 
 namespace mrpt::graphslam::apps

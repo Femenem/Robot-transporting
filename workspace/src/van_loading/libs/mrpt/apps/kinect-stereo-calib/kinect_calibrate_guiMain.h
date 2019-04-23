@@ -1,15 +1,15 @@
 /* +------------------------------------------------------------------------+
    |                     Mobile Robot Programming Toolkit (MRPT)            |
-   |                          http://www.mrpt.org/                          |
+   |                          https://www.mrpt.org/                         |
    |                                                                        |
    | Copyright (c) 2005-2019, Individual contributors, see AUTHORS file     |
-   | See: http://www.mrpt.org/Authors - All rights reserved.                |
-   | Released under BSD License. See details in http://www.mrpt.org/License |
+   | See: https://www.mrpt.org/Authors - All rights reserved.               |
+   | Released under BSD License. See: https://www.mrpt.org/License          |
    +------------------------------------------------------------------------+ */
 
 /*
   App      : kinect-calibrate
-  Web page : http://www.mrpt.org/Kinect_and_MRPT
+  Web page : https://www.mrpt.org/Kinect_and_MRPT
 
   Usage    : Run and follow on-screen instructions
 */
@@ -22,22 +22,22 @@
 #include "wx/defs.h"
 
 //(*Headers(kinect_calibrate_guiDialog)
+#include <mrpt/gui/WxUtils.h>
 #include <wx/bmpbuttn.h>
-#include <wx/grid.h>
-#include <wx/spinctrl.h>
+#include <wx/button.h>
 #include <wx/checkbox.h>
 #include <wx/dialog.h>
-#include <wx/sizer.h>
+#include <wx/grid.h>
+#include <wx/listbox.h>
 #include <wx/notebook.h>
-#include <wx/button.h>
 #include <wx/panel.h>
-#include "MyGLCanvas.h"
-#include <mrpt/gui/WxUtils.h>
+#include <wx/radiobox.h>
+#include <wx/sizer.h>
+#include <wx/spinctrl.h>
 #include <wx/stattext.h>
 #include <wx/textctrl.h>
-#include <wx/radiobox.h>
 #include <wx/timer.h>
-#include <wx/listbox.h>
+#include "MyGLCanvas.h"
 //*)
 
 #include <wx/config.h>  // wxConfig

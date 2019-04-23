@@ -1,24 +1,24 @@
 /* +------------------------------------------------------------------------+
    |                     Mobile Robot Programming Toolkit (MRPT)            |
-   |                          http://www.mrpt.org/                          |
+   |                          https://www.mrpt.org/                         |
    |                                                                        |
    | Copyright (c) 2005-2019, Individual contributors, see AUTHORS file     |
-   | See: http://www.mrpt.org/Authors - All rights reserved.                |
-   | Released under BSD License. See details in http://www.mrpt.org/License |
+   | See: https://www.mrpt.org/Authors - All rights reserved.               |
+   | Released under BSD License. See: https://www.mrpt.org/License          |
    +------------------------------------------------------------------------+ */
 
 #include "robotic_arm_kinematicsMain.h"
 #include <wx/msgdlg.h>
 
 //(*InternalHeaders(robotic_arm_kinematicsFrame)
-#include <wx/settings.h>
-#include <wx/string.h>
-#include <wx/intl.h>
-#include <wx/font.h>
+#include <wx/artprov.h>
 #include <wx/bitmap.h>
+#include <wx/font.h>
 #include <wx/icon.h>
 #include <wx/image.h>
-#include <wx/artprov.h>
+#include <wx/intl.h>
+#include <wx/settings.h>
+#include <wx/string.h>
 //*)
 #include <mrpt/gui/wx28-fixes.h>
 
@@ -34,8 +34,8 @@
 #include <mrpt/opengl/stock_objects.h>
 #include <mrpt/serialization/CArchive.h>
 
-#include "imgs/main_icon.xpm"
 #include "../wx-common/mrpt_logo.xpm"
+#include "imgs/main_icon.xpm"
 
 // A custom Art provider for customizing the icons:
 class MyArtProvider : public wxArtProvider
@@ -125,12 +125,8 @@ robotic_arm_kinematicsFrame::robotic_arm_kinematicsFrame(
 {
 	the_win = this;
 
-// Load my custom icons:
-#if wxCHECK_VERSION(2, 8, 0)
+	// Load my custom icons:
 	wxArtProvider::Push(new MyArtProvider);
-#else
-	wxArtProvider::PushProvider(new MyArtProvider);
-#endif
 
 	//(*Initialize(robotic_arm_kinematicsFrame)
 	wxMenuItem* MenuItem2;

@@ -1,10 +1,10 @@
 /* +------------------------------------------------------------------------+
    |                     Mobile Robot Programming Toolkit (MRPT)            |
-   |                          http://www.mrpt.org/                          |
+   |                          https://www.mrpt.org/                         |
    |                                                                        |
    | Copyright (c) 2005-2019, Individual contributors, see AUTHORS file     |
-   | See: http://www.mrpt.org/Authors - All rights reserved.                |
-   | Released under BSD License. See details in http://www.mrpt.org/License |
+   | See: https://www.mrpt.org/Authors - All rights reserved.               |
+   | Released under BSD License. See: https://www.mrpt.org/License          |
    +------------------------------------------------------------------------+ */
 
 #if defined(__GNUC__)  // Needed for ffmpeg headers. Only allowed here when not
@@ -20,10 +20,10 @@
 extern "C"
 {
 #define _MSC_STDINT_H_  // We already have pstdint.h in MRPT
-#include <libavformat/avformat.h>
 #include <libavcodec/avcodec.h>
-#include <libswscale/swscale.h>
+#include <libavformat/avformat.h>
 #include <libavutil/imgutils.h>
+#include <libswscale/swscale.h>
 }
 #endif
 

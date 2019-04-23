@@ -1,23 +1,23 @@
 /* +------------------------------------------------------------------------+
    |                     Mobile Robot Programming Toolkit (MRPT)            |
-   |                          http://www.mrpt.org/                          |
+   |                          https://www.mrpt.org/                         |
    |                                                                        |
    | Copyright (c) 2005-2019, Individual contributors, see AUTHORS file     |
-   | See: http://www.mrpt.org/Authors - All rights reserved.                |
-   | Released under BSD License. See details in http://www.mrpt.org/License |
+   | See: https://www.mrpt.org/Authors - All rights reserved.               |
+   | Released under BSD License. See: https://www.mrpt.org/License          |
    +------------------------------------------------------------------------+ */
 #pragma once
 
-#include <mrpt/typemeta/TTypeName_stl.h>  // TTypeName<> for STL templates, needed for serialization of STL templates
-#include <mrpt/serialization/metaprogramming_serialization.h>
 #include <mrpt/serialization/CArchive.h>
-#include <vector>
+#include <mrpt/serialization/metaprogramming_serialization.h>
+#include <mrpt/typemeta/TTypeName_stl.h>  // TTypeName<> for STL templates, needed for serialization of STL templates
+#include <algorithm>  // for_each()
 #include <array>
 #include <deque>
-#include <set>
-#include <map>
 #include <list>
-#include <algorithm>  // for_each()
+#include <map>
+#include <set>
+#include <vector>
 
 namespace mrpt::serialization
 {

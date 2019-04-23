@@ -1,51 +1,51 @@
 /* +------------------------------------------------------------------------+
    |                     Mobile Robot Programming Toolkit (MRPT)            |
-   |                          http://www.mrpt.org/                          |
+   |                          https://www.mrpt.org/                         |
    |                                                                        |
    | Copyright (c) 2005-2019, Individual contributors, see AUTHORS file     |
-   | See: http://www.mrpt.org/Authors - All rights reserved.                |
-   | Released under BSD License. See details in http://www.mrpt.org/License |
+   | See: https://www.mrpt.org/Authors - All rights reserved.               |
+   | Released under BSD License. See: https://www.mrpt.org/License          |
    +------------------------------------------------------------------------+ */
 
 #include "gridmapSimulMain.h"
 #include <wx/msgdlg.h>
 
 //(*InternalHeaders(gridmapSimulFrame)
-#include <wx/string.h>
-#include <wx/intl.h>
+#include <wx/artprov.h>
 #include <wx/bitmap.h>
 #include <wx/icon.h>
 #include <wx/image.h>
-#include <wx/artprov.h>
+#include <wx/intl.h>
+#include <wx/string.h>
 //*)
 
-#include <wx/msgdlg.h>
-#include <wx/filedlg.h>
-#include <wx/progdlg.h>
-#include <wx/imaglist.h>
+#include <wx/artprov.h>
 #include <wx/busyinfo.h>
-#include <wx/log.h>
-#include <wx/textdlg.h>
-#include <wx/dirdlg.h>
 #include <wx/colordlg.h>
 #include <wx/dcmemory.h>
+#include <wx/dirdlg.h>
+#include <wx/filedlg.h>
 #include <wx/image.h>
-#include <wx/artprov.h>
+#include <wx/imaglist.h>
+#include <wx/log.h>
+#include <wx/msgdlg.h>
+#include <wx/progdlg.h>
+#include <wx/textdlg.h>
 
 #include "../wx-common/mrpt_logo.xpm"
 #include "imgs/app_icon_gridmapsimul.xpm"
 
 #include <mrpt/gui/about_box.h>
 
-#include <mrpt/system/filesystem.h>
-#include <mrpt/io/CFileOutputStream.h>
 #include <mrpt/io/CFileGZInputStream.h>
 #include <mrpt/io/CFileGZOutputStream.h>
-#include <mrpt/opengl/CSetOfObjects.h>
+#include <mrpt/io/CFileOutputStream.h>
+#include <mrpt/opengl/CGridPlaneXY.h>
 #include <mrpt/opengl/CPlanarLaserScan.h>
 #include <mrpt/opengl/CPointCloud.h>
-#include <mrpt/opengl/CGridPlaneXY.h>
+#include <mrpt/opengl/CSetOfObjects.h>
 #include <mrpt/system/CTimeLogger.h>
+#include <mrpt/system/filesystem.h>
 
 //#define DO_SCAN_LIKELIHOOD_DEBUG
 
@@ -100,16 +100,16 @@ wxBitmap MyArtProvider::CreateBitmap(
 
 #include <mrpt/gui/CWxGLCanvasBase.h>
 
-#include <mrpt/system/CTicTac.h>
+#include <mrpt/hwdrivers/CJoystick.h>
 #include <mrpt/kinematics/CVehicleSimul_DiffDriven.h>
-#include <mrpt/obs/CRawlog.h>
 #include <mrpt/maps/COccupancyGridMap2D.h>
 #include <mrpt/obs/CActionRobotMovement2D.h>
 #include <mrpt/obs/CObservationOdometry.h>
-#include <mrpt/hwdrivers/CJoystick.h>
+#include <mrpt/obs/CRawlog.h>
+#include <mrpt/system/CTicTac.h>
 
-#include <mrpt/opengl/stock_objects.h>
 #include <mrpt/core/aligned_std_vector.h>
+#include <mrpt/opengl/stock_objects.h>
 #include <mrpt/serialization/CArchive.h>
 
 #include <mrpt/gui/WxUtils.h>

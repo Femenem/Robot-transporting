@@ -1,24 +1,24 @@
 /* +------------------------------------------------------------------------+
    |                     Mobile Robot Programming Toolkit (MRPT)            |
-   |                          http://www.mrpt.org/                          |
+   |                          https://www.mrpt.org/                         |
    |                                                                        |
    | Copyright (c) 2005-2019, Individual contributors, see AUTHORS file     |
-   | See: http://www.mrpt.org/Authors - All rights reserved.                |
-   | Released under BSD License. See details in http://www.mrpt.org/License |
+   | See: https://www.mrpt.org/Authors - All rights reserved.               |
+   | Released under BSD License. See: https://www.mrpt.org/License          |
    +------------------------------------------------------------------------+ */
 
 #pragma once
 
-#include <mrpt/obs/CActionCollection.h>
-#include <mrpt/obs/CSensoryFrame.h>
-#include <mrpt/obs/CObservation.h>
 #include <mrpt/graphs/CNetworkOfPoses.h>
+#include <mrpt/graphslam/misc/CWindowManager.h>
+#include <mrpt/obs/CActionCollection.h>
+#include <mrpt/obs/CObservation.h>
+#include <mrpt/obs/CSensoryFrame.h>
 #include <mrpt/system/COutputLogger.h>
 #include <mrpt/system/CTimeLogger.h>
-#include <mrpt/graphslam/misc/CWindowManager.h>
 
-#include <string>
 #include <map>
+#include <string>
 
 namespace mrpt::graphslam
 {

@@ -1,37 +1,35 @@
 /* +------------------------------------------------------------------------+
    |                     Mobile Robot Programming Toolkit (MRPT)            |
-   |                          http://www.mrpt.org/                          |
+   |                          https://www.mrpt.org/                         |
    |                                                                        |
    | Copyright (c) 2005-2019, Individual contributors, see AUTHORS file     |
-   | See: http://www.mrpt.org/Authors - All rights reserved.                |
-   | Released under BSD License. See details in http://www.mrpt.org/License |
+   | See: https://www.mrpt.org/Authors - All rights reserved.               |
+   | Released under BSD License. See: https://www.mrpt.org/License          |
    +------------------------------------------------------------------------+ */
 
 #include "vision-precomp.h"  // Precompiled headers
 
-#include <mrpt/config.h>
-#include <mrpt/vision/utils.h>
-#include <mrpt/vision/pnp_algos.h>
-
-#include <iostream>
-
 #include <mrpt/math/types_math.h>  // Eigen must be included first via MRPT to enable the plugin system
+
+#include <mrpt/config.h>
+#include <mrpt/otherlibs/do_opencv_includes.h>
+#include <mrpt/vision/pnp_algos.h>
+#include <mrpt/vision/utils.h>
 #include <Eigen/Core>
 #include <Eigen/Dense>
-
-#include <mrpt/otherlibs/do_opencv_includes.h>
+#include <iostream>
 #if MRPT_HAS_OPENCV
 #include <opencv2/core/eigen.hpp>
 #endif
 
 #include "dls.h"
 #include "epnp.h"
-#include "upnp.h"
-#include "p3p.h"
-#include "ppnp.h"
-#include "posit.h"
 #include "lhm.h"
+#include "p3p.h"
+#include "posit.h"
+#include "ppnp.h"
 #include "rpnp.h"
+#include "upnp.h"
 
 bool mrpt::vision::pnp::CPnP::dls(
 	const Eigen::Ref<Eigen::MatrixXd> obj_pts,

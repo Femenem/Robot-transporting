@@ -60,7 +60,7 @@ class ICPDirection {
     // Serialize message field [angle]
     bufferOffset = _serializer.float32(obj.angle, buffer, bufferOffset);
     // Serialize message field [goodness]
-    bufferOffset = _serializer.float32(obj.goodness, buffer, bufferOffset);
+    bufferOffset = _serializer.float64(obj.goodness, buffer, bufferOffset);
     return bufferOffset;
   }
 
@@ -75,12 +75,12 @@ class ICPDirection {
     // Deserialize message field [angle]
     data.angle = _deserializer.float32(buffer, bufferOffset);
     // Deserialize message field [goodness]
-    data.goodness = _deserializer.float32(buffer, bufferOffset);
+    data.goodness = _deserializer.float64(buffer, bufferOffset);
     return data;
   }
 
   static getMessageSize(object) {
-    return 16;
+    return 20;
   }
 
   static datatype() {
@@ -90,7 +90,7 @@ class ICPDirection {
 
   static md5sum() {
     //Returns md5sum for a message object
-    return 'ec2458f4ae291f686f0f7664eab3bac0';
+    return 'b749b73aa627a1a22c81c8fa999a58b3';
   }
 
   static messageDefinition() {
@@ -106,7 +106,7 @@ class ICPDirection {
     float32 angle
     
     # how well the models fit together
-    float32 goodness
+    float64 goodness
     `;
   }
 

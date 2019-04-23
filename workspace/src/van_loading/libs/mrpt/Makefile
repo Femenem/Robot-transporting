@@ -51,7 +51,7 @@ EQUALS = =
 CMAKE_SOURCE_DIR = /home/matt/Documents/Robot-transporting/workspace/src/van_loading/libs/mrpt
 
 # The top-level build directory on which CMake was run.
-CMAKE_BINARY_DIR = /home/matt/Documents/Robot-transporting/workspace/src/van_loading/libs/mrpt
+CMAKE_BINARY_DIR = /home/matt/Documents/Robot-transporting/workspace/src/van_loading/libs/mrpt/build
 
 #=============================================================================
 # Targets provided globally by CMake.
@@ -149,7 +149,7 @@ package/fast: package
 # Special rule for the target package_source
 package_source:
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "Run CPack packaging tool for source..."
-	/usr/bin/cpack --config ./CPackSourceConfig.cmake /home/matt/Documents/Robot-transporting/workspace/src/van_loading/libs/mrpt/CPackSourceConfig.cmake
+	/usr/bin/cpack --config ./CPackSourceConfig.cmake /home/matt/Documents/Robot-transporting/workspace/src/van_loading/libs/mrpt/build/CPackSourceConfig.cmake
 .PHONY : package_source
 
 # Special rule for the target package_source
@@ -159,9 +159,9 @@ package_source/fast: package_source
 
 # The main all target
 all: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/matt/Documents/Robot-transporting/workspace/src/van_loading/libs/mrpt/CMakeFiles /home/matt/Documents/Robot-transporting/workspace/src/van_loading/libs/mrpt/CMakeFiles/progress.marks
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/matt/Documents/Robot-transporting/workspace/src/van_loading/libs/mrpt/build/CMakeFiles /home/matt/Documents/Robot-transporting/workspace/src/van_loading/libs/mrpt/build/CMakeFiles/progress.marks
 	$(MAKE) -f CMakeFiles/Makefile2 all
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/matt/Documents/Robot-transporting/workspace/src/van_loading/libs/mrpt/CMakeFiles 0
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/matt/Documents/Robot-transporting/workspace/src/van_loading/libs/mrpt/build/CMakeFiles 0
 .PHONY : all
 
 # The main clean target

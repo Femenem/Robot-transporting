@@ -1,10 +1,10 @@
 /* +------------------------------------------------------------------------+
    |                     Mobile Robot Programming Toolkit (MRPT)            |
-   |                          http://www.mrpt.org/                          |
+   |                          https://www.mrpt.org/                         |
    |                                                                        |
    | Copyright (c) 2005-2019, Individual contributors, see AUTHORS file     |
-   | See: http://www.mrpt.org/Authors - All rights reserved.                |
-   | Released under BSD License. See details in http://www.mrpt.org/License |
+   | See: https://www.mrpt.org/Authors - All rights reserved.               |
+   | Released under BSD License. See: https://www.mrpt.org/License          |
    +------------------------------------------------------------------------+ */
 /*
  * Redistribution and use in source and binary forms, with or without
@@ -31,12 +31,13 @@
  *
  */
 
-#include "sdkcommon.h"
 #include "hal/abs_rxtx.h"
-#include "hal/thread.h"
-#include "hal/locker.h"
 #include "hal/event.h"
+#include "hal/locker.h"
+#include "hal/thread.h"
 #include "rplidar_driver_serial.h"
+#include "rptypes.h"
+#include "sdkcommon.h"
 
 #ifndef min
 #define min(a, b) (((a) < (b)) ? (a) : (b))

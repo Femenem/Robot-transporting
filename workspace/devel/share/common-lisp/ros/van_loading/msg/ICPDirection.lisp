@@ -73,11 +73,15 @@
     (cl:write-byte (cl:ldb (cl:byte 8 8) bits) ostream)
     (cl:write-byte (cl:ldb (cl:byte 8 16) bits) ostream)
     (cl:write-byte (cl:ldb (cl:byte 8 24) bits) ostream))
-  (cl:let ((bits (roslisp-utils:encode-single-float-bits (cl:slot-value msg 'goodness))))
+  (cl:let ((bits (roslisp-utils:encode-double-float-bits (cl:slot-value msg 'goodness))))
     (cl:write-byte (cl:ldb (cl:byte 8 0) bits) ostream)
     (cl:write-byte (cl:ldb (cl:byte 8 8) bits) ostream)
     (cl:write-byte (cl:ldb (cl:byte 8 16) bits) ostream)
-    (cl:write-byte (cl:ldb (cl:byte 8 24) bits) ostream))
+    (cl:write-byte (cl:ldb (cl:byte 8 24) bits) ostream)
+    (cl:write-byte (cl:ldb (cl:byte 8 32) bits) ostream)
+    (cl:write-byte (cl:ldb (cl:byte 8 40) bits) ostream)
+    (cl:write-byte (cl:ldb (cl:byte 8 48) bits) ostream)
+    (cl:write-byte (cl:ldb (cl:byte 8 56) bits) ostream))
 )
 (cl:defmethod roslisp-msg-protocol:deserialize ((msg <ICPDirection>) istream)
   "Deserializes a message object of type '<ICPDirection>"
@@ -104,7 +108,11 @@
       (cl:setf (cl:ldb (cl:byte 8 8) bits) (cl:read-byte istream))
       (cl:setf (cl:ldb (cl:byte 8 16) bits) (cl:read-byte istream))
       (cl:setf (cl:ldb (cl:byte 8 24) bits) (cl:read-byte istream))
-    (cl:setf (cl:slot-value msg 'goodness) (roslisp-utils:decode-single-float-bits bits)))
+      (cl:setf (cl:ldb (cl:byte 8 32) bits) (cl:read-byte istream))
+      (cl:setf (cl:ldb (cl:byte 8 40) bits) (cl:read-byte istream))
+      (cl:setf (cl:ldb (cl:byte 8 48) bits) (cl:read-byte istream))
+      (cl:setf (cl:ldb (cl:byte 8 56) bits) (cl:read-byte istream))
+    (cl:setf (cl:slot-value msg 'goodness) (roslisp-utils:decode-double-float-bits bits)))
   msg
 )
 (cl:defmethod roslisp-msg-protocol:ros-datatype ((msg (cl:eql '<ICPDirection>)))
@@ -115,22 +123,22 @@
   "van_loading/ICPDirection")
 (cl:defmethod roslisp-msg-protocol:md5sum ((type (cl:eql '<ICPDirection>)))
   "Returns md5sum for a message object of type '<ICPDirection>"
-  "ec2458f4ae291f686f0f7664eab3bac0")
+  "b749b73aa627a1a22c81c8fa999a58b3")
 (cl:defmethod roslisp-msg-protocol:md5sum ((type (cl:eql 'ICPDirection)))
   "Returns md5sum for a message object of type 'ICPDirection"
-  "ec2458f4ae291f686f0f7664eab3bac0")
+  "b749b73aa627a1a22c81c8fa999a58b3")
 (cl:defmethod roslisp-msg-protocol:message-definition ((type (cl:eql '<ICPDirection>)))
   "Returns full string definition for message of type '<ICPDirection>"
-  (cl:format cl:nil "# x distance (forward/back)~%float32 x~%~%# y distance (left/right)~%float32 y~%~%# angle to turn, positive to right, degrees~%float32 angle~%~%# how well the models fit together~%float32 goodness~%~%"))
+  (cl:format cl:nil "# x distance (forward/back)~%float32 x~%~%# y distance (left/right)~%float32 y~%~%# angle to turn, positive to right, degrees~%float32 angle~%~%# how well the models fit together~%float64 goodness~%~%"))
 (cl:defmethod roslisp-msg-protocol:message-definition ((type (cl:eql 'ICPDirection)))
   "Returns full string definition for message of type 'ICPDirection"
-  (cl:format cl:nil "# x distance (forward/back)~%float32 x~%~%# y distance (left/right)~%float32 y~%~%# angle to turn, positive to right, degrees~%float32 angle~%~%# how well the models fit together~%float32 goodness~%~%"))
+  (cl:format cl:nil "# x distance (forward/back)~%float32 x~%~%# y distance (left/right)~%float32 y~%~%# angle to turn, positive to right, degrees~%float32 angle~%~%# how well the models fit together~%float64 goodness~%~%"))
 (cl:defmethod roslisp-msg-protocol:serialization-length ((msg <ICPDirection>))
   (cl:+ 0
      4
      4
      4
-     4
+     8
 ))
 (cl:defmethod roslisp-msg-protocol:ros-message-to-list ((msg <ICPDirection>))
   "Converts a ROS message object to a list"

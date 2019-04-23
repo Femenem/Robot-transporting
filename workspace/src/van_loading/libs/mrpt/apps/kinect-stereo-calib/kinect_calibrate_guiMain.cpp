@@ -1,45 +1,45 @@
 /* +------------------------------------------------------------------------+
    |                     Mobile Robot Programming Toolkit (MRPT)            |
-   |                          http://www.mrpt.org/                          |
+   |                          https://www.mrpt.org/                         |
    |                                                                        |
    | Copyright (c) 2005-2019, Individual contributors, see AUTHORS file     |
-   | See: http://www.mrpt.org/Authors - All rights reserved.                |
-   | Released under BSD License. See details in http://www.mrpt.org/License |
+   | See: https://www.mrpt.org/Authors - All rights reserved.               |
+   | Released under BSD License. See: https://www.mrpt.org/License          |
    +------------------------------------------------------------------------+ */
 
 /*
   App      : kinect-stereo-calib
   Web pages:
-  http://www.mrpt.org/list-of-mrpt-apps/application-kinect-stereo-calib
-			 http://www.mrpt.org/Kinect_and_MRPT
+  https://www.mrpt.org/list-of-mrpt-apps/application-kinect-stereo-calib
+			 https://www.mrpt.org/Kinect_and_MRPT
   Usage    : Run and follow on-screen instructions
 */
 
 #include "kinect_calibrate_guiMain.h"
+#include <mrpt/gui/about_box.h>
 #include <wx/msgdlg.h>
 #include <wx/progdlg.h>
-#include <mrpt/gui/about_box.h>
 
 //(*InternalHeaders(kinect_calibrate_guiDialog)
+#include <wx/artprov.h>
+#include <wx/bitmap.h>
+#include <wx/font.h>
+#include <wx/image.h>
+#include <wx/intl.h>
 #include <wx/settings.h>
 #include <wx/string.h>
-#include <wx/intl.h>
-#include <wx/font.h>
-#include <wx/bitmap.h>
-#include <wx/image.h>
-#include <wx/artprov.h>
 //*)
 
+#include <mrpt/config/CConfigFile.h>
+#include <mrpt/gui/WxUtils.h>
 #include <mrpt/hwdrivers/CKinect.h>
-#include <mrpt/vision/chessboard_find_corners.h>
-#include <mrpt/vision/chessboard_stereo_camera_calib.h>
-#include <mrpt/system/filesystem.h>
-#include <mrpt/system/CTicTac.h>
+#include <mrpt/io/CMemoryStream.h>
 #include <mrpt/io/vector_loadsave.h>
 #include <mrpt/poses/CPose3DQuat.h>
-#include <mrpt/io/CMemoryStream.h>
-#include <mrpt/gui/WxUtils.h>
-#include <mrpt/config/CConfigFile.h>
+#include <mrpt/system/CTicTac.h>
+#include <mrpt/system/filesystem.h>
+#include <mrpt/vision/chessboard_find_corners.h>
+#include <mrpt/vision/chessboard_stereo_camera_calib.h>
 
 using namespace mrpt;
 using namespace mrpt::obs;
@@ -50,8 +50,8 @@ using namespace mrpt::hwdrivers;
 using namespace std;
 
 #include "../wx-common/mrpt_logo.xpm"
-#include "imgs/kinect.xpm"
 #include "imgs/kinect-covered-projector.h"
+#include "imgs/kinect.xpm"
 
 // A custom Art provider for customizing the icons:
 class MyArtProvider : public wxArtProvider
@@ -187,12 +187,8 @@ kinect_calibrate_guiDialog::kinect_calibrate_guiDialog(
 {
 	m_grabstate = gsIdle;
 
-// Load my custom icons:
-#if wxCHECK_VERSION(2, 8, 0)
+	// Load my custom icons:
 	wxArtProvider::Push(new MyArtProvider);
-#else
-	wxArtProvider::PushProvider(new MyArtProvider);
-#endif
 
 	//(*Initialize(kinect_calibrate_guiDialog)
 	wxFlexGridSizer* FlexGridSizer30;

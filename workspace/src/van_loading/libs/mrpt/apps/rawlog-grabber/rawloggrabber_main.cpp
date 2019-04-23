@@ -1,10 +1,10 @@
 /* +------------------------------------------------------------------------+
    |                     Mobile Robot Programming Toolkit (MRPT)            |
-   |                          http://www.mrpt.org/                          |
+   |                          https://www.mrpt.org/                         |
    |                                                                        |
    | Copyright (c) 2005-2019, Individual contributors, see AUTHORS file     |
-   | See: http://www.mrpt.org/Authors - All rights reserved.                |
-   | Released under BSD License. See details in http://www.mrpt.org/License |
+   | See: https://www.mrpt.org/Authors - All rights reserved.               |
+   | Released under BSD License. See: https://www.mrpt.org/License          |
    +------------------------------------------------------------------------+ */
 
 /*-----------------------------------------------------------------------------
@@ -13,23 +13,23 @@
 	AUTHOR: Jose Luis Blanco Claraco <joseluisblancoc@gmail.com>
 
 	For instructions and details, see:
-	 http://www.mrpt.org/list-of-mrpt-apps/application-rawlog-grabber/
+	 https://www.mrpt.org/list-of-mrpt-apps/application-rawlog-grabber/
   -----------------------------------------------------------------------------*/
 
-#include <mrpt/hwdrivers/CGenericSensor.h>
 #include <mrpt/config/CConfigFile.h>
-#include <mrpt/io/CFileGZOutputStream.h>
-#include <mrpt/img/CImage.h>
 #include <mrpt/core/round.h>
+#include <mrpt/hwdrivers/CGenericSensor.h>
+#include <mrpt/img/CImage.h>
+#include <mrpt/io/CFileGZOutputStream.h>
 #include <mrpt/obs/CActionCollection.h>
-#include <mrpt/obs/CSensoryFrame.h>
-#include <mrpt/obs/CObservationOdometry.h>
+#include <mrpt/obs/CActionRobotMovement2D.h>
 #include <mrpt/obs/CObservationGPS.h>
 #include <mrpt/obs/CObservationIMU.h>
-#include <mrpt/obs/CActionRobotMovement2D.h>
-#include <mrpt/system/os.h>
-#include <mrpt/system/filesystem.h>
+#include <mrpt/obs/CObservationOdometry.h>
+#include <mrpt/obs/CSensoryFrame.h>
 #include <mrpt/serialization/CArchive.h>
+#include <mrpt/system/filesystem.h>
+#include <mrpt/system/os.h>
 
 #include <thread>
 

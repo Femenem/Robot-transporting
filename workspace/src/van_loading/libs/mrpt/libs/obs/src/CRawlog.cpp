@@ -1,20 +1,20 @@
 /* +------------------------------------------------------------------------+
    |                     Mobile Robot Programming Toolkit (MRPT)            |
-   |                          http://www.mrpt.org/                          |
+   |                          https://www.mrpt.org/                         |
    |                                                                        |
    | Copyright (c) 2005-2019, Individual contributors, see AUTHORS file     |
-   | See: http://www.mrpt.org/Authors - All rights reserved.                |
-   | Released under BSD License. See details in http://www.mrpt.org/License |
+   | See: https://www.mrpt.org/Authors - All rights reserved.               |
+   | Released under BSD License. See: https://www.mrpt.org/License          |
    +------------------------------------------------------------------------+ */
 
 #include "obs-precomp.h"  // Precompiled headers
 
-#include <mrpt/system/filesystem.h>
-#include <mrpt/obs/CRawlog.h>
-#include <mrpt/io/CFileInputStream.h>
 #include <mrpt/io/CFileGZInputStream.h>
 #include <mrpt/io/CFileGZOutputStream.h>
+#include <mrpt/io/CFileInputStream.h>
+#include <mrpt/obs/CRawlog.h>
 #include <mrpt/serialization/CArchive.h>
+#include <mrpt/system/filesystem.h>
 
 using namespace mrpt;
 using namespace mrpt::io;
@@ -254,7 +254,7 @@ bool CRawlog::loadFromRawLogFile(
 		}
 		catch (const std::exception& e)
 		{
-			std::cerr << e.what() << std::endl;
+			std::cerr << mrpt::exception_to_str(e) << std::endl;
 			keepReading = false;
 		}
 		catch (...)
@@ -295,8 +295,9 @@ bool CRawlog::saveToRawLogFile(const std::string& fileName) const
 		for (const auto& m_seqOfActOb : m_seqOfActObs) f << *m_seqOfActOb;
 		return true;
 	}
-	catch (...)
+	catch (const std::exception& e)
 	{
+		std::cerr << mrpt::exception_to_str(e) << std::endl;
 		return false;
 	}
 }
@@ -357,7 +358,7 @@ bool CRawlog::readActionObservationPair(
 	{
 		std::cerr << "[CRawlog::readActionObservationPair] Found exception:"
 				  << std::endl
-				  << e.what() << std::endl;
+				  << mrpt::exception_to_str(e) << std::endl;
 		return false;
 	}
 	catch (...)
@@ -419,7 +420,7 @@ bool CRawlog::getActionObservationPairOrObservation(
 	{
 		std::cerr << "[CRawlog::readActionObservationPair] Found exception:"
 				  << std::endl
-				  << e.what() << std::endl;
+				  << mrpt::exception_to_str(e) << std::endl;
 		return false;
 	}
 	catch (...)
@@ -530,8 +531,9 @@ bool CRawlog::getActionObservationPair(
 
 		return true;
 	}
-	catch (std::exception&)
+	catch (const std::exception& e)
 	{
+		std::cerr << mrpt::exception_to_str(e) << std::endl;
 		return false;
 	}
 	catch (...)

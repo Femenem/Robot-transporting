@@ -52,7 +52,7 @@ set_target_properties(mrpt::nav PROPERTIES
 # Import target "mrpt::nav" for configuration "Release"
 set_property(TARGET mrpt::nav APPEND PROPERTY IMPORTED_CONFIGURATIONS RELEASE)
 set_target_properties(mrpt::nav PROPERTIES
-  IMPORTED_LOCATION_RELEASE "/home/matt/Documents/Robot-transporting/workspace/src/van_loading/libs/mrpt/lib/libmrpt-nav.so.1.9.9"
+  IMPORTED_LOCATION_RELEASE "/home/matt/Documents/Robot-transporting/workspace/src/van_loading/libs/mrpt/build/lib/libmrpt-nav.so.1.9.9"
   IMPORTED_SONAME_RELEASE "libmrpt-nav.so.1.9"
   )
 

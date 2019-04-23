@@ -1,27 +1,27 @@
 /* +------------------------------------------------------------------------+
    |                     Mobile Robot Programming Toolkit (MRPT)            |
-   |                          http://www.mrpt.org/                          |
+   |                          https://www.mrpt.org/                         |
    |                                                                        |
    | Copyright (c) 2005-2019, Individual contributors, see AUTHORS file     |
-   | See: http://www.mrpt.org/Authors - All rights reserved.                |
-   | Released under BSD License. See details in http://www.mrpt.org/License |
+   | See: https://www.mrpt.org/Authors - All rights reserved.               |
+   | Released under BSD License. See: https://www.mrpt.org/License          |
    +------------------------------------------------------------------------+ */
 #pragma once
 
-#include <mrpt/gui/CDisplayWindow3D.h>
 #include <mrpt/config/CConfigFile.h>
 #include <mrpt/core/exceptions.h>
+#include <mrpt/gui/CDisplayWindow3D.h>
 #include <mrpt/system/COutputLogger.h>
 #include <mrpt/system/filesystem.h>
 
-#include <mrpt/graphslam/misc/CWindowObserver.h>
-#include <mrpt/graphslam/misc/CWindowManager.h>
-#include <mrpt/graphslam/apps_related/TUserOptionsChecker.h>
 #include <mrpt/graphslam/CGraphSlamEngine.h>
+#include <mrpt/graphslam/apps_related/TUserOptionsChecker.h>
+#include <mrpt/graphslam/misc/CWindowManager.h>
+#include <mrpt/graphslam/misc/CWindowObserver.h>
 
-#include <string>
-#include <sstream>
 #include <iostream>
+#include <sstream>
+#include <string>
 
 /**\brief Manage variables and methods related to applications executing
  * graphSLAM using the mrpt-graphslam API.

@@ -1,31 +1,31 @@
 /* +------------------------------------------------------------------------+
    |                     Mobile Robot Programming Toolkit (MRPT)            |
-   |                          http://www.mrpt.org/                          |
+   |                          https://www.mrpt.org/                         |
    |                                                                        |
    | Copyright (c) 2005-2019, Individual contributors, see AUTHORS file     |
-   | See: http://www.mrpt.org/Authors - All rights reserved.                |
-   | Released under BSD License. See details in http://www.mrpt.org/License |
+   | See: https://www.mrpt.org/Authors - All rights reserved.               |
+   | Released under BSD License. See: https://www.mrpt.org/License          |
    +------------------------------------------------------------------------+ */
 #pragma once
 
-#include <mrpt/system/COutputLogger.h>
 #include <mrpt/containers/CThreadSafeQueue.h>
+#include <mrpt/system/COutputLogger.h>
 
-#include <mrpt/hmtslam/HMT_SLAM_common.h>
-#include <mrpt/hmtslam/CLocalMetricHypothesis.h>
+#include <mrpt/core/aligned_std_map.h>
 #include <mrpt/hmtslam/CHierarchicalMHMap.h>
-#include <mrpt/hmtslam/CTopLCDetector_GridMatching.h>
+#include <mrpt/hmtslam/CLocalMetricHypothesis.h>
 #include <mrpt/hmtslam/CTopLCDetector_FabMap.h>
-#include <mrpt/slam/CICP.h>
+#include <mrpt/hmtslam/CTopLCDetector_GridMatching.h>
+#include <mrpt/hmtslam/HMT_SLAM_common.h>
 #include <mrpt/maps/CPointsMap.h>
-#include <mrpt/slam/TKLDParams.h>
 #include <mrpt/obs/CActionCollection.h>
 #include <mrpt/opengl/COpenGLScene.h>
 #include <mrpt/serialization/CMessage.h>
-#include <mrpt/core/aligned_std_map.h>
+#include <mrpt/slam/CICP.h>
+#include <mrpt/slam/TKLDParams.h>
 
-#include <thread>
 #include <queue>
+#include <thread>
 
 namespace mrpt
 {
@@ -49,8 +49,8 @@ class CLSLAM_RBPF_2DLASER;
  *Transactions on Robotics (TRO), Vol. 24, No. 2, April 2008.
  *		- ...
  *
- *  More information in the wiki page: http://www.mrpt.org/HMT-SLAM . A complete
- *working application can be found in "MRPT/apps/hmt-slam".
+ *  More information in the wiki page: https://www.mrpt.org/HMT-SLAM . A
+ *complete working application can be found in "MRPT/apps/hmt-slam".
  *
  *  The complete state of the SLAM framework is serializable, so it can be saved
  *and restore to/from a binary dump. This class implements

@@ -1,19 +1,19 @@
 /* +------------------------------------------------------------------------+
    |                     Mobile Robot Programming Toolkit (MRPT)            |
-   |                          http://www.mrpt.org/                          |
+   |                          https://www.mrpt.org/                         |
    |                                                                        |
    | Copyright (c) 2005-2019, Individual contributors, see AUTHORS file     |
-   | See: http://www.mrpt.org/Authors - All rights reserved.                |
-   | Released under BSD License. See details in http://www.mrpt.org/License |
+   | See: https://www.mrpt.org/Authors - All rights reserved.               |
+   | Released under BSD License. See: https://www.mrpt.org/License          |
    +------------------------------------------------------------------------+ */
 
 #include "nav-precomp.h"  // Precomp header
 
-#include <mrpt/serialization/CArchive.h>
 #include <mrpt/nav/tpspace/CParameterizedTrajectoryGenerator.h>
+#include <mrpt/opengl/CSetOfLines.h>
+#include <mrpt/serialization/CArchive.h>
 #include <mrpt/system/filesystem.h>
 #include <mrpt/system/os.h>
-#include <mrpt/opengl/CSetOfLines.h>
 
 using namespace mrpt::nav;
 
@@ -530,7 +530,7 @@ void CParameterizedTrajectoryGenerator::evalClearanceSingleObstacle(
 	{
 		step_pointer_dbl += numStepsPerIncr;
 		const size_t step = mrpt::round(step_pointer_dbl);
-		// const double dist_over_path = e.first;
+		const double dist_over_path = e.first;
 		double& inout_clearance = e.second;
 
 		if (had_collision)
@@ -550,7 +550,10 @@ void CParameterizedTrajectoryGenerator::evalClearanceSingleObstacle(
 		const double this_clearance =
 			treat_as_obstacle ? this->evalClearanceToRobotShape(ol.x, ol.y)
 							  : ol.norm();
-		if (this_clearance <= .0 && treat_as_obstacle)
+		if (this_clearance <= .0 && treat_as_obstacle &&
+			(dist_over_path > 0.5 ||
+			 std::abs(mrpt::math::angDistance(
+				 std::atan2(oy, ox), index2alpha(k))) < mrpt::DEG2RAD(45.0)))
 		{
 			// Collision:
 			had_collision = true;

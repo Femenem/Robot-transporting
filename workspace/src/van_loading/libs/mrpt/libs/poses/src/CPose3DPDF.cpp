@@ -1,10 +1,10 @@
 /* +------------------------------------------------------------------------+
    |                     Mobile Robot Programming Toolkit (MRPT)            |
-   |                          http://www.mrpt.org/                          |
+   |                          https://www.mrpt.org/                         |
    |                                                                        |
    | Copyright (c) 2005-2019, Individual contributors, see AUTHORS file     |
-   | See: http://www.mrpt.org/Authors - All rights reserved.                |
-   | Released under BSD License. See details in http://www.mrpt.org/License |
+   | See: https://www.mrpt.org/Authors - All rights reserved.               |
+   | Released under BSD License. See: https://www.mrpt.org/License          |
    +------------------------------------------------------------------------+ */
 
 #include "poses-precomp.h"  // Precompiled headers
@@ -13,13 +13,13 @@
 #include <mrpt/poses/CPose3DPDF.h>
 #include <mrpt/poses/CPose3DPDFGaussian.h>
 #include <mrpt/poses/CPose3DPDFGaussianInf.h>
-#include <mrpt/poses/CPose3DPDFSOG.h>
 #include <mrpt/poses/CPose3DPDFParticles.h>
+#include <mrpt/poses/CPose3DPDFSOG.h>
 #include <mrpt/poses/CPose3DQuatPDF.h>
 #include <mrpt/poses/CPosePDFGaussian.h>
 #include <mrpt/poses/CPosePDFGaussianInf.h>
-#include <mrpt/poses/CPosePDFSOG.h>
 #include <mrpt/poses/CPosePDFParticles.h>
+#include <mrpt/poses/CPosePDFSOG.h>
 #include <mrpt/serialization/CArchive.h>
 
 using namespace mrpt::poses;
@@ -145,7 +145,7 @@ void CPose3DPDF::jacobiansPoseComposition(
 	CMatrixDouble66& df_du)
 {
 	// See this techical report:
-	// http://www.mrpt.org/6D_poses:equivalences_compositions_and_uncertainty
+	// https://www.mrpt.org/6D_poses:equivalences_compositions_and_uncertainty
 
 	// Direct equations (for the covariances) in yaw-pitch-roll are too complex.
 	//  Make a way around them and consider instead this path:

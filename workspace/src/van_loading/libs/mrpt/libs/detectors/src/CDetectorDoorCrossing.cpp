@@ -1,10 +1,10 @@
 /* +------------------------------------------------------------------------+
    |                     Mobile Robot Programming Toolkit (MRPT)            |
-   |                          http://www.mrpt.org/                          |
+   |                          https://www.mrpt.org/                         |
    |                                                                        |
    | Copyright (c) 2005-2019, Individual contributors, see AUTHORS file     |
-   | See: http://www.mrpt.org/Authors - All rights reserved.                |
-   | Released under BSD License. See details in http://www.mrpt.org/License |
+   | See: https://www.mrpt.org/Authors - All rights reserved.               |
+   | Released under BSD License. See: https://www.mrpt.org/License          |
    +------------------------------------------------------------------------+ */
 
 #include "detectors-precomp.h"  // Precompiled headers
@@ -95,7 +95,7 @@ void CDetectorDoorCrossing::process(
 		mapInitializer.push_back(def);
 	}
 
-	CMultiMetricMap auxMap(&mapInitializer);
+	CMultiMetricMap auxMap(mapInitializer);
 
 	for (i = 0; i < options.windowSize; i++)
 	{
@@ -123,7 +123,7 @@ void CDetectorDoorCrossing::process(
 	// 4) Compute the information differece between this
 	//      "map patch" and the previous one:
 	// -------------------------------------------------------
-	auxMap.m_gridMaps[0]->computeEntropy(entropy);
+	auxMap.mapByClass<COccupancyGridMap2D>()->computeEntropy(entropy);
 
 	if (!lastEntropyValid)
 	{
@@ -136,7 +136,7 @@ void CDetectorDoorCrossing::process(
 		out_estimation.enoughtInformation = true;
 
 		out_estimation.informationGain = entropy.I - lastEntropy.I;
-		out_estimation.pointsMap = *auxMap.m_pointsMaps[0];
+		out_estimation.pointsMap = *auxMap.mapByClass<CSimplePointsMap>();
 	}
 
 	// For next iterations:

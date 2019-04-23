@@ -1,10 +1,10 @@
 /* +------------------------------------------------------------------------+
    |                     Mobile Robot Programming Toolkit (MRPT)            |
-   |                          http://www.mrpt.org/                          |
+   |                          https://www.mrpt.org/                         |
    |                                                                        |
    | Copyright (c) 2005-2019, Individual contributors, see AUTHORS file     |
-   | See: http://www.mrpt.org/Authors - All rights reserved.                |
-   | Released under BSD License. See details in http://www.mrpt.org/License |
+   | See: https://www.mrpt.org/Authors - All rights reserved.               |
+   | Released under BSD License. See: https://www.mrpt.org/License          |
    +------------------------------------------------------------------------+ */
 
 /** An implementation of Hybrid Metric Topological SLAM (HMT-SLAM).
@@ -20,17 +20,17 @@
  *		    in  IEEE Transactions on Robotics (TRO), Vol. 24, No. 2, April 2008.
  *		- ...
  *
- *  More information in the wiki page: http://www.mrpt.org/HMT-SLAM
+ *  More information in the wiki page: https://www.mrpt.org/HMT-SLAM
  *
  */
 
 #include "hmtslam-precomp.h"  // Precomp header
 
-#include <mrpt/io/CFileStream.h>
 #include <mrpt/config/CConfigFile.h>
+#include <mrpt/io/CFileStream.h>
+#include <mrpt/io/CMemoryStream.h>
 #include <mrpt/serialization/stl_serialization.h>
 #include <mrpt/system/filesystem.h>
-#include <mrpt/io/CMemoryStream.h>
 
 #include <mrpt/system/os.h>
 
@@ -425,7 +425,7 @@ void CHMTSLAM::initializeEmptyMap()
 
 		firstArea->m_hypotheses = LMH_hyps;
 		CMultiMetricMap::Ptr emptyMap =
-			CMultiMetricMap::Create(&m_options.defaultMapsInitializers);
+			CMultiMetricMap::Create(m_options.defaultMapsInitializers);
 
 		firstArea->m_nodeType = "Area";
 		firstArea->m_label = generateUniqueAreaLabel();

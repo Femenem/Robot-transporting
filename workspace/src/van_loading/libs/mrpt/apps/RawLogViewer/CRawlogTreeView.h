@@ -1,23 +1,23 @@
 /* +------------------------------------------------------------------------+
    |                     Mobile Robot Programming Toolkit (MRPT)            |
-   |                          http://www.mrpt.org/                          |
+   |                          https://www.mrpt.org/                         |
    |                                                                        |
    | Copyright (c) 2005-2019, Individual contributors, see AUTHORS file     |
-   | See: http://www.mrpt.org/Authors - All rights reserved.                |
-   | Released under BSD License. See details in http://www.mrpt.org/License |
+   | See: https://www.mrpt.org/Authors - All rights reserved.               |
+   | Released under BSD License. See: https://www.mrpt.org/License          |
    +------------------------------------------------------------------------+ */
 
 #ifndef CRawlogTreeView_H
 #define CRawlogTreeView_H
 
+#include <wx/button.h>
 #include <wx/notebook.h>
+#include <wx/scrolwin.h>
 #include <wx/sizer.h>
+#include <wx/statbmp.h>
+#include <wx/statline.h>
 #include <wx/stattext.h>
 #include <wx/textctrl.h>
-#include <wx/statline.h>
-#include <wx/statbmp.h>
-#include <wx/button.h>
-#include <wx/scrolwin.h>
 
 #include <mrpt/obs/CRawlog.h>
 
@@ -47,12 +47,13 @@ class CRawlogTreeView : public wxScrolledWindow
 		const wxSize& size = wxDefaultSize, long style = wxVSCROLL,
 		const wxString& name = wxT("rawlogTreeView"));
 
-	~CRawlogTreeView() override;
-
 	/** Draws the rawlog items */
 	void OnDraw(wxDC& dc) override;
 
-	void AssignImageList(wxImageList* imageList) { m_imageList = imageList; }
+	void AssignImageList(std::shared_ptr<wxImageList> imageList)
+	{
+		m_imageList = imageList;
+	}
 	/** Sets the rawlog to be rendered in the control (It's kept as a pointer,
 	 * so the original object cannot be destroyed).
 	 *  It automatically calls "reloadFromRawlog".
@@ -88,7 +89,7 @@ class CRawlogTreeView : public wxScrolledWindow
 	/** A reference to the rawlog to be rendered. */
 	mrpt::obs::CRawlog* m_rawlog{nullptr};
 	/** We own this pointer */
-	wxImageList* m_imageList{nullptr};
+	std::shared_ptr<wxImageList> m_imageList;
 	/** Selected row, or -1 if none */
 	int m_selectedItem{-1};
 	/** File name */

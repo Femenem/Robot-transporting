@@ -1,17 +1,19 @@
 /* +------------------------------------------------------------------------+
    |                     Mobile Robot Programming Toolkit (MRPT)            |
-   |                          http://www.mrpt.org/                          |
+   |                          https://www.mrpt.org/                         |
    |                                                                        |
    | Copyright (c) 2005-2019, Individual contributors, see AUTHORS file     |
-   | See: http://www.mrpt.org/Authors - All rights reserved.                |
-   | Released under BSD License. See details in http://www.mrpt.org/License |
+   | See: https://www.mrpt.org/Authors - All rights reserved.               |
+   | Released under BSD License. See: https://www.mrpt.org/License          |
    +------------------------------------------------------------------------+ */
 
+#include <mrpt/config/CConfigFile.h>
+#include <mrpt/maps/CLandmarksMap.h>
 #include <mrpt/maps/CMultiMetricMap.h>
 #include <mrpt/obs/CObservationBeaconRanges.h>
-#include <mrpt/slam/CRejectionSamplingRangeOnlyLocalization.h>
 #include <mrpt/random.h>
-#include <mrpt/config/CConfigFile.h>
+#include <mrpt/slam/CRejectionSamplingRangeOnlyLocalization.h>
+#include <mrpt/system/CTicTac.h>
 #include <mrpt/system/os.h>
 #include <iostream>
 
@@ -37,7 +39,7 @@ void TestRS()
 	CMultiMetricMap map;
 	mrpt::maps::TSetOfMetricMapInitializers mapInit;
 	mapInit.loadFromConfigFile(CConfigFile("_demo_map.ini"), "MetricMap");
-	map.setListOfMaps(&mapInit);
+	map.setListOfMaps(mapInit);
 
 	// Create a dummy observation:
 	mrpt::obs::CObservationBeaconRanges obs;
@@ -65,12 +67,13 @@ void TestRS()
 	CTicTac tictac;
 
 	// Set data:
-	ASSERT_(map.m_landmarksMap);
+	auto lmMap = map.mapByClass<CLandmarksMap>();
+	ASSERT_(lmMap);
 
 	printf("Preparing...");
 	tictac.Tic();
 	CPose2D dumPose(0, 0, 0);
-	RS.setParams(*map.m_landmarksMap, obs, SIGMA, dumPose);
+	RS.setParams(*lmMap, obs, SIGMA, dumPose);
 	printf("Ok! %fms\n", 1000 * tictac.Tac());
 
 	printf("Computing...");

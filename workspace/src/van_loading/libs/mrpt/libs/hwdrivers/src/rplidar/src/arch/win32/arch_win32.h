@@ -1,10 +1,10 @@
 /* +------------------------------------------------------------------------+
    |                     Mobile Robot Programming Toolkit (MRPT)            |
-   |                          http://www.mrpt.org/                          |
+   |                          https://www.mrpt.org/                         |
    |                                                                        |
    | Copyright (c) 2005-2019, Individual contributors, see AUTHORS file     |
-   | See: http://www.mrpt.org/Authors - All rights reserved.                |
-   | Released under BSD License. See details in http://www.mrpt.org/License |
+   | See: https://www.mrpt.org/Authors - All rights reserved.               |
+   | Released under BSD License. See: https://www.mrpt.org/License          |
    +------------------------------------------------------------------------+ */
 /*
  * Redistribution and use in source and binary forms, with or without
@@ -52,11 +52,11 @@
 #define _RICHEDIT_VER 0x0200
 #endif
 
+#include <direct.h>
+#include <process.h>
 #include <stddef.h>
 #include <stdio.h>
-#include <windows.h>
 #include <stdlib.h>  //for memcpy etc..
-#include <process.h>
-#include <direct.h>
+#include <windows.h>
 
 #include "timer.h"

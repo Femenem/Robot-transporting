@@ -1,18 +1,18 @@
 /* +------------------------------------------------------------------------+
    |                     Mobile Robot Programming Toolkit (MRPT)            |
-   |                          http://www.mrpt.org/                          |
+   |                          https://www.mrpt.org/                         |
    |                                                                        |
    | Copyright (c) 2005-2019, Individual contributors, see AUTHORS file     |
-   | See: http://www.mrpt.org/Authors - All rights reserved.                |
-   | Released under BSD License. See details in http://www.mrpt.org/License |
+   | See: https://www.mrpt.org/Authors - All rights reserved.               |
+   | Released under BSD License. See: https://www.mrpt.org/License          |
    +------------------------------------------------------------------------+ */
 #ifndef MTWSDIDATA_H
 #define MTWSDIDATA_H
 
 #include <xsens/pstdint.h>
-#include <xsens/xsvector3.h>
-#include <xsens/xsquaternion.h>
 #include <xsens/xsdeviceid.h>
+#include <xsens/xsquaternion.h>
+#include <xsens/xsvector3.h>
 
 struct XsRange;
 
