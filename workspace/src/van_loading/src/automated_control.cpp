@@ -71,22 +71,24 @@ public:
 //            ROS_INFO("Calculating movement");
             // calculate average and send command
             van_loading::ICPDirection averageDirection = calculate_average();
-            if(averageDirection.goodness > 0.7){ // Its an accurate reading if above 80%
+            //ROS_INFO("Average direction: x: %f, y: %f, angle: %f, goodness: %f",
+            //        averageDirection.x, averageDirection.y, averageDirection.angle, averageDirection.goodness);
+            if(averageDirection.goodness > 0.7 && averageDirection.goodness < 1.5){ // Its an accurate reading if above 80%
                 move_robot(averageDirection); // Safely move
             } else { // Not accurate reading so change state
                 // Go back 1, if still inaccurate, forward 2
-                ROS_WARN("Model not a good enough match at %fl, changing state", averageDirection.goodness);
+                ROS_WARN("Model not a good enough match at %f, changing state", averageDirection.goodness);
                 // TODO: bug above, memory issue if not printing out.
 #ifdef AUTOMATIC_STATE
                 if(stateTracker == 0){ // At the start so go up a state
                     increment_state();
                     stateWentDown = false;
                 }
-                else if(stateTracker > 0 && !stateWentDown ){ // Go back one
+                else if(stateTracker > 0 && !stateWentDown ){ // State went up last
                     decrement_state();
                     stateWentDown = true;
 
-                } else if(stateTracker+2 < numberOfStates && stateWentDown){ // Go forward
+                } else if(stateTracker+2 < numberOfStates && stateWentDown){ // State went down last
                     increment_state();
                     increment_state();
                     stateWentDown = false;
@@ -127,10 +129,14 @@ private:
         /**
          * Check if we are close enough to finish/move on
          */
-        if((direction.x < 0.25 && direction.x > -0.25)){ // Close enough to move on (just above snapshot distance)
+        if((direction.x < 0.20 && direction.x > -0.20)){ // Close enough to move on (just above snapshot distance)
             if(stateTracker == numberOfStates){ // FINISHED
                 ROS_INFO("Robot is at the goal.");
-                ros::shutdown();
+                targetSpeed = 0.0;
+                targetSteering = 0.0;
+                currentSpeed = 0.0;
+                currentSteering = 0.0;
+//                ros::shutdown();
                 return;
             } else { // Not finished so move on
                 ROS_INFO("Close enough to goal, moving state forwards");
@@ -143,25 +149,7 @@ private:
         /**
          * Not close enough to move on so move closer
          */
-        else { // Not close enough yet
-            /**
-             * Check for any errors
-             */
-//            if ((direction.x < -0.7 || direction.x > 0.7) && stateTracker > 3) {  // If likely to be missing a state
-//                ROS_INFO("Missing a checkpoint?");
-//                increment_state();
-////                if (wentForward[stateTracker-1]) { // Meant to be going forwards
-////#ifdef AUTOMATIC_STATE
-////                    increment_state();
-////#endif
-////                } else { // Meant to be going backwards
-////#ifdef AUTOMATIC_STATE
-////                    increment_state();
-////#endif
-////                }
-//                // Out of bounds for next checkpoint and not first value
-//                targetSpeed = 0.0;
-//            } else{ // On track
+        else {
                 // Calculate speed
                 targetSpeed = (direction.x * -1) * 2; // Invert because values are backwards.
                 // * 2 because we are slow af.
@@ -174,21 +162,45 @@ private:
                     targetSpeed = -MAX_SPEED;
                 }
 
-                // Steering calculation
-                if (direction.y > 0.00 || direction.y < -0.02) { // Y position is far enough out to need a turn
-                    targetSteering = deg_to_rad(direction.y) * -1; // * 20 to make it faster
-                    if (direction.angle > 2.0) { // If angle is far out, add it to calculation
-                        targetSteering = targetSteering + direction.angle;
+                if ((direction.y > 0.02 || direction.y < -0.02) || (direction.angle > 0.5 || direction.angle < -0.5)) { // Y position is far enough out to need a turn
+                    if(direction.y < 0.6 && direction.y > -0.6){ // If y is too far out, do nothing
+                        targetSteering = ((direction.y * -1) * 2); // * 2 to make it faster
                     }
-                    if (targetSteering < 1) {
-                        targetSteering = targetSteering * 100;
+//                    if (direction.angle > 2.0 || direction.angle < -2.0) { // If angle is far out, add it to calculation
+                        targetSteering = targetSteering + (deg_to_rad((direction.angle * -1) * 500));
+//                    }
+                    if (targetSteering > 0.20 || targetSteering < -0.20) { // Big value
+                        targetSteering = targetSteering / 10;
                     }
+                    if(targetSteering > 0.3 ){ // Max turn of ~17 degrees
+                        targetSteering = 0.3;
+                    } else if(targetSteering < -0.3){
+                        targetSteering = -0.3;
+                    }
+//                    targetSteering = targetSteering * -1; // Backwards driving?
+//                    targetSteering = targetSteering + targetSpeed;
                 } else {
                     targetSteering = 0.0;
                 }
                 if (currentSpeed < 0.0) { // Going backwards so switch steering
                     targetSteering = targetSteering * -1;
                 }
+
+                // Steering calculation
+//                if (direction.y > 0.00 || direction.y < -0.02) { // Y position is far enough out to need a turn
+//                    targetSteering = deg_to_rad(direction.y) * -1; // * 20 to make it faster
+//                    if (direction.angle > 2.0) { // If angle is far out, add it to calculation
+//                        targetSteering = targetSteering + direction.angle;
+//                    }
+//                    if (targetSteering < 1) {
+//                        targetSteering = targetSteering * 100;
+//                    }
+//                } else {
+//                    targetSteering = 0.0;
+//                }
+//                if (currentSpeed < 0.0) { // Going backwards so switch steering
+//                    targetSteering = targetSteering * -1;
+//                }
 
 
 //        std::cout << "Current state: " << std::to_string(stateTracker) <<

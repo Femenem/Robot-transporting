@@ -1,0 +1,39 @@
+<launch>
+
+    <!--
+      Control stuff
+    -->
+    <!--    <rosparam file="$(find van_loading)/config/control.yaml" command="load"/>-->
+
+    <!--    <node name="controller_spawner" pkg="controller_manager" type="spawner" respawn="false"-->
+    <!--          output="screen" ns="/van_loading"-->
+    <!--          args="front_right_steering_controller-->
+    <!--          front_left_steering_controller-->
+    <!--          rear_right_steering_controller-->
+    <!--          rear_left_steering_controller-->
+    <!--          front_right_wheel_controller-->
+    <!--          front_left_wheel_controller-->
+    <!--          rear_right_wheel_controller-->
+    <!--          rear_left_wheel_controller-->
+    <!--          joint_state_controller"/>-->
+
+    <!--    &lt;!&ndash; convert joint states to TF transforms for rviz, etc &ndash;&gt;-->
+    <!--    <node name="robot_state_publisher" pkg="robot_state_publisher"-->
+    <!--          type="robot_state_publisher"-->
+    <!--          respawn="true" output="screen">-->
+    <!--        <remap from="/joint_states" to="/van_loading/joint_states" />-->
+    <!--    </node>-->
+
+    <!--
+      Laserscan filter
+    -->
+
+    <node pkg="laser_filters" type="scan_to_scan_filter_chain"
+          name="laser_filter" respawn="true" output="screen" ns="/van_loading/front_laser/">
+        <rosparam command="load" file="$(find van_loading)/config/filters.yaml" />
+        <!--                <remap from="scan" to="base_scan" />    No need to remap because of namespace on node  -->
+    </node>
+
+    <node pkg="van_loading" type="record_path_node" name="icp_compare" respawn="false" output="screen"/>
+
+</launch>

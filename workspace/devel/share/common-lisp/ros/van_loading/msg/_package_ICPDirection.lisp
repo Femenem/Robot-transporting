@@ -3,8 +3,8 @@
           X
           Y-VAL
           Y
-          ANGLE-VAL
-          ANGLE
           GOODNESS-VAL
           GOODNESS
+          ANGLE-VAL
+          ANGLE
 ))

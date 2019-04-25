@@ -1,0 +1,4 @@
+[submodule "mmp-student"]
+	path = mmp-student
+	url = https://gitlab.dcs.aber.ac.uk/mmp/mmp-student
+	ignore = dirty

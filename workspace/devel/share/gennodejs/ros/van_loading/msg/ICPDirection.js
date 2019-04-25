@@ -20,8 +20,8 @@ class ICPDirection {
       // initObj === null is a special case for deserialization where we don't initialize fields
       this.x = null;
       this.y = null;
-      this.angle = null;
       this.goodness = null;
+      this.angle = null;
     }
     else {
       if (initObj.hasOwnProperty('x')) {
@@ -36,17 +36,17 @@ class ICPDirection {
       else {
         this.y = 0.0;
       }
-      if (initObj.hasOwnProperty('angle')) {
-        this.angle = initObj.angle
-      }
-      else {
-        this.angle = 0.0;
-      }
       if (initObj.hasOwnProperty('goodness')) {
         this.goodness = initObj.goodness
       }
       else {
         this.goodness = 0.0;
+      }
+      if (initObj.hasOwnProperty('angle')) {
+        this.angle = initObj.angle
+      }
+      else {
+        this.angle = 0.0;
       }
     }
   }
@@ -57,10 +57,10 @@ class ICPDirection {
     bufferOffset = _serializer.float32(obj.x, buffer, bufferOffset);
     // Serialize message field [y]
     bufferOffset = _serializer.float32(obj.y, buffer, bufferOffset);
-    // Serialize message field [angle]
-    bufferOffset = _serializer.float32(obj.angle, buffer, bufferOffset);
     // Serialize message field [goodness]
     bufferOffset = _serializer.float64(obj.goodness, buffer, bufferOffset);
+    // Serialize message field [angle]
+    bufferOffset = _serializer.float64(obj.angle, buffer, bufferOffset);
     return bufferOffset;
   }
 
@@ -72,15 +72,15 @@ class ICPDirection {
     data.x = _deserializer.float32(buffer, bufferOffset);
     // Deserialize message field [y]
     data.y = _deserializer.float32(buffer, bufferOffset);
-    // Deserialize message field [angle]
-    data.angle = _deserializer.float32(buffer, bufferOffset);
     // Deserialize message field [goodness]
     data.goodness = _deserializer.float64(buffer, bufferOffset);
+    // Deserialize message field [angle]
+    data.angle = _deserializer.float64(buffer, bufferOffset);
     return data;
   }
 
   static getMessageSize(object) {
-    return 20;
+    return 24;
   }
 
   static datatype() {
@@ -90,7 +90,7 @@ class ICPDirection {
 
   static md5sum() {
     //Returns md5sum for a message object
-    return 'b749b73aa627a1a22c81c8fa999a58b3';
+    return '803c0d8508f23245cbb285376956ee7c';
   }
 
   static messageDefinition() {
@@ -102,11 +102,11 @@ class ICPDirection {
     # y distance (left/right)
     float32 y
     
-    # angle to turn, positive to right, degrees
-    float32 angle
-    
     # how well the models fit together
     float64 goodness
+    
+    # angle to turn, positive to right, degrees
+    float64 angle
     `;
   }
 
@@ -130,18 +130,18 @@ class ICPDirection {
       resolved.y = 0.0
     }
 
-    if (msg.angle !== undefined) {
-      resolved.angle = msg.angle;
-    }
-    else {
-      resolved.angle = 0.0
-    }
-
     if (msg.goodness !== undefined) {
       resolved.goodness = msg.goodness;
     }
     else {
       resolved.goodness = 0.0
+    }
+
+    if (msg.angle !== undefined) {
+      resolved.angle = msg.angle;
+    }
+    else {
+      resolved.angle = 0.0
     }
 
     return resolved;

@@ -26,14 +26,14 @@ struct ICPDirection_
   ICPDirection_()
     : x(0.0)
     , y(0.0)
-    , angle(0.0)
-    , goodness(0.0)  {
+    , goodness(0.0)
+    , angle(0.0)  {
     }
   ICPDirection_(const ContainerAllocator& _alloc)
     : x(0.0)
     , y(0.0)
-    , angle(0.0)
-    , goodness(0.0)  {
+    , goodness(0.0)
+    , angle(0.0)  {
   (void)_alloc;
     }
 
@@ -45,11 +45,11 @@ struct ICPDirection_
    typedef float _y_type;
   _y_type y;
 
-   typedef float _angle_type;
-  _angle_type angle;
-
    typedef double _goodness_type;
   _goodness_type goodness;
+
+   typedef double _angle_type;
+  _angle_type angle;
 
 
 
@@ -129,12 +129,12 @@ struct MD5Sum< ::van_loading::ICPDirection_<ContainerAllocator> >
 {
   static const char* value()
   {
-    return "b749b73aa627a1a22c81c8fa999a58b3";
+    return "803c0d8508f23245cbb285376956ee7c";
   }
 
   static const char* value(const ::van_loading::ICPDirection_<ContainerAllocator>&) { return value(); }
-  static const uint64_t static_value1 = 0xb749b73aa627a1a2ULL;
-  static const uint64_t static_value2 = 0x2c81c8fa999a58b3ULL;
+  static const uint64_t static_value1 = 0x803c0d8508f23245ULL;
+  static const uint64_t static_value2 = 0xcbb285376956ee7cULL;
 };
 
 template<class ContainerAllocator>
@@ -159,11 +159,11 @@ struct Definition< ::van_loading::ICPDirection_<ContainerAllocator> >
 "# y distance (left/right)\n"
 "float32 y\n"
 "\n"
-"# angle to turn, positive to right, degrees\n"
-"float32 angle\n"
-"\n"
 "# how well the models fit together\n"
 "float64 goodness\n"
+"\n"
+"# angle to turn, positive to right, degrees\n"
+"float64 angle\n"
 ;
   }
 
@@ -184,8 +184,8 @@ namespace serialization
     {
       stream.next(m.x);
       stream.next(m.y);
-      stream.next(m.angle);
       stream.next(m.goodness);
+      stream.next(m.angle);
     }
 
     ROS_DECLARE_ALLINONE_SERIALIZER
@@ -208,10 +208,10 @@ struct Printer< ::van_loading::ICPDirection_<ContainerAllocator> >
     Printer<float>::stream(s, indent + "  ", v.x);
     s << indent << "y: ";
     Printer<float>::stream(s, indent + "  ", v.y);
-    s << indent << "angle: ";
-    Printer<float>::stream(s, indent + "  ", v.angle);
     s << indent << "goodness: ";
     Printer<double>::stream(s, indent + "  ", v.goodness);
+    s << indent << "angle: ";
+    Printer<double>::stream(s, indent + "  ", v.angle);
   }
 };
 

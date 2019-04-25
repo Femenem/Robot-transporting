@@ -4,8 +4,8 @@ float32 x
 # y distance (left/right)
 float32 y
 
-# angle to turn, positive to right, degrees
-float32 angle
-
 # how well the models fit together
 float64 goodness
+
+# angle to turn, positive to right, degrees
+float64 angle

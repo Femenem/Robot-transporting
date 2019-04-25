@@ -7,7 +7,7 @@ import struct
 
 
 class ICPDirection(genpy.Message):
-  _md5sum = "b749b73aa627a1a22c81c8fa999a58b3"
+  _md5sum = "803c0d8508f23245cbb285376956ee7c"
   _type = "van_loading/ICPDirection"
   _has_header = False #flag to mark the presence of a Header object
   _full_text = """# x distance (forward/back)
@@ -16,13 +16,13 @@ float32 x
 # y distance (left/right)
 float32 y
 
-# angle to turn, positive to right, degrees
-float32 angle
-
 # how well the models fit together
-float64 goodness"""
-  __slots__ = ['x','y','angle','goodness']
-  _slot_types = ['float32','float32','float32','float64']
+float64 goodness
+
+# angle to turn, positive to right, degrees
+float64 angle"""
+  __slots__ = ['x','y','goodness','angle']
+  _slot_types = ['float32','float32','float64','float64']
 
   def __init__(self, *args, **kwds):
     """
@@ -32,7 +32,7 @@ float64 goodness"""
     changes.  You cannot mix in-order arguments and keyword arguments.
 
     The available fields are:
-       x,y,angle,goodness
+       x,y,goodness,angle
 
     :param args: complete set of field values, in .msg order
     :param kwds: use keyword arguments corresponding to message field names
@@ -45,15 +45,15 @@ float64 goodness"""
         self.x = 0.
       if self.y is None:
         self.y = 0.
-      if self.angle is None:
-        self.angle = 0.
       if self.goodness is None:
         self.goodness = 0.
+      if self.angle is None:
+        self.angle = 0.
     else:
       self.x = 0.
       self.y = 0.
-      self.angle = 0.
       self.goodness = 0.
+      self.angle = 0.
 
   def _get_types(self):
     """
@@ -68,7 +68,7 @@ float64 goodness"""
     """
     try:
       _x = self
-      buff.write(_get_struct_3fd().pack(_x.x, _x.y, _x.angle, _x.goodness))
+      buff.write(_get_struct_2f2d().pack(_x.x, _x.y, _x.goodness, _x.angle))
     except struct.error as se: self._check_types(struct.error("%s: '%s' when writing '%s'" % (type(se), str(se), str(locals().get('_x', self)))))
     except TypeError as te: self._check_types(ValueError("%s: '%s' when writing '%s'" % (type(te), str(te), str(locals().get('_x', self)))))
 
@@ -81,8 +81,8 @@ float64 goodness"""
       end = 0
       _x = self
       start = end
-      end += 20
-      (_x.x, _x.y, _x.angle, _x.goodness,) = _get_struct_3fd().unpack(str[start:end])
+      end += 24
+      (_x.x, _x.y, _x.goodness, _x.angle,) = _get_struct_2f2d().unpack(str[start:end])
       return self
     except struct.error as e:
       raise genpy.DeserializationError(e) #most likely buffer underfill
@@ -96,7 +96,7 @@ float64 goodness"""
     """
     try:
       _x = self
-      buff.write(_get_struct_3fd().pack(_x.x, _x.y, _x.angle, _x.goodness))
+      buff.write(_get_struct_2f2d().pack(_x.x, _x.y, _x.goodness, _x.angle))
     except struct.error as se: self._check_types(struct.error("%s: '%s' when writing '%s'" % (type(se), str(se), str(locals().get('_x', self)))))
     except TypeError as te: self._check_types(ValueError("%s: '%s' when writing '%s'" % (type(te), str(te), str(locals().get('_x', self)))))
 
@@ -110,8 +110,8 @@ float64 goodness"""
       end = 0
       _x = self
       start = end
-      end += 20
-      (_x.x, _x.y, _x.angle, _x.goodness,) = _get_struct_3fd().unpack(str[start:end])
+      end += 24
+      (_x.x, _x.y, _x.goodness, _x.angle,) = _get_struct_2f2d().unpack(str[start:end])
       return self
     except struct.error as e:
       raise genpy.DeserializationError(e) #most likely buffer underfill
@@ -120,9 +120,9 @@ _struct_I = genpy.struct_I
 def _get_struct_I():
     global _struct_I
     return _struct_I
-_struct_3fd = None
-def _get_struct_3fd():
-    global _struct_3fd
-    if _struct_3fd is None:
-        _struct_3fd = struct.Struct("<3fd")
-    return _struct_3fd
+_struct_2f2d = None
+def _get_struct_2f2d():
+    global _struct_2f2d
+    if _struct_2f2d is None:
+        _struct_2f2d = struct.Struct("<2f2d")
+    return _struct_2f2d

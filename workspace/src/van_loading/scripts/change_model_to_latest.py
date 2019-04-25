@@ -11,4 +11,4 @@ try:
 except IOError:
     print("Something went wrong, please try again")
 else:
-    print("File successfully copied to model.csv")
+    print("File successfully copied from " + latest_file + " to model.csv")

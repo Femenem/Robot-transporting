@@ -34,10 +34,10 @@ public:
         timestamp = std::localtime(&now); // Convert to local time
         fileString = "/home/matt/Documents/Robot-transporting/workspace/src/van_loading/data/"
                 + std::to_string(timestamp->tm_mday) + "-" + std::to_string(timestamp->tm_mon)
-                + ":" + std::to_string(timestamp->tm_hour) + std::to_string(timestamp->tm_min)
+                + "-" + std::to_string(timestamp->tm_hour) + std::to_string(timestamp->tm_min)
                 + std::to_string(timestamp->tm_sec) + ".csv"; // TODO MAKE LOCAL FILE
         file.open(fileString, std::ios::app);
-        ROS_INFO("File has been opened in this location: %s", fileString);
+        ROS_INFO("File has been opened in this location: %s", fileString.c_str());
         ROS_INFO("Recording.");
     }
 

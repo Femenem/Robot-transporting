@@ -2,7 +2,7 @@
   <!--
     Gazebo stuff.
   -->
-  <arg name="world" default="$(find van_loading)/gazebo/worlds/idris.world" />
+  <arg name="world" default="$(find van_loading)/worlds/idris.world" />
   <arg name="debug" default="false"/>
   <arg name="paused" default="false"/>
 
